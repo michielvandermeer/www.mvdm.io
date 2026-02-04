@@ -91,8 +91,11 @@ pagination:
 
 paginate: 10
 
-# Collections for projects and products
+# Collections for projects, products, and tabs
 collections:
+  tabs:
+    output: true
+    sort_by: order
   projects:
     output: true
     permalink: /projects/:name/
@@ -111,7 +114,8 @@ defaults:
       toc: true
       permalink: /posts/:title/
   - scope:
-      path: _tabs
+      path: ""
+      type: "tabs"
     values:
       layout: page
       permalink: /:title/
