@@ -5,13 +5,13 @@ icon: fas fa-info-circle
 order: 1
 ---
 
-Hi there, I'm Michiel van der Meer, a seasoned software engineer, architect, and team lead with extensive experience in the industrial automation industry. I've honed my skills in both the shipping and horticulture sectors, where I've implemented innovative solutions in logistics and developed cutting-edge technology for greenhouse data analysis and climate control systems. You can find all the projects I've working on by following [this link](/www.mvdm.io/projects/).
+Hi there, I'm Michiel van der Meer, a seasoned software engineer, architect, and team lead with extensive experience in the industrial automation industry. I've honed my skills in both the shipping and horticulture sectors, where I've implemented innovative solutions in logistics and developed cutting-edge technology for greenhouse data analysis and climate control systems. You can find all the projects I've working on by following [this link]({{ '/projects/' | relative_url }}).
 
-I'm currently the Tech-Lead at [Jewel Software](/www.mvdm.io/projects/jewel-software/). Next to that I'm available 1 day per week as an [independent consultant](/www.mvdm.io/consultancy/).
+I'm currently the Tech-Lead at [Jewel Software]({{ '/projects/jewel-software/' | relative_url }}). Next to that I'm available 1 day per week as an [independent consultant]({{ '/consultancy/' | relative_url }}).
 
-In addition to my professional work, I also work on smaller personal projects. The main ones currently are: [Commonplace](/www.mvdm.io/products/commonplace/) and [Software Translation Tools](/www.mvdm.io/products/translation-tools/).
+In addition to my professional work, I also work on smaller personal projects. The main ones currently are: [Commonplace]({{ '/products/commonplace/' | relative_url }}) and [Software Translation Tools]({{ '/products/translation-tools/' | relative_url }}).
 
-Aside from my technical expertise, I am also a sporadic writer, covering a wide range of topics in my blog. You can find all my articles by following [this link](/www.mvdm.io/).
+Aside from my technical expertise, I am also a sporadic writer, covering a wide range of topics in my blog. You can find all my articles by following [this link]({{ '/' | relative_url }}).
 
 To connect with me, feel free to reach out through [LinkedIn](https://www.linkedin.com/in/michielmeer/) or send me an [email](mailto:michiel@mvdm.io). I would love to hear from you!
 

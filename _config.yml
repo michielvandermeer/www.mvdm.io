@@ -67,7 +67,7 @@ pageviews:
 theme_mode: dark
 
 # Avatar (displayed in sidebar)
-avatar: /assets/images/avatar.png
+avatar: /assets/images/avatar.svg
 
 # Table of contents
 toc: true
