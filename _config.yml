@@ -1,11 +1,14 @@
 # Site settings
 title: mvdm.io
 description: Professional blog of Michiel van der Meer
-author:
-  name: Michiel van der Meer
-  email: michiel@mvdm.io
-url: ""
-baseurl: ""
+author: Michiel van der Meer
+email: michiel@mvdm.io
+url: "https://michielvandermeer.github.io"
+baseurl: "/www.mvdm.io"
+
+# Social links (Minima 2.5 format)
+linkedin_username: michielmeer
+github_username: mvdmio
 
 # Build settings
 theme: minima
@@ -16,9 +19,6 @@ plugins:
 # Minima theme settings
 minima:
   skin: dark
-  social_links:
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/michielmeer/" }
-    - { platform: github, user_url: "https://github.com/mvdmio" }
 
 # Header navigation
 header_pages:
