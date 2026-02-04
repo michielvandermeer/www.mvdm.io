@@ -1,0 +1,53 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // Use a capable model for this content-focused project
+  "model": "anthropic/claude-sonnet-4-5",
+
+  // Auto-update OpenCode
+  "autoupdate": true,
+
+  // Sharing settings
+  "share": "manual",
+
+  // Tool configurations - be careful with system commands
+  "permission": {
+    // Ask before running bash commands since Jekyll builds can take time
+    "bash": "ask"
+  },
+
+  // Custom commands for common Jekyll workflows
+  "command": {
+    "serve": {
+      "description": "Start Jekyll development server",
+      "template": "Run `bundle exec jekyll serve` to start the local development server. Report any errors that occur."
+    },
+    "build": {
+      "description": "Build the Jekyll site",
+      "template": "Run `bundle exec jekyll build` to build the site. Check for any build errors or warnings."
+    },
+    "new-post": {
+      "description": "Create a new blog post",
+      "template": "Create a new blog post with the title: $ARGUMENTS\n\nFollow these steps:\n1. Generate the filename using format YYYY-MM-DD-slug.md (use today's date)\n2. Create the file in _posts/ directory\n3. Include proper front matter with layout: post, title, date, author: Michiel van der Meer\n4. Ask which categories and tags to use\n5. Remind to add an image to assets/images/posts/ if needed"
+    },
+    "new-project": {
+      "description": "Create a new project page",
+      "template": "Create a new project page with the title: $ARGUMENTS\n\nFollow these steps:\n1. Create the file in _projects/ directory with a slug-based filename\n2. Include proper front matter with layout: page, title, description, image, and order\n3. Add sections for Technologies, Responsibilities, and Challenges\n4. Remind to add an image to assets/images/projects/"
+    },
+    "new-product": {
+      "description": "Create a new product page",
+      "template": "Create a new product page with the title: $ARGUMENTS\n\nFollow these steps:\n1. Create the file in _products/ directory with a slug-based filename\n2. Include proper front matter with layout: page, title, description, image, external_url, and order\n3. Remind to add an image to assets/images/products/"
+    }
+  },
+
+  // File watcher ignore patterns
+  "watcher": {
+    "ignore": [
+      "_site/**",
+      ".jekyll-cache/**",
+      ".git/**",
+      "vendor/**",
+      "node_modules/**"
+    ]
+  }
+}
