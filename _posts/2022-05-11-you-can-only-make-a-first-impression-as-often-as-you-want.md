@@ -4,7 +4,9 @@ title: "You can only make a first impression as often as you want"
 date: 2022-05-11
 author: Michiel van der Meer
 categories: [Business]
-image: /assets/images/posts/impression.jpg
+tags: [agile, product validation]
+image:
+  path: /assets/images/posts/impression.jpg
 ---
 
 "You can only make a first impression once."

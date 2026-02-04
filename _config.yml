@@ -1,68 +1,170 @@
-# Site settings
+# The Site Configuration
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# Site language
+lang: en
+
+# Prefer a specific timezone
+timezone: Europe/Amsterdam
+
+# Site title
 title: mvdm.io
+
+# Site tagline
+tagline: Professional blog of Michiel van der Meer
+
+# Site description
 description: Professional blog of Michiel van der Meer
-author: Michiel van der Meer
-email: michiel@mvdm.io
+
+# Site URL
 url: "https://michielvandermeer.github.io"
 baseurl: "/www.mvdm.io"
 
-# Social links (Minima 2.5 format)
-linkedin_username: michielmeer
-github_username: mvdmio
+# GitHub username
+github:
+  username: mvdmio
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# Social links
+social:
+  name: Michiel van der Meer
+  email: michiel@mvdm.io
+  links:
+    - https://github.com/mvdmio
+    - https://www.linkedin.com/in/michielmeer/
 
-# Minima theme settings
-minima:
-  skin: dark
+# Site verification settings (optional)
+webmaster_verifications:
+  google: # fill in Google Search Console verification
+  bing:
+  alexa:
+  yandex:
+  baidu:
+  facebook:
 
-# Header navigation
-header_pages:
-  - about.md
-  - consultancy.md
-  - projects.html
-  - products.html
-  - open-source.md
+# Analytics
+analytics:
+  google:
+    id: # fill in your Google Analytics ID
+  goatcounter:
+    id:
+  umami:
+    id:
+    domain:
+  matomo:
+    id:
+    domain:
+  cloudflare:
+    id:
+  fathom:
+    id:
+
+# Page views
+pageviews:
+  provider:
+
+# Theme mode - prefer dark mode to match original Ghost site
+theme_mode: dark
+
+# Avatar (displayed in sidebar)
+avatar: /assets/images/avatar.png
+
+# Table of contents
+toc: true
+
+# Comments
+comments:
+  provider: # leave empty for no comments
+
+# Self-hosted static assets (leave blank for CDN)
+assets:
+  self_host:
+    enabled: false
+
+# PWA settings
+pwa:
+  enabled: true
+
+# Pagination settings
+pagination:
+  enabled: true
+
+paginate: 10
 
 # Collections for projects and products
 collections:
   projects:
     output: true
-    permalink: /:collection/:name/
+    permalink: /projects/:name/
   products:
     output: true
-    permalink: /:collection/:name/
+    permalink: /products/:name/
 
 # Default front matter
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
+      layout: post
+      comments: false
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _tabs
+    values:
+      layout: page
+      permalink: /:title/
   - scope:
       path: ""
-      type: "projects"
+      type: projects
     values:
-      layout: "page"
+      layout: page
   - scope:
       path: ""
-      type: "products"
+      type: products
     values:
-      layout: "page"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+      layout: page
+
+# SASSify
+sass:
+  style: compressed
+
+# Compress HTML - disabled on Windows due to 'nul' file issues
+# compress_html:
+#   clippings: all
+#   comments: all
+#   endings: all
+#   profile: false
+#   blanklines: false
+#   ignore:
+#     envs: [development]
 
 # Exclude from processing
 exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - package*.json
   - Gemfile
   - Gemfile.lock
-  - README.md
   - vendor
   - download-images.ps1
+
+# Jekyll archives (not enabled by default in Chirpy)
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+# Plugins (jekyll-feed handled by Chirpy theme)
+plugins:
+  - jekyll-seo-tag

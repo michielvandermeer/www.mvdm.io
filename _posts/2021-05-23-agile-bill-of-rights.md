@@ -4,7 +4,9 @@ title: "Agile bill of rights"
 date: 2021-05-23
 author: Michiel van der Meer
 categories: [Software Development]
-image: /assets/images/posts/bill-of-rights.jpg
+tags: [agile, scrum, clean agile]
+image:
+  path: /assets/images/posts/bill-of-rights.jpg
 ---
 
 I'm reading 'Clean Agile' by Robert C. Martin.

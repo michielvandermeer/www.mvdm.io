@@ -4,7 +4,9 @@ title: "List of fully-remote businesses"
 date: 2020-12-09
 author: Michiel van der Meer
 categories: [Business]
-image: /assets/images/posts/remote-work.jpg
+tags: [remote work, companies]
+image:
+  path: /assets/images/posts/remote-work.jpg
 ---
 
 Sourced from Twitter: [https://twitter.com/chris_herd/status/1336427593864798210](https://twitter.com/chris_herd/status/1336427593864798210)

@@ -4,7 +4,9 @@ title: "The unwritten rules of remote communication"
 date: 2021-06-02
 author: Michiel van der Meer
 categories: [Business]
-image: /assets/images/posts/remote-coding.jpg
+tags: [remote work, communication]
+image:
+  path: /assets/images/posts/remote-coding.jpg
 ---
 
 I've had a discussion at work recently about the 'etiquette' of communicating remotely. To my surprise, some people were unclear about the proper way of communicating; meaning when it is appropriate to call someone, or send an instant message, or type it up in an email.

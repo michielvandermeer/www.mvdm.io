@@ -3,7 +3,10 @@ layout: post
 title: "Effective .NET Web development for individuals and small teams"
 date: 2023-05-27
 author: Michiel van der Meer
-image: /assets/images/posts/effective-dotnet-web-development.jpeg
+categories: [Software Development]
+tags: [dotnet, web development, rails, hotwire]
+image:
+  path: /assets/images/posts/effective-dotnet-web-development.jpeg
 ---
 
 The challenge at my current employment is to get the most out of a small team and a relatively small budget. This essay is my vision on how to accomplish that.

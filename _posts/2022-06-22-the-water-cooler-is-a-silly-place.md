@@ -4,7 +4,9 @@ title: "The water cooler is a silly place"
 date: 2022-06-22
 author: Michiel van der Meer
 categories: [Business]
-image: /assets/images/posts/watercooler.jpeg
+tags: [remote work, office culture]
+image:
+  path: /assets/images/posts/watercooler.jpeg
 ---
 
 After the lockdown restrictions from the COVID-19 crisis ended we, like every other company, discussed about going back into the office.

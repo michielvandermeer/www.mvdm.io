@@ -4,7 +4,9 @@ title: "What it takes to lead software development teams effectively"
 date: 2022-06-08
 author: Michiel van der Meer
 categories: [Business, Software Development]
-image: /assets/images/posts/what-it-takes-to-lead.jpeg
+tags: [leadership, scrum, agile, team management]
+image:
+  path: /assets/images/posts/what-it-takes-to-lead.jpeg
 ---
 
 Clarity and focus.

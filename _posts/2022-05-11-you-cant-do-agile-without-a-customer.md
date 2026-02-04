@@ -4,7 +4,9 @@ title: "You can't do agile without a customer"
 date: 2022-05-11
 author: Michiel van der Meer
 categories: [Business]
-image: /assets/images/posts/cloud-skyline.jpg
+tags: [agile, scrum, customer feedback]
+image:
+  path: /assets/images/posts/cloud-skyline.jpg
 ---
 
 I've worked on many projects during my career. Many of them eventually delivered high-quality products that were used by a good amount of customers. However, most of them went over budget, as is very common in the software development industry [\[forbes\]](https://www.forbes.com/sites/steveandriole/2020/12/01/why-no-one-can-manage-projects-especially-technology-projects/).

@@ -4,7 +4,9 @@ title: "Improving on the 'yearly disappointment' at work"
 date: 2021-05-04
 author: Michiel van der Meer
 categories: [Business]
-image: /assets/images/posts/meeting-room.jpg
+tags: [performance reviews, workplace]
+image:
+  path: /assets/images/posts/meeting-room.jpg
 ---
 
 At work, I've dubbed my yearly performance review the 'yearly disappointment.' It's the time when my supervisor and I look back at the past year and review how much of my goals have been met. The supervisor then gives me a score between 1 and 10. Based on the score I get a higher or lower raise.

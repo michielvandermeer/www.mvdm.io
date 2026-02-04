@@ -4,7 +4,9 @@ title: "Developers are not socially awkward introverts; here is how to understan
 date: 2022-06-15
 author: Michiel van der Meer
 categories: [Business, Software Development]
-image: /assets/images/posts/developers-not-introverts.jpg
+tags: [developers, leadership, team management]
+image:
+  path: /assets/images/posts/developers-not-introverts.jpg
 ---
 
 Recently a well-accomplished Product Owner told me that he thought programmers were weird people. He thought of them as anti-social, extremely introverted and, dare I say it, akin to autistic. The main reasons he thought so were that his developers were wearing headphones all day, got annoyed when they were interrupted, didn't talk much at the water cooler, and didn't really enjoy the office parties.
