@@ -1,0 +1,68 @@
+# Site settings
+title: mvdm.io
+description: Professional blog of Michiel van der Meer
+author:
+  name: Michiel van der Meer
+  email: michiel@mvdm.io
+url: ""
+baseurl: ""
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Minima theme settings
+minima:
+  skin: dark
+  social_links:
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/michielmeer/" }
+    - { platform: github, user_url: "https://github.com/mvdmio" }
+
+# Header navigation
+header_pages:
+  - about.md
+  - consultancy.md
+  - projects.html
+  - products.html
+  - open-source.md
+
+# Collections for projects and products
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+  products:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - download-images.ps1

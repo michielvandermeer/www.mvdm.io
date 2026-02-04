@@ -1,0 +1,20 @@
+---
+layout: page
+title: Products
+permalink: /products/
+---
+
+A list of products I've built.
+
+<ul class="product-list">
+{% assign sorted_products = site.products | sort: "order" %}
+{% for product in sorted_products %}
+  <li>
+    <h3><a href="{{ product.url | relative_url }}">{{ product.title }}</a></h3>
+    <p>{{ product.description }}</p>
+    {% if product.external_url %}
+    <p><a href="{{ product.external_url }}" target="_blank">Visit {{ product.title }}</a></p>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
