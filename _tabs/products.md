@@ -14,9 +14,7 @@ Personal projects and products I'm working on.
   <article class="col">
     <div class="post-preview card h-100">
       {% if product.image %}
-      <a href="{{ product.url | relative_url }}">
-        <img src="{{ product.image | relative_url }}" class="card-img-top" alt="{{ product.title }}">
-      </a>
+      <a href="{{ product.url | relative_url }}"><img src="{{ product.image | relative_url }}" class="card-img-top" alt="{{ product.title }}"></a>
       {% endif %}
       <div class="card-body d-flex flex-column">
         <h4 class="card-title mb-2">

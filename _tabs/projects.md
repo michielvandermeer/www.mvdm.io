@@ -12,15 +12,15 @@ A list of projects I've participated in over the years.
 <div class="row row-cols-1 row-cols-md-2 g-4 mb-4 mt-2">
   {% for project in sorted_projects %}
   <article class="col">
-    <a href="{{ project.url | relative_url }}" class="post-preview card h-100 text-decoration-none">
+    <div class="post-preview card h-100">
       {% if project.image %}
-      <img src="{{ project.image | relative_url }}" class="card-img-top" alt="{{ project.title }}">
+      <a href="{{ project.url | relative_url }}"><img src="{{ project.image | relative_url }}" class="card-img-top" alt="{{ project.title }}"></a>
       {% endif %}
-      <div class="card-body d-flex flex-column">
+      <a href="{{ project.url | relative_url }}" class="card-body d-flex flex-column text-decoration-none">
         <h4 class="card-title mb-2">{{ project.title }}</h4>
         <p class="card-text text-muted flex-grow-1">{{ project.description }}</p>
-      </div>
-    </a>
+      </a>
+    </div>
   </article>
   {% endfor %}
 </div>
