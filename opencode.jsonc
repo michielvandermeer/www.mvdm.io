@@ -10,12 +10,6 @@
   // Sharing settings
   "share": "manual",
 
-  // Tool configurations - be careful with system commands
-  "permission": {
-    // Ask before running bash commands since Jekyll builds can take time
-    "bash": "ask"
-  },
-
   // Custom commands for common Jekyll workflows
   "command": {
     "serve": {

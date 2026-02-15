@@ -23,7 +23,7 @@ Personal projects and products I'm working on.
           <a href="{{ product.url | relative_url }}">{{ product.title }}</a>
         </h4>
         <p class="card-text text-muted flex-grow-1">{{ product.description }}</p>
-        <div class="d-flex gap-2 mt-3">
+        <div class="card-buttons">
           <a href="{{ product.url | relative_url }}" class="btn btn-outline-primary btn-sm">Learn more</a>
           {% if product.external_url %}
           <a href="{{ product.external_url }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
