@@ -1,22 +1,47 @@
 ---
 layout: page
 title: "Translation Tools"
-description: "Everyone can translate without juggling files between people."
+description: "Translate your software without juggling files between people."
 image: /assets/images/products/translation-tools.jpg
 external_url: https://translations.mvdm.io
 order: 2
 ---
 
-**Everyone can translate without juggling files between people.**
+**Translate your software without juggling files between people.**
 
-Link to the app: [https://translations.mvdm.io](https://translate.mvdm.io/)
+Localizing software usually means sending translation files back and forth between developers and translators, dealing with merge conflicts, and hoping nothing gets lost along the way. Translation Tools eliminates that friction by connecting directly to your Git repository and giving everyone a browser-based editor to work in.
 
-Translation Tools makes translating software seamless. It allows non-developers to edit translations without having to know anything about the tools that are normally used by programmers.
+## Git-Native Workflow
 
-Translation Tools is currently in **Open Beta**. You can register your account for free; no credit card required. When the beta ends you will be asked if you want to continue using Translation Tools or if you would like to stop. Continuing will mean that you'll subscribe to a paid plan. I have not yet determined the pricing.
+Your translation files stay in your Git repository as the single source of truth. Translation Tools clones your repo via SSH, reads the translation files, and presents them in an editable interface. When translations are updated, the changes are committed and pushed back to your repository -- no file exports, no manual merges, no lost work.
 
-## Features
+Switch branches, pull the latest changes, and reset to the remote state, all from the web interface. Your translation workflow fits seamlessly into your existing development process.
 
-Translation Tools integrates directly with your Git repository. It will find all the translation files in your repository and present the keys and values in a grid for easy editing. You can invite anyone you want into your account to participate in translating. They won't need to download any tools and there's no need for importing and exporting any files.
+## Intuitive Translation Editor
 
-Not sure about how to translate a phrase? No worries; Translation Tools suggests fitting translations based on the other languages you already have translated. No need to switch between Google Translate and Translation Tools all the time.
+All translation keys are displayed in a table grouped by file, with a column for each locale. Click any cell to open the editor, where you can see the values in other languages side by side. Changed values are highlighted so you can easily review what has been modified before committing.
+
+Non-technical team members and external translators can contribute directly -- no developer tools required, no training needed.
+
+## Built-In Translation Suggestions
+
+Not sure how to phrase a translation? Translation Tools automatically suggests translations using Google Translate based on the values already present in your other locales. Translators get a helpful starting point without ever leaving the editor.
+
+## Azure DevOps Integration
+
+Connect your Azure DevOps account to browse and select repositories directly from the UI. No need to manually configure SSH keys or repository URLs.
+
+## Multi-Platform Support
+
+Translation Tools supports the translation file formats used across major platforms:
+
+- **.NET** -- `.resx` resource files
+- **Android** -- `strings.xml`
+- **iOS** -- `.strings` and `.stringsdict`
+- **Ruby on Rails** -- `.yml`
+
+Multiple file groups within the same project are automatically discovered and organized, so you can manage all your translations in one place regardless of your tech stack.
+
+---
+
+[Get started with Translation Tools](https://translations.mvdm.io) and simplify your localization workflow.
