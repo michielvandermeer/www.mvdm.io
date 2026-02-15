@@ -11,21 +11,23 @@
 /* append your custom style below */
 
 /* Product & project cards */
+.post-preview.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.post-preview.card::before {
+  display: none;
+}
+
 .post-preview.card .card-img-top {
   border-radius: 10px 10px 0 0;
   object-fit: cover;
   height: 180px;
-  position: relative;
-  z-index: 1;
 }
 
 .post-preview.card .card-body {
   position: relative;
-  z-index: 1;
-}
-
-.post-preview.card::before {
-  pointer-events: none;
 }
 
 .post-preview.card .card-title {
