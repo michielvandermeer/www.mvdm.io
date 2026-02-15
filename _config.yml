@@ -18,8 +18,8 @@ tagline: Professional blog of Michiel van der Meer
 description: Professional blog of Michiel van der Meer
 
 # Site URL
-url: "https://michielvandermeer.github.io"
-baseurl: "/www.mvdm.io"
+url: "https://mvdm.io"
+baseurl: ""
 
 # GitHub username
 github:
