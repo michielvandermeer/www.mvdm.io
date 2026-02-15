@@ -1,0 +1,37 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* Product cards */
+.post-preview.card .card-img-top {
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  height: 180px;
+}
+
+.post-preview.card .card-title a {
+  color: var(--heading-color);
+  text-decoration: none;
+}
+
+.post-preview.card .card-title a:hover {
+  color: var(--link-color);
+}
+
+.post-preview.card .btn-primary {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+}
+
+.post-preview.card .btn-primary:hover {
+  filter: brightness(1.15);
+}
