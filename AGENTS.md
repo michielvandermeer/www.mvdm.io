@@ -1,129 +1,120 @@
-# Personal Blog & Portfolio - mvdm.io
+# mvdm.io — marketing website for mvdmio's products
 
-This is a Jekyll-based personal blog and portfolio website for Michiel van der Meer. The site showcases professional projects, personal products, and technical blog posts.
+This is the public marketing site for mvdmio. It sells five SaaS products
+(Compliance, Translation Tools, Health Check, Statistics, Commonplace); the
+blog, resume and open-source pages are secondary. See `CONTEXT.md` for the
+domain vocabulary (Product, Flagship, Landing page, Resume, mvdmio) — use
+those terms, not "app", "project", "tool", "portfolio" or "info page".
 
-## Tech Stack
+## Tech stack
 
-- **Jekyll 4.4.1** - Static site generator (Ruby-based)
-- **jekyll-theme-chirpy 7.4.1** - Modern blog theme with dark mode
-- **Ruby** - Runtime (2.7+ required, 3.3 used in CI)
-- **Bundler** - Ruby dependency management
-- **GitHub Actions** - CI/CD deployment to GitHub Pages
+Plain static HTML and hand-written CSS. No generator, no build step, no
+Node, no Ruby, no Bundler. GitHub Pages serves the repository root directly.
+The only external dependency is Google Fonts (Source Serif 4, Inter, IBM
+Plex Mono, loaded via `<link>` in every page's `<head>`).
 
-## Project Structure
+## Page / URL structure
+
+Every URL is a directory containing an `index.html`, so links never carry a
+`.html` suffix:
 
 ```
-├── _config.yml          # Main Jekyll configuration
-├── Gemfile              # Ruby dependencies
-├── index.html           # Home page (uses 'home' layout)
-├── _posts/              # Blog posts (YYYY-MM-DD-slug.md format)
-├── _projects/           # Professional project portfolio
-├── _products/           # Personal products/SaaS projects
-├── _tabs/               # Navigation pages (ordered by 'order' front matter)
-└── assets/images/       # Images organized by type (posts/, projects/, products/)
+index.html                         /            (homepage)
+404.html                           served for unmatched paths
+products/<name>/index.html         /products/<name>/   (5 Landing pages)
+blog/index.html                    /blog/       (post index)
+posts/<slug>/index.html            /posts/<slug>/       (10 posts)
+projects/index.html                /projects/   (Resume index)
+projects/<slug>/index.html         /projects/<slug>/    (8 Resume entries)
+about/index.html                   /about/
+open-source/index.html             /open-source/
+feed.xml                           /feed.xml    (hand-maintained RSS)
+sitemap.xml, robots.txt            search-engine files, served at root
+assets/css/site.css                the one shared stylesheet
+assets/images/, assets/img/        images and favicons
 ```
 
-## Content Conventions
+`/consultancy/` is gone with no redirect — do not recreate it. There is no
+`_tabs/`, `_posts/`, `_projects/`, `_config.yml`, `Gemfile`, or any other
+Jekyll/Chirpy machinery; do not reintroduce any of it.
 
-### Blog Posts (`_posts/*.md`)
+## Shared stylesheet and design tokens
 
-Posts must follow the naming convention: `YYYY-MM-DD-slug.md`
+`assets/css/site.css` is the single stylesheet for the whole site — every
+page links it, nothing else. It carries the "Boardroom" design system:
 
-```yaml
----
-layout: post
-title: "Article Title"
-date: YYYY-MM-DD
-author: Michiel van der Meer
-categories: [Category1, Category2]
-tags: [tag1, tag2]
-image:
-  path: /assets/images/posts/image-name.jpg
----
-```
+- **Tokens** (custom properties near the top of the file): paper background
+  `--paper`, ink `--ink`, pine `--pine` (buttons), hairline `--hairline`,
+  plus one accent variable per product — `--acc-compliance`,
+  `--acc-translation-tools`, `--acc-health-check`, `--acc-statistics`,
+  `--acc-commonplace`. A Landing page sets its accent by adding the
+  matching class/variable at the top of its markup; don't hardcode a
+  product's hex color inline.
+- **Reusable classes**: `.wrap` (page-width container), `.eyebrow`/`.mono`
+  (small caps/mono labels), `.clause` (hairline-ruled, mono-numbered
+  section — "01", "02"…), `.duo` (two-column text-beside-illustration
+  section) with `.duo.rev` to flip which side the text sits on (alternates
+  per feature section on a Landing page), `.ledger` (pricing table with
+  dotted leader lines and a `.total` row), `.tiles`/`.tile` (card grid, used
+  by the Resume index and Open source page), `.page-head` (generic page
+  header), `.post-head`/`.post-image`/`.prose` (post and Resume entry
+  layout), `.btn` (pine primary button) and `.btn.sm` (quieter secondary
+  button).
+- The site is light-only: no dark mode, no theme toggle, and no
+  `prefers-color-scheme: dark` overrides — don't add any.
+- Reduced motion: any animation/transition must be guarded so
+  `prefers-reduced-motion: reduce` disables it.
+- Focus states must stay visible on every interactive element — don't
+  suppress `:focus`/`:focus-visible` outlines.
 
-Common categories: `Software Development`, `Business`
-Common tags: `dotnet`, `web development`, `rails`, `hotwire`, `remote work`, `communication`, `leadership`, `scrum`, `agile`, `team management`
+Adding new shared UI: put the class in `site.css`, not in a `<style>` block
+on one page. Page-specific one-offs (e.g. an inline SVG illustration) can
+live in the page itself.
 
-### Projects (`_projects/*.md`)
+## How to add a page
 
-```yaml
----
-layout: page
-title: "Project Name"
-description: "Short description"
-image: /assets/images/projects/image.jpg
-order: 1  # Controls display order
----
-```
+1. Create `<path>/index.html` (a new directory with an `index.html` inside,
+   so the URL has no file extension).
+2. Copy the `<head>` block from a page of the same kind (a Landing page
+   from another Landing page, a post from another post, etc.) — same
+   Google Fonts `<link>`, same favicon links, same `assets/css/site.css`
+   link. Give it its own `<title>` and `<meta name="description">`, both
+   distinct from every other page's, and its own `<link rel="canonical">`.
+3. Reuse the shared nav and footer markup from a sibling page exactly —
+   don't invent a second nav.
+4. Add the new URL to `sitemap.xml`.
+5. If it's a new post: add it to `blog/index.html`'s list (and to
+   `feed.xml`'s items, most-recent-first) and its own `posts/<slug>/`
+   directory.
+6. If it's a new Resume entry: add it to `projects/index.html`'s tile grid
+   in the same order.
 
-Include sections for Technologies, Responsibilities, and Challenges when relevant.
+## Prices
 
-### Products (`_products/*.md`)
+Each Landing page states its Product's price in **exactly one place** —
+one literal string, once, in the ledger pricing table (business Products:
+"€999 / year, excl. VAT"; Commonplace: "€99 / year, incl. VAT"). Prices are
+hand-maintained against what's actually configured in Stripe; there is no
+sync. When a price changes, edit that one line on that one page — do not
+introduce a second occurrence of the number anywhere else on the page
+(hero copy, meta description, etc. must paraphrase around it instead of
+repeating the figure).
 
-```yaml
----
-layout: page
-title: "Product Name"
-description: "Short tagline"
-image: /assets/images/products/image.jpg
-external_url: https://product.mvdm.io
-order: 1
----
-```
+## How to verify a change
 
-### Tabs (`_tabs/*.md`)
+There is no build step and no test framework — verification means serving
+the tree and looking at it:
 
-Navigation pages with FontAwesome icons:
+1. Serve the repository root with any static file server, e.g.
+   `python3 -m http.server` from the repo root, then visit
+   `http://localhost:8000/`.
+2. Click through the pages you touched and their neighbors (nav, footer,
+   in-body links) and confirm nothing 404s.
+3. Check the page at both a desktop width and a narrow (~375px) width.
+4. Tab through interactive elements and confirm the focus ring is visible.
+5. If you touched `feed.xml`, confirm it still parses as RSS (e.g. open it
+   in a browser or feed reader, or run it through an XML parser).
+6. If you added or removed a page, update `sitemap.xml` to match.
 
-```yaml
----
-layout: page
-title: Tab Name
-icon: fas fa-icon-name
-order: 1  # Navigation order
----
-```
-
-## Development Workflow
-
-### Local Development
-
-```bash
-bundle install              # Install dependencies
-bundle exec jekyll serve    # Run dev server at localhost:4000
-```
-
-### Building
-
-```bash
-bundle exec jekyll build
-```
-
-### Deployment
-
-- Automatic deployment via GitHub Actions on push to `main` or `master`
-- Deploys to GitHub Pages
-
-## Important Notes
-
-- Use relative URLs with `| relative_url` filter in templates
-- Images should be placed in `assets/images/` in the appropriate subdirectory
-- The theme mode is set to dark by default
-- Timezone is Europe/Amsterdam
-- PWA is enabled
-- Table of contents is enabled on posts by default
-- Comments are disabled
-
-## Files to Never Edit
-
-- `_site/` - Generated output (gitignored)
-- `.jekyll-cache/` - Build cache (gitignored)
-- Files from the jekyll-theme-chirpy gem (override by creating local copies instead)
-
-## When Adding Content
-
-1. Place images in the appropriate `assets/images/` subdirectory first
-2. Follow the front matter conventions exactly
-3. Test locally with `bundle exec jekyll serve` before committing
-4. Verify the site builds successfully
+A throwaway link-crawl script is fine for a one-off check but should not be
+committed — there is no CI test suite for this repo.

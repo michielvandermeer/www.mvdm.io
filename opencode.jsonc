@@ -10,37 +10,34 @@
   // Sharing settings
   "share": "manual",
 
-  // Custom commands for common Jekyll workflows
+  // Custom commands for the static-site workflow (plain HTML, no build step)
   "command": {
     "serve": {
-      "description": "Start Jekyll development server",
-      "template": "Run `bundle exec jekyll serve` to start the local development server. Report any errors that occur."
+      "description": "Serve the site locally",
+      "template": "Run `python3 -m http.server` from the repository root to serve the site at http://localhost:8000/. Report any errors that occur."
     },
-    "build": {
-      "description": "Build the Jekyll site",
-      "template": "Run `bundle exec jekyll build` to build the site. Check for any build errors or warnings."
+    "check-links": {
+      "description": "Crawl the locally served site for broken internal links",
+      "template": "Serve the repository root with a static file server, then crawl every internal link starting from `/` and report any that don't return 200 (or, for the preserved-URL contract in AGENTS.md/README.md, don't resolve to the intended page). Use a throwaway script in the scratchpad — do not commit it."
     },
     "new-post": {
       "description": "Create a new blog post",
-      "template": "Create a new blog post with the title: $ARGUMENTS\n\nFollow these steps:\n1. Generate the filename using format YYYY-MM-DD-slug.md (use today's date)\n2. Create the file in _posts/ directory\n3. Include proper front matter with layout: post, title, date, author: Michiel van der Meer\n4. Ask which categories and tags to use\n5. Remind to add an image to assets/images/posts/ if needed"
+      "template": "Create a new blog post with the title: $ARGUMENTS\n\nFollow these steps:\n1. Choose a URL-friendly slug and create `posts/<slug>/index.html`\n2. Copy the `<head>` and nav/footer markup from an existing post in `posts/`, then write a distinct `<title>` and `<meta name=\"description\">` and update the `<link rel=\"canonical\">`\n3. Write the post body inside the `.prose` container, matching an existing post's structure\n4. Add the post to `blog/index.html`'s list and as a new item in `feed.xml` (most-recent-first)\n5. Add `https://mvdm.io/posts/<slug>/` to `sitemap.xml`\n6. Add any post image to `assets/images/posts/`"
     },
-    "new-project": {
-      "description": "Create a new project page",
-      "template": "Create a new project page with the title: $ARGUMENTS\n\nFollow these steps:\n1. Create the file in _projects/ directory with a slug-based filename\n2. Include proper front matter with layout: page, title, description, image, and order\n3. Add sections for Technologies, Responsibilities, and Challenges\n4. Remind to add an image to assets/images/projects/"
+    "new-resume-entry": {
+      "description": "Create a new Resume entry",
+      "template": "Create a new Resume entry with the title: $ARGUMENTS\n\nFollow these steps:\n1. Choose a URL-friendly slug and create `projects/<slug>/index.html`\n2. Copy the `<head>` and nav/footer markup from an existing entry in `projects/`, then write a distinct `<title>` and `<meta name=\"description\">` and update the `<link rel=\"canonical\">`\n3. Write the entry body inside the `.prose` container, matching an existing entry's structure\n4. Add a tile for it to `projects/index.html`'s grid\n5. Add `https://mvdm.io/projects/<slug>/` to `sitemap.xml`\n6. Add an image to `assets/images/projects/`"
     },
-    "new-product": {
-      "description": "Create a new product page",
-      "template": "Create a new product page with the title: $ARGUMENTS\n\nFollow these steps:\n1. Create the file in _products/ directory with a slug-based filename\n2. Include proper front matter with layout: page, title, description, image, external_url, and order\n3. Remind to add an image to assets/images/products/"
+    "new-product-landing-page": {
+      "description": "Scaffold a new Product Landing page",
+      "template": "Create a new Landing page for the Product: $ARGUMENTS\n\nFollow these steps:\n1. Create `products/<name>/index.html`\n2. Copy the `<head>`, nav and footer from an existing Landing page in `products/`; write a distinct `<title>` and `<meta name=\"description\">` and update the `<link rel=\"canonical\">`\n3. Build the anatomy described in AGENTS.md and the spec: hero (name, tagline, \"Get started\" + \"Contact me\", one price line) → SVG illustration in a document frame → 3-6 `.duo`/`.duo.rev` feature sections → a `.ledger` pricing table with the price stated exactly once → a closing call to action\n4. Pick an accent color variable (`--acc-<name>`) — add one to `assets/css/site.css` if this Product doesn't have one yet\n5. Add the new URL to `sitemap.xml`, and add the Product to the top nav on every page\n6. Remind the user that all copy is drafted from that app's `Project.md`/changelog and needs the owner's review before it ships"
     }
   },
 
   // File watcher ignore patterns
   "watcher": {
     "ignore": [
-      "_site/**",
-      ".jekyll-cache/**",
       ".git/**",
-      "vendor/**",
       "node_modules/**"
     ]
   }
