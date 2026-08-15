@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open source — mvdmio</title>
+<meta name="description" content="The MIT-licensed .NET packages mvdmio maintains on GitHub — the open-source plumbing underneath its products.">
+<link rel="canonical" href="https://mvdm.io/open-source/">
+
+<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#0e3b2e">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#fbfaf7">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="wordmark" href="/">mvdmio</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="/products/compliance/">Compliance</a>
+      <a href="/products/translation-tools/">Translation Tools</a>
+      <a href="/products/health-check/">Health Check</a>
+      <a href="/products/statistics/">Statistics</a>
+      <a href="/products/commonplace/">Commonplace</a>
+      <a href="/open-source/">Open source</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <span class="nav-cta"><a class="btn" href="https://compliance.mvdm.io">Get started</a></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="eyebrow mono">mvdmio &middot; open source</p>
+      <h1>Open source</h1>
+      <p class="sub">Most of this open-source work comes from practical problems run into while building the products above. When a tool is missing, too heavy, or just not pleasant to work with, it usually ends with a focused alternative built in-house. The repositories below are the current public projects in the <span class="mono">mvdmio</span> GitHub organization.</p>
+    </header>
+
+    <div class="tiles">
+      <div class="tile">
+        <div class="tile-body">
+          <h3><a href="https://github.com/mvdmio/Database.PgSQL" target="_blank" rel="noopener">Database.PgSQL</a></h3>
+          <p>A PostgreSQL library for .NET applications that prefer clear SQL and predictable plumbing over a full ORM. It bundles connection management, migrations, schema bootstrapping, and Dapper-friendly helpers into a package that stays practical without getting in the way.</p>
+          <div class="card-buttons"><a href="https://github.com/mvdmio/Database.PgSQL" class="btn ghost sm" target="_blank" rel="noopener">View repository &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-body">
+          <h3><a href="https://github.com/mvdmio/ASP.Jobs" target="_blank" rel="noopener">ASP.Jobs</a></h3>
+          <p>A lightweight job scheduler for ASP.NET Core applications, built for projects that need background work, delayed execution, or recurring CRON jobs, without the operational overhead of a much larger scheduling platform.</p>
+          <div class="card-buttons"><a href="https://github.com/mvdmio/ASP.Jobs" class="btn ghost sm" target="_blank" rel="noopener">View repository &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-body">
+          <h3><a href="https://github.com/mvdmio/Hotwire.NET" target="_blank" rel="noopener">Hotwire.NET</a></h3>
+          <p>A package that brings Hotwire to ASP.NET and makes Turbo and Stimulus feel native in the .NET ecosystem. It also adds support for Turbo Streams and server-side broadcasting, making it easier to build responsive applications without defaulting to a large frontend stack.</p>
+          <div class="card-buttons"><a href="https://github.com/mvdmio/Hotwire.NET" class="btn ghost sm" target="_blank" rel="noopener">View repository &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-body">
+          <h3><a href="https://github.com/mvdmio/Tailwind.NET" target="_blank" rel="noopener">Tailwind.NET</a></h3>
+          <p>A NuGet-first way to add Tailwind CSS to .NET projects, aimed at developers who want the benefits of Tailwind in ASP.NET without assembling a separate frontend build pipeline before they can start shipping pages.</p>
+          <div class="card-buttons"><a href="https://github.com/mvdmio/Tailwind.NET" class="btn ghost sm" target="_blank" rel="noopener">View repository &rarr;</a></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-body">
+          <h3><a href="https://github.com/mvdmio/ValueConversion" target="_blank" rel="noopener">ValueConversion</a></h3>
+          <p>A C# library for working with quantities, units of measurement, and a small set of currencies at runtime, for situations where values should stay explicit and convertible instead of being passed around as loose numbers with too much room for confusion.</p>
+          <div class="card-buttons"><a href="https://github.com/mvdmio/ValueConversion" class="btn ghost sm" target="_blank" rel="noopener">View repository &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="about-experience">
+      <h2>Philosophy</h2>
+      <p class="sub" style="margin:0 0 96px">Open source has been instrumental in this career, and mvdmio tries to contribute back whenever it can — whether through code, documentation, or helping others.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <span class="wordmark" style="font-size:16px">mvdmio</span>
+    <span>Built by Michiel van der Meer, the Netherlands</span>
+    <a href="/about/">About</a>
+    <a href="/projects/">Resume</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:michiel@mvdm.io">michiel@mvdm.io</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('site-nav');
+    var toggle = nav.querySelector('.nav-toggle');
+    toggle.addEventListener('click', function () {
+      var open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', String(!open));
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>
+</body>
+</html>

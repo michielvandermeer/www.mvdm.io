@@ -491,3 +491,94 @@ main { flex: 1; }
   .section { padding: 56px 0 0; }
   .blog-list time { width: auto; }
 }
+
+/* ---------- small button variant (open-source cards) ---------- */
+.btn.sm { padding: 7px 16px; font-size: 13.5px; }
+
+/* ---------- about page ---------- */
+.about-head { max-width: 720px; margin: 0 auto; padding: 64px 0 8px; text-align: center; }
+.about-head .eyebrow { justify-content: center; display: flex; }
+.about-head h1 { font-size: clamp(30px, 4.2vw, 44px); margin-bottom: 10px; }
+.about-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 36px 0 96px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.about-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-copy p { margin-bottom: 20px; color: var(--ink-soft); font-size: 17px; }
+.about-copy a { color: var(--pine); text-decoration-color: var(--hairline); }
+.about-copy a:hover { text-decoration-color: var(--pine); }
+.about-experience { max-width: 760px; margin: 0 auto; padding-bottom: 96px; }
+.about-experience h2 { font-size: 24px; margin-bottom: 20px; }
+.exp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+.exp-table th, .exp-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+}
+.exp-table th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  width: 220px;
+}
+.exp-table td { color: var(--ink-soft); }
+
+/* ---------- resume / open-source tile grid ---------- */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 8px 0 96px;
+}
+.tile {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+.tile:hover { border-color: var(--emerald); }
+.tile-img { aspect-ratio: 16 / 9; overflow: hidden; background: var(--paper); }
+.tile-img img { width: 100%; height: 100%; object-fit: cover; }
+.tile-body { padding: 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.tile h3 { font-size: 20px; }
+.tile h3 a { color: inherit; text-decoration: none; }
+.tile p { font-size: 15px; color: var(--ink-soft); flex: 1; margin: 0; }
+.tile .card-buttons { margin-top: 4px; }
+
+.page-head { max-width: 720px; margin: 0 auto; padding: 64px 0 8px; text-align: center; }
+.page-head .eyebrow { justify-content: center; display: flex; }
+.page-head h1 { font-size: clamp(30px, 4.2vw, 44px); margin-bottom: 10px; }
+.page-head .sub { max-width: 640px; margin: 0 auto; }
+
+@media (max-width: 700px) {
+  .tiles { grid-template-columns: 1fr; }
+  .about-body { grid-template-columns: 1fr; }
+  .about-photo { width: 140px; height: 140px; }
+  .exp-table th { width: auto; display: block; padding-bottom: 4px; border-bottom: none; }
+  .exp-table td { display: block; padding-top: 0; }
+  .exp-table tr { display: block; padding: 12px 0; border-bottom: 1px solid var(--hairline); }
+  .exp-table thead { display: none; }
+}
