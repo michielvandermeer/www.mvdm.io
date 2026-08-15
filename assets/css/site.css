@@ -51,13 +51,22 @@ button { font: inherit; cursor: pointer; }
   --emerald: #0a8754;
   --hairline: #ddd8ca;
 
-  /* per-product accents — a Landing page sets --acc to one of these */
+  /* per-product accents — the registry below maps a Landing page to one */
   --acc-compliance: #059669;
   --acc-translation-tools: #0284c7;
   --acc-health-check: #0d9488;
   --acc-statistics: #4f46e5;
   --acc-commonplace: #d97706;
 }
+
+/* Landing-page accent registry: a Landing page opts in with
+   <html data-product="…">; everything on the page then reads var(--acc).
+   Adding a Product = one token above + one line here. */
+html[data-product="compliance"]        { --acc: var(--acc-compliance); }
+html[data-product="translation-tools"] { --acc: var(--acc-translation-tools); }
+html[data-product="health-check"]      { --acc: var(--acc-health-check); }
+html[data-product="statistics"]        { --acc: var(--acc-statistics); }
+html[data-product="commonplace"]       { --acc: var(--acc-commonplace); }
 
 html, body {
   background: var(--paper);

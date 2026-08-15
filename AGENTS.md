@@ -52,9 +52,11 @@ page links it, nothing else. It carries the "Boardroom" design system:
   `--paper`, ink `--ink`, pine `--pine` (buttons), hairline `--hairline`,
   plus one accent variable per product — `--acc-compliance`,
   `--acc-translation-tools`, `--acc-health-check`, `--acc-statistics`,
-  `--acc-commonplace`. A Landing page sets its accent by adding the
-  matching class/variable at the top of its markup; don't hardcode a
-  product's hex color inline.
+  `--acc-commonplace`. A Landing page sets its accent by putting
+  `data-product="<name>"` on its `<html>` tag; the registry in `site.css`
+  (right under the tokens) maps that attribute to `--acc`, and the page
+  reads `var(--acc)` everywhere. Don't hardcode a product's hex color
+  inline, and don't set `--acc` from a page-level `<style>` block.
 - **Reusable classes**: `.wrap` (page-width container), `.eyebrow`/`.mono`
   (small caps/mono labels), `.clause` (hairline-ruled, mono-numbered
   section — "01", "02"…), `.duo` (two-column text-beside-illustration
