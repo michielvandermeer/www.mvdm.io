@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>mvdmio blog</title>
+    <link>https://mvdm.io/blog/</link>
+    <description>Posts by Michiel van der Meer on agile, remote work and leading software teams.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>Effective .NET Web development for individuals and small teams</title>
+      <link>https://mvdm.io/posts/effective-dotnet-web-development/</link>
+      <guid>https://mvdm.io/posts/effective-dotnet-web-development/</guid>
+      <pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate>
+      <description>Michiel on why server-side rendering with Hotwire brings Rails-style productivity to ASP.NET for small teams.</description>
+    </item>
+
+    <item>
+      <title>The water cooler is a silly place</title>
+      <link>https://mvdm.io/posts/the-water-cooler-is-a-silly-place/</link>
+      <guid>https://mvdm.io/posts/the-water-cooler-is-a-silly-place/</guid>
+      <pubDate>Wed, 22 Jun 2022 00:00:00 GMT</pubDate>
+      <description>Michiel argues the water cooler rarely solves real problems, and that focused, uninterrupted work matters more than office chatter.</description>
+    </item>
+
+    <item>
+      <title>Developers are not socially awkward introverts; here is how to understand us</title>
+      <link>https://mvdm.io/posts/developers-are-not-socially-awkward-introverts/</link>
+      <guid>https://mvdm.io/posts/developers-are-not-socially-awkward-introverts/</guid>
+      <pubDate>Wed, 15 Jun 2022 00:00:00 GMT</pubDate>
+      <description>Michiel explains the personality traits that make good programmers, and why headphones and quiet rooms aren't a social problem.</description>
+    </item>
+
+    <item>
+      <title>What it takes to lead software development teams effectively</title>
+      <link>https://mvdm.io/posts/what-it-takes-to-lead-software-development-teams/</link>
+      <guid>https://mvdm.io/posts/what-it-takes-to-lead-software-development-teams/</guid>
+      <pubDate>Wed, 08 Jun 2022 00:00:00 GMT</pubDate>
+      <description>Michiel on the milestones, expectations and uninterrupted time that effective software teams need from their leads.</description>
+    </item>
+
+    <item>
+      <title>You can only make a first impression as often as you want</title>
+      <link>https://mvdm.io/posts/you-can-only-make-a-first-impression-as-often-as-you-want/</link>
+      <guid>https://mvdm.io/posts/you-can-only-make-a-first-impression-as-often-as-you-want/</guid>
+      <pubDate>Wed, 11 May 2022 00:00:00 GMT</pubDate>
+      <description>Michiel on why showing an unfinished product to customers is validation, not a wasted first impression.</description>
+    </item>
+
+    <item>
+      <title>You can't do agile without a customer</title>
+      <link>https://mvdm.io/posts/you-cant-do-agile-without-a-customer/</link>
+      <guid>https://mvdm.io/posts/you-cant-do-agile-without-a-customer/</guid>
+      <pubDate>Wed, 11 May 2022 00:00:00 GMT</pubDate>
+      <description>Michiel on why agile only works when real end-users, not internal stakeholders, validate the product.</description>
+    </item>
+
+    <item>
+      <title>The unwritten rules of remote communication</title>
+      <link>https://mvdm.io/posts/the-unwritten-rules-of-remote-communication/</link>
+      <guid>https://mvdm.io/posts/the-unwritten-rules-of-remote-communication/</guid>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 GMT</pubDate>
+      <description>Michiel's rules of thumb for when to call, message or email a remote colleague.</description>
+    </item>
+
+    <item>
+      <title>Agile bill of rights</title>
+      <link>https://mvdm.io/posts/agile-bill-of-rights/</link>
+      <guid>https://mvdm.io/posts/agile-bill-of-rights/</guid>
+      <pubDate>Sun, 23 May 2021 00:00:00 GMT</pubDate>
+      <description>Michiel records the Customer and Developer Bill of Rights from Robert C. Martin's Clean Agile.</description>
+    </item>
+
+    <item>
+      <title>Improving on the 'yearly disappointment' at work</title>
+      <link>https://mvdm.io/posts/improving-on-the-yearly-disappointment/</link>
+      <guid>https://mvdm.io/posts/improving-on-the-yearly-disappointment/</guid>
+      <pubDate>Tue, 04 May 2021 00:00:00 GMT</pubDate>
+      <description>Michiel on why performance reviews should stop deciding pay raises, and what to discuss instead.</description>
+    </item>
+
+    <item>
+      <title>List of fully-remote businesses</title>
+      <link>https://mvdm.io/posts/list-of-fully-remote-businesses/</link>
+      <guid>https://mvdm.io/posts/list-of-fully-remote-businesses/</guid>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 GMT</pubDate>
+      <description>A sourced list of fully-remote businesses, from payroll platforms to online events tools.</description>
+    </item>
+  </channel>
+</rss>

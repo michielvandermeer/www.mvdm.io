@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agile bill of rights — mvdmio blog</title>
+<meta name="description" content="Michiel records the Customer and Developer Bill of Rights from Robert C. Martin's Clean Agile.">
+<link rel="canonical" href="https://mvdm.io/posts/agile-bill-of-rights/">
+<link rel="alternate" type="application/rss+xml" title="mvdmio blog" href="/feed.xml">
+
+<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#0e3b2e">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#fbfaf7">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="wordmark" href="/">mvdmio</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="/products/compliance/">Compliance</a>
+      <a href="/products/translation-tools/">Translation Tools</a>
+      <a href="/products/health-check/">Health Check</a>
+      <a href="/products/statistics/">Statistics</a>
+      <a href="/products/commonplace/">Commonplace</a>
+      <a href="/open-source/">Open source</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <span class="nav-cta"><a class="btn" href="https://compliance.mvdm.io">Get started</a></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <article>
+      <header class="post-head">
+        <p class="eyebrow mono">mvdmio &middot; blog</p>
+        <h1>Agile bill of rights</h1>
+        <p class="post-meta"><time datetime="2021-05-23">23 May 2021</time> &middot; Michiel van der Meer</p>
+      </header>
+      <figure class="post-image"><img src="/assets/images/posts/bill-of-rights.jpg" alt=""></figure>
+      <div class="prose">
+
+<p>I'm reading 'Clean Agile' by Robert C. Martin.</p>
+<p>On pages 56 and 57 he describes 'The Bill of Rights' as defined by Kent Beck, Ward Cunningham, and Ron Jefferies, among others.</p>
+<p>I wanted to record them here because I expect I'll be referring to these often when interacting with development teams and product managers in the future. They read as follows:</p>
+<h3>Customer Bill of Rights</h3>
+<ul>
+<li>You have the right to an overall plan and to know what can be accomplished when and at what cost.</li>
+<li>You have the right to get the most possible value out of every iteration.</li>
+<li>You have the right to see progress in a running system, proven to work by passing repeatable tests that you specify.</li>
+<li>You have the right to change your mind, to substitute functionality, and to change priorities without paying exorbitant costs.</li>
+<li>You have the right to be informed of schedule and estimate changes, in time to choose how to reduce the scope to meet a required date. You can cancel at any time and be left with a useful working system reflecting investment to date.</li>
+</ul>
+<h3>Developer Bill of Rights</h3>
+<ul>
+<li>You have the right to know what is needed with clear declarations of priority.</li>
+<li>You have the right to produce high-quality work at all times.</li>
+<li>You have the right to ask for and receive help from peers, managers, and customers.</li>
+<li>You have the right to make and update you own estimates.</li>
+<li>You have the right to accept your responsibilities instead of having them assigned to you.</li>
+</ul>
+<p>Pages 57-61 continue to give a more detailed explanation of each of these rights. I'll mention the definition of 'customer' and 'developer' here, but I can't plagiarize the whole thing. If you want all the details you'll have to buy the book.</p>
+<p>'Customer' in this context refers to business people in general. This includes true customers, managers, executives, project leaders, and anyone else who might carry responsibility for schedule and budget or who will pay for and benefit from the execution of the system.</p>
+<p>'Developers' in this context are anyone who works on the development of code. This includes programmers, QA, testers, and business analysts.</p>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <span class="wordmark" style="font-size:16px">mvdmio</span>
+    <span>Built by Michiel van der Meer, the Netherlands</span>
+    <a href="/about/">About</a>
+    <a href="/projects/">Resume</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:michiel@mvdm.io">michiel@mvdm.io</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('site-nav');
+    var toggle = nav.querySelector('.nav-toggle');
+    toggle.addEventListener('click', function () {
+      var open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', String(!open));
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>
+</body>
+</html>

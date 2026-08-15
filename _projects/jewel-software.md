@@ -10,7 +10,7 @@ Modernizing a suite of web and android applications aimed at municipality operat
 
 I'm the tech-lead of a team of 6 developers. Next to programming I also advise the company on technology, development process, security, and operations.
 
-Together with the team I'm leading an effort to modernize all applications in an effort to break through to international markets. This means completely rewriting all the applications in a [modern programming framework](/2023/05/27/effective-dotnet-web-development.html) as well as unifying the applications into a more monolithic structure.
+Together with the team I'm leading an effort to modernize all applications in an effort to break through to international markets. This means completely rewriting all the applications in a [modern programming framework](/posts/effective-dotnet-web-development/) as well as unifying the applications into a more monolithic structure.
 
 ## Technologies
 

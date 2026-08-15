@@ -1,6 +1,6 @@
 # 06 — Blog index, converted posts, and feed.xml
 
-Status: pending
+Status: done
 
 ## What to build
 
@@ -40,9 +40,23 @@ Projects: mvdm.io static site (serve the repo root; all pages built so far rende
 
 ## Acceptance criteria
 
-- [ ] `/blog/` lists all ten posts with dates, newest first, in the site design
-- [ ] Each of the ten `/posts/:title/` URLs above serves the converted post with content, images, title, date, and author intact — content unchanged, only converted
-- [ ] Links inside post bodies resolve on the new site (no hrefs left pointing at retired Jekyll URL shapes)
-- [ ] `/feed.xml` exists, lists the ten posts, and parses as valid RSS (verify with a parser, e.g. Python's `xml.etree` plus a feed sanity check)
-- [ ] `_posts/` is deleted
-- [ ] Index and posts are readable at 375px, keep visible focus states, respect reduced motion, and each has a title + meta description
+- [x] `/blog/` lists all ten posts with dates, newest first, in the site design
+- [x] Each of the ten `/posts/:title/` URLs above serves the converted post with content, images, title, date, and author intact — content unchanged, only converted
+- [x] Links inside post bodies resolve on the new site (no hrefs left pointing at retired Jekyll URL shapes)
+- [x] `/feed.xml` exists, lists the ten posts, and parses as valid RSS (verify with a parser, e.g. Python's `xml.etree` plus a feed sanity check)
+- [x] `_posts/` is deleted
+- [x] Index and posts are readable at 375px, keep visible focus states, respect reduced motion, and each has a title + meta description
+
+## Outcome
+
+Built `blog/index.html` and ten `posts/<slug>/index.html` pages reusing the shared `assets/css/site.css` design system (nav, footer, `.wrap`, `.eyebrow`, `.mono`) with new typography classes added for this step: `.blog-head`/`.blog-list` for the index (title, dashed hairline separators, mono dates, serif titles) and `.post-head`/`.post-meta`/`.post-image`/`.prose` for post pages (centered eyebrow/title/meta block, bordered header image, and a `.prose` scope for converted body content — headings, paragraphs, lists, links, bold/italic, blockquote, and `<pre>` code blocks, all styled with the existing paper/ink/pine/hairline tokens rather than new colors). Both files carry `<link rel="alternate" type="application/rss+xml" href="/feed.xml">` in the head, per the spec's "reference it from page heads" instruction — scoped to the blog and post pages themselves rather than every page site-wide, since that's where a reader would discover the feed.
+
+All ten posts from `_posts/*.md` were converted once, content unchanged, to their `/posts/<filename-slug-without-date>/` URLs (the ten slugs listed in the step file, verified against the actual `_posts/` filenames). Markdown (headings, lists, bold/italic/blockquote/code fences, links) was hand-converted to the equivalent HTML tags inside `.prose` — no rewriting of any sentence. Each page keeps title, ISO `<time>` + human-readable date, "Michiel van der Meer" as byline, and its original header image under `/assets/images/posts/` (paths unchanged). `blog/index.html` lists all ten, newest first, with dates and links, no search/tags/categories/pagination.
+
+Fixed the one internal Jekyll-shaped link identified by the step: `_projects/jewel-software.md`'s `/2023/05/27/effective-dotnet-web-development.html` now points at `/posts/effective-dotnet-web-development/`. No other `/YYYY/MM/DD/...` or `.html`-suffixed internal hrefs exist anywhere in the served tree (verified with a repo-wide grep).
+
+`feed.xml` is a hand-maintained RSS 2.0 file with all ten items (title, link, pubDate, description), newest first matching the blog index order; pubDate weekdays were cross-checked against the actual calendar dates with a Python script. Parsed successfully with `xml.etree.ElementTree` (10 items, all with title/link/pubDate present).
+
+`_posts/` was deleted via `git rm -r`. Verified locally with `python3 -m http.server`: `/`, `/blog/`, all ten `/posts/<slug>/` URLs, `/feed.xml`, `site.css`, and a sample post image all return 200.
+
+Drift from footprint: none of substance. The footprint's per-post ordering wasn't specified for the two 2022-05-11 posts (same date) — "you-can-only-make-a-first-impression..." was placed before "you-cant-do-agile-without-a-customer" in both the blog index and feed, an arbitrary but consistent tie-break (matches the alphabetical order the two files had in `_posts/`).

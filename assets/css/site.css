@@ -379,6 +379,88 @@ main { flex: 1; }
 .close .sub { margin: 0 auto 28px; }
 .close .actions { justify-content: center; }
 
+/* ---------- blog index ---------- */
+.blog-head { max-width: 720px; margin: 0 auto; padding: 64px 0 8px; text-align: center; }
+.blog-head .eyebrow { justify-content: center; display: flex; }
+.blog-head h1 { font-size: clamp(30px, 4.2vw, 44px); margin-bottom: 10px; }
+.blog-list {
+  list-style: none;
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding-bottom: 96px;
+}
+.blog-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  padding: 22px 0;
+  border-bottom: 1px dashed var(--hairline);
+  flex-wrap: wrap;
+}
+.blog-list time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 6.5em;
+}
+.blog-list a {
+  font-family: 'Source Serif 4', serif;
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+}
+.blog-list a:hover { color: var(--pine); }
+
+/* ---------- post page ---------- */
+.post-head { max-width: 720px; margin: 0 auto; padding: 64px 0 32px; text-align: center; }
+.post-head .eyebrow { justify-content: center; display: flex; }
+.post-head h1 { font-size: clamp(28px, 4.2vw, 42px); margin-bottom: 14px; }
+.post-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.post-image {
+  max-width: 880px;
+  margin: 0 auto 48px;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.post-image img { width: 100%; display: block; }
+
+.prose { max-width: 720px; margin: 0 auto; padding-bottom: 96px; }
+.prose h2 { font-size: 26px; margin: 44px 0 16px; }
+.prose h3 { font-size: 20px; margin: 32px 0 12px; }
+.prose p { margin-bottom: 20px; color: var(--ink-soft); font-size: 17px; }
+.prose ul, .prose ol { margin: 0 0 20px 22px; color: var(--ink-soft); }
+.prose li { margin-bottom: 8px; }
+.prose a { color: var(--pine); text-decoration-color: var(--hairline); }
+.prose a:hover { text-decoration-color: var(--pine); }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose blockquote {
+  border-left: 3px solid var(--emerald);
+  padding: 2px 0 2px 18px;
+  margin: 0 0 20px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.prose pre {
+  background: rgba(16, 35, 28, .05);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 18px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.prose code { font-family: 'IBM Plex Mono', monospace; font-size: 0.9em; }
+
 /* ---------- 404 ---------- */
 .not-found {
   padding: 120px 0;
@@ -407,4 +489,5 @@ main { flex: 1; }
   .wrap { padding: 0 20px; }
   .hero { padding: 48px 0 56px; }
   .section { padding: 56px 0 0; }
+  .blog-list time { width: auto; }
 }
