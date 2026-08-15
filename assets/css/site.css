@@ -287,6 +287,9 @@ main { flex: 1; }
   align-items: center;
 }
 .duo .sub { margin-bottom: 22px; }
+/* alternating feature sections: swap sides without reordering the markup */
+.duo.rev > *:first-child { order: 2; }
+.duo.rev > *:last-child { order: 1; }
 
 .list { list-style: none; margin: 0 0 26px; }
 .list li {
@@ -340,6 +343,7 @@ main { flex: 1; }
   padding: 10px 0;
 }
 .ledger .row .dots { flex: 1; border-bottom: 1px dotted var(--hairline); }
+.ledger .row a { color: var(--pine); }
 .ledger .total { border-top: 1px solid var(--ink); margin-top: 8px; font-weight: 600; }
 .ledger .actions { justify-content: center; margin-top: 26px; }
 
@@ -396,6 +400,7 @@ main { flex: 1; }
   .hero, .duo { grid-template-columns: 1fr; gap: 36px; padding-top: 48px; }
   .cols, .cards { grid-template-columns: 1fr; }
   .clause .tail { margin-left: 0; width: 100%; }
+  .duo.rev > *:first-child, .duo.rev > *:last-child { order: 0; }
 }
 
 @media (max-width: 480px) {
