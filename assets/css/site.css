@@ -15,6 +15,24 @@ button { font: inherit; cursor: pointer; }
   outline-offset: 2px;
 }
 
+/* skip link — first focusable element on every page; hidden until focused */
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--pine);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transform: translateY(-250%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition: none !important;
@@ -372,6 +390,7 @@ main { flex: 1; }
 }
 .site-footer a { color: var(--ink-soft); }
 .site-footer a:hover { color: var(--ink); }
+.site-footer .wordmark { font-size: 16px; }
 
 /* ---------- closing call to action (used from step 02 onward) ---------- */
 .close { padding: 96px 0; text-align: center; }

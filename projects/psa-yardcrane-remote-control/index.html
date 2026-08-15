@@ -24,6 +24,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-nav" id="site-nav">
   <div class="wrap site-nav-inner">
     <a class="wordmark" href="/">mvdmio</a>
@@ -44,7 +46,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <article>
       <header class="post-head">
@@ -82,7 +84,7 @@
 
 <footer class="site-footer">
   <div class="wrap foot-inner">
-    <span class="wordmark" style="font-size:16px">mvdmio</span>
+    <span class="wordmark">mvdmio</span>
     <span>Built by Michiel van der Meer, the Netherlands</span>
     <a href="/about/">About</a>
     <a href="/projects/">Resume</a>
@@ -91,16 +93,6 @@
   </div>
 </footer>
 
-<script>
-  (function () {
-    var nav = document.getElementById('site-nav');
-    var toggle = nav.querySelector('.nav-toggle');
-    toggle.addEventListener('click', function () {
-      var open = nav.getAttribute('data-open') === 'true';
-      nav.setAttribute('data-open', String(!open));
-      toggle.setAttribute('aria-expanded', String(!open));
-    });
-  })();
-</script>
+<script src="/assets/js/site.js" defer></script>
 </body>
 </html>

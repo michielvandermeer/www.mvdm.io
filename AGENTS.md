@@ -8,10 +8,14 @@ those terms, not "app", "project", "tool", "portfolio" or "info page".
 
 ## Tech stack
 
-Plain static HTML and hand-written CSS. No generator, no build step, no
-Node, no Ruby, no Bundler. GitHub Pages serves the repository root directly.
-The only external dependency is Google Fonts (Source Serif 4, Inter, IBM
-Plex Mono, loaded via `<link>` in every page's `<head>`).
+Plain static HTML, hand-written CSS, and one small hand-written JS file
+(`assets/js/site.js`, the mobile nav toggle — every page references it with
+`<script src="/assets/js/site.js" defer></script>` at the end of `<body>`).
+No generator, no build step, no Node, no Ruby, no Bundler. GitHub Pages
+serves the repository root directly. The only external dependency is Google
+Fonts (Source Serif 4, Inter, IBM Plex Mono, loaded via `<link>` in every
+page's `<head>`). Don't add inline `<script>` blocks to pages; if the site
+ever needs more behavior, extend `site.js`.
 
 ## Page / URL structure
 
@@ -31,6 +35,7 @@ open-source/index.html             /open-source/
 feed.xml                           /feed.xml    (hand-maintained RSS)
 sitemap.xml, robots.txt            search-engine files, served at root
 assets/css/site.css                the one shared stylesheet
+assets/js/site.js                  the one shared script (mobile nav toggle)
 assets/images/, assets/img/        images and favicons
 ```
 
@@ -80,8 +85,10 @@ live in the page itself.
    Google Fonts `<link>`, same favicon links, same `assets/css/site.css`
    link. Give it its own `<title>` and `<meta name="description">`, both
    distinct from every other page's, and its own `<link rel="canonical">`.
-3. Reuse the shared nav and footer markup from a sibling page exactly —
-   don't invent a second nav.
+3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
+   element in `<body>`, pointing at `<main id="main">`), nav and footer
+   markup, and the `site.js` script tag from a sibling page exactly — don't
+   invent a second nav.
 4. Add the new URL to `sitemap.xml`.
 5. If it's a new post: add it to `blog/index.html`'s list (and to
    `feed.xml`'s items, most-recent-first) and its own `posts/<slug>/`
@@ -92,13 +99,19 @@ live in the page itself.
 ## Prices
 
 Each Landing page states its Product's price in **exactly one place** —
-one literal string, once, in the ledger pricing table (business Products:
-"€999 / year, excl. VAT"; Commonplace: "€99 / year, incl. VAT"). Prices are
-hand-maintained against what's actually configured in Stripe; there is no
-sync. When a price changes, edit that one line on that one page — do not
-introduce a second occurrence of the number anywhere else on the page
-(hero copy, meta description, etc. must paraphrase around it instead of
-repeating the figure).
+one literal string, once, in the hero price line (`<p class="fee"
+id="price">…`; business Products: "€999 / year, excl. VAT"; Commonplace:
+"€99 / year, incl. VAT"). The ledger pricing table's totals row does not
+repeat the number — it links back to the hero with `<a href="#price">see
+fee ↑</a>`. Do not introduce a second occurrence of the number anywhere
+else on the page (ledger, meta description, etc. must paraphrase around it
+or link to `#price` instead of repeating the figure).
+
+The homepage mentions each Product's price **at most once** (Compliance in
+the hero fee line, Translation Tools in its clause tail, the other three on
+their cards). Prices are hand-maintained against what's actually configured
+in Stripe; there is no sync. When a price changes, the whole edit is: one
+line on that Product's Landing page plus at most one line on the homepage.
 
 ## How to verify a change
 
