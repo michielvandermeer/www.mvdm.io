@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistics — mvdmio</title>
+<meta name="description" content="Statistics by mvdmio tracks active users, throughput, and response times across your applications from raw request data, self-hosted, with a drop-in .NET client.">
+<link rel="canonical" href="https://mvdm.io/products/statistics/">
+
+<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#0e3b2e">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#fbfaf7">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>:root { --acc: var(--acc-statistics); }</style>
+</head>
+<body>
+
+<header class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="wordmark" href="/">mvdmio</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="/products/compliance/">Compliance</a>
+      <a href="/products/translation-tools/">Translation Tools</a>
+      <a href="/products/health-check/">Health Check</a>
+      <a href="/products/statistics/">Statistics</a>
+      <a href="/products/commonplace/">Commonplace</a>
+      <a href="/open-source/">Open source</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <span class="nav-cta"><a class="btn" href="https://statistics.mvdm.io">Get started</a></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <p class="eyebrow">mvdmio · Statistics</p>
+      <h1>Know how your app is actually used.</h1>
+      <p class="sub">Statistics tracks every request your applications make, self-hosted, and turns that raw stream into active-user counts, throughput, and response times — no third party ever sees your data.</p>
+      <div class="actions">
+        <a class="btn" href="https://statistics.mvdm.io">Get started</a>
+        <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
+      </div>
+      <p class="fee" id="price">€999 / year, excl. VAT — every project you track. <a href="#pricing">See pricing →</a></p>
+    </div>
+    <figure class="frame">
+      <svg class="ill" viewBox="0 0 320 220" role="img" aria-label="A dashboard showing daily active user counts as a bar chart">
+        <g font-family="IBM Plex Mono, monospace" font-size="9.5">
+          <text x="16" y="26" fill="#0e3b2e">DAU — last 14 days</text>
+          <g stroke="#dcd8ca"><line x1="16" y1="140" x2="304" y2="140"/></g>
+          <g fill="var(--acc)" opacity=".75">
+            <rect x="20" y="96" width="14" height="44"/><rect x="40" y="110" width="14" height="30"/><rect x="60" y="86" width="14" height="54"/>
+            <rect x="80" y="70" width="14" height="70"/><rect x="100" y="80" width="14" height="60"/><rect x="120" y="60" width="14" height="80"/>
+            <rect x="140" y="50" width="14" height="90"/><rect x="160" y="66" width="14" height="74"/><rect x="180" y="76" width="14" height="64"/>
+            <rect x="200" y="56" width="14" height="84"/><rect x="220" y="46" width="14" height="94"/><rect x="240" y="40" width="14" height="100"/>
+            <rect x="260" y="52" width="14" height="88"/><rect x="280" y="36" width="14" height="104"/>
+          </g>
+        </g>
+        <text x="16" y="160" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">illustrative — counts derived from raw requests, not stored metrics</text>
+        <line x1="16" y1="174" x2="304" y2="174" stroke="#dcd8ca"/>
+        <text x="16" y="190" font-family="IBM Plex Mono, monospace" font-size="9" fill="#47584f">group by: tag = application</text>
+        <text x="16" y="206" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8a9791">statistics.mvdm.io</text>
+      </svg>
+      <figcaption><span>active users</span><span>DAU, WAU, or MAU, your choice</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="strip"><div class="wrap strip-inner">
+    <span>Active users</span><span>Throughput</span><span>Response time</span><span>Request log</span>
+    <span>Tag filtering</span><span>Period comparison</span><span>Self-hosted</span><span>Drop-in client</span>
+  </div></section>
+
+  <div class="wrap">
+    <section class="section" id="active-users">
+      <div class="clause"><span class="num mono">01</span><h2>Active users, at the interval that matters</h2></div>
+      <div class="duo">
+        <div>
+          <p class="sub">One dashboard covers daily, weekly, and monthly active users over any date range you pick, with no separate metric to configure for each.</p>
+          <ul class="list">
+            <li>Switch interval between <strong>Day</strong>, <strong>Week</strong>, and <strong>Month</strong> to get DAU, WAU, or MAU from the same underlying request data</li>
+            <li>Monthly buckets align to calendar month boundaries, so a range like "last 30 days" still renders full, correctly-bounded months instead of ragged partial ones</li>
+            <li>Compare the current range against the previous period or the same period last year to see growth or seasonality at a glance</li>
+            <li>Group and filter by any tag your requests carry — application, account, feature area — to slice activity by the dimension you care about</li>
+          </ul>
+        </div>
+        <figure class="frame">
+          <svg class="ill" viewBox="0 0 320 180" role="img" aria-label="Three toggles for day, week, and month active user views, illustrative">
+            <g font-family="IBM Plex Mono, monospace" font-size="9.5">
+              <rect x="16" y="20" width="70" height="26" rx="13" fill="var(--acc)" opacity=".15"/>
+              <text x="51" y="37" text-anchor="middle" fill="#0e3b2e">DAU</text>
+              <rect x="94" y="20" width="70" height="26" rx="13" fill="#fff" stroke="#dcd8ca"/>
+              <text x="129" y="37" text-anchor="middle" fill="#47584f">WAU</text>
+              <rect x="172" y="20" width="70" height="26" rx="13" fill="#fff" stroke="#dcd8ca"/>
+              <text x="207" y="37" text-anchor="middle" fill="#47584f">MAU</text>
+            </g>
+            <g stroke="var(--acc)" stroke-width="2" fill="none">
+              <path d="M16 100 L46 88 L76 96 L106 74 L136 80 L166 60 L196 68 L226 50 L256 56 L286 40"/>
+            </g>
+            <g fill="var(--acc)">
+              <circle cx="16" cy="100" r="2.5"/><circle cx="46" cy="88" r="2.5"/><circle cx="76" cy="96" r="2.5"/><circle cx="106" cy="74" r="2.5"/>
+              <circle cx="136" cy="80" r="2.5"/><circle cx="166" cy="60" r="2.5"/><circle cx="196" cy="68" r="2.5"/><circle cx="226" cy="50" r="2.5"/>
+              <circle cx="256" cy="56" r="2.5"/><circle cx="286" cy="40" r="2.5"/>
+            </g>
+            <line x1="16" y1="130" x2="304" y2="130" stroke="#dcd8ca"/>
+            <text x="16" y="150" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">group by: tag = environment</text>
+            <text x="16" y="166" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">vs. same period last year</text>
+          </svg>
+          <figcaption><span>DAU / WAU / MAU</span><span>same data, different bucket</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="throughput-response">
+      <div class="clause"><span class="num mono">02</span><h2>Throughput and response time, by path</h2></div>
+      <div class="duo rev">
+        <figure class="frame">
+          <svg class="ill" viewBox="0 0 320 170" role="img" aria-label="A response-time table with percentile columns beside a throughput line, illustrative">
+            <g font-family="IBM Plex Mono, monospace" font-size="8.5">
+              <rect x="14" y="14" width="292" height="22" rx="4" fill="var(--acc)" opacity=".1"/>
+              <text x="22" y="29" fill="#0e3b2e">PATH</text><text x="180" y="29" fill="#0e3b2e">P50</text><text x="220" y="29" fill="#0e3b2e">P95</text><text x="260" y="29" fill="#0e3b2e">P99</text>
+              <g stroke="#dcd8ca"><line x1="14" y1="36" x2="306" y2="36"/><line x1="14" y1="58" x2="306" y2="58"/><line x1="14" y1="80" x2="306" y2="80"/></g>
+              <text x="22" y="51" fill="#10231c">/api/orders</text><text x="178" y="51" fill="#47584f">42ms</text><text x="216" y="51" fill="#47584f">180ms</text><text x="256" y="51" fill="#47584f">410ms</text>
+              <text x="22" y="73" fill="#10231c">/api/search</text><text x="178" y="73" fill="#47584f">88ms</text><text x="216" y="73" fill="#47584f">240ms</text><text x="256" y="73" fill="#47584f">520ms</text>
+            </g>
+            <line x1="14" y1="96" x2="306" y2="96" stroke="#dcd8ca"/>
+            <g font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#47584f"><text x="14" y="112">requests / min</text></g>
+            <g stroke="var(--acc)" stroke-width="2" fill="none">
+              <path d="M14 150 L54 140 L94 146 L134 120 L174 128 L214 110 L254 118 L294 100"/>
+            </g>
+          </svg>
+          <figcaption><span>throughput &amp; latency</span><span>illustrative figures</span></figcaption>
+        </figure>
+        <div>
+          <p class="sub">Two more views over the same request stream, grouped the same way as active users.</p>
+          <ul class="list">
+            <li>The throughput dashboard shows total requests and average requests per minute per day, so you can see traffic spikes and measure the effect of a release</li>
+            <li>The response time view aggregates requests by normalized path and reports P50, P95, and P99 processing-time percentiles per path</li>
+            <li>Both views support the same tag-based grouping and filtering as active users — drill into one application, one account, or one environment without a separate dashboard</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="request-log">
+      <div class="clause"><span class="num mono">03</span><h2>Every request, searchable, and one client to install</h2></div>
+      <div class="duo">
+        <div>
+          <p class="sub">Statistics is built on a single append-only fact: the tracked request. Every dashboard is derived from that stream at query time — there's no separate metrics pipeline to keep in sync.</p>
+          <ul class="list">
+            <li>The request log lists every tracked request with timestamp, URL, user, and tags, with server-side search, sort, and pagination for ad-hoc debugging</li>
+            <li>Tags are free-form key-value pairs on each request — there's no fixed catalog to maintain, and a tag appears in filters the moment a request in your window carries it</li>
+            <li>Install the <code>mvdmio.Statistics.Client</code> NuGet package and tracking starts automatically: it intercepts authenticated requests, captures user identity and your custom tags, and skips static files and unauthenticated traffic on its own</li>
+          </ul>
+        </div>
+        <figure class="frame">
+          <svg class="ill" viewBox="0 0 320 170" role="img" aria-label="A searchable request log table, illustrative">
+            <rect x="14" y="14" width="292" height="24" rx="4" fill="var(--acc)" opacity=".1"/>
+            <g font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#0e3b2e">
+              <text x="22" y="30">TIME</text><text x="80" y="30">URL</text><text x="200" y="30">USER</text><text x="260" y="30">TAGS</text>
+            </g>
+            <g font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#47584f">
+              <g stroke="#dcd8ca"><line x1="14" y1="42" x2="306" y2="42"/><line x1="14" y1="64" x2="306" y2="64"/><line x1="14" y1="86" x2="306" y2="86"/><line x1="14" y1="108" x2="306" y2="108"/></g>
+              <text x="22" y="56">14:02:11</text><text x="80" y="56">/api/orders</text><text x="200" y="56">user_42</text><text x="260" y="56">prod</text>
+              <text x="22" y="78">14:02:09</text><text x="80" y="78">/api/search</text><text x="200" y="78">user_17</text><text x="260" y="78">prod</text>
+              <text x="22" y="100">14:02:07</text><text x="80" y="100">/dashboard</text><text x="200" y="100">user_42</text><text x="260" y="100">staging</text>
+            </g>
+            <text x="14" y="130" font-family="IBM Plex Mono, monospace" font-size="8" fill="#8a9791">search · sort · paginate, server-side</text>
+          </svg>
+          <figcaption><span>request log</span><span>the one fact everything derives from</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="ledger">
+        <h2>Plain pricing</h2>
+        <div class="row"><span>Statistics — annual licence</span><span class="dots"></span><span>included</span></div>
+        <div class="row"><span>Active users, throughput &amp; response time dashboards</span><span class="dots"></span><span>included</span></div>
+        <div class="row"><span>Request log &amp; tag-based filtering</span><span class="dots"></span><span>included</span></div>
+        <div class="row"><span>NuGet client</span><span class="dots"></span><span>included</span></div>
+        <div class="row"><span>Tracked applications per project</span><span class="dots"></span><span>unlimited</span></div>
+        <div class="row total"><span>Per year, excl. VAT</span><span class="dots"></span><span><a href="#price">see fee ↑</a></span></div>
+        <div class="actions">
+          <a class="btn" href="https://statistics.mvdm.io">Get started</a>
+          <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="close">
+      <h2>Stop guessing how your app is used.</h2>
+      <p class="sub">Install the client, and Statistics starts turning your own request traffic into dashboards you can actually act on.</p>
+      <div class="actions">
+        <a class="btn" href="https://statistics.mvdm.io">Get started</a>
+        <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <span class="wordmark" style="font-size:16px">mvdmio</span>
+    <span>Built by Michiel van der Meer, the Netherlands</span>
+    <a href="/about/">About</a>
+    <a href="/projects/">Resume</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:michiel@mvdm.io">michiel@mvdm.io</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('site-nav');
+    var toggle = nav.querySelector('.nav-toggle');
+    toggle.addEventListener('click', function () {
+      var open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', String(!open));
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>
+</body>
+</html>
