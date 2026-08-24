@@ -375,7 +375,12 @@ main { flex: 1; }
   overflow-wrap: anywhere;
 }
 .ledger .row .dots { flex: 1 1 1.5em; min-width: 12px; border-bottom: 1px dotted var(--hairline); }
-.ledger .row > span:last-child:not(:only-child) { flex: 0 0 auto; white-space: nowrap; }
+.ledger .row > span:last-child { flex: 0 0 auto; white-space: nowrap; }
+.ledger .row.no-amount > span:last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+}
 .ledger .row a { color: var(--pine); }
 .ledger .total { border-top: 1px solid var(--ink); margin-top: 8px; font-weight: 600; }
 .ledger .actions { justify-content: center; margin-top: 26px; }

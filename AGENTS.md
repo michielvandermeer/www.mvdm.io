@@ -62,7 +62,8 @@ page links it, nothing else. It carries the "Boardroom" design system:
   section — "01", "02"…), `.duo` (two-column text-beside-illustration
   section) with `.duo.rev` to flip which side the text sits on (alternates
   per feature section on a Landing page), `.ledger` (pricing table with
-  dotted leader lines and a `.total` row), `.tiles`/`.tile` (card grid, used
+  dotted leader lines; other Products keep a `.total` row, Compliance's
+  ledger does not), `.tiles`/`.tile` (card grid, used
   by the Resume index and Open source page), `.page-head` (generic page
   header), `.post-head`/`.post-image`/`.prose` (post and Resume entry
   layout), `.btn` (pine primary button) and `.btn.sm` (quieter secondary
