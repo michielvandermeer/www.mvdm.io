@@ -369,7 +369,13 @@ main { flex: 1; }
   font-size: 14.5px;
   padding: 10px 0;
 }
-.ledger .row .dots { flex: 1; border-bottom: 1px dotted var(--hairline); }
+.ledger .row > span:first-child {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ledger .row .dots { flex: 1 1 1.5em; min-width: 12px; border-bottom: 1px dotted var(--hairline); }
+.ledger .row > span:last-child:not(:only-child) { flex: 0 0 auto; white-space: nowrap; }
 .ledger .row a { color: var(--pine); }
 .ledger .total { border-top: 1px solid var(--ink); margin-top: 8px; font-weight: 600; }
 .ledger .actions { justify-content: center; margin-top: 26px; }
@@ -517,6 +523,11 @@ main { flex: 1; }
   .hero { padding: 48px 0 56px; }
   .section { padding: 56px 0 0; }
   .blog-list time { width: auto; }
+  .ledger { padding: 28px 20px; }
+  .ledger .row { flex-wrap: wrap; row-gap: 4px; }
+  .ledger .row .dots { display: none; }
+  .ledger .row > span:first-child { flex: 1 1 100%; }
+  .ledger .row > span:last-child { margin-left: auto; }
 }
 
 /* ---------- small button variant (open-source cards) ---------- */
