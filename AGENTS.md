@@ -100,20 +100,29 @@ live in the page itself.
 
 ## Prices
 
-Each Landing page states its Product's price in **exactly one place** —
+Compliance is billed per Framework. Its Landing page hero holds the
+Flagship band as a headline — one literal string in `<p class="fee"
+id="price">…`. The Compliance ledger lists every distinct Framework fee
+and may repeat the Flagship figure; it has no organisation-total row. The
+homepage Flagship fee line uses that same Flagship-band headline and does
+not list cheaper bands or AI credit amounts.
+
+Every other Product still states a single price in **exactly one place** —
 one literal string, once, in the hero price line (`<p class="fee"
 id="price">…`; business Products: "€999 / year, excl. VAT"; Commonplace:
-"€99 / year, incl. VAT"). The ledger pricing table's totals row does not
+"€99 / year, incl. VAT"). Those Products' ledger totals row does not
 repeat the number — it links back to the hero with `<a href="#price">see
 fee ↑</a>`. Do not introduce a second occurrence of the number anywhere
-else on the page (ledger, meta description, etc. must paraphrase around it
-or link to `#price` instead of repeating the figure).
+else on those pages (ledger, meta description, etc. must paraphrase
+around it or link to `#price` instead of repeating the figure).
 
 The homepage mentions each Product's price **at most once** (Compliance in
 the hero fee line, Translation Tools in its clause tail, the other three on
-their cards). Prices are hand-maintained against what's actually configured
-in Stripe; there is no sync. When a price changes, the whole edit is: one
-line on that Product's Landing page plus at most one line on the homepage.
+their cards). Prices are hand-written against what's actually configured
+in Stripe; there is no page-load fetch and no sync. A later Compliance
+price change edits the hero, the band table, and at most the homepage
+Flagship line. A later change to another Product is still one line on that
+Landing page plus at most one line on the homepage.
 
 ## How to verify a change
 
