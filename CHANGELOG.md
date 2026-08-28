@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-08-28: Legal pages in the footer
+Every page footer now links Terms of Service, Privacy Notice, Data Processing Agreement, Subprocessor list, and Company details. Those pages are public and listed in the sitemap.
+
 ## 2026-08-24: Compliance billed per Framework
 Compliance is now billed per Framework. The Landing page lists three annual fee bands with included AI credit; the homepage Flagship line leads with the €999 band for ISO 27001, SOC 2 and ISO 9001.
 
