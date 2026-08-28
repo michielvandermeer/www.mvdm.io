@@ -28,4 +28,33 @@ The pages describing past client and employer work (formerly called "Projects" o
 _Avoid_: Projects, portfolio
 
 **mvdmio**:
-The company brand the site speaks as. Michiel appears as the founder on the about page, not as the site's voice.
+The company brand the site speaks as. Michiel appears as the founder on the about page, not as the site's voice. The legal trade name of the sole proprietorship is **mvdm.io**.
+_Avoid_: treating mvdmio as the KvK name
+
+**mvdm.io**:
+The legal trade name of the sole proprietorship that offers Compliance (KvK 86594737). Documents name this party, not the brand.
+_Avoid_: mvdmio as the contracting party
+
+**Legal page**:
+A public page on this site that publishes one vendor document. Not a Landing page. Each page carries an effective date. A later edit replaces the page; continued use of Compliance is acceptance.
+_Avoid_: info page, legal centre
+
+**Terms of Service**:
+The contract that lets a customer organisation use Compliance.
+_Avoid_: Customer Agreement, User Agreement
+
+**Privacy Notice**:
+The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, and billing.
+_Avoid_: Privacy Policy
+
+**Data Processing Agreement**:
+The contract for personal data in a customer's Compliance records, which **mvdm.io** processes as processor.
+_Avoid_: using this name for a file a customer attaches to their own supplier
+
+**Subprocessor list**:
+The public list of third parties **mvdm.io** uses to process that customer data.
+_Avoid_: vendors, processors (alone)
+
+**Company details**:
+The identification page for the sole proprietorship: legal name, address, KvK number, and contact.
+_Avoid_: Imprint, Colophon, Legal notice, Impressum
