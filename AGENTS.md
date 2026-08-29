@@ -148,6 +148,12 @@ published site carries them. That zip URL is a constant the six mvdmio
 apps link at; don't rename it without checking `LegalPageUrls` in the
 `mvdmio-suite` repo first.
 
+A Legal page PDF is the printed document body — the heading (small label,
+title, effective date) and the prose — not a print of the live page's
+website controls. Print media in `assets/css/site.css` hides the skip
+link, site navigation, website footer, and the Download PDF control
+(`.print-hide`). The wording in the PDF remains the wording on the page.
+
 **Never commit a PDF or the zip by hand.** They are build output, gitignored
 (`legal/*/*.pdf`, `legal/mvdmio-legal-pack.zip`), and only ever correct as of
 the last deploy — that's the point: a page and its PDF are always made

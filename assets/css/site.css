@@ -625,3 +625,24 @@ main { flex: 1; }
   .exp-table tr { display: block; padding: 12px 0; border-bottom: 1px solid var(--hairline); }
   .exp-table thead { display: none; }
 }
+
+/* ---------- print: Legal PDFs are the document body only ---------- */
+@media print {
+  .skip-link,
+  .site-nav,
+  .site-footer,
+  .print-hide {
+    display: none !important;
+  }
+
+  body {
+    min-height: 0;
+    display: block;
+  }
+
+  main { flex: none; }
+
+  .page-head { padding-top: 0; }
+
+  .prose { padding-bottom: 0; }
+}
