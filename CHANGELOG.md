@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-08-29: Legal PDFs contain only the document
+A Legal page PDF now contains only that document: the title, the effective date, and the body. Printing the page from the browser gives the same file. Download PDF, the site navigation, and the website footer stay on the screen pages.
+
 ## 2026-08-29: Legal pack ready to download
 You can download each Legal page as a PDF, or one zip of all five, from the legal index. The wording in the PDF is the wording on the page.
 
