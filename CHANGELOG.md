@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-08-29: Legal pages cover every product
+The Terms of Service, Privacy Notice, Data Processing Agreement and Subprocessor list now cover all five products rather than Compliance alone. Every legal page repeats the same company identification, and the subprocessor list is grouped by product so you only read the entries for what you bought. The pages also describe how the applications actually work: hosting is one server in Nuremberg, Germany, and the data behind a closed licence is kept for 365 days before it is deleted.
+
 ## 2026-08-28: Legal pages in the footer
 Every page footer now links Terms of Service, Privacy Notice, Data Processing Agreement, Subprocessor list, and Company details. Those pages are public and listed in the sitemap.
 
