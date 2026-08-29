@@ -80,9 +80,9 @@
 <h2>4. Types of data and data subjects</h2>
 <p>Data categories depend on the covered Product:</p>
 <ul>
-<li><strong>mvdm.io Compliance</strong>: workforce records and free text that Customer keeps in policies, registers, evidence, imports, and Assistant conversations. Anyone on the account can read a Person&rsquo;s notes; mvdm.io Compliance has no field-level permission model.</li>
+<li><strong>mvdm.io Compliance</strong>: workforce records and free text that Customer keeps in policies, registers, evidence, imports, and Assistant conversations. Anyone on the account can read a Person&rsquo;s notes; Compliance has no field-level permission model.</li>
 <li><strong>mvdm.io Statistics</strong>: Customer&rsquo;s own end users — the visitors to Customer&rsquo;s site or application that Statistics measures.</li>
-<li><strong>mvdm.io Health Check</strong>: browser screenshots of Customer&rsquo;s sites, including pages behind a sign-in that Customer has configured Health Check to reach.</li>
+<li><strong>mvdm.io Health Check</strong>: browser screenshots of Customer&rsquo;s sites, including pages behind a sign-in that Customer has configured Health Check to reach; the hostnames Customer submits for checking are also sent to Qualys SSL Labs for TLS grading.</li>
 <li><strong>mvdm.io Translation Tools</strong>: translation text that Customer submits for translation.</li>
 </ul>
 <p>Data subjects are the people Customer includes in a covered Product: employees, contractors, end users, and others Customer records or exposes to it.</p>
@@ -110,10 +110,10 @@
 <p>Customer authorises mvdm.io to use the subprocessors listed on the public <a href="/legal/subprocessors/">Subprocessor list</a>. That page is incorporated by reference. mvdm.io remains responsible for subprocessors&rsquo; performance of the processing obligations under this DPA. mvdm.io emails account owners when the Subprocessor list changes. A Customer who objects to a new subprocessor may end the contract, with no refund for time already paid, as described in the <a href="/legal/terms/">Terms of Service</a>.</p>
 
 <h2>9. International transfers</h2>
-<p>Application hosting is a dedicated server in <strong>Nuremberg, Germany</strong>. The following subprocessors process relevant data in the <strong>United States</strong>: <strong>Stripe</strong> (payments), <strong>Cloudflare</strong> (DNS, TLS proxy, and email), <strong>xAI</strong> (Assistant and translation content), and <strong>Anthropic</strong> (mvdm.io Compliance import extraction). Transfers to these providers rely on their own standard contractual clauses.</p>
+<p>Application hosting is a dedicated server in <strong>Nuremberg, Germany</strong>. The following subprocessors process relevant data in the <strong>United States</strong>: <strong>Stripe</strong> (payments), <strong>Cloudflare</strong> (DNS, TLS proxy, and email), <strong>xAI</strong> (Assistant and translation content), <strong>Anthropic</strong> (mvdm.io Compliance import extraction), and <strong>Qualys SSL Labs</strong> (mvdm.io Health Check hostname submissions for TLS grading). Transfers to these providers rely on their own standard contractual clauses. mvdm.io Commonplace&rsquo;s subprocessor, Google Books, does not appear here because mvdm.io Commonplace sits outside this DPA entirely (see section 1); it is disclosed on the <a href="/legal/subprocessors/">Subprocessor list</a> instead.</p>
 
 <h2>10. Artificial intelligence subprocessors</h2>
-<p>The mvdm.io Compliance and mvdm.io Translation Tools Assistants send relevant content to <strong>xAI</strong>. mvdm.io Compliance&rsquo;s import extraction sends relevant content to <strong>Anthropic</strong>. This DPA does not promise that those providers never use content to train models.</p>
+<p>The mvdm.io Compliance and mvdm.io Translation Tools Assistants send relevant content to <strong>xAI</strong>. Compliance&rsquo;s import extraction sends relevant content to <strong>Anthropic</strong>. This DPA does not promise that those providers never use content to train models.</p>
 <p>mvdm.io Health Check offers optional Azure telemetry that connects to <strong>Customer&rsquo;s own</strong> Azure tenant. Microsoft is not a subprocessor of mvdm.io for that telemetry.</p>
 
 <h2>11. Assistance, breach, and audits</h2>
