@@ -11,11 +11,15 @@ those terms, not "app", "project", "tool", "portfolio" or "info page".
 Plain static HTML, hand-written CSS, and one small hand-written JS file
 (`assets/js/site.js`, the mobile nav toggle — every page references it with
 `<script src="/assets/js/site.js" defer></script>` at the end of `<body>`).
-No generator, no build step, no Node, no Ruby, no Bundler. GitHub Pages
-serves the repository root directly. The only external dependency is Google
-Fonts (Source Serif 4, Inter, IBM Plex Mono, loaded via `<link>` in every
-page's `<head>`). Don't add inline `<script>` blocks to pages; if the site
-ever needs more behavior, extend `site.js`.
+No generator, no Node, no Ruby, no Bundler, and no build step for the pages
+themselves — GitHub Pages serves the repository root directly, exactly as
+committed. The only external dependency is Google Fonts (Source Serif 4,
+Inter, IBM Plex Mono, loaded via `<link>` in every page's `<head>`). Don't
+add inline `<script>` blocks to pages; if the site ever needs more
+behavior, extend `site.js`.
+
+The one exception is the legal pack: the Pages deploy workflow does run a
+build step — see **Legal documents** below.
 
 ## Page / URL structure
 
@@ -30,8 +34,12 @@ blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
 projects/index.html                /projects/   (Resume index)
 projects/<slug>/index.html         /projects/<slug>/    (8 Resume entries)
+legal/index.html                   /legal/      (lists the 5 legal pages, links the pack)
 legal/<doc>/index.html             /legal/<doc>/        (5 Legal pages: terms,
                                    privacy, dpa, subprocessors, company)
+legal/<doc>/<doc>.pdf              deploy-generated PDF beside each legal page
+legal/mvdmio-legal-pack.zip        deploy-generated pack of all 5 (see
+                                   Legal documents section below)
 about/index.html                   /about/
 open-source/index.html             /open-source/
 feed.xml                           /feed.xml    (hand-maintained RSS)
@@ -127,10 +135,36 @@ price change edits the hero, the band table, and at most the homepage
 Flagship line. A later change to another Product is still one line on that
 Landing page plus at most one line on the homepage.
 
+## Legal documents
+
+`/legal/` is the one place on the site with a build step. The five legal
+pages (`legal/terms/`, `legal/privacy/`, `legal/dpa/`, `legal/subprocessors/`,
+`legal/company/`) are ordinary hand-written pages like any other, but the
+Pages deploy workflow (`.github/workflows/pages-deploy.yml`) additionally
+renders each one to a PDF beside its `index.html` with headless Chromium,
+then zips the five flat (no folder, no cover sheet, no manifest) into
+`legal/mvdmio-legal-pack.zip` — before the artifact upload step, so the
+published site carries them. That zip URL is a constant the six mvdmio
+apps link at; don't rename it without checking `LegalPageUrls` in the
+`mvdmio-suite` repo first.
+
+**Never commit a PDF or the zip by hand.** They are build output, gitignored
+(`legal/*/*.pdf`, `legal/mvdmio-legal-pack.zip`), and only ever correct as of
+the last deploy — that's the point: a page and its PDF are always made
+together, so they can't disagree. If you edit a legal page's content, the
+next deploy regenerates its PDF and the pack automatically; there is
+nothing else to do.
+
+`legal/index.html` lists the five documents and links the pack; add a new
+legal document to it (and to `sitemap.xml`) the same way you'd add any other
+page — see "How to add a page" above.
+
 ## How to verify a change
 
-There is no build step and no test framework — verification means serving
-the tree and looking at it:
+There is no test framework, and no build step for the pages themselves (the
+one exception is the legal pack — see **Legal documents** above, and note
+its PDFs/zip are deploy-time output you won't have locally). Verification
+means serving the tree and looking at it:
 
 1. Serve the repository root with any static file server, e.g.
    `python3 -m http.server` from the repo root, then visit

@@ -35,6 +35,59 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Render legal PDFs and build the legal pack
+        run: |
+          set -euo pipefail
+
+          # Serve the checkout so root-relative asset/nav links (e.g. /assets/css/site.css)
+          # resolve the same way they do in production — a plain file:// load would not.
+          python3 -m http.server 8080 --directory . &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          for _ in $(seq 1 20); do
+            curl -sf http://localhost:8080/legal/ >/dev/null && break
+            sleep 0.5
+          done
+
+          TOOLDIR="${RUNNER_TEMP}/legal-pdf-tools"
+          mkdir -p "$TOOLDIR"
+          npm install --prefix "$TOOLDIR" puppeteer@23.9.0
+
+          NODE_PATH="$TOOLDIR/node_modules" node <<'NODE'
+          const puppeteer = require("puppeteer");
+
+          const docs = [
+            ["terms", "terms-of-service.pdf"],
+            ["privacy", "privacy-notice.pdf"],
+            ["dpa", "data-processing-agreement.pdf"],
+            ["subprocessors", "subprocessor-list.pdf"],
+            ["company", "company-details.pdf"],
+          ];
+
+          (async () => {
+            const browser = await puppeteer.launch();
+            for (const [dir, file] of docs) {
+              const page = await browser.newPage();
+              await page.goto(`http://localhost:8080/legal/${dir}/`, { waitUntil: "networkidle0" });
+              await page.pdf({
+                path: `legal/${dir}/${file}`,
+                format: "A4",
+                printBackground: true,
+                margin: { top: "20mm", bottom: "20mm", left: "18mm", right: "18mm" },
+              });
+              await page.close();
+            }
+            await browser.close();
+          })();
+          NODE
+
+          zip -j legal/mvdmio-legal-pack.zip \
+            legal/terms/terms-of-service.pdf \
+            legal/privacy/privacy-notice.pdf \
+            legal/dpa/data-processing-agreement.pdf \
+            legal/subprocessors/subprocessor-list.pdf \
+            legal/company/company-details.pdf
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
