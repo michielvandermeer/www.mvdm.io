@@ -30,6 +30,8 @@ blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
 projects/index.html                /projects/   (Resume index)
 projects/<slug>/index.html         /projects/<slug>/    (8 Resume entries)
+legal/<doc>/index.html             /legal/<doc>/        (5 Legal pages: terms,
+                                   privacy, dpa, subprocessors, company)
 about/index.html                   /about/
 open-source/index.html             /open-source/
 feed.xml                           /feed.xml    (hand-maintained RSS)
