@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-08-30: Quieter header and footer
+The header now has two rows. Open source, Blog, About, and Resume stay visible, and the five product names plus Get started sit below, behind the menu on a phone. The footer lists mvdmio, who built the site, the email, and the five Legal pages.
+
 ## 2026-08-29: Legal PDFs contain only the document
 A Legal page PDF now contains only that document: the title, the effective date, and the body. Printing the page from the browser gives the same file. Download PDF, the site navigation, and the website footer stay on the screen pages.
 
