@@ -1,0 +1,206 @@
+/* PROTOTYPE — throwaway. Four variants of how people reach pages
+   that no longer have a primary place in the top bar.
+   Switch with ?variant=A|B|C|D or the bottom bar.
+   Question: dropdown vs index page vs utility row vs Flagship + More. */
+
+.proto-state {
+  background: #10231c;
+  color: #fbfaf7;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 12px 32px;
+}
+.proto-state b { color: #fff; font-weight: 500; }
+.proto-state span { color: #c5d0ca; }
+
+.proto-util {
+  border-bottom: 1px solid var(--hairline);
+  background: var(--paper);
+}
+.proto-util-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 22px;
+  padding: 8px 0;
+}
+.proto-util a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.proto-util a:hover { color: var(--ink); }
+
+.nav-drop {
+  position: relative;
+}
+.nav-drop summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  padding: 6px 2px;
+  border-radius: 4px;
+}
+.nav-drop summary::-webkit-details-marker { display: none; }
+.nav-drop summary::after {
+  content: " ▾";
+  font-size: 10px;
+  color: var(--ink-soft);
+}
+.nav-drop[open] summary { color: var(--ink); }
+.nav-drop summary:hover { color: var(--ink); }
+
+.nav-drop-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 320px;
+  padding: 10px 0;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  box-shadow: 0 12px 32px rgba(16, 35, 28, .08);
+  z-index: 40;
+}
+.nav-drop-panel.wide { min-width: 360px; }
+
+.nav-links .nav-drop-panel a:not(.btn) {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: 10px;
+  row-gap: 2px;
+  width: 100%;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 15px;
+  border-radius: 0;
+}
+.nav-links .nav-drop-panel a:not(.btn):hover {
+  background: rgba(14, 59, 46, .05);
+  color: var(--ink);
+}
+.nav-drop-panel .num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  padding-top: 3px;
+}
+.nav-drop-panel .name { font-weight: 500; }
+.nav-drop-panel .blurb {
+  grid-column: 2;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.nav-links .nav-drop-panel.simple a:not(.btn) {
+  display: block;
+  padding: 8px 16px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+.nav-links .nav-drop-panel.simple a:not(.btn):hover { color: var(--ink); background: rgba(14, 59, 46, .05); }
+.nav-drop-panel .drop-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 10px 16px 4px;
+}
+
+.proto-switcher {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px 8px 8px;
+  background: #10231c;
+  color: #fbfaf7;
+  border-radius: 999px;
+  box-shadow: 0 10px 32px rgba(16, 35, 28, .35);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  max-width: calc(100% - 24px);
+}
+.proto-switcher button {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: #fbfaf7;
+  color: #10231c;
+  font-size: 16px;
+  line-height: 1;
+}
+.proto-switcher button:hover { background: #fff; }
+.proto-switcher .label {
+  min-width: 200px;
+  text-align: center;
+  padding: 0 6px;
+  white-space: nowrap;
+}
+.proto-switcher .label small {
+  display: block;
+  color: #9aaba3;
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+
+.foot-inner.proto-foot {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+.foot-id,
+.foot-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  margin: 0;
+}
+.foot-sep::before {
+  content: " – ";
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+body { padding-bottom: 88px; }
+
+@media (max-width: 900px) {
+  .nav-drop { width: 100%; }
+  .nav-drop summary { width: 100%; padding: 10px 4px; }
+  .nav-drop-panel {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    padding: 0 0 8px 12px;
+  }
+  .proto-util-inner { justify-content: flex-start; }
+  .proto-state { padding: 12px 16px; }
+  .proto-switcher .label { min-width: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-drop-panel { box-shadow: none; }
+}
