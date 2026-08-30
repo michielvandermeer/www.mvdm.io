@@ -79,7 +79,8 @@ page links it, nothing else. It carries the "Boardroom" design system:
   layout), `.btn` (pine primary button) and `.btn.sm` (quieter secondary
   button), `.site-util` / `.site-util-inner` (header upper row: Open
   source, Blog, About, Resume), `.foot-inner` / `.foot-id` / `.foot-legal`
-  / `.foot-sep` (two-line footer; spaced dashes are `.foot-sep::before`).
+  / `.foot-sep` (two-line footer; spaced dashes are `.foot-sep::before`
+  on a wrapper that is not a link — do not put `.foot-sep` on a link).
 - The site is light-only: no dark mode, no theme toggle, and no
   `prefers-color-scheme: dark` overrides — don't add any.
 - Reduced motion: any animation/transition must be guarded so
@@ -111,7 +112,9 @@ live in the page itself.
    point it at that Product's own application. Hero and other in-page Get
    started buttons stay pointed where they belong. The footer is
    `.foot-inner`: identity on `.foot-id`, Legal pages on
-   `.foot-legal`.
+   `.foot-legal`. Copy that footer wrap from a sibling page exactly —
+   dashes are `.foot-sep::before` on a wrapper that is not a link. Do
+   not put `.foot-sep` on a link.
 4. Add the new URL to `sitemap.xml`.
 5. If it's a new post: add it to `blog/index.html`'s list (and to
    `feed.xml`'s items, most-recent-first) and its own `posts/<slug>/`
