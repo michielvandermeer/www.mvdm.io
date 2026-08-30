@@ -200,6 +200,7 @@ main { flex: 1; }
   .site-nav[data-open="true"] .nav-links { display: flex; }
   .nav-cta { margin-left: 4px; width: 100%; }
   .nav-cta .btn { display: block; text-align: center; }
+  .site-util-inner { justify-content: flex-start; }
 }
 
 /* Two-row header: .site-util is the upper row of site links */
@@ -223,10 +224,6 @@ main { flex: 1; }
   border-radius: 4px;
 }
 .site-util a:hover { color: var(--ink); }
-
-@media (max-width: 900px) {
-  .site-util-inner { justify-content: flex-start; }
-}
 
 /* ---------- hero ---------- */
 .hero {
@@ -429,7 +426,7 @@ main { flex: 1; }
   font-size: 14px;
   color: var(--ink-soft);
 }
-.foot-inner.foot-stack {
+.foot-inner {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

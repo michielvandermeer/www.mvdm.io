@@ -78,7 +78,7 @@ page links it, nothing else. It carries the "Boardroom" design system:
   header), `.post-head`/`.post-image`/`.prose` (post and Resume entry
   layout), `.btn` (pine primary button) and `.btn.sm` (quieter secondary
   button), `.site-util` / `.site-util-inner` (header upper row: Open
-  source, Blog, About, Resume), `.foot-stack` / `.foot-id` / `.foot-legal`
+  source, Blog, About, Resume), `.foot-inner` / `.foot-id` / `.foot-legal`
   / `.foot-sep` (two-line footer; spaced dashes are `.foot-sep::before`).
 - The site is light-only: no dark mode, no theme toggle, and no
   `prefers-color-scheme: dark` overrides — don't add any.
@@ -110,7 +110,7 @@ live in the page itself.
    `https://compliance.mvdm.io`, including on a new Landing page — do not
    point it at that Product's own application. Hero and other in-page Get
    started buttons stay pointed where they belong. The footer is
-   `.foot-inner.foot-stack`: identity on `.foot-id`, Legal pages on
+   `.foot-inner`: identity on `.foot-id`, Legal pages on
    `.foot-legal`.
 4. Add the new URL to `sitemap.xml`.
 5. If it's a new post: add it to `blog/index.html`'s list (and to
