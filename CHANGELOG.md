@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-08-30: Footer dashes sit between items
+The dash between items in the footer is no longer part of a link. It is not underlined, and clicking it does not open a page or a mail message. The email and the Legal page names still open the same destinations.
+
 ## 2026-08-30: Quieter header and footer
 The header now has two rows. Open source, Blog, About, and Resume stay visible, and the five product names plus Get started sit below, behind the menu on a phone. The footer lists mvdmio, who built the site, the email, and the five Legal pages.
 
