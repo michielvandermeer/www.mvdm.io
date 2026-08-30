@@ -148,7 +148,7 @@ main { flex: 1; }
   align-items: center;
   gap: 22px;
   margin-left: auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .nav-links a:not(.btn) {
   text-decoration: none;
@@ -202,7 +202,7 @@ main { flex: 1; }
   .nav-cta .btn { display: block; text-align: center; }
 }
 
-/* Two-row header (homepage first; other pages keep the eight-link bar) */
+/* Two-row header: .site-util is the upper row of site links */
 .site-util {
   border-bottom: 1px solid var(--hairline);
 }
@@ -226,10 +226,6 @@ main { flex: 1; }
 
 @media (max-width: 900px) {
   .site-util-inner { justify-content: flex-start; }
-}
-
-@media (min-width: 901px) {
-  .site-nav:has(.site-util) .nav-links { flex-wrap: nowrap; }
 }
 
 /* ---------- hero ---------- */
@@ -433,22 +429,16 @@ main { flex: 1; }
   font-size: 14px;
   color: var(--ink-soft);
 }
-.foot-inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 28px;
-}
-.site-footer a { color: var(--ink-soft); }
-.site-footer a:hover { color: var(--ink); }
-.site-footer .wordmark { font-size: 16px; }
-
-/* Two-line footer (homepage first; other pages keep the wrapping row) */
 .foot-inner.foot-stack {
+  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 8px;
   align-items: flex-start;
 }
+.site-footer a { color: var(--ink-soft); }
+.site-footer a:hover { color: var(--ink); }
+.site-footer .wordmark { font-size: 16px; }
 .foot-id,
 .foot-legal {
   display: flex;

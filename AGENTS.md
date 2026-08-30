@@ -77,7 +77,9 @@ page links it, nothing else. It carries the "Boardroom" design system:
   by the Resume index and Open source page), `.page-head` (generic page
   header), `.post-head`/`.post-image`/`.prose` (post and Resume entry
   layout), `.btn` (pine primary button) and `.btn.sm` (quieter secondary
-  button).
+  button), `.site-util` / `.site-util-inner` (header upper row: Open
+  source, Blog, About, Resume), `.foot-stack` / `.foot-id` / `.foot-legal`
+  / `.foot-sep` (two-line footer; spaced dashes are `.foot-sep::before`).
 - The site is light-only: no dark mode, no theme toggle, and no
   `prefers-color-scheme: dark` overrides — don't add any.
 - Reduced motion: any animation/transition must be guarded so
@@ -99,9 +101,17 @@ live in the page itself.
    link. Give it its own `<title>` and `<meta name="description">`, both
    distinct from every other page's, and its own `<link rel="canonical">`.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
-   element in `<body>`, pointing at `<main id="main">`), nav and footer
-   markup, and the `site.js` script tag from a sibling page exactly — don't
-   invent a second nav.
+   element in `<body>`, pointing at `<main id="main">`), the two-row
+   header, the two-line footer, and the `site.js` script tag from a
+   sibling page exactly — don't invent a second nav. The header's upper
+   row is `.site-util` (Open source, Blog, About, Resume); the lower row
+   is `.site-nav-inner` / `#nav-links` (the five Product names, then Get
+   started). Get started in that header always opens
+   `https://compliance.mvdm.io`, including on a new Landing page — do not
+   point it at that Product's own application. Hero and other in-page Get
+   started buttons stay pointed where they belong. The footer is
+   `.foot-inner.foot-stack`: identity on `.foot-id`, Legal pages on
+   `.foot-legal`.
 4. Add the new URL to `sitemap.xml`.
 5. If it's a new post: add it to `blog/index.html`'s list (and to
    `feed.xml`'s items, most-recent-first) and its own `posts/<slug>/`
