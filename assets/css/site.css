@@ -202,6 +202,36 @@ main { flex: 1; }
   .nav-cta .btn { display: block; text-align: center; }
 }
 
+/* Two-row header (homepage first; other pages keep the eight-link bar) */
+.site-util {
+  border-bottom: 1px solid var(--hairline);
+}
+.site-util-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 22px;
+  padding: 8px 0;
+}
+.site-util a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border-radius: 4px;
+}
+.site-util a:hover { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .site-util-inner { justify-content: flex-start; }
+}
+
+@media (min-width: 901px) {
+  .site-nav:has(.site-util) .nav-links { flex-wrap: nowrap; }
+}
+
 /* ---------- hero ---------- */
 .hero {
   display: grid;
@@ -411,6 +441,27 @@ main { flex: 1; }
 .site-footer a { color: var(--ink-soft); }
 .site-footer a:hover { color: var(--ink); }
 .site-footer .wordmark { font-size: 16px; }
+
+/* Two-line footer (homepage first; other pages keep the wrapping row) */
+.foot-inner.foot-stack {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+.foot-id,
+.foot-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  margin: 0;
+}
+.foot-sep::before {
+  content: "\00a0–\00a0";
+  color: var(--ink-soft);
+  font-weight: 400;
+}
 
 /* ---------- closing call to action (used from step 02 onward) ---------- */
 .close { padding: 96px 0; text-align: center; }
