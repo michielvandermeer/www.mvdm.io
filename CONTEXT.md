@@ -13,7 +13,7 @@ A billed standards line inside Compliance, such as ISO 27001 or SOC 2. One Frame
 _Avoid_: Product, licence
 
 **AI credit**:
-A US-dollar allowance for the Compliance assistant. Each Framework includes a yearly amount, and those amounts add when an organisation buys more than one Framework. Extra credit can be bought.
+A US-dollar allowance for the Compliance assistant. Each Framework includes a yearly amount, and those amounts add when an organisation buys more than one Framework. Extra credit is bought in USD packs. Each use is the provider's list price plus ten percent, named in the Terms of Service.
 _Avoid_: tokens, Assistant extra, token pack
 
 **Flagship**:
