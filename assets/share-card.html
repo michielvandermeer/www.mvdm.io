@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200">
+<title>Share card template</title>
+
+<!--
+  This is a TOOL, not a page: it is never added to sitemap.xml or feed.xml,
+  carries no Share card of its own, and has no site header, footer or nav.
+  It is driven by the deploy render (step 02) with three query parameters —
+  eyebrow, headline, product — and screenshotted at a 1200x630 viewport.
+
+  It links the site's own stylesheet so the card reads the real Boardroom
+  tokens and can never drift from the palette. Its own <style> block below
+  holds only the card's layout, which does not exist as a page pattern.
+
+  The inline <script> at the bottom is the one place on this site an inline
+  script is allowed: this template is not a page a reader visits, so
+  AGENTS.md's "don't add inline <script> blocks to pages" does not apply
+  here — the query-string read is this file's entire job.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<style>
+  /* Card layout — variant B "Accent field" from
+     .agents/prototypes/share-card/, minus the URL line, foot signed
+     mvdm.io. Not a reusable site pattern, so it lives here rather than in
+     site.css: this is the only page that ever draws a card. */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: var(--pine);
+  }
+
+  .card {
+    width: 1200px;
+    height: 630px;
+    background: var(--acc, var(--pine));
+    padding: 76px 88px 64px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::after {
+    /* oversized mark, bottom-right, at 7% white */
+    content: 'M';
+    position: absolute;
+    right: -46px;
+    bottom: -190px;
+    font: 600 520px/1 'Source Serif 4', Georgia, serif;
+    color: rgba(255, 255, 255, .07);
+    pointer-events: none;
+  }
+
+  .card .eyebrow {
+    /* overrides site.css .eyebrow's emerald-on-paper styling — a card
+       reads white-on-accent, never the page's own eyebrow color */
+    font: 500 20px/1 'IBM Plex Mono', monospace;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .72);
+    margin: 0 0 34px;
+    position: relative;
+  }
+
+  .card h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -.015em;
+    color: #fff;
+    margin: 0;
+    position: relative;
+    max-width: 16em;
+  }
+
+  .card h1 em {
+    font-style: italic;
+    color: #fff;
+    border-bottom: 4px solid rgba(255, 255, 255, .45);
+  }
+
+  .card .foot {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: relative;
+  }
+
+  .card .wordmark {
+    font: 600 32px/1 'Source Serif 4', Georgia, serif;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <p class="eyebrow" id="eyebrow"></p>
+  <h1 id="headline"></h1>
+  <div class="foot">
+    <span class="wordmark">mvdm.io</span>
+  </div>
+</div>
+
+<script>
+  // Query-string read — see the head comment for why an inline script is
+  // allowed on this one file. Build input only: eyebrow/headline/product
+  // are taken from the site's own pages at deploy time, never from a
+  // reader, so writing headline as innerHTML below is safe.
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var eyebrow = params.get('eyebrow');
+    var headline = params.get('headline') || '';
+    var product = params.get('product');
+
+    if (!eyebrow) {
+      eyebrow = 'mvdmio · 404';
+    }
+
+    if (product) {
+      document.documentElement.setAttribute('data-product', product);
+    }
+
+    document.getElementById('eyebrow').textContent = eyebrow;
+
+    var h1 = document.getElementById('headline');
+    h1.innerHTML = headline;
+
+    // Size ramp keyed to the plain-text length of the headline (tags
+    // stripped), the decision the prototype's render() settled.
+    var plain = headline.replace(/<[^>]+>/g, '');
+    var len = plain.length;
+    var size = len <= 20 ? 96 : len <= 35 ? 82 : len <= 50 ? 70 : len <= 65 ? 58 : 50;
+    h1.style.fontSize = size + 'px';
+
+    // Signal readiness to the screenshotter once web fonts are loaded, so
+    // a card is never shot in a fallback font.
+    document.fonts.ready.then(function () {
+      document.documentElement.setAttribute('data-ready', 'true');
+    });
+  })();
+</script>
+
+</body>
+</html>

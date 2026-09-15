@@ -1,6 +1,6 @@
 # 01 — Share card template
 
-Status: pending
+Status: done
 Blocked by: none
 
 ## What to build
@@ -70,21 +70,53 @@ Projects: none (static site; nothing compiles)
 
 ## Acceptance criteria
 
-- [ ] Serving the repo root with `python3 -m http.server` and opening
+- [x] Serving the repo root with `python3 -m http.server` and opening
       `/assets/share-card.html?...` at a 1200 x 630 viewport draws one card and
       nothing else.
-- [ ] The five-character headline ("Legal") and the 76-character headline (the
+- [x] The five-character headline ("Legal") and the 76-character headline (the
       "Developers are not socially awkward introverts" post) both look
       deliberate: nothing overflows, clips, or collides with the signature.
-- [ ] A headline carrying an `<em>` (Compliance) renders the emphasis as white
+- [x] A headline carrying an `<em>` (Compliance) renders the emphasis as white
       italic with a translucent underline, not as emerald.
-- [ ] Each of the five `product` values draws its own accent; no value and an
+- [x] Each of the five `product` values draws its own accent; no value and an
       unknown value both draw pine.
-- [ ] No `eyebrow` parameter draws `mvdmio · 404`.
-- [ ] Side by side with `.agents/prototypes/share-card/?variant=B`, the built
+- [x] No `eyebrow` parameter draws `mvdmio · 404`.
+- [x] Side by side with `.agents/prototypes/share-card/?variant=B`, the built
       template matches the agreed variant — minus the URL line, signed
       `mvdm.io`.
-- [ ] The template references `/assets/css/site.css` rather than repeating any
+- [x] The template references `/assets/css/site.css` rather than repeating any
       colour value, and sets no `--acc` of its own.
-- [ ] The template is absent from `sitemap.xml` and carries no site header,
+- [x] The template is absent from `sitemap.xml` and carries no site header,
       footer or nav.
+
+## Outcome
+
+Built `assets/share-card.html` exactly to spec: a standalone tool page (no
+header/footer/nav, not in `sitemap.xml`) that reads `eyebrow`, `headline` and
+`product` from the query string, draws variant B "Accent field" at
+1200x630 (full-bleed `--acc`/`--pine` field, mono uppercase eyebrow at 72%
+white, Source Serif 4 h1 in white with the length-keyed size ramp on the
+plain-text length, `<em>` as white italic with a translucent underline, a
+`mvdm.io` signature bottom-left, and a 7%-white oversized `M` bottom-right),
+links `/assets/css/site.css` and the same Google Fonts `<link>` every page
+uses, sets no `--acc` of its own, falls back to `mvdmio · 404` when `eyebrow`
+is absent, and sets `data-product` on `<html>` so the existing `site.css`
+registry resolves `--acc` (absent/unknown product falls through to `--pine`
+via the layout's `var(--acc, var(--pine))`). It waits on `document.fonts.ready`
+and then sets `data-ready="true"` on `<html>` for step 02's screenshotter to
+poll.
+
+Verified by serving the repo root with `python3 -m http.server` and driving
+headless Chromium (system `/usr/bin/chromium` via `puppeteer-core`, since a
+full Puppeteer-bundled Chromium download was blocked in this sandbox) at a
+1200x630 viewport across the required range: the 5-char headline ("Legal"),
+the 76-char post headline, the Compliance `<em>` headline, all five product
+accents, and the no-eyebrow/404 case. All eight screenshots matched variant B
+with nothing overflowing, clipping, or colliding with the signature; each
+product accent matched its `site.css` token. No PNG or test tooling was
+committed; the local static server and scratch npm install used for the
+check were torn down before finishing.
+
+Drift from the footprint's guess: none — `assets/share-card.html` is the only
+file changed, matching the Footprint's "new file" line; `site.css` and the
+prototype were read-only references as planned.
