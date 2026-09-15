@@ -101,6 +101,12 @@ live in the page itself.
    Google Fonts `<link>`, same favicon links, same `assets/css/site.css`
    link. Give it its own `<title>` and `<meta name="description">`, both
    distinct from every other page's, and its own `<link rel="canonical">`.
+   Copy the Share card block too (`og:title`, `og:description`, `og:url`,
+   `og:image` and the rest) from that same sibling page, directly after the
+   canonical link — its `og:title`/`og:description`/`og:url` mirror this
+   page's own title, description and canonical, and its `og:image` path
+   mirrors the new URL (see **Share cards** below). `og:type` is `article`
+   for a post, `website` for everything else.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
    element in `<body>`, pointing at `<main id="main">`), the two-row
    header, the two-line footer, and the `site.js` script tag from a
@@ -115,7 +121,8 @@ live in the page itself.
    `.foot-legal`. Copy that footer wrap from a sibling page exactly —
    dashes are `.foot-sep::before` on a wrapper that is not a link. Do
    not put `.foot-sep` on a link.
-4. Add the new URL to `sitemap.xml`.
+4. Add the new URL to `sitemap.xml` — this is also what gets the new page a
+   Share card at the next deploy (see **Share cards** below).
 5. If it's a new post: add it to `blog/index.html`'s list (and to
    `feed.xml`'s items, most-recent-first) and its own `posts/<slug>/`
    directory.
@@ -177,6 +184,31 @@ nothing else to do.
 `legal/index.html` lists the five documents and links the pack; add a new
 legal document to it (and to `sitemap.xml`) the same way you'd add any other
 page — see "How to add a page" above.
+
+## Share cards
+
+Every page carries Open Graph/Twitter Card markup in its `<head>` pointing at
+a 1200x630 picture of that page's own eyebrow and headline. The same deploy
+step that renders the Legal PDFs (above) grows a second half that renders one
+PNG per page — reading each page's `<h1>`, `.eyebrow` text and `data-product`
+attribute, then screenshotting `assets/share-card.html` with those values —
+into `assets/share-cards/<path>.png`, mirroring the URL
+(`assets/share-cards/index.png` for the homepage,
+`assets/share-cards/products/compliance.png` for the Compliance Landing
+page). **Never commit a share card PNG by hand** — like the Legal PDFs, they
+are gitignored (`assets/share-cards/`) build output, only ever correct as of
+the last deploy.
+
+`assets/share-card.html` is the template, not a page: it carries no header,
+footer or Share card of its own, and it is not in `sitemap.xml`. It is the
+one page on the site allowed an inline `<script>` block (see **Tech stack**
+above), because it reads its three values (`eyebrow`, `headline`, `product`)
+from its own URL's query string rather than from server-rendered content —
+which also means it opens on its own, with no deploy and no Puppeteer, when
+you want to see what a card looks like: serve the repo root and visit
+`/assets/share-card.html?eyebrow=...&headline=...&product=...`. See
+[ADR-0001](docs/adr/0001-share-card-pictures-are-rendered-at-deploy-time.md)
+for why the pictures are deploy-time output rather than committed files.
 
 ## How to verify a change
 
