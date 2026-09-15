@@ -3,3 +3,6 @@
 # Legal pack: rendered by the Pages deploy workflow, never committed by hand.
 legal/*/*.pdf
 legal/mvdmio-legal-pack.zip
+
+# Share card pictures: rendered by the Pages deploy workflow, never committed by hand.
+assets/share-cards/

@@ -1,6 +1,6 @@
 # 02 — Deploy renders a card for every page
 
-Status: pending
+Status: done
 Blocked by: 01
 
 ## What to build
@@ -81,3 +81,68 @@ Projects: none (static site; nothing compiles)
       `assets/share-cards/`.
 - [ ] The Legal PDFs and `legal/mvdmio-legal-pack.zip` are still produced
       exactly as before, and the render still runs before "Upload artifact".
+
+## Outcome
+
+Grew the existing "Render legal PDFs and build the legal pack" step in
+`.github/workflows/pages-deploy.yml` into "Render legal PDFs, build the legal
+pack, and render share cards" — same job, same local `python3 -m http.server`
+on port 8080, same `$TOOLDIR` with `puppeteer@23.9.0` pinned via
+`npm install --prefix "$TOOLDIR"`, same `NODE_PATH="$TOOLDIR/node_modules"
+node <<'NODE'` heredoc shape, same `set -euo pipefail`. The card half is a
+second heredoc appended right after the `zip -j legal/mvdmio-legal-pack.zip`
+line and before "Upload artifact": it parses `<loc>` out of `sitemap.xml` with
+a regex (no XML library), appends `404.html` as a fixed extra, loads each page
+from `http://localhost:8080`, reads `document.querySelector('h1').innerHTML`,
+the first `.eyebrow` element's `textContent`, and `data-product` off
+`<html>`, throws (failing the step) if a page has no `h1`, builds the query
+string for `assets/share-card.html` from those three values, sets a
+1200x630 viewport, navigates to the template, polls
+`document.documentElement.getAttribute('data-ready') === 'true'` via
+`page.waitForFunction` (15s timeout) so no card is ever shot in a fallback
+font, and screenshots to a path mirroring the URL (`/` → `index.png`,
+`/products/compliance/` → `products/compliance.png`, `404.html` →
+`404.png`), creating directories as needed. The legal PDF/zip half and its
+ordering against "Upload artifact" are untouched. `.gitignore` gained
+`assets/share-cards/` beside the existing legal-pack rules.
+
+Verified locally from this worktree: served the repo root with
+`python3 -m http.server 8080`, installed `puppeteer-core@23.9.0` in a scratch
+directory (the full Puppeteer Chromium download is network-blocked in this
+sandbox, same constraint step 01 hit), and ran a copy of the workflow's node
+script pointed at the system's `/usr/bin/chromium` via `executablePath`. It
+wrote all 35 PNGs, every one exactly 1200x630 (confirmed with Pillow) and at
+the mirrored path, including `assets/share-cards/index.png` and
+`assets/share-cards/404.png`. Read back and visually inspected several —
+each of the five Landing pages carries its own Product accent (checked
+Compliance's emerald-green field, matching `--acc-compliance`), the other
+pages carry `--pine`, the 76-character post headline and the five-character
+"Legal" headline both size correctly and clear the signature, the Compliance
+`<em>` renders as a white italic with the translucent underline, and
+`404.html` (no `.eyebrow` element on that page) draws the `mvdmio · 404`
+fallback with its own `h1` text as the headline. Confirmed the pinned
+`set -euo pipefail` behavior: edited `assets/share-card.html` to look up a
+nonexistent element id so the inline script throws before signaling
+`data-ready`, reran the same render script, and it exited non-zero
+(`TimeoutError: Waiting failed: 15000ms exceeded` from `waitForFunction`) —
+a broken template fails the step rather than publishing a page pointing at a
+missing picture. Reverted the template to its committed state immediately
+after. `git status --porcelain` after the render showed nothing under
+`assets/share-cards/`, confirming the new `.gitignore` rule. Deleted the
+rendered PNGs, killed the local HTTP server, and removed the scratch
+`puppeteer-core` install before finishing; no PNG, node_modules, or test
+tooling is committed.
+
+Drift from the footprint's guess: none. Only
+`.github/workflows/pages-deploy.yml` and `.gitignore` were changed, matching
+the Footprint exactly; `sitemap.xml`, `assets/share-card.html`, `404.html`,
+`index.html` and the product `index.html` pages were read-only references as
+planned. One clarification worth flagging for later steps: the homepage
+(`index.html`) currently carries no `data-product` and its `<h1>`/`.eyebrow`
+happen to read as Compliance-flavored marketing copy (mirroring
+`products/compliance/index.html`) — its card therefore renders in pine with
+Compliance's own headline/eyebrow text, which is exactly what the existing
+page markup says today. This is pre-existing page content, out of this
+Step's footprint, and not something the render script should special-case;
+flagging it only in case a later Step (Spec markup work) expected the
+homepage to read as brand-neutral copy.

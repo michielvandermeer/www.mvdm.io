@@ -35,7 +35,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Render legal PDFs and build the legal pack
+      - name: Render legal PDFs, build the legal pack, and render share cards
         run: |
           set -euo pipefail
 
@@ -89,6 +89,87 @@ jobs:
             legal/dpa/data-processing-agreement.pdf \
             legal/subprocessors/subprocessor-list.pdf \
             legal/company/company-details.pdf
+
+          NODE_PATH="$TOOLDIR/node_modules" node <<'NODE'
+          const puppeteer = require("puppeteer");
+          const fs = require("fs");
+          const path = require("path");
+
+          // Page list: every URL in sitemap.xml, plus 404.html which is
+          // deliberately not in the sitemap. Parsing <loc> with a regex is
+          // enough — no XML library needed for a file this shaped.
+          const sitemap = fs.readFileSync("sitemap.xml", "utf8");
+          const locs = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
+
+          const pages = locs.map((loc) => {
+            const u = new URL(loc);
+            return { loadUrl: `http://localhost:8080${u.pathname}`, urlPath: u.pathname };
+          });
+          pages.push({ loadUrl: "http://localhost:8080/404.html", urlPath: "/404.html" });
+
+          // Mirror the URL into assets/share-cards/<path>.png:
+          //   /                     -> assets/share-cards/index.png
+          //   /products/compliance/ -> assets/share-cards/products/compliance.png
+          //   /404.html             -> assets/share-cards/404.png
+          function outputPathFor(urlPath) {
+            if (urlPath === "/404.html") {
+              return "assets/share-cards/404.png";
+            }
+            let trimmed = urlPath.replace(/^\/|\/$/g, "");
+            if (trimmed === "") {
+              trimmed = "index";
+            }
+            return `assets/share-cards/${trimmed}.png`;
+          }
+
+          (async () => {
+            const browser = await puppeteer.launch({
+              args: ["--no-sandbox", "--disable-setuid-sandbox"],
+            });
+            for (const { loadUrl, urlPath } of pages) {
+              const page = await browser.newPage();
+              await page.goto(loadUrl, { waitUntil: "networkidle0" });
+
+              const { headline, eyebrow, product } = await page.evaluate(() => {
+                const h1 = document.querySelector("h1");
+                const eyebrowEl = document.querySelector(".eyebrow");
+                return {
+                  headline: h1 ? h1.innerHTML.trim() : "",
+                  eyebrow: eyebrowEl ? eyebrowEl.textContent.trim() : "",
+                  product: document.documentElement.getAttribute("data-product") || "",
+                };
+              });
+
+              if (!headline) {
+                throw new Error(`No <h1> found on ${loadUrl} — cannot draw its share card`);
+              }
+
+              const params = new URLSearchParams();
+              if (eyebrow) {
+                params.set("eyebrow", eyebrow);
+              }
+              params.set("headline", headline);
+              if (product) {
+                params.set("product", product);
+              }
+
+              await page.setViewport({ width: 1200, height: 630 });
+              await page.goto(`http://localhost:8080/assets/share-card.html?${params.toString()}`, {
+                waitUntil: "networkidle0",
+              });
+              await page.waitForFunction(
+                () => document.documentElement.getAttribute("data-ready") === "true",
+                { timeout: 15000 },
+              );
+
+              const outPath = outputPathFor(urlPath);
+              fs.mkdirSync(path.dirname(outPath), { recursive: true });
+              await page.screenshot({ path: outPath });
+              await page.close();
+            }
+            await browser.close();
+          })();
+          NODE
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
