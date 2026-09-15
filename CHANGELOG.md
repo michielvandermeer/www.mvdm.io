@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-09-16: Shared links show a picture
+Sharing a page from this site now shows a picture instead of a bare link. The picture carries that page's own heading and the colour of the product it belongs to. Every page has one, including the five product pages, the blog posts, the resume entries, the legal documents, and the page you land on when an address is wrong.
+
 ## 2026-08-30: Footer dashes sit between items
 The dash between items in the footer is no longer part of a link. It is not underlined, and clicking it does not open a page or a mail message. The email and the Legal page names still open the same destinations.
 
