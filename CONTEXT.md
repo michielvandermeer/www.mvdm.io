@@ -27,6 +27,10 @@ _Avoid_: Product page, info page
 The pages describing past client and employer work (formerly called "Projects" on the site).
 _Avoid_: Projects, portfolio
 
+**Share card**:
+How a page looks when someone pastes its link into a feed such as LinkedIn or Slack: the markup in that page's head, plus the 1200 x 630 picture the markup points at. Every page on the site has one.
+_Avoid_: link preview, social card, OG image
+
 **mvdmio**:
 The company brand the site speaks as. Michiel appears as the founder on the about page, not as the site's voice. The legal trade name of the sole proprietorship is **mvdm.io**.
 _Avoid_: treating mvdmio as the KvK name

@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROTOTYPE — Share card variants</title>
+
+<!--
+  THROWAWAY PROTOTYPE — not part of the site. Delete with the worktree.
+
+  Three variants of the Share card at 1200x630, switchable via ?variant=A|B|C,
+  on a throwaway /share-card-prototype/ route, driven by the real copy of nine
+  site pages chosen to span the headline-length range (5 to 76 characters).
+
+  Run: python3 -m http.server 8000   then open
+  http://localhost:8000/share-card-prototype/
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- site tokens, copied from assets/css/site.css ---------- */
+:root {
+  --paper: #fbfaf7;
+  --ink: #10231c;
+  --ink-soft: #47584f;
+  --pine: #0e3b2e;
+  --pine-deep: #0b3227;
+  --emerald: #0a8754;
+  --hairline: #ddd8ca;
+}
+
+/* ---------- prototype chrome (deliberately NOT the design) ---------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0 0 110px;
+  background: #23262b;
+  color: #e8e6e1;
+  font: 400 14px/1.6 'Inter', system-ui, sans-serif;
+}
+.proto-bar {
+  background: #b4272b;
+  color: #fff;
+  padding: 8px 20px;
+  font: 500 12px/1.5 'IBM Plex Mono', monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.proto-wrap { max-width: 1320px; margin: 0 auto; padding: 22px 20px 0; }
+.proto-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.proto-controls label {
+  font: 500 11px/1 'IBM Plex Mono', monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #9aa0a6;
+  display: block;
+  margin-bottom: 6px;
+}
+select {
+  font: 400 14px/1.4 'Inter', sans-serif;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid #454a51;
+  background: #2c3036;
+  color: #e8e6e1;
+  min-width: 320px;
+}
+.state {
+  font: 400 12px/1.7 'IBM Plex Mono', monospace;
+  color: #9aa0a6;
+  border-left: 2px solid #454a51;
+  padding-left: 12px;
+  white-space: pre;
+}
+.proto-h {
+  font: 500 11px/1 'IBM Plex Mono', monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #9aa0a6;
+  margin: 30px 0 10px;
+}
+.stage { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+
+/* scaled viewports onto the real 1200x630 card */
+.shot { overflow: hidden; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,.45); }
+.shot-full { width: 840px; height: 441px; }
+.shot-full .card { transform: scale(.7); }
+.shot-feed { width: 552px; height: 289.8px; border-radius: 0; box-shadow: none; }
+.shot-feed .card { transform: scale(.46); }
+.card { width: 1200px; height: 630px; transform-origin: top left; }
+
+/* LinkedIn-ish feed mock, so legibility is judged at the size people see */
+.feed {
+  width: 552px;
+  background: #fff;
+  border: 1px solid #d0d3d6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.feed-meta { padding: 10px 14px 14px; border-top: 1px solid #e3e5e7; }
+.feed-title {
+  font: 600 15px/1.35 'Inter', sans-serif;
+  color: #000;
+  margin: 0 0 3px;
+}
+.feed-host { font: 400 12px/1.4 'Inter', sans-serif; color: #5f6163; margin: 0; }
+
+/* ---------- floating variant switcher ---------- */
+.switcher {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  color: #111;
+  border-radius: 999px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.5);
+  overflow: hidden;
+  z-index: 50;
+  font: 500 14px/1 'Inter', sans-serif;
+}
+.switcher button {
+  border: 0;
+  background: #fff;
+  color: #111;
+  font-size: 17px;
+  padding: 0 18px;
+  cursor: pointer;
+}
+.switcher button:hover { background: #ececec; }
+.switcher button:focus-visible { outline: 2px solid #2563eb; outline-offset: -3px; }
+.switcher .label {
+  padding: 13px 8px;
+  min-width: 230px;
+  text-align: center;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* ================================================================
+   THE THREE VARIANTS
+   ================================================================ */
+
+/* ---- A — Paper: the site's own look, scaled up ---- */
+.v-a {
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 14px 1fr;
+}
+.v-a .rail { background: var(--acc); }
+.v-a .body {
+  padding: 74px 88px 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.v-a .eyebrow {
+  font: 500 20px/1 'IBM Plex Mono', monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--acc);
+  margin-bottom: 30px;
+}
+.v-a h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+.v-a h1 em { font-style: italic; color: var(--acc); }
+.v-a .desc {
+  font: 400 22px/1.5 'Inter', sans-serif;
+  color: var(--ink-soft);
+  margin: 24px 0 0;
+  max-width: 30em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.v-a .foot {
+  position: absolute;
+  left: 88px;
+  right: 88px;
+  bottom: 62px;
+  padding-top: 26px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.v-a .wordmark {
+  font: 600 30px/1 'Source Serif 4', Georgia, serif;
+  color: var(--pine);
+}
+.v-a .url {
+  font: 400 17px/1 'IBM Plex Mono', monospace;
+  color: var(--ink-soft);
+}
+
+/* ---- B — Accent field: colour is the whole card ---- */
+.v-b {
+  background: var(--acc);
+  padding: 76px 88px 64px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.v-b::after {                      /* faint oversized mark, bottom-right */
+  content: 'M';
+  position: absolute;
+  right: -46px;
+  bottom: -190px;
+  font: 600 520px/1 'Source Serif 4', Georgia, serif;
+  color: rgba(255,255,255,.07);
+  pointer-events: none;
+}
+.v-b .eyebrow {
+  font: 500 20px/1 'IBM Plex Mono', monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 34px;
+  position: relative;
+}
+.v-b h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin: 0;
+  position: relative;
+  max-width: 16em;
+}
+.v-b h1 em {
+  font-style: italic;
+  color: #fff;
+  border-bottom: 4px solid rgba(255,255,255,.45);
+}
+.v-b .foot {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: relative;
+}
+.v-b .wordmark {
+  font: 600 32px/1 'Source Serif 4', Georgia, serif;
+  color: #fff;
+}
+.v-b .url {
+  font: 400 17px/1 'IBM Plex Mono', monospace;
+  color: rgba(255,255,255,.72);
+}
+
+/* ---- C — Split ledger: brand panel beside the words ---- */
+.v-c {
+  display: grid;
+  grid-template-columns: 372px 1fr;
+  background: var(--paper);
+}
+.v-c .panel {
+  background: var(--acc);
+  padding: 62px 44px;
+  display: flex;
+  flex-direction: column;
+}
+.v-c .panel .wordmark {
+  font: 600 42px/1 'Source Serif 4', Georgia, serif;
+  color: #fff;
+}
+.v-c .panel .kind {
+  margin-top: auto;
+  font: 500 19px/1.4 'IBM Plex Mono', monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.8);
+  border-top: 1px solid rgba(255,255,255,.3);
+  padding-top: 20px;
+}
+.v-c .body {
+  padding: 66px 68px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.v-c h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+.v-c h1 em { font-style: italic; color: var(--acc); }
+.v-c .desc {
+  font: 400 21px/1.55 'Inter', sans-serif;
+  color: var(--ink-soft);
+  margin: 22px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.v-c .foot {
+  position: absolute;
+  left: 68px;
+  right: 68px;
+  bottom: 58px;
+  padding-top: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font: 400 17px/1 'IBM Plex Mono', monospace;
+  color: var(--ink-soft);
+}
+.v-c .foot .leader {
+  flex: 1;
+  border-bottom: 2px dotted var(--hairline);
+  transform: translateY(-4px);
+}
+</style>
+</head>
+<body>
+
+<div class="proto-bar">Prototype — Share card variants — throwaway, not part of the site</div>
+
+<div class="proto-wrap">
+
+  <div class="proto-controls">
+    <div>
+      <label for="page">Page</label>
+      <select id="page"></select>
+    </div>
+    <div class="state" id="state"></div>
+  </div>
+
+  <p class="proto-h">The card itself — 1200 &times; 630, shown at 70%</p>
+  <div class="stage">
+    <div class="shot shot-full"><div class="card" id="card-full"></div></div>
+  </div>
+
+  <p class="proto-h">In the feed — the size LinkedIn actually shows it</p>
+  <div class="stage">
+    <div class="feed">
+      <div class="shot shot-feed"><div class="card" id="card-feed"></div></div>
+      <div class="feed-meta">
+        <p class="feed-title" id="feed-title"></p>
+        <p class="feed-host" id="feed-host"></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="switcher">
+  <button type="button" id="prev" aria-label="Previous variant">&#8592;</button>
+  <span class="label" id="variant-label"></span>
+  <button type="button" id="next" aria-label="Next variant">&#8594;</button>
+</div>
+
+<script>
+/* ---------------- real copy, lifted from the pages ---------------- */
+var PAGES = [
+  {
+    key: 'compliance', name: 'Landing — Compliance',
+    eyebrow: 'mvdmio · Compliance', kind: 'Product',
+    h1: 'One compliance system. <em>Every</em> framework.',
+    title: 'Compliance — mvdmio',
+    desc: 'Compliance by mvdmio is a certification-ready management system billed per framework — ISO 27001, SOC 2, ISO 9001 and six more — from one set of records, with AI credit included.',
+    url: 'mvdm.io/products/compliance', acc: '#059669'
+  },
+  {
+    key: 'commonplace', name: 'Landing — Commonplace (56-char headline)',
+    eyebrow: 'mvdmio · Commonplace', kind: 'Product',
+    h1: 'A quiet place to keep the things you don’t want to lose.',
+    title: 'Commonplace — mvdmio',
+    desc: 'Commonplace is a calm home for your books, quotes, notes, contacts and reminders — one personal place to keep what matters, priced simply per year.',
+    url: 'mvdm.io/products/commonplace', acc: '#d97706'
+  },
+  {
+    key: 'statistics', name: 'Landing — Statistics',
+    eyebrow: 'mvdmio · Statistics', kind: 'Product',
+    h1: 'Know how your app is actually used.',
+    title: 'Statistics — mvdmio',
+    desc: 'Statistics by mvdmio tracks active users, throughput, and response times across your applications from raw request data, self-hosted, with a drop-in .NET client.',
+    url: 'mvdm.io/products/statistics', acc: '#4f46e5'
+  },
+  {
+    key: 'home', name: 'Homepage',
+    eyebrow: 'mvdmio · Compliance', kind: 'mvdmio',
+    h1: 'Certification-ready, <em>every day</em> of the year.',
+    title: 'mvdmio — Compliance, Translation Tools, Health Check, Statistics, Commonplace',
+    desc: 'mvdmio builds five focused software products, led by Compliance: a certification-ready management system for ISO 27001, SOC 2, GDPR and more.',
+    url: 'mvdm.io', acc: '#0e3b2e'
+  },
+  {
+    key: 'post-long', name: 'Post — longest headline (76 chars)',
+    eyebrow: 'mvdmio · blog', kind: 'Blog',
+    h1: 'Developers are not socially awkward introverts; here is how to understand us',
+    title: 'Developers are not socially awkward introverts; here is how to understand us — mvdmio blog',
+    desc: 'Michiel explains the personality traits that make good programmers, and why headphones and quiet rooms aren’t a social problem.',
+    url: 'mvdm.io/posts/developers-are-not-socially-awkward-introverts', acc: '#0e3b2e'
+  },
+  {
+    key: 'post-short', name: 'Post — short headline (20 chars)',
+    eyebrow: 'mvdmio · blog', kind: 'Blog',
+    h1: 'Agile bill of rights',
+    title: 'Agile bill of rights — mvdmio blog',
+    desc: 'Michiel records the Customer and Developer Bill of Rights from Robert C. Martin’s Clean Agile.',
+    url: 'mvdm.io/posts/agile-bill-of-rights', acc: '#0e3b2e'
+  },
+  {
+    key: 'resume', name: 'Resume entry — Jewel Software',
+    eyebrow: 'mvdmio · resume', kind: 'Resume',
+    h1: 'Jewel Software',
+    title: 'Jewel Software — Resume — mvdmio',
+    desc: 'Modernizing a suite of web and android applications aimed at municipality operations.',
+    url: 'mvdm.io/projects/jewel-software', acc: '#0e3b2e'
+  },
+  {
+    key: 'legal-index', name: 'Legal index — shortest headline (5 chars)',
+    eyebrow: 'mvdm.io · legal', kind: 'Legal',
+    h1: 'Legal',
+    title: 'Legal — mvdm.io',
+    desc: 'mvdm.io’s legal documents: Terms of Service, Privacy Notice, Data Processing Agreement, Subprocessor list and Company details, each with its own PDF and all five as one pack.',
+    url: 'mvdm.io/legal', acc: '#0e3b2e'
+  },
+  {
+    key: 'terms', name: 'Legal page — Terms of Service',
+    eyebrow: 'mvdm.io · legal', kind: 'Legal',
+    h1: 'Terms of Service',
+    title: 'Terms of Service — mvdm.io',
+    desc: 'Contract terms for every mvdm.io Product: trials, fees, acceptable use, liability, Dutch law, and closed-licence retention.',
+    url: 'mvdm.io/legal/terms', acc: '#0e3b2e'
+  },
+  {
+    key: '404', name: '404 — no eyebrow on the page',
+    eyebrow: 'mvdmio · 404', kind: '404',
+    h1: 'This page doesn’t exist.',
+    title: 'Page not found — mvdmio',
+    desc: 'This page doesn’t exist. Find the mvdmio products, blog and resume from the navigation.',
+    url: 'mvdm.io', acc: '#0e3b2e'
+  }
+];
+
+var VARIANTS = [
+  { key: 'A', name: 'Paper — the site, scaled up' },
+  { key: 'B', name: 'Accent field — colour is the card' },
+  { key: 'C', name: 'Split ledger — brand panel' }
+];
+
+/* ---------------- helpers ---------------- */
+function plain(html) { return html.replace(/<[^>]+>/g, ''); }
+
+function ramp(len, sizes) {
+  if (len <= 20) return sizes[0];
+  if (len <= 35) return sizes[1];
+  if (len <= 50) return sizes[2];
+  if (len <= 65) return sizes[3];
+  return sizes[4];
+}
+
+function render(v, p) {
+  var len = plain(p.h1).length;
+  if (v === 'A') {
+    return '<div class="card v-a" style="--acc:' + p.acc + '">' +
+      '<div class="rail"></div>' +
+      '<div class="body">' +
+        '<p class="eyebrow">' + p.eyebrow + '</p>' +
+        '<h1 style="font-size:' + ramp(len, [82, 70, 60, 50, 43]) + 'px">' + p.h1 + '</h1>' +
+        '<p class="desc">' + p.desc + '</p>' +
+        '<div class="foot"><span class="wordmark">mvdmio</span>' +
+        '<span class="url">' + p.url + '</span></div>' +
+      '</div></div>';
+  }
+  if (v === 'B') {
+    return '<div class="card v-b" style="--acc:' + p.acc + '">' +
+      '<p class="eyebrow">' + p.eyebrow + '</p>' +
+      '<h1 style="font-size:' + ramp(len, [96, 82, 70, 58, 50]) + 'px">' + p.h1 + '</h1>' +
+      '<div class="foot"><span class="wordmark">mvdm.io</span></div></div>';
+  }
+  return '<div class="card v-c" style="--acc:' + p.acc + '">' +
+    '<div class="panel"><span class="wordmark">mvdmio</span>' +
+    '<span class="kind">' + p.kind + '</span></div>' +
+    '<div class="body">' +
+      '<h1 style="font-size:' + ramp(len, [64, 56, 48, 42, 36]) + 'px">' + p.h1 + '</h1>' +
+      '<p class="desc">' + p.desc + '</p>' +
+      '<div class="foot"><span>' + p.url + '</span><span class="leader"></span></div>' +
+    '</div></div>';
+}
+
+/* ---------------- state ---------------- */
+function params() { return new URLSearchParams(location.search); }
+
+function currentVariant() {
+  var v = (params().get('variant') || 'A').toUpperCase();
+  return VARIANTS.some(function (x) { return x.key === v; }) ? v : 'A';
+}
+
+function currentPage() {
+  var k = params().get('page');
+  for (var i = 0; i < PAGES.length; i++) if (PAGES[i].key === k) return PAGES[i];
+  return PAGES[0];
+}
+
+function setParams(variant, pageKey) {
+  var q = params();
+  q.set('variant', variant);
+  q.set('page', pageKey);
+  history.replaceState(null, '', location.pathname + '?' + q.toString());
+  draw();
+}
+
+function draw() {
+  var v = currentVariant();
+  var p = currentPage();
+  var html = render(v, p);
+
+  document.getElementById('card-full').outerHTML = html.replace('class="card', 'id="card-full" class="card');
+  document.getElementById('card-feed').outerHTML = html.replace('class="card', 'id="card-feed" class="card');
+
+  document.getElementById('feed-title').textContent = p.title;
+  document.getElementById('feed-host').textContent = 'mvdm.io';
+
+  var meta = VARIANTS.filter(function (x) { return x.key === v; })[0];
+  document.getElementById('variant-label').textContent = v + ' — ' + meta.name;
+  document.getElementById('page').value = p.key;
+
+  document.getElementById('state').textContent =
+    'variant  ' + v + '  (' + meta.name + ')\n' +
+    'page     ' + p.key + '  — accent ' + p.acc + '\n' +
+    'headline ' + plain(p.h1).length + ' chars, font ' +
+      ramp(plain(p.h1).length, v === 'A' ? [82,70,60,50,43] : v === 'B' ? [96,82,70,58,50] : [64,56,48,42,36]) + 'px\n' +
+    'shows    ' + (v === 'C' ? 'eyebrow as panel label' : 'eyebrow') +
+      (v === 'B' ? ', no description, no URL' : ', description');
+}
+
+/* ---------------- wiring ---------------- */
+var sel = document.getElementById('page');
+PAGES.forEach(function (p) {
+  var o = document.createElement('option');
+  o.value = p.key;
+  o.textContent = p.name;
+  sel.appendChild(o);
+});
+sel.addEventListener('change', function () { setParams(currentVariant(), sel.value); });
+
+function cycle(step) {
+  var v = currentVariant();
+  var i = 0;
+  VARIANTS.forEach(function (x, n) { if (x.key === v) i = n; });
+  var next = VARIANTS[(i + step + VARIANTS.length) % VARIANTS.length].key;
+  setParams(next, currentPage().key);
+}
+
+document.getElementById('prev').addEventListener('click', function () { cycle(-1); });
+document.getElementById('next').addEventListener('click', function () { cycle(1); });
+
+document.addEventListener('keydown', function (e) {
+  var t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
+  if (e.key === 'ArrowLeft') { e.preventDefault(); cycle(-1); }
+  if (e.key === 'ArrowRight') { e.preventDefault(); cycle(1); }
+});
+
+draw();
+</script>
+</body>
+</html>
