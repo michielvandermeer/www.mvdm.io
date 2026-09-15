@@ -1,6 +1,6 @@
 # 03 — Share card markup on the Product pages and 404
 
-Status: pending
+Status: done
 Blocked by: 02
 
 ## What to build
@@ -70,16 +70,61 @@ Projects: none (static site; nothing compiles)
 
 ## Acceptance criteria
 
-- [ ] All seven pages carry the ten tags (nine on `404.html`), in the position
+- [x] All seven pages carry the ten tags (nine on `404.html`), in the position
       described, with the same tag order on every page.
-- [ ] Every `og:title`, `og:description` and `og:url` matches that page's own
+- [x] Every `og:title`, `og:description` and `og:url` matches that page's own
       `<title>`, description and canonical exactly.
-- [ ] Every `og:image` is an absolute `https://mvdm.io/...` URL whose path
+- [x] Every `og:image` is an absolute `https://mvdm.io/...` URL whose path
       matches the PNG step 02 renders for that page.
-- [ ] `404.html` carries no `og:url`.
-- [ ] Every `og:image:alt` reads as one sentence naming the page.
-- [ ] Fetching each of the seven pages the way a crawler does returns those
+- [x] `404.html` carries no `og:url`.
+- [x] Every `og:image:alt` reads as one sentence naming the page.
+- [x] Fetching each of the seven pages the way a crawler does returns those
       values, and each picture URL resolves to a real 1200 x 630 file rather
       than a 404 (after a local render, or against the deployed site).
-- [ ] No page's visible content changed: no headline, description, title or
+- [x] No page's visible content changed: no headline, description, title or
       canonical is reworded.
+
+## Outcome
+
+Added the ten-tag Share card block (nine on `404.html`) directly after
+`<link rel="canonical">` on `index.html` and the five
+`products/*/index.html` pages, and directly after
+`<meta name="description">` on `404.html`, in the exact tag order the Step
+specifies. Every `og:title`, `og:description` and `og:url` is copied verbatim
+from that page's own `<title>`, `<meta name="description">` and canonical —
+no new copy was written and no visible content changed (confirmed by `git
+diff`: every file's diff is a pure addition, zero deletions). `og:image` is
+absolute (`https://mvdm.io/assets/share-cards/...`) and mirrors the path step
+02's renderer writes for that page (`index.png`,
+`products/<slug>.png`, `404.png`); `og:image:width`/`height` are `1200`/`630`;
+`og:site_name` is `mvdmio` and `og:type` is `website` on all seven.
+`og:image:alt` is the page's own eyebrow with the `·` dropped, an em dash,
+then the headline as plain text with `<em>` tags stripped (e.g. Compliance's
+alt reads "mvdmio Compliance — One compliance system. Every framework.",
+matching the Spec's own example verbatim). `404.html` carries no `og:url`
+(its address is unknowable when the page is written) and its alt uses the
+card's own substitute eyebrow: "mvdmio 404 — This page doesn't exist."
+
+Verified by re-running (a scoped copy of) step 02's render script — serving
+the repo root with `python3 -m http.server`, driving the same
+`puppeteer-core@23.9.0` against the system's `/usr/bin/chromium` (the full
+Puppeteer Chromium download remains network-blocked in this sandbox, as
+steps 01 and 02 noted) — for exactly these seven pages: all seven PNGs were
+produced, each verified 1200x630 with Pillow, each at the path this Step's
+`og:image` values point to (`assets/share-cards/index.png`,
+`assets/share-cards/products/<slug>.png`, `assets/share-cards/404.png`), and
+each page's `data-product`/eyebrow/headline read back matched what its new
+`og:image:alt` and `og:image` claim. The local HTTP server and the rendered
+PNGs were removed after the check; nothing under `assets/share-cards/` is
+committed.
+
+Drift from the footprint's guess: none. Exactly the seven named files were
+edited, each at the position the Step specifies; no other file changed.
+
+One correction for step 04, which copies this shape to the rest of the site:
+the homepage's `<meta name="description">` already carries a straight
+apostrophe / plain ASCII punctuation in every page checked here, so
+`og:description` values were copied byte-for-byte with only `&` and `"`
+XML-escaped (no apostrophe escaping) to match the site's own existing meta
+tags — for consistency, step 04 should do the same rather than HTML-entity
+escaping apostrophes.
