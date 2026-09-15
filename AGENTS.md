@@ -199,11 +199,19 @@ page). **Never commit a share card PNG by hand** — like the Legal PDFs, they
 are gitignored (`assets/share-cards/`) build output, only ever correct as of
 the last deploy.
 
+A page missing an `<h1>` or a `.eyebrow` fails the deploy rather than
+publishing a card that points at nothing — `404.html` is the one named
+exception: it has no `.eyebrow` element, so the render step substitutes
+`mvdmio · 404` for it alone. The homepage is also handled on its own: its
+card reads its own `<title>` instead of its hero's Product-led `<h1>`/
+`.eyebrow`, so the card speaks for mvdmio rather than for one Product.
+
 `assets/share-card.html` is the template, not a page: it carries no header,
-footer or Share card of its own, and it is not in `sitemap.xml`. It is the
-one page on the site allowed an inline `<script>` block (see **Tech stack**
-above), because it reads its three values (`eyebrow`, `headline`, `product`)
-from its own URL's query string rather than from server-rendered content —
+footer or Share card of its own, and it is not in `sitemap.xml`. **Tech
+stack**'s "don't add inline `<script>` blocks to pages" governs pages a
+reader visits, so it does not reach this file — it carries an inline
+`<script>` that reads its three values (`eyebrow`, `headline`, `product`)
+from its own URL's query string rather than from server-rendered content,
 which also means it opens on its own, with no deploy and no Puppeteer, when
 you want to see what a card looks like: serve the repo root and visit
 `/assets/share-card.html?eyebrow=...&headline=...&product=...`. See

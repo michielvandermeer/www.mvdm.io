@@ -15,15 +15,14 @@
   tokens and can never drift from the palette. Its own <style> block below
   holds only the card's layout, which does not exist as a page pattern.
 
-  The inline <script> at the bottom is the one place on this site an inline
-  script is allowed: this template is not a page a reader visits, so
-  AGENTS.md's "don't add inline <script> blocks to pages" does not apply
-  here — the query-string read is this file's entire job.
+  The inline <script> at the bottom reads those three query parameters —
+  AGENTS.md's "don't add inline <script> blocks to pages" governs pages a
+  reader visits, and this file is not one of those.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 
 <style>
@@ -115,19 +114,17 @@
 </div>
 
 <script>
-  // Query-string read — see the head comment for why an inline script is
-  // allowed on this one file. Build input only: eyebrow/headline/product
-  // are taken from the site's own pages at deploy time, never from a
-  // reader, so writing headline as innerHTML below is safe.
+  // Query-string read — see the head comment for why this file may carry
+  // an inline script. Build input only: eyebrow/headline/product are
+  // taken from the site's own pages at deploy time, never from a reader,
+  // so writing headline as innerHTML below is safe. The deploy render
+  // always supplies eyebrow (404.html's own substitute included) — a
+  // missing one there fails the deploy rather than reaching this file.
   (function () {
     var params = new URLSearchParams(location.search);
     var eyebrow = params.get('eyebrow');
     var headline = params.get('headline') || '';
     var product = params.get('product');
-
-    if (!eyebrow) {
-      eyebrow = 'mvdmio · 404';
-    }
 
     if (product) {
       document.documentElement.setAttribute('data-product', product);

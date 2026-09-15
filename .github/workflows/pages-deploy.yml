@@ -49,14 +49,16 @@ jobs:
             sleep 0.5
           done
 
-          TOOLDIR="${RUNNER_TEMP}/legal-pdf-tools"
+          TOOLDIR="${RUNNER_TEMP}/puppeteer-tools"
           mkdir -p "$TOOLDIR"
           npm install --prefix "$TOOLDIR" puppeteer@23.9.0
 
           NODE_PATH="$TOOLDIR/node_modules" node <<'NODE'
           const puppeteer = require("puppeteer");
+          const fs = require("fs");
+          const path = require("path");
 
-          const docs = [
+          const legalDocs = [
             ["terms", "terms-of-service.pdf"],
             ["privacy", "privacy-notice.pdf"],
             ["dpa", "data-processing-agreement.pdf"],
@@ -64,48 +66,17 @@ jobs:
             ["company", "company-details.pdf"],
           ];
 
-          (async () => {
-            const browser = await puppeteer.launch({
-              args: ["--no-sandbox", "--disable-setuid-sandbox"],
-            });
-            for (const [dir, file] of docs) {
-              const page = await browser.newPage();
-              await page.goto(`http://localhost:8080/legal/${dir}/`, { waitUntil: "networkidle0" });
-              await page.pdf({
-                path: `legal/${dir}/${file}`,
-                format: "A4",
-                printBackground: true,
-                margin: { top: "20mm", bottom: "20mm", left: "18mm", right: "18mm" },
-              });
-              await page.close();
-            }
-            await browser.close();
-          })();
-          NODE
-
-          zip -j legal/mvdmio-legal-pack.zip \
-            legal/terms/terms-of-service.pdf \
-            legal/privacy/privacy-notice.pdf \
-            legal/dpa/data-processing-agreement.pdf \
-            legal/subprocessors/subprocessor-list.pdf \
-            legal/company/company-details.pdf
-
-          NODE_PATH="$TOOLDIR/node_modules" node <<'NODE'
-          const puppeteer = require("puppeteer");
-          const fs = require("fs");
-          const path = require("path");
-
           // Page list: every URL in sitemap.xml, plus 404.html which is
           // deliberately not in the sitemap. Parsing <loc> with a regex is
           // enough — no XML library needed for a file this shaped.
           const sitemap = fs.readFileSync("sitemap.xml", "utf8");
           const locs = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 
-          const pages = locs.map((loc) => {
+          const sharePages = locs.map((loc) => {
             const u = new URL(loc);
             return { loadUrl: `http://localhost:8080${u.pathname}`, urlPath: u.pathname };
           });
-          pages.push({ loadUrl: "http://localhost:8080/404.html", urlPath: "/404.html" });
+          sharePages.push({ loadUrl: "http://localhost:8080/404.html", urlPath: "/404.html" });
 
           // Mirror the URL into assets/share-cards/<path>.png:
           //   /                     -> assets/share-cards/index.png
@@ -123,14 +94,30 @@ jobs:
           }
 
           (async () => {
+            // One browser for both halves of this step: the legal PDFs and
+            // the share cards are two loops over the same launch, not two
+            // launches.
             const browser = await puppeteer.launch({
               args: ["--no-sandbox", "--disable-setuid-sandbox"],
             });
-            for (const { loadUrl, urlPath } of pages) {
+
+            for (const [dir, file] of legalDocs) {
+              const page = await browser.newPage();
+              await page.goto(`http://localhost:8080/legal/${dir}/`, { waitUntil: "networkidle0" });
+              await page.pdf({
+                path: `legal/${dir}/${file}`,
+                format: "A4",
+                printBackground: true,
+                margin: { top: "20mm", bottom: "20mm", left: "18mm", right: "18mm" },
+              });
+              await page.close();
+            }
+
+            for (const { loadUrl, urlPath } of sharePages) {
               const page = await browser.newPage();
               await page.goto(loadUrl, { waitUntil: "networkidle0" });
 
-              const { headline, eyebrow, product } = await page.evaluate(() => {
+              let { headline, eyebrow, product } = await page.evaluate(() => {
                 const h1 = document.querySelector("h1");
                 const eyebrowEl = document.querySelector(".eyebrow");
                 return {
@@ -144,10 +131,34 @@ jobs:
                 throw new Error(`No <h1> found on ${loadUrl} — cannot draw its share card`);
               }
 
-              const params = new URLSearchParams();
-              if (eyebrow) {
-                params.set("eyebrow", eyebrow);
+              if (!eyebrow) {
+                // Spec: "404.html has no eyebrow element, so its card uses
+                // mvdmio · 404" — that default belongs to 404.html alone.
+                // Any other page missing one is a real gap, so it fails the
+                // deploy the same way a missing headline does, rather than
+                // silently shipping a card mislabelled 404.
+                if (urlPath === "/404.html") {
+                  eyebrow = "mvdmio · 404";
+                } else {
+                  throw new Error(`No .eyebrow found on ${loadUrl} — cannot draw its share card`);
+                }
               }
+
+              if (urlPath === "/") {
+                // Story 6: the homepage's card should speak for mvdmio, not
+                // for whichever Product leads its hero. Reuse the page's own
+                // <title> (already brand-first: "mvdmio — <the five
+                // Products>") instead of its hero <h1>/.eyebrow — no new
+                // copy, same rule as every other field in this block.
+                const titleText = await page.title();
+                const sep = " — ";
+                const idx = titleText.indexOf(sep);
+                eyebrow = "mvdmio";
+                headline = idx === -1 ? titleText : titleText.slice(idx + sep.length);
+              }
+
+              const params = new URLSearchParams();
+              params.set("eyebrow", eyebrow);
               params.set("headline", headline);
               if (product) {
                 params.set("product", product);
@@ -167,9 +178,17 @@ jobs:
               await page.screenshot({ path: outPath });
               await page.close();
             }
+
             await browser.close();
           })();
           NODE
+
+          zip -j legal/mvdmio-legal-pack.zip \
+            legal/terms/terms-of-service.pdf \
+            legal/privacy/privacy-notice.pdf \
+            legal/dpa/data-processing-agreement.pdf \
+            legal/subprocessors/subprocessor-list.pdf \
+            legal/company/company-details.pdf
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
