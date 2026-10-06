@@ -1,6 +1,6 @@
 # 01 — List Sentry on the Subprocessor list
 
-Status: pending
+Status: done
 Depends on: none
 
 ## What to build
@@ -32,3 +32,18 @@ Projects: none
 - [ ] The visible effective date and the `<time datetime>` value show the same date, the date this step was built, and the Outcome records it.
 - [ ] The page reads correctly at desktop width and at about 375px wide, with no sideways scroll.
 - [ ] No PDF, zip, or share card PNG is committed.
+
+## Outcome
+
+`legal/subprocessors/index.html` now lists Sentry (Functional Software, Inc.) as the fourth entry under "Every Product", with the wording this Step proposed. The self-hosted note is gone, the Statistics section says "shared four", and both description tags read "Hetzner, Cloudflare, Stripe and Sentry for every Product" and still match each other. No PDF, zip, or share card PNG is committed.
+
+Effective date: **6 October 2026** (`datetime="2026-10-06"`). Step 02 gives the Data Processing Agreement the same date.
+
+The Footprint matched the code. No other file changed apart from the Run recipe.
+
+Run recipe: written (`.agents/refs/run-recipe.md`: serve with `python3 -m http.server`, then use headless Chromium for the DOM dump and screenshots)
+
+Safety fact: The served `/legal/subprocessors/` names Sentry (Functional Software, Inc.) as the fourth "Every Product" entry, with EU-region storage in Germany and a United States company, and no longer carries the self-hosted note; if either were false, the list account owners agreed to would leave out a third party holding their users' data (rung 4)
+Proof: `bash /data/projects/mvdmio/www.mvdm.io/.git/proof/3-list-sentry-on-the-subprocessor-list-and-in-dpa-section-9/step01.sh /data/projects/mvdmio/www.mvdm.io/.claude/worktrees/3-list-sentry-on-the-subprocessor-list-and-in-dpa-section-9` exit 0 — 10 PASS lines, e.g. "PASS Every Product order ['Hetzner', 'Cloudflare', 'Stripe', 'Sentry']", "PASS no self-hosted text", "PASS effective date 2026-10-06"; step01-375.png in the Proof folder shows the page at 375px with no sideways scroll
+
+Checker: the review kept "shared four" and Sentry's two-sentence entry, because the Spec asks for both. The Run recipe's Evidence section now says where the Proof folder is. The Statistics Landing page hero (`products/statistics/index.html`) still says "no third party ever sees your data"; the Spec does not cover Landing pages, so this run leaves it for the maintainer.
