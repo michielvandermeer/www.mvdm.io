@@ -1,6 +1,6 @@
 # 02 — Show Data Processing Agreement transfers as a table
 
-Status: pending
+Status: done
 Depends on: 01
 
 ## What to build
@@ -53,3 +53,18 @@ Projects: none
 - [ ] The browser's print preview of `/legal/dpa/` shows the full table with its headings, and hides the site header, footer, and Download PDF control.
 - [ ] The visible effective date and the `<time datetime>` value on `/legal/dpa/` match the date on `/legal/subprocessors/` from step 01.
 - [ ] No PDF, zip, or share card PNG is committed.
+
+## Outcome
+
+Section 9 of `legal/dpa/index.html` is now a table with the three `<th scope="col">` headings ("Subprocessor", "Company in", "Data stored in") and the seven rows in the order this Step gave; Sentry's row reads United States and Germany. The Nuremberg sentence stays word for word, followed in the same paragraph by the sentence that introduces the table. After the table, the standard contractual clauses sentence names Stripe, Cloudflare, xAI, Anthropic, Qualys SSL Labs, and Sentry, and the Google Books sentence and its link are unchanged. The effective date is **6 October 2026** (`datetime="2026-10-06"`), the same as the Subprocessor list.
+
+`assets/css/site.css` gains one shared class, `.doc-table`, beside `.exp-table`. It uses `--hairline` rules, `--ink-soft` text and the mono, uppercase heading style of `.exp-table th`, and it has 20px of space below it, like a `.prose` paragraph. At `max-width: 480px` the padding and font size get smaller; that narrow rule sits in its own `@media (max-width: 480px)` block directly after the base `.doc-table` rules, because in the shared 480px block above them it lost to the later base rules and never applied. In print, the header row repeats and a row does not split across pages. It has no animation or transition. `.exp-table` and the About page are untouched.
+
+The Footprint matched the code. Whole-site check: a local link crawl of 67 URLs found no broken links (PDFs, the zip, and share cards are deploy-time output, so the crawl skipped them), and `feed.xml` and `sitemap.xml` parse. Step 01's Proof still passes (10 PASS).
+
+Checker fixes: the narrow-width `.doc-table` rule moved after the base rules (it was dead CSS), and a stray change to `.ledger .row > span:first-child` (`overflow-wrap: anywhere` to `break-word`) was reverted, so the Landing page ledgers are as on `main`. Review left as is: `.doc-table th` repeats the `.exp-table th` declarations instead of sharing a selector, because this Step says not to change `.exp-table`; the standard contractual clauses sentence keeps naming the six companies, because the Spec asks it to name the transfers it covers. Checker re-run: a local link crawl of 63 URLs found no broken links, `feed.xml` and `sitemap.xml` parse, and Step 01's checks pass (10 PASS).
+
+Run recipe: unchanged
+
+Safety fact: The served `/legal/dpa/` section 9 table lists all seven covered-Product subprocessors, with Sentry as United States company and Germany storage, the standard contractual clauses sentence names all six United States companies, and the table stays readable with headings and tightened padding at 375px and in print; if any of this were false, the transfer terms account owners agreed to would leave out Sentry, or would misstate where its data is stored (rung 4)
+Proof: `bash /data/projects/mvdmio/www.mvdm.io/.git/proof/3-list-sentry-on-the-subprocessor-list-and-in-dpa-section-9/step02.sh /data/projects/mvdmio/www.mvdm.io/.claude/worktrees/3-list-sentry-on-the-subprocessor-list-and-in-dpa-section-9` exit 0 — 20 PASS lines, e.g. "PASS seven rows in order; Sentry row ['Sentry', 'United States', 'Germany']", "PASS 375px: cell padding-right and font-size ('10px', '14px'), want ('10px', '14px')", "PASS site.css diff only adds doc-table rules (0 stray, 0 removed)"; step02-375.png, step02-desktop.png and step02-print.pdf are in the Proof folder
