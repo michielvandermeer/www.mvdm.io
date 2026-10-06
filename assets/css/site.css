@@ -249,12 +249,13 @@ main { flex: 1; }
   max-width: 34em;
   margin-bottom: 30px;
 }
-.fee {
+.fee, .cta-note {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 13.5px;
   color: var(--ink-soft);
   margin-top: 18px;
 }
+.cta-note + .fee { margin-top: 6px; }
 
 .frame {
   background: #fff;
