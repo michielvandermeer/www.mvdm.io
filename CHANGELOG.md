@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-07: Logs kept at most 90 days
+Section 7 of the Data Processing Agreement now says that application logs, error reports, and traces are kept for at most 90 days. The old line said logs were kept for 7 to 14 days, which did not count the error reports and logs that go to Sentry. The limit covers mvdmio's own server and Sentry alike, and the agreement still carries the date 7 October 2026.
+
 ## 2026-10-07: Sentry added to the Subprocessor list
 The Subprocessor list now names Sentry, which receives error reports, traces and logs from every product. Sentry is a company in the United States that stores this data in Germany, and the old note that said error tracking runs on mvdmio's own machine is gone. Section 9 of the Data Processing Agreement now shows a table with the country of each subprocessor's company and the country where it stores the data, and both pages carry the date 7 October 2026.
 
