@@ -1,6 +1,6 @@
 # 01 — DPA section 7 gives one 90-day limit for logs, error reports, and traces
 
-Status: pending
+Status: done
 Depends on: none
 
 ## What to build
@@ -31,3 +31,12 @@ Projects: none
 - [ ] A search of the whole repository outside `.agents/` finds no page that still says "7 to 14 days".
 - [ ] No other Legal page, no PDF, and no zip is changed or committed.
 - [ ] Served locally (`python3 -m http.server` from the repo root), `/legal/dpa/` shows the new line; at about 375px wide the changed item wraps like the other items and the page does not scroll sideways; the browser's print preview shows section 7 with the new line.
+
+## Outcome
+
+Section 7's log item in `legal/dpa/index.html` now reads exactly "application logs, error reports, and traces kept for at most 90 days;". Built on 7 October 2026, so the effective date stays `<time datetime="2026-10-07">7 October 2026</time>`. The other six items, the bold paragraph, and section 9's `.legal-table` are unchanged; `git diff` touches one line. No other page, PDF or zip changed; outside `.agents/`, no file still says "7 to 14 days". Served locally, the page renders at desktop and 375px widths with no sideways scroll, and Chromium's print-to-PDF of the page shows the new line in section 7. Footprint matched the code; no drift.
+
+Checker: both review axes found nothing to fix. The Checker re-ran the Proof's steps on the served page (port 8765) and added two checks: the other six items are word for word as on `main`, in order, and the new line is the sixth item. Both passed. The same checks fail against `main`'s page. The print-to-PDF text holds the new line and "Effective 7 October 2026".
+
+Safety fact: the served `/legal/dpa/` section 7 holds exactly seven items: the six old ones unchanged, plus the new 90-day line in the old log line's place. No "7 to 14 days" is left, and the effective date's `datetime` and text agree. If this is false, account owners read a retention promise mvdm.io does not keep once suite #212 sends data to Sentry (rung 4)
+Proof: `bash /data/projects/mvdmio/www.mvdm.io/.git/proof/4-dpa-section-7-promises-7-to-14-days-of-logs-but-sentry-keeps-them-30/check-dpa.sh` exit 0 — PASS section 7 has 7 items / PASS new retention line present / PASS old '7 to 14 days' gone (dpa-desktop.png, dpa-narrow.png and dpa-print.pdf in the Proof folder)
