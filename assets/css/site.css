@@ -249,12 +249,13 @@ main { flex: 1; }
   max-width: 34em;
   margin-bottom: 30px;
 }
-.fee {
+.fee, .cta-note {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 13.5px;
   color: var(--ink-soft);
   margin-top: 18px;
 }
+.cta-note + .fee { margin-top: 6px; }
 
 .frame {
   background: #fff;
@@ -571,6 +572,7 @@ main { flex: 1; }
   .ledger .row .dots { display: none; }
   .ledger .row > span:first-child { flex: 1 1 100%; }
   .ledger .row > span:last-child { margin-left: auto; }
+  .ledger .row:not(.no-amount) > span:last-child { flex-shrink: 1; white-space: normal; text-align: right; }
 }
 
 /* ---------- small button variant (open-source cards) ---------- */
