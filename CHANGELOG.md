@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-07: Sentry added to the Subprocessor list
+The Subprocessor list now names Sentry, which receives error reports, traces and logs from every product. Sentry is a company in the United States that stores this data in Germany, and the old note that said error tracking runs on mvdmio's own machine is gone. Section 9 of the Data Processing Agreement now shows a table with the country of each subprocessor's company and the country where it stores the data, and both pages carry the date 7 October 2026.
+
 ## 2026-09-16: Shared links show a picture
 Sharing a page from this site now shows a picture instead of a bare link. The picture carries that page's own heading and the colour of the product it belongs to. Every page has one, including the five product pages, the blog posts, the resume entries, the legal documents, and the page you land on when an address is wrong.
 
