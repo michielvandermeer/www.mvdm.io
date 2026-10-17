@@ -22,7 +22,8 @@ behavior, and the homepage and the five Landing pages each carry one (see
 **Prices** and "How to add a page" below). Executable inline scripts stay
 forbidden.
 
-The one exception is the Pages deploy workflow, which does run build steps
+The one exception is the Pages deploy workflow
+(`.github/workflows/pages-deploy.yml`), which does run build steps
 of its own: the legal pack (see **Legal documents** below), the Share cards
 (see **Share cards** below), and the sitemap's `<lastmod>` dates (see **Page
 / URL structure** and "How to add a page" step 4).
