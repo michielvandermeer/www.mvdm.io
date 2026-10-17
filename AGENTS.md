@@ -116,8 +116,11 @@ live in the page itself.
    distinct from every other page's, and its own `<link rel="canonical">`.
    Copy the Share card block too (`og:title`, `og:description`, `og:url`,
    `og:image` and the rest) from that same sibling page, directly after the
-   canonical link — its `og:title`/`og:description`/`og:url` mirror this
-   page's own title, description and canonical, and its `og:image` path
+   canonical link — `og:title`/`og:description` carry the share-preview
+   wording, and `og:title` may differ from `<title>` (a Landing page's
+   `<title>` carries the search keywords, its `og:title` stays brand-first
+   "Product — mvdmio"); `og:description` mirrors this page's meta
+   description, `og:url` its canonical, and its `og:image` path
    mirrors the new URL (see **Share cards** below). `og:type` is `article`
    for a post, `website` for everything else. A Landing page also copies
    the `<script type="application/ld+json">` block from a sibling Landing
@@ -236,7 +239,7 @@ A page missing an `<h1>` or a `.eyebrow` fails the deploy rather than
 publishing a card that points at nothing — `404.html` is the one named
 exception: it has no `.eyebrow` element, so the render step substitutes
 `mvdmio · 404` for it alone. The homepage is also handled on its own: its
-card reads its own `<title>` instead of its hero's Product-led `<h1>`/
+card reads its own `og:title` instead of its hero's Product-led `<h1>`/
 `.eyebrow`, so the card speaks for mvdmio rather than for one Product.
 
 `assets/share-card.html` is the template, not a page: it carries no header,
