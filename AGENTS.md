@@ -46,6 +46,9 @@ about/index.html                   /about/
 open-source/index.html             /open-source/
 feed.xml                           /feed.xml    (hand-maintained RSS)
 sitemap.xml, robots.txt            search-engine files, served at root
+llms.txt                           /llms.txt    (plain markdown summary for
+                                   language models; no price in it, and
+                                   not in sitemap.xml)
 assets/css/site.css                the one shared stylesheet
 assets/js/site.js                  the one shared script (mobile nav toggle)
 assets/images/, assets/img/        images and favicons

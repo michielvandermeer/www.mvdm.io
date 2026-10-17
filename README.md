@@ -19,6 +19,7 @@ about/index.html             About page
 open-source/index.html       Open-source packages page
 feed.xml                     Hand-maintained RSS feed
 sitemap.xml, robots.txt      Search-engine files
+llms.txt                     Plain-text summary for language models
 assets/css/site.css          The one shared stylesheet (design tokens, layout, components)
 assets/images/, assets/img/  Images and favicons
 ```
