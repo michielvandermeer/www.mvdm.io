@@ -16,7 +16,11 @@ themselves — GitHub Pages serves the repository root directly, exactly as
 committed. The only external dependency is Google Fonts (Source Serif 4,
 Inter, IBM Plex Mono, loaded via `<link>` in every page's `<head>`). Don't
 add inline `<script>` blocks to pages; if the site ever needs more
-behavior, extend `site.js`.
+behavior, extend `site.js`. The one exception is a
+`<script type="application/ld+json">` block: it is inert data, not
+behavior, and the homepage and the five Landing pages each carry one (see
+**Prices** and "How to add a page" below). Executable inline scripts stay
+forbidden.
 
 The one exception is the Pages deploy workflow, which does run build steps
 of its own: the legal pack (see **Legal documents** below), the Share cards
@@ -115,7 +119,14 @@ live in the page itself.
    canonical link — its `og:title`/`og:description`/`og:url` mirror this
    page's own title, description and canonical, and its `og:image` path
    mirrors the new URL (see **Share cards** below). `og:type` is `article`
-   for a post, `website` for everything else.
+   for a post, `website` for everything else. A Landing page also copies
+   the `<script type="application/ld+json">` block from a sibling Landing
+   page, directly after the Share card block, and adapts it: one
+   `SoftwareApplication` with the Product's `name`, canonical `url`, the
+   page's own meta description, an `applicationCategory`, and its price
+   as `offers` (see **Prices** below). The homepage carries its own block
+   (an `Organization` and a `WebSite`, no price); no other kind of page
+   has one.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
    element in `<body>`, pointing at `<main id="main">`), the two-row
    header, the two-line footer, and the `site.js` script tag from a
@@ -149,22 +160,33 @@ and may repeat the Flagship figure; it has no organisation-total row. The
 homepage Flagship fee line uses that same Flagship-band headline and does
 not list cheaper bands or AI credit amounts.
 
-Every other Product still states a single price in **exactly one place** —
-one literal string, once, in the hero price line (`<p class="fee"
-id="price">…`; business Products: "€999 / year, excl. VAT"; Commonplace:
-"€99 / year, incl. VAT"). Those Products' ledger totals row does not
-repeat the number — it links back to the hero with `<a href="#price">see
-fee ↑</a>`. Do not introduce a second occurrence of the number anywhere
-else on those pages (ledger, meta description, etc. must paraphrase
-around it or link to `#price` instead of repeating the figure).
+Every other Product states a single price in its hero price line (`<p
+class="fee" id="price">…`; business Products: "€999 / year, excl. VAT";
+Commonplace: "€99 / year, incl. VAT"). The ledger's totals row on those
+pages repeats the number as it stands. Beyond that, the only other place
+a price may appear is the page's JSON-LD block (see below) — do not
+introduce it anywhere else on those pages (meta description, prose, etc.
+must paraphrase around it or link to `#price` instead of repeating the
+figure).
+
+Each Landing page's JSON-LD block (`<script type="application/ld+json">`
+in the `<head>`, after the Share card block) restates the price as
+machine-readable data: `price` as a number, `priceCurrency` `EUR`, and a
+`UnitPriceSpecification` with `valueAddedTaxIncluded` (false for the
+business Products and Compliance, true for Commonplace) and a one-year
+`billingDuration`. Compliance's block holds one `Offer` per band row of
+the table, named by that row's Frameworks, each per Framework. The block
+repeats only what the page shows: no ratings, no reviews, no AI credit
+amounts. The homepage block holds no price.
 
 The homepage mentions each Product's price **at most once** (Compliance in
 the hero fee line, Translation Tools in its clause tail, the other three on
 their cards). Prices are hand-written against what's actually configured
 in Stripe; there is no page-load fetch and no sync. A later Compliance
-price change edits the hero, the band table, and at most the homepage
-Flagship line. A later change to another Product is still one line on that
-Landing page plus at most one line on the homepage.
+price change edits the hero, the band table, the matching `Offer` in the
+page's JSON-LD block, and at most the homepage Flagship line. A later
+change to another Product edits its hero price line (and the ledger total
+row), that page's JSON-LD block, and at most one line on the homepage.
 
 ## Legal documents
 
