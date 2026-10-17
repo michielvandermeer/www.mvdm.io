@@ -65,7 +65,9 @@ Jekyll/Chirpy machinery; do not reintroduce any of it.
 
 The committed `sitemap.xml` lists addresses only. The deploy adds
 `<lastmod>` to every entry from git history (the date each page's own
-`index.html` was last committed); nobody writes it by hand.
+`index.html` was last committed); nobody writes it by hand. The deploy fails if an
+address in `sitemap.xml` has no page file, so removing or renaming a page
+includes updating its sitemap entry.
 
 ## Shared stylesheet and design tokens
 

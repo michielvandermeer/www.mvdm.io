@@ -55,11 +55,17 @@ jobs:
               else
                 file="${path#/}index.html"
               fi
+              # Git still dates a deleted path (with the deleting commit), so
+              # only the working tree can tell that the page file is gone.
+              if [ ! -f "$file" ]; then
+                echo "::error::Page file missing for $addr (looked for $file; deleted, or renamed with the old address left in sitemap.xml). Remove or correct the sitemap entry." >&2
+                exit 1
+              fi
               date="$(git log -1 --format=%cs -- "$file")"
               # A shallow checkout still answers with its one commit, which
               # would be the wrong date, so it counts as no date at all.
               if [ -z "$date" ] || [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
-                echo "::error::No git date for $addr (looked for $file; shallow checkout, missing file, or rename)" >&2
+                echo "::error::No git date for $addr (looked for $file; shallow checkout, or a file git has no commit for)" >&2
                 exit 1
               fi
               line="${line%%</loc>*}</loc><lastmod>${date}</lastmod>${line#*</loc>}"
