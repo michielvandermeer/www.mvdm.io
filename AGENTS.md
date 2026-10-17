@@ -18,8 +18,10 @@ Inter, IBM Plex Mono, loaded via `<link>` in every page's `<head>`). Don't
 add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`.
 
-The one exception is the legal pack: the Pages deploy workflow does run a
-build step — see **Legal documents** below.
+The one exception is the Pages deploy workflow, which does run build steps
+of its own: the legal pack (see **Legal documents** below), the Share cards
+(see **Share cards** below), and the sitemap's `<lastmod>` dates (see **Page
+/ URL structure** and "How to add a page" step 4).
 
 ## Page / URL structure
 
@@ -52,6 +54,10 @@ assets/images/, assets/img/        images and favicons
 `/consultancy/` is gone with no redirect — do not recreate it. There is no
 `_tabs/`, `_posts/`, `_projects/`, `_config.yml`, `Gemfile`, or any other
 Jekyll/Chirpy machinery; do not reintroduce any of it.
+
+The committed `sitemap.xml` lists addresses only. The deploy adds
+`<lastmod>` to every entry from git history (the date each page's own
+`index.html` was last committed); nobody writes it by hand.
 
 ## Shared stylesheet and design tokens
 
@@ -122,7 +128,9 @@ live in the page itself.
    dashes are `.foot-sep::before` on a wrapper that is not a link. Do
    not put `.foot-sep` on a link.
 4. Add the new URL to `sitemap.xml` — this is also what gets the new page a
-   Share card at the next deploy (see **Share cards** below).
+   Share card at the next deploy (see **Share cards** below). List the
+   address only: the deploy adds `<lastmod>` from git history, and nobody
+   writes it by hand.
 5. If it's a new post: add it to `blog/index.html`'s list (and to
    `feed.xml`'s items, most-recent-first) and its own `posts/<slug>/`
    directory.
@@ -157,7 +165,7 @@ Landing page plus at most one line on the homepage.
 
 ## Legal documents
 
-`/legal/` is the one place on the site with a build step. The five legal
+`/legal/` is where the deploy's build step renders PDFs. The five legal
 pages (`legal/terms/`, `legal/privacy/`, `legal/dpa/`, `legal/subprocessors/`,
 `legal/company/`) are ordinary hand-written pages like any other, but the
 Pages deploy workflow (`.github/workflows/pages-deploy.yml`) additionally
@@ -221,8 +229,10 @@ for why the pictures are deploy-time output rather than committed files.
 ## How to verify a change
 
 There is no test framework, and no build step for the pages themselves (the
-one exception is the legal pack — see **Legal documents** above, and note
-its PDFs/zip are deploy-time output you won't have locally). Verification
+one exception is the Pages deploy workflow's own steps — see **Legal
+documents** and **Share cards** above — and note the legal PDFs, zip, Share
+cards and sitemap `<lastmod>` dates are deploy-time output you won't have
+locally). Verification
 means serving the tree and looking at it:
 
 1. Serve the repository root with any static file server, e.g.

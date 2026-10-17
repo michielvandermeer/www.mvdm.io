@@ -31,6 +31,42 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history, so `git log` can date each page below. The default
+          # of one commit would stamp every page with this deploy's own date.
+          fetch-depth: 0
+
+      - name: Add lastmod to sitemap.xml from git history
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Rewrites the runner's copy only; the committed sitemap.xml keeps
+          # listing addresses. Each <loc> gets the date its own page file was
+          # last committed (shared files like the stylesheet never count).
+          tmp="$(mktemp)"
+          loc_re='<loc>([^<]*)</loc>'
+          while IFS= read -r line || [ -n "$line" ]; do
+            if [[ "$line" =~ $loc_re ]]; then
+              addr="${BASH_REMATCH[1]}"
+              path="${addr#https://mvdm.io}"
+              if [ "$path" = "/" ]; then
+                file="index.html"
+              else
+                file="${path#/}index.html"
+              fi
+              date="$(git log -1 --format=%cs -- "$file")"
+              # A shallow checkout still answers with its one commit, which
+              # would be the wrong date, so it counts as no date at all.
+              if [ -z "$date" ] || [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+                echo "::error::No git date for $addr (looked for $file; shallow checkout, missing file, or rename)" >&2
+                exit 1
+              fi
+              line="${line%%</loc>*}</loc><lastmod>${date}</lastmod>${line#*</loc>}"
+            fi
+            printf '%s\n' "$line"
+          done < sitemap.xml > "$tmp"
+          mv "$tmp" sitemap.xml
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
