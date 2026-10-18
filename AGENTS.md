@@ -154,7 +154,8 @@ live in the page itself.
    point it at that Product's own application. Hero and other in-page Get
    started buttons stay pointed where they belong. The footer is
    `.foot-inner`: identity on `.foot-id`, Legal pages on
-   `.foot-legal`. Copy that footer wrap from a sibling page exactly —
+   `.foot-legal`, which starts with a link to the `/legal/` hub that every
+   copy must keep. Copy that footer wrap from a sibling page exactly —
    dashes are `.foot-sep::before` on a wrapper that is not a link. Do
    not put `.foot-sep` on a link. Every `<img>` carries `width` and
    `height` equal to the pixel size of the file its `src` serves (not the
