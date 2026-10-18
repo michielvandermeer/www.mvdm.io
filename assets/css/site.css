@@ -412,14 +412,19 @@ main { flex: 1; }
 
 .list { list-style: none; margin: 0 0 26px; }
 .list li {
-  padding: 10px 0;
+  position: relative;
+  padding: 10px 0 10px 1.8em;
   border-bottom: 1px dashed var(--hairline);
   font-size: 15.5px;
   color: var(--ink-soft);
-  display: flex;
-  gap: 12px;
 }
-.list li::before { content: "—"; color: var(--emerald); }
+.list li::before {
+  content: "—";
+  color: var(--emerald);
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
 
 /* ---------- three-card grid ---------- */
 .cards {
