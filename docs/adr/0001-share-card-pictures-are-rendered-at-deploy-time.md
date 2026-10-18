@@ -18,9 +18,7 @@ together, so they cannot contradict each other.
 
 The cost is real and worth stating. You cannot open a card locally without
 running the deploy step yourself, so a design change to the template is checked
-by deploying or by driving Chromium by hand. The pictures are also a hard
-dependency on a network fetch at deploy time, because the card is set in Source
-Serif 4 and IBM Plex Mono from Google Fonts. Both failure modes are loud rather
-than quiet: the render step runs under `set -euo pipefail`, so a card that
-cannot be drawn fails the deploy instead of publishing a page that points at a
-missing picture.
+by deploying or by driving Chromium by hand. That failure is loud rather than
+quiet: the render step runs under `set -euo pipefail`, so a card that cannot be
+drawn fails the deploy instead of publishing a page that points at a missing
+picture.

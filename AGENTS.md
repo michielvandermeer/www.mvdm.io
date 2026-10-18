@@ -13,8 +13,11 @@ Plain static HTML, hand-written CSS, and one small hand-written JS file
 `<script src="/assets/js/site.js" defer></script>` at the end of `<body>`).
 No generator, no Node, no Ruby, no Bundler, and no build step for the pages
 themselves — GitHub Pages serves the repository root directly, exactly as
-committed. The only external dependency is Google Fonts (Source Serif 4,
-Inter, IBM Plex Mono, loaded via `<link>` in every page's `<head>`). Don't
+committed. The site has no external dependency: it serves its own fonts
+(Source Serif 4, Inter, IBM Plex Mono) from `assets/fonts/` through the
+`@font-face` rules at the top of `site.css`, and no page may request
+`fonts.googleapis.com` or `fonts.gstatic.com` (see "How to add a page"
+step 2 for the check). Don't
 add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
@@ -115,8 +118,12 @@ live in the page itself.
    so the URL has no file extension).
 2. Copy the `<head>` block from a page of the same kind (a Landing page
    from another Landing page, a post from another post, etc.) — same
-   Google Fonts `<link>`, same favicon links, same `assets/css/site.css`
-   link. Give it its own `<title>` and `<meta name="description">`, both
+   Inter preload link (`<link rel="preload" as="font" type="font/woff2"
+   crossorigin href="/assets/fonts/inter-latin.woff2">`, directly before
+   the stylesheet link, and no other font preload), same favicon links,
+   same `assets/css/site.css` link. A page never links Google Fonts; the
+   check is `grep -rlE "googleapis|gstatic" --include=*.html
+   --exclude-dir=.agents .`, which must list nothing. Give it its own `<title>` and `<meta name="description">`, both
    distinct from every other page's, and its own `<link rel="canonical">`.
    Copy the Share card block too (`og:title`, `og:description`, `og:url`,
    `og:image` and the rest) from that same sibling page, directly after the

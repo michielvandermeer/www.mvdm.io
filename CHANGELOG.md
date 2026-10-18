@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-18: Fonts served from mvdm.io
+Every page now serves its own typefaces from mvdm.io instead of loading them from Google, so opening a page no longer sends your address to Google, and text appears at once instead of waiting for Google's font stylesheet. The pages look the same. The Privacy Notice loses its Google Fonts section, its remaining sections are renumbered 1 to 10, and it carries the date 18 October 2026.
+
 ## 2026-10-18: Compliance page lists BIO2 and Dutch Arbo, with questions answered
 The Compliance page now lists BIO2 and Dutch Arbo with the other frameworks, in the hero, the framework catalogs and the pricing table. It also has a new section, Questions buyers ask, that answers common questions about frameworks, cost, the free trial and billing.
 
