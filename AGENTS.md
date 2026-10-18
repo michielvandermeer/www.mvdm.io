@@ -146,7 +146,10 @@ live in the page itself.
    `.foot-inner`: identity on `.foot-id`, Legal pages on
    `.foot-legal`. Copy that footer wrap from a sibling page exactly —
    dashes are `.foot-sep::before` on a wrapper that is not a link. Do
-   not put `.foot-sep` on a link.
+   not put `.foot-sep` on a link. Every `<img>` carries `width` and
+   `height` equal to the pixel size of the file its `src` serves (not the
+   size it displays at), and `loading="lazy"` only when it starts below
+   the first screen.
 4. Add the new URL to `sitemap.xml` — this is also what gets the new page a
    Share card at the next deploy (see **Share cards** below). List the
    address only: the deploy adds `<lastmod>` from git history, and nobody

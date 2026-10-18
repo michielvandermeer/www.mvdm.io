@@ -7,6 +7,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; }
 img, svg { display: block; max-width: 100%; }
+img { height: auto; }
 a { color: inherit; }
 button { font: inherit; cursor: pointer; }
 
