@@ -585,6 +585,7 @@ main { flex: 1; }
 .prose li { margin-bottom: 8px; }
 .prose a { color: var(--pine); text-decoration-color: var(--hairline); }
 .prose a:hover { text-decoration-color: var(--pine); }
+.prose a { overflow-wrap: anywhere; }
 .prose strong { color: var(--ink); font-weight: 600; }
 .prose blockquote {
   border-left: 3px solid var(--emerald);
