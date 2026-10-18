@@ -330,6 +330,10 @@ main { flex: 1; }
 .cols h3 { font-size: 20px; margin-bottom: 10px; }
 .cols p { font-size: 15.5px; color: var(--ink-soft); }
 
+.faq h3 { font-size: 20px; margin: 32px 0 8px; }
+.faq h3:first-child { margin-top: 0; }
+.faq p { max-width: 68ch; color: var(--ink-soft); }
+
 .more { margin-top: 34px; }
 .more a {
   color: var(--pine);

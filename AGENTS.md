@@ -19,7 +19,8 @@ add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
 behavior, and the homepage and the five Landing pages each carry one (see
-**Prices** and "How to add a page" below). Executable inline scripts stay
+**Prices** and "How to add a page" below; the Compliance page's block also
+holds a `FAQPage`). Executable inline scripts stay
 forbidden.
 
 The one exception is the Pages deploy workflow
@@ -130,7 +131,9 @@ live in the page itself.
    page, directly after the Share card block, and adapts it: one
    `SoftwareApplication` with the Product's `name`, canonical `url`, the
    page's own meta description, an `applicationCategory`, and its price
-   as `offers` (see **Prices** below). The homepage carries its own block
+   as `offers` (see **Prices** below). The Compliance page's block also
+   holds a `FAQPage` whose answers equal the visible answers of its
+   `#faq` section. The homepage carries its own block
    (an `Organization` and a `WebSite`, no price); no other kind of page
    has one.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
@@ -186,14 +189,20 @@ business Products and Compliance, true for Commonplace) and a one-year
 `billingDuration`. Compliance's block holds one `Offer` per band row of
 the table, named by that row's Frameworks, each per Framework. The block
 repeats only what the page shows: no ratings, no reviews, no AI credit
-amounts. The homepage block holds no price.
+amounts. The homepage block holds no price. The Compliance page's block
+holds one `SoftwareApplication` and one `FAQPage` (in a `@graph`); the
+`FAQPage`'s answers are the same strings as the visible answers in the
+page's `#faq` section, with no markup in them. The FAQ's cost answer and its
+billing example repeat the Compliance fees, and the cost answer names the
+frameworks of each fee row, as the matching `Offer` does.
 
 The homepage mentions each Product's price **at most once** (Compliance in
 the hero fee line, Translation Tools in its clause tail, the other three on
 their cards). Prices are hand-written against what's actually configured
 in Stripe; there is no page-load fetch and no sync. A later Compliance
 price change edits the hero, the band table, the matching `Offer` in the
-page's JSON-LD block, and at most the homepage Flagship line. A later
+page's JSON-LD block, the FAQ's cost answer and billing example (in the
+visible FAQ and in the JSON-LD), and at most the homepage Flagship line. A later
 change to another Product edits its hero price line (and the ledger total
 row), that page's JSON-LD block, and at most one line on the homepage.
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-18: Compliance page lists BIO2 and Dutch Arbo, with questions answered
+The Compliance page now lists BIO2 and Dutch Arbo with the other frameworks, in the hero, the framework catalogs and the pricing table. It also has a new section, Questions buyers ask, that answers common questions about frameworks, cost, the free trial and billing.
+
 ## 2026-10-07: Logs kept at most 90 days
 Section 7 of the Data Processing Agreement now says that application logs, error reports, and traces are kept for at most 90 days. The old line said logs were kept for 7 to 14 days, which did not count the error reports and logs that go to Sentry. The limit covers mvdmio's own server and Sentry alike, and the agreement still carries the date 7 October 2026.
 
