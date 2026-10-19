@@ -21,9 +21,10 @@ step 2 for the check). Don't
 add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
-behavior, and the homepage and the five Landing pages each carry one (see
-**Prices** and "How to add a page" below; the Compliance page's block also
-holds a `FAQPage`). Executable inline scripts stay
+behavior, and the homepage, the five Landing pages and the Compliance
+Framework page each carry one (see **Prices** and "How to add a page"
+below; the Compliance page's and the Framework page's blocks also hold a
+`FAQPage`). Executable inline scripts stay
 forbidden.
 
 The one exception is the Pages deploy workflow
@@ -40,7 +41,8 @@ Every URL is a directory containing an `index.html`, so links never carry a
 ```
 index.html                         /            (homepage)
 404.html                           served for unmatched paths
-products/<name>/index.html         /products/<name>/   (5 Landing pages)
+products/<name>/index.html         /products/<name>/   (5 Product Landing pages)
+products/compliance/iso-27001/index.html   /products/compliance/iso-27001/   (Framework page)
 blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
 projects/index.html                /projects/   (Resume index)
@@ -140,7 +142,9 @@ live in the page itself.
    page's own meta description, an `applicationCategory`, and its price
    as `offers` (see **Prices** below). The Compliance page's block also
    holds a `FAQPage` whose answers equal the visible answers of its
-   `#faq` section. The homepage carries its own block
+   `#faq` section, and so does the block of the Compliance Framework page
+   (`products/compliance/iso-27001/`), which holds one `Offer` for its
+   Framework. The homepage carries its own block
    (an `Organization` and a `WebSite`, no price); no other kind of page
    has one.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
@@ -196,8 +200,10 @@ machine-readable data: `price` as a number, `priceCurrency` `EUR`, and a
 business Products and Compliance, true for Commonplace) and a one-year
 `billingDuration`. Compliance's block holds one `Offer` per band row of
 the table, named by that row's Frameworks, each per Framework. The block
-repeats only what the page shows: no ratings, no reviews, and the `Offer`s
-carry no AI credit amounts. The homepage block holds no price. The
+repeats only what the page shows: no ratings, no reviews, and the `Offer`
+(price) entries carry no AI credit amounts. A `FAQPage` answer may name an
+AI credit amount when it equals the visible answer. The homepage block
+holds no price. The
 Compliance page's block holds one `SoftwareApplication` and one `FAQPage`
 (in a `@graph`); the `FAQPage`'s answers are the same strings as the
 visible answers in the page's `#faq` section, with no markup in them, so
@@ -212,8 +218,12 @@ their cards). Prices are hand-written against what's actually configured
 in Stripe; there is no page-load fetch and no sync. A later Compliance
 price change edits the hero, the band table, the matching `Offer` in the
 page's JSON-LD block, the FAQ's cost answer and billing example (in the
-visible FAQ and in the JSON-LD), and at most the homepage Flagship line. A later
-change to another Product edits its hero price line (and the ledger total
+visible FAQ and in the JSON-LD), and at most the homepage Flagship line. It
+also edits the Framework page `products/compliance/iso-27001/`: its meta
+description and `og:description` (which state the €999 fee and equal the
+JSON-LD `description`), its Pricing and trial section with the €999 plus
+€199 example, its FAQ cost answer (visible and in the JSON-LD) and its
+`Offer`. A later change to another Product edits its hero price line (and the ledger total
 row), that page's JSON-LD block, and at most one line on the homepage.
 
 ## Legal documents

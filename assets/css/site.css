@@ -291,6 +291,7 @@ main { flex: 1; }
   padding: 84px 0 72px;
   align-items: center;
 }
+.hero-single { grid-template-columns: 1fr; }
 .eyebrow {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 13px;

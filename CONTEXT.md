@@ -23,6 +23,10 @@ The Product the homepage leads with. Currently Compliance, followed by Translati
 A Product's marketing page on this site: benefit-led copy, pricing, and calls to action. Not documentation and not an info page.
 _Avoid_: Product page, info page
 
+**Framework page**:
+A page under a Product's Landing page that is about one Framework of Compliance, such as ISO 27001. It is not a Landing page, which stays a Product's marketing page.
+_Avoid_: Landing page
+
 **Resume**:
 The pages describing past client and employer work (formerly called "Projects" on the site).
 _Avoid_: Projects, portfolio
