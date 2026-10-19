@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-19: Homepage and Compliance wording no longer imply one audit covers every framework
+The homepage hero now says the evidence and registers you keep up once are reused for every framework they apply to, and no longer says audits or findings are shared. The Compliance page's question and answer, the hero label and the homepage card now say one record can meet requirements in several frameworks, and that a record satisfies a control. No counting language remains.
+
 ## 2026-10-18: Fonts served from mvdm.io
 Every page now serves its own typefaces from mvdm.io instead of loading them from Google, so opening a page no longer sends your address to Google, and text appears at once instead of waiting for Google's font stylesheet. The pages look the same. The Privacy Notice loses its Google Fonts section, its remaining sections are renumbered 1 to 10, and it carries the date 18 October 2026.
 
