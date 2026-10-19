@@ -11,7 +11,7 @@ index.html                  Homepage
 404.html                     Not-found page
 products/<name>/index.html   The 5 Landing pages (compliance, translation-tools,
                               health-check, statistics, commonplace)
-nl/gemeenten/index.html      Dutch page for gemeenten (Compliance)
+nl/gemeenten/index.html      Dutch page (Compliance, for gemeenten)
 blog/index.html              Blog index
 posts/<slug>/index.html      Blog posts
 projects/index.html          Resume index

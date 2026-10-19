@@ -27,6 +27,10 @@ _Avoid_: Product page, info page
 A page under a Product's Landing page that is about one Framework of Compliance, such as ISO 27001. It is not a Landing page, which stays a Product's marketing page.
 _Avoid_: Landing page
 
+**Dutch page**:
+A page in Dutch for one Dutch-speaking audience, such as `/nl/gemeenten/` for gemeenten (Dutch municipalities). It is not a translation of an English page: it has no English twin and no `hreflang`. It is not a Landing page, which stays a Product's marketing page, and not a Framework page.
+_Avoid_: Dutch Landing page, translated page, localised page
+
 **Resume**:
 The pages describing past client and employer work (formerly called "Projects" on the site).
 _Avoid_: Projects, portfolio

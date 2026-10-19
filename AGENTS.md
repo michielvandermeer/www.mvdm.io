@@ -22,7 +22,7 @@ add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
 behavior, and the homepage, the five Landing pages, the Compliance
-Framework page and the Dutch page for gemeenten each carry one (see
+Framework page and the Dutch page each carry one (see
 **Prices** and "How to add a page" below; the Compliance page's, the
 Framework page's and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
 forbidden.
@@ -43,7 +43,7 @@ index.html                         /            (homepage)
 404.html                           served for unmatched paths
 products/<name>/index.html         /products/<name>/   (5 Product Landing pages)
 products/compliance/iso-27001/index.html   /products/compliance/iso-27001/   (Framework page)
-nl/gemeenten/index.html            /nl/gemeenten/   (Dutch page for gemeenten)
+nl/gemeenten/index.html            /nl/gemeenten/   (Dutch page, for gemeenten)
 blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
 projects/index.html                /projects/   (Resume index)
@@ -145,7 +145,7 @@ live in the page itself.
    holds a `FAQPage` whose answers equal the visible answers of its
    `#faq` section, and so does the block of the Compliance Framework page
    (`products/compliance/iso-27001/`), which holds one `Offer` for its
-   Framework. So does the block of the Dutch page for gemeenten
+   Framework. So does the block of the Dutch page
    (`nl/gemeenten/`), which holds one `Offer` each for BIO2 and the AVG
    and has `inLanguage` `nl`. The homepage carries its own block
    (an `Organization` and a `WebSite`, no price); no other kind of page
