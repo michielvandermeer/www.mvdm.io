@@ -399,6 +399,7 @@ main { flex: 1; }
   text-decoration: none;
   border-bottom: 1px solid var(--emerald);
 }
+.more + .actions { margin-top: 30px; }
 
 .duo {
   display: grid;
