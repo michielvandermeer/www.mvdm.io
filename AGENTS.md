@@ -153,8 +153,14 @@ live in the page itself.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
    element in `<body>`, pointing at `<main id="main">`), the two-row
    header, the two-line footer, and the `site.js` script tag from a
-   sibling page exactly — don't invent a second nav. The header's upper
-   row is `.site-util` (Open source, Blog, About, Resume); the lower row
+   sibling page exactly — don't invent a second nav. The one exception
+   is a page whose language is not English: it keeps the frame in
+   English, puts `lang="en"` on the skip link, on `<header>` and on
+   `<footer>` as the one change to the copied frame (so a screen reader
+   reads the English frame with English pronunciation), and sets its own
+   language on `<html>` (the Dutch page uses `lang="nl"`). A page in
+   English carries no `lang` on those three elements, so a frame copied
+   from the Dutch page loses them. The header's upper row is `.site-util` (Open source, Blog, About, Resume); the lower row
    is `.site-nav-inner` / `#nav-links` (the five Product names, then Get
    started). Get started in that header always opens
    `https://compliance.mvdm.io`, including on a new Landing page — do not
