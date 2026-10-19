@@ -184,8 +184,11 @@ Compliance is billed per Framework. Its Landing page hero holds the
 Flagship band as a headline — one literal string in `<p class="fee"
 id="price">…`. The Compliance ledger lists every distinct Framework fee
 and may repeat the Flagship figure; it has no organisation-total row. The
-homepage Flagship fee line uses that same Flagship-band headline and does
-not list cheaper bands or AI credit amounts.
+homepage Flagship fee line uses that same Flagship-band headline and may
+add one sentence giving a "from" price for the other Frameworks. That
+"from" price equals the lowest Framework fee on the Compliance Landing
+page ledger (€199 today), so a fee change keeps the two in step. The line
+lists no cheaper band individually and names no AI credit amount.
 
 Every other Product states a single price in its hero price line (`<p
 class="fee" id="price">…`; business Products: "€999 / year, excl. VAT";
