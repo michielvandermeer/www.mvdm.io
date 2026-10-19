@@ -196,11 +196,13 @@ machine-readable data: `price` as a number, `priceCurrency` `EUR`, and a
 business Products and Compliance, true for Commonplace) and a one-year
 `billingDuration`. Compliance's block holds one `Offer` per band row of
 the table, named by that row's Frameworks, each per Framework. The block
-repeats only what the page shows: no ratings, no reviews, no AI credit
-amounts. The homepage block holds no price. The Compliance page's block
-holds one `SoftwareApplication` and one `FAQPage` (in a `@graph`); the
-`FAQPage`'s answers are the same strings as the visible answers in the
-page's `#faq` section, with no markup in them. The FAQ's cost answer and its
+repeats only what the page shows: no ratings, no reviews, and the `Offer`s
+carry no AI credit amounts. The homepage block holds no price. The
+Compliance page's block holds one `SoftwareApplication` and one `FAQPage`
+(in a `@graph`); the `FAQPage`'s answers are the same strings as the
+visible answers in the page's `#faq` section, with no markup in them, so
+they carry whatever the visible answer says, including the cost answer's AI
+credit sentence ("$10 or $5, billed in USD"). The FAQ's cost answer and its
 billing example repeat the Compliance fees, and the cost answer names the
 frameworks of each fee row, as the matching `Offer` does.
 

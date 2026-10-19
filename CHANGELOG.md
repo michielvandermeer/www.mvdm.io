@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-19: Compliance page and homepage wording changed
+The Compliance page heading now reads "ISO 27001, SOC 2 and GDPR compliance software", and the line under it opens with "Your frameworks overlap. Your work doesn't have to." The body, the trial note, the register, framework, assistant and task sections, the pricing table, the closing block and four answers in Questions buyers ask are reworded in plainer language. Each pricing row now says how much AI credit a framework includes and that it is billed in USD, and the answer on one record and several frameworks says an audit still covers one standard. On the homepage, the hero, the price line and the three Compliance cards use the same wording, and the framework strip now lists all eleven frameworks, including BIO2 and Dutch Arbo. The arrows in captions and links are gone.
+
 ## 2026-10-19: Homepage and Compliance wording no longer imply one audit covers every framework
 The homepage hero now says the evidence and registers you keep up once are reused for every framework they apply to, and no longer says audits or findings are shared. The Compliance page's question and answer, the hero label and the homepage card now say one record can meet requirements in several frameworks, and that a record satisfies a control. No counting language remains.
 
