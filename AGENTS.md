@@ -223,7 +223,14 @@ also edits the Framework page `products/compliance/iso-27001/`: its meta
 description and `og:description` (which state the €999 fee and equal the
 JSON-LD `description`), its Pricing and trial section with the €999 plus
 €199 example, its FAQ cost answer (visible and in the JSON-LD) and its
-`Offer`. A later change to another Product edits its hero price line (and the ledger total
+`Offer`. A later change to an AI credit amount edits the `$10` and `$5` row
+labels of the band table and the FAQ cost answer on
+`products/compliance/index.html` (the cost answer exists twice: as visible
+text and as the `FAQPage` answer in the page's JSON-LD block, whose last
+sentence names the amounts). On `products/compliance/iso-27001/` it edits the
+Pricing and trial section's sentence about included credit and the FAQ cost
+answer, visible and in the JSON-LD. The `Offer` entries need no edit for it
+(see the rule above). A later change to another Product edits its hero price line (and the ledger total
 row), that page's JSON-LD block, and at most one line on the homepage.
 
 ## Legal documents
