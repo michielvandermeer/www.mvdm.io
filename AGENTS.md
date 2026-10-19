@@ -231,9 +231,10 @@ JSON-LD `description`), its Pricing and trial section with the €999 plus
 €199 example, its FAQ cost answer (visible and in the JSON-LD) and its
 `Offer`. It also edits the Dutch page `nl/gemeenten/`: its meta description
 and `og:description` (which state the BIO2 and AVG fees and equal the
-JSON-LD `description`), its "Wat het kost" section, its FAQ cost and
-assistant answers (visible and in the JSON-LD) and its two `Offer`s. A later change to an AI credit amount edits the `$10` and `$5` row
-labels of the band table and the FAQ cost answer on
+JSON-LD `description`), its "Wat het kost" section, its FAQ cost answer
+(visible and in the JSON-LD) and its two `Offer`s. A later change to an AI
+credit amount edits the `$10` and `$5` row labels of the band table and the
+FAQ cost answer on
 `products/compliance/index.html` (the cost answer exists twice: as visible
 text and as the `FAQPage` answer in the page's JSON-LD block, whose last
 sentence names the amounts). On `products/compliance/iso-27001/` it edits the
