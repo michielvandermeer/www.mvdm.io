@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-21: Data Processing Agreement promises breach notification within 48 hours
+Section 11 of the Data Processing Agreement now says mvdm.io will notify the Customer of a personal-data breach without undue delay, and within 48 hours, after becoming aware of it. Before, it gave no number of hours. The rest of the agreement is unchanged, and the page now carries the effective date 21 October 2026.
+
 ## 2026-10-20: Homepage and Compliance descriptions no longer call Compliance certification-ready
 The descriptions of the homepage and the Compliance page, in search results and in link previews, and the description in the Compliance page's search-engine data no longer call Compliance certification-ready or count its frameworks. They now describe it as a management system for running frameworks and name them.
 
