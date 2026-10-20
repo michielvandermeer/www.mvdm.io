@@ -183,6 +183,10 @@ live in the page itself.
    directory.
 6. If it's a new Resume entry: add it to `projects/index.html`'s tile grid
    in the same order.
+7. If the new page is a Framework page, or another page built around one
+   Framework like the Dutch page, link that Framework's name in the
+   homepage's framework strip (the `.strip` section under the hero) in the
+   same change. A link to a page in Dutch carries `hreflang="nl"`.
 
 ## Prices
 
