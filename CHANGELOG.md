@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-20: Homepage and Compliance descriptions no longer call Compliance certification-ready
+The descriptions of the homepage and the Compliance page, in search results and in link previews, and the description in the Compliance page's search-engine data no longer call Compliance certification-ready or count its frameworks. They now describe it as a management system for running frameworks and name them.
+
 ## 2026-10-20: Compliance wording matches the application
 The ISO 27001 page now says Compliance scores each risk on a 5×5 likelihood and impact matrix and that treatment actions lower the residual risk score, in the page and in its answer about risks. The lists of registers on the ISO 27001 page, the Compliance page and the homepage no longer name controls and audits, which Compliance has no pages for. The llms.txt file no longer calls Compliance certification-ready or counts its frameworks, and names them instead.
 
