@@ -21,7 +21,7 @@ step 2 for the check). Don't
 add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
-behavior, and the homepage, the five Landing pages, the two Compliance
+behavior, and the homepage, the five Landing pages, the three Compliance
 Framework pages and the Dutch page each carry one (see
 **Prices** and "How to add a page" below; the Compliance page's, the
 Framework pages' and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
@@ -44,6 +44,7 @@ index.html                         /            (homepage)
 products/<name>/index.html         /products/<name>/   (5 Product Landing pages)
 products/compliance/iso-27001/index.html   /products/compliance/iso-27001/   (Framework page)
 products/compliance/iso-42001/index.html   /products/compliance/iso-42001/   (Framework page)
+products/compliance/eu-ai-act/index.html   /products/compliance/eu-ai-act/   (Framework page)
 nl/gemeenten/index.html            /nl/gemeenten/   (Dutch page, for gemeenten)
 blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
@@ -145,7 +146,8 @@ live in the page itself.
    as `offers` (see **Prices** below). The Compliance page's block also
    holds a `FAQPage` whose answers equal the visible answers of its
    `#faq` section, and so does the block of each Compliance Framework page
-   (`products/compliance/iso-27001/`, `products/compliance/iso-42001/`),
+   (`products/compliance/iso-27001/`, `products/compliance/iso-42001/`,
+   `products/compliance/eu-ai-act/`),
    which holds one `Offer` for its Framework. So does the block of the Dutch page
    (`nl/gemeenten/`), which holds one `Offer` each for BIO2 and the AVG
    and has `inLanguage` `nl`. The homepage carries its own block
@@ -244,7 +246,11 @@ JSON-LD `description`), its Pricing and trial section with the €999 plus
 its meta description and `og:description` (which state the €749 fee and equal
 the JSON-LD `description`), its Pricing and trial section with the €749 plus
 €999 example (a €999 change edits that example too), its FAQ cost answer
-(visible and in the JSON-LD) and its `Offer`. It also edits the Dutch page `nl/gemeenten/`: its meta description
+(visible and in the JSON-LD) and its `Offer`. It also edits the Framework page `products/compliance/eu-ai-act/`:
+its meta description and `og:description` (which state the €199 fee and equal
+the JSON-LD `description`), its Pricing and trial section with the €199 plus
+€749 example (a €749 change edits that example too), its FAQ cost answer (visible and in the JSON-LD) and its `Offer`.
+It also edits the Dutch page `nl/gemeenten/`: its meta description
 and `og:description` (which state the BIO2 and AVG fees and equal the
 JSON-LD `description`), its "Wat het kost" section, its FAQ cost answer
 (visible and in the JSON-LD) and its two `Offer`s. A later change to an AI
@@ -256,6 +262,8 @@ sentence names the amounts). On `products/compliance/iso-27001/` it edits the
 Pricing and trial section's sentence about included credit and the FAQ cost
 answer, visible and in the JSON-LD. On `products/compliance/iso-42001/` it
 edits the Pricing and trial section's sentence about included credit and the
+FAQ cost answer, visible and in the JSON-LD. On `products/compliance/eu-ai-act/`
+it edits the Pricing and trial section's sentence about included credit and the
 FAQ cost answer, visible and in the JSON-LD. On `nl/gemeenten/` it edits the "Wat het
 kost" section's credit sentence and the FAQ assistant answer, visible and in
 the JSON-LD. The `Offer` entries need no edit for it
