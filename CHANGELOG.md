@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-21: Compliance pages no longer say "every framework" outside the trial line
+The headings of the register section on the ISO 42001 and EU AI Act pages now read "Shared registers, risks and review tasks". The answer on one record and several frameworks on the Compliance page, in the page and in its search-engine data, now says mappings connect requirements across the frameworks you adopt. The ISO 27001 page now says a record can meet requirements in the other frameworks it maps to. The trial line, which says the trial gives full access to every framework, is unchanged.
+
 ## 2026-10-21: Data Processing Agreement promises breach notification within 48 hours
 Section 11 of the Data Processing Agreement now says mvdm.io will notify the Customer of a personal-data breach without undue delay, and within 48 hours, after becoming aware of it. Before, it gave no number of hours. The rest of the agreement is unchanged, and the page now carries the effective date 21 October 2026.
 
