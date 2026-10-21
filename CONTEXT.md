@@ -55,6 +55,10 @@ _Avoid_: info page, legal centre
 The one contract that lets a customer use any Product. Written product-neutral, with a subheading for whatever holds for one Product alone.
 _Avoid_: Customer Agreement, User Agreement; a separate contract per Product
 
+**Partner terms**:
+The Legal page holding the Partner programme's contract: the Commission a Partner earns, payment through Stripe, and the self-billing agreement under which mvdm.io writes the Partner's invoices. Written for Partners, not customers.
+_Avoid_: Partner agreement, affiliate terms
+
 **Privacy Notice**:
 The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, and billing.
 _Avoid_: Privacy Policy

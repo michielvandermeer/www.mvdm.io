@@ -51,11 +51,12 @@ blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
 projects/index.html                /projects/   (Resume index)
 projects/<slug>/index.html         /projects/<slug>/    (8 Resume entries)
-legal/index.html                   /legal/      (lists the 5 legal pages, links the pack)
-legal/<doc>/index.html             /legal/<doc>/        (5 Legal pages: terms,
-                                   privacy, dpa, subprocessors, company)
+legal/index.html                   /legal/      (lists the 6 legal pages, links the pack)
+legal/<doc>/index.html             /legal/<doc>/        (6 Legal pages: terms,
+                                   privacy, dpa, subprocessors, company,
+                                   partners)
 legal/<doc>/<doc>.pdf              deploy-generated PDF beside each legal page
-legal/mvdmio-legal-pack.zip        deploy-generated pack of all 5 (see
+legal/mvdmio-legal-pack.zip        deploy-generated pack of all 6 (see
                                    Legal documents section below)
 about/index.html                   /about/
 open-source/index.html             /open-source/
@@ -279,12 +280,12 @@ row), that page's JSON-LD block, and at most one line on the homepage.
 
 ## Legal documents
 
-`/legal/` is where the deploy's build step renders PDFs. The five legal
+`/legal/` is where the deploy's build step renders PDFs. The six legal
 pages (`legal/terms/`, `legal/privacy/`, `legal/dpa/`, `legal/subprocessors/`,
-`legal/company/`) are ordinary hand-written pages like any other, but the
+`legal/company/`, `legal/partners/`) are ordinary hand-written pages like any other, but the
 Pages deploy workflow (`.github/workflows/pages-deploy.yml`) additionally
 renders each one to a PDF beside its `index.html` with headless Chromium,
-then zips the five flat (no folder, no cover sheet, no manifest) into
+then zips the six flat (no folder, no cover sheet, no manifest) into
 `legal/mvdmio-legal-pack.zip` — before the artifact upload step, so the
 published site carries them. That zip URL is a constant the six mvdmio
 apps link at; don't rename it without checking `LegalPageUrls` in the
@@ -303,7 +304,7 @@ together, so they can't disagree. If you edit a legal page's content, the
 next deploy regenerates its PDF and the pack automatically; there is
 nothing else to do.
 
-`legal/index.html` lists the five documents and links the pack; add a new
+`legal/index.html` lists the six documents and links the pack; add a new
 legal document to it (and to `sitemap.xml`) the same way you'd add any other
 page — see "How to add a page" above.
 

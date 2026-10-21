@@ -19,4 +19,4 @@
 
 - [About](https://mvdm.io/about/): Michiel van der Meer, the software engineer and architect who builds and runs mvdmio, with two decades in industrial automation.
 - [Open source](https://mvdm.io/open-source/): the MIT-licensed .NET packages mvdmio maintains on GitHub.
-- [Legal](https://mvdm.io/legal/): Terms of Service, Privacy Notice, Data Processing Agreement, Subprocessor list and Company details, each as a PDF and all five as one pack.
+- [Legal](https://mvdm.io/legal/): Terms of Service, Privacy Notice, Data Processing Agreement, Subprocessor list, Company details and Partner terms, each as a PDF and all six as one pack.

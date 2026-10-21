@@ -106,6 +106,7 @@ jobs:
             ["dpa", "data-processing-agreement.pdf"],
             ["subprocessors", "subprocessor-list.pdf"],
             ["company", "company-details.pdf"],
+            ["partners", "partner-terms.pdf"],
           ];
 
           // Page list: every URL in sitemap.xml, plus 404.html which is
@@ -234,7 +235,8 @@ jobs:
             legal/privacy/privacy-notice.pdf \
             legal/dpa/data-processing-agreement.pdf \
             legal/subprocessors/subprocessor-list.pdf \
-            legal/company/company-details.pdf
+            legal/company/company-details.pdf \
+            legal/partners/partner-terms.pdf
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
