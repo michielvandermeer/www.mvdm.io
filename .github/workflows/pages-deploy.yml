@@ -230,13 +230,7 @@ jobs:
           })();
           NODE
 
-          zip -j legal/mvdmio-legal-pack.zip \
-            legal/terms/terms-of-service.pdf \
-            legal/privacy/privacy-notice.pdf \
-            legal/dpa/data-processing-agreement.pdf \
-            legal/subprocessors/subprocessor-list.pdf \
-            legal/company/company-details.pdf \
-            legal/partners/partner-terms.pdf
+          zip -j legal/mvdmio-legal-pack.zip legal/*/*.pdf
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
