@@ -59,8 +59,24 @@ _Avoid_: Customer Agreement, User Agreement; a separate contract per Product
 The Legal page holding the Partner programme's contract: the Commission a Partner earns, payment through Stripe, and the self-billing agreement under which mvdm.io writes the Partner's invoices. Written for Partners, not customers.
 _Avoid_: Partner agreement, affiliate terms
 
+**Partner**:
+A person or organisation mvdm.io has accepted to bring customers to the Products and earn a Commission. Not a customer reseller and not a Product user by that fact.
+_Avoid_: affiliate, reseller
+
+**Referral**:
+A customer account tied to one Partner, either because the customer registered through the Partner's link or named the Partner at registration, or because mvdm.io set it.
+_Avoid_: lead
+
+**Commission**:
+The share of a Referral's paid licence charges that a Partner earns. AI credit packs and trials earn none.
+_Avoid_: payout, bonus
+
+**Self-billing invoice**:
+The invoice mvdm.io issues in a Partner's name for each Commission payment, so the Partner does not invoice for it.
+_Avoid_: Partner invoice
+
 **Privacy Notice**:
-The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, and billing.
+The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, and billing. It also covers a Partner's billing details and payment records (billing address, tax ID, Commission payments and Self-billing invoices), and names a Partner as a recipient of an account's name and the Commission each invoice earned.
 _Avoid_: Privacy Policy
 
 **Data Processing Agreement**:
