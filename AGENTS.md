@@ -55,7 +55,12 @@ legal/index.html                   /legal/      (lists the 6 legal pages, links 
 legal/<doc>/index.html             /legal/<doc>/        (6 Legal pages: terms,
                                    privacy, dpa, subprocessors, company,
                                    partners)
-legal/<doc>/<doc>.pdf              deploy-generated PDF beside each legal page
+legal/terms/terms-of-service.pdf   deploy-generated PDF beside each legal page
+legal/privacy/privacy-notice.pdf
+legal/dpa/data-processing-agreement.pdf
+legal/subprocessors/subprocessor-list.pdf
+legal/company/company-details.pdf
+legal/partners/partner-terms.pdf
 legal/mvdmio-legal-pack.zip        deploy-generated pack of all 6 (see
                                    Legal documents section below)
 about/index.html                   /about/
