@@ -234,17 +234,17 @@ Compliance page's block holds one `SoftwareApplication` and one `FAQPage`
 (in a `@graph`); the `FAQPage`'s answers are the same strings as the
 visible answers in the page's `#faq` section, with no markup in them, so
 they carry whatever the visible answer says, including the cost answer's AI
-credit sentence ("$10 or $5, billed in USD"). The FAQ's cost answer and its
-billing example repeat the Compliance fees, and the cost answer names the
-frameworks of each fee row, as the matching `Offer` does.
+credit sentence ("$10 or $5, billed in USD"). The FAQ's cost answer repeats
+the Compliance fees and names the frameworks of each fee row, as the matching
+`Offer` does; its billing answer states no fee.
 
 The homepage mentions each Product's price **at most once** (Compliance in
 the hero fee line, Translation Tools in its clause tail, the other three on
 their cards). Prices are hand-written against what's actually configured
 in Stripe; there is no page-load fetch and no sync. A later Compliance
 price change edits the hero, the band table, the matching `Offer` in the
-page's JSON-LD block, the FAQ's cost answer and billing example (in the
-visible FAQ and in the JSON-LD), and at most the homepage Flagship line. It
+page's JSON-LD block, the FAQ's cost answer (in the visible FAQ and in the
+JSON-LD), and at most the homepage Flagship line. It
 also edits the Framework page `products/compliance/iso-27001/`: its meta
 description and `og:description` (which state the €999 fee and equal the
 JSON-LD `description`), its Pricing and trial section with the €999 plus
