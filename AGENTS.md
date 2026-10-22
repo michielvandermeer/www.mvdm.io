@@ -312,8 +312,11 @@ nothing else to do.
 `legal/index.html` lists the six documents and links the pack; add a new
 legal document to it (and to `sitemap.xml`) the same way you'd add any other
 page — see "How to add a page" above. A new legal document also needs one
-line in the render list of the workflow's "Render legal PDFs, build the legal
-pack, and render share cards" step; the pack takes every PDF that list
+entry in the `legalDocs` array of the workflow's "Render legal PDFs, build the
+legal pack, and render share cards" step: the page's directory under `legal/`
+paired with its PDF file name, like `["terms", "terms-of-service.pdf"]`. Don't
+confuse it with that step's Share card page list, which is read from
+`sitemap.xml` and is not hand-kept. The pack takes every PDF `legalDocs`
 renders, so there is no second list to keep.
 
 ## Share cards
