@@ -254,16 +254,16 @@ page's JSON-LD block, the FAQ's cost answer (in the visible FAQ and in the
 JSON-LD), and at most the homepage Flagship line. It
 also edits the Framework page `products/compliance/iso-27001/`: its meta
 description and `og:description` (which state the €999 fee and equal the
-JSON-LD `description`), its Pricing and trial section with the €999 plus
-€199 example, its FAQ cost answer (visible and in the JSON-LD) and its
+JSON-LD `description`), its Pricing and trial section (which states the €999 fee), its FAQ cost
+answer (visible and in the JSON-LD) and its
 `Offer`. It also edits the Framework page `products/compliance/iso-42001/`:
 its meta description and `og:description` (which state the €749 fee and equal
-the JSON-LD `description`), its Pricing and trial section with the €749 plus
-€999 example (a €999 change edits that example too), its FAQ cost answer
+the JSON-LD `description`), its Pricing and trial section (which states the €749 fee), its FAQ cost answer
 (visible and in the JSON-LD) and its `Offer`. It also edits the Framework page `products/compliance/eu-ai-act/`:
 its meta description and `og:description` (which state the €199 fee and equal
-the JSON-LD `description`), its Pricing and trial section with the €199 plus
-€749 example (a €749 change edits that example too), its FAQ cost answer (visible and in the JSON-LD) and its `Offer`.
+the JSON-LD `description`), its Pricing and trial section (which states the €199 fee), its FAQ cost answer (visible and in the JSON-LD) and its `Offer`.
+A Framework page or the Dutch page states each fee on its own and adds no
+total; the SOC 2 page's "another €999" sentence is the one approved exception.
 It also edits the Framework page `products/compliance/soc-2/`: its meta description
 and `og:description` (which state the €999 fee and equal the JSON-LD
 `description`), its Pricing and trial section with the example of adding SOC 2 to ISO 27001 (another €999), its FAQ cost answer
