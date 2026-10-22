@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-22: GDPR page calls the supplier category Subprocessor
+The GDPR page now calls the supplier category "Subprocessor", the same word the Compliance app's Suppliers register shows. Before, it spelled the category "SubProcessor". The rest of the page is unchanged.
+
 ## 2026-10-22: Partner terms page, and the Terms and Privacy Notice name Partners
 There is a new Legal page, Partner terms, at /legal/partners/. It says who a Partner is, how a customer becomes a Referral, the Commission a Partner earns and when it is held, paid and changed, the self-billing agreement under which mvdm.io issues the invoice for each Commission payment, what a Partner sees and must keep confidential, and that Commission records and self-billing invoices are kept for 7 years. It is listed on /legal/, in the footer of every page and in the legal pack, which now holds six documents. The Terms of Service and the Privacy Notice now say that a Partner sees the account name and the Commission each invoice earned, and the Privacy Notice covers a Partner's billing details and payment records and the 7-year retention. Both now carry the date 22 October 2026.
 
