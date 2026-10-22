@@ -293,7 +293,7 @@ section's sentence about included credit and the FAQ cost answer, visible and in
 the JSON-LD. On `nl/gemeenten/` it edits the "Wat het
 kost" section's credit sentence and the FAQ assistant answer, visible and in
 the JSON-LD. The `Offer` entries need no edit for it
-(see the rule above). A later change to another Product edits its hero price line (and the ledger total
+(the JSON-LD paragraph says they carry no AI credit amounts). A later change to another Product edits its hero price line (and the ledger total
 row), that page's JSON-LD block, and at most one line on the homepage.
 
 ## Legal documents
