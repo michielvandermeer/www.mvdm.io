@@ -200,6 +200,10 @@ live in the page itself.
    Framework like the Dutch page, link that Framework's name in the
    homepage's framework strip (the `.strip` section under the hero) in the
    same change. A link to a page in Dutch carries `hreflang="nl"`.
+8. A new Framework page also edits this file in the same change: the
+   Page / URL structure list, the Framework page count under **Tech stack**,
+   and both Compliance lists under **Prices** (price change, AI credit
+   change).
 
 ## Prices
 
