@@ -9,6 +9,7 @@
 - [Compliance for ISO 42001](https://mvdm.io/products/compliance/iso-42001/): running an ISO/IEC 42001 AI management system in Compliance, with clauses 4 to 10, Annex A controls, a Statement of Applicability, a 5×5 risk matrix and crosswalks to ISO 27001.
 - [Compliance for the EU AI Act](https://mvdm.io/products/compliance/eu-ai-act/): tracking EU AI Act requirements in Compliance, with an Applicability page for marking which apply, shared registers and crosswalk topics that show where the EU AI Act and ISO 42001 overlap.
 - [Compliance for SOC 2](https://mvdm.io/products/compliance/soc-2/): preparing for a SOC 2 examination in Compliance, with the Trust Services Criteria for every category, shared registers, a 5×5 risk matrix and crosswalks to ISO 27001 and GDPR.
+- [Compliance for GDPR](https://mvdm.io/products/compliance/gdpr/): running the EU GDPR and the UK GDPR as separate frameworks in Compliance, with personal data breaches in the Incidents register, processor checks in supplier reviews and crosswalks to SOC 2 and ISO 27001.
 - [Compliance for gemeenten (in Dutch)](https://mvdm.io/nl/gemeenten/): a Dutch page for Dutch municipalities that track BIO2 and the GDPR together in Compliance.
 - [Translation Tools](https://mvdm.io/products/translation-tools/): keeps `.resx` files as the source of truth, fills empty locales with AI, and ships a NuGet client and a `translations` CLI for .NET projects.
 - [Health Check](https://mvdm.io/products/health-check/): monitors uptime, DNS and SSL certificates, and crawls your app with automated smoke tests.

@@ -24,7 +24,7 @@ A Product's marketing page on this site: benefit-led copy, pricing, and calls to
 _Avoid_: Product page, info page
 
 **Framework page**:
-A page under a Product's Landing page that is about one Framework of Compliance, such as ISO 27001. It is not a Landing page, which stays a Product's marketing page.
+A page under a Product's Landing page that is about one Framework of Compliance, such as ISO 27001, or about one law kept as separate Frameworks, such as the EU GDPR and the UK GDPR. It is not a Landing page, which stays a Product's marketing page.
 _Avoid_: Landing page
 
 **Dutch page**:
