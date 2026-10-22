@@ -262,8 +262,6 @@ the JSON-LD `description`), its Pricing and trial section (which states the €7
 (visible and in the JSON-LD) and its `Offer`. It also edits the Framework page `products/compliance/eu-ai-act/`:
 its meta description and `og:description` (which state the €199 fee and equal
 the JSON-LD `description`), its Pricing and trial section (which states the €199 fee), its FAQ cost answer (visible and in the JSON-LD) and its `Offer`.
-A Framework page or the Dutch page states each fee on its own and adds no
-total; the SOC 2 page's "another €999" sentence is the one approved exception.
 It also edits the Framework page `products/compliance/soc-2/`: its meta description
 and `og:description` (which state the €999 fee and equal the JSON-LD
 `description`), its Pricing and trial section with the example of adding SOC 2 to ISO 27001 (another €999), its FAQ cost answer
@@ -276,7 +274,8 @@ answer (visible and in the JSON-LD) and its two `Offer`s.
 It also edits the Dutch page `nl/gemeenten/`: its meta description
 and `og:description` (which state the BIO2 and AVG fees and equal the
 JSON-LD `description`), its "Wat het kost" section, its FAQ cost answer
-(visible and in the JSON-LD) and its two `Offer`s. A later change to an AI
+(visible and in the JSON-LD) and its two `Offer`s. A Framework page or the Dutch page states each fee on its own and adds no
+total; the SOC 2 page's "another €999" sentence is the one approved exception. A later change to an AI
 credit amount edits the `$10` and `$5` row labels of the band table and the
 FAQ cost answer on
 `products/compliance/index.html` (the cost answer exists twice: as visible
