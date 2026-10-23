@@ -143,7 +143,9 @@ live in the page itself.
    canonical link — `og:title`/`og:description` carry the share-preview
    wording, and `og:title` may differ from `<title>` (a Landing page's
    `<title>` carries the search keywords, its `og:title` stays brand-first
-   "Product — mvdmio"); `og:description` mirrors this page's meta
+   "Product — mvdmio", except the Compliance Landing page, whose
+   `<title>` and `og:title` read "… | mvdmio" because its head tags carry
+   no em dash); `og:description` mirrors this page's meta
    description, `og:url` its canonical, and its `og:image` path
    mirrors the new URL (see **Share cards** below). `og:type` is `article`
    for a post, `website` for everything else. A Landing page also copies
