@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-23: Compliance has an ISO 9001 page
+There is a new Framework page at /products/compliance/iso-9001/. It covers ISO 9001 quality management software for the 2015 and 2026 editions: the catalogs, the move from the 2015 edition to the 2026 edition, findings with corrective action, audits and management reviews, and how the crosswalk links ISO 9001 to ISO 27001. It carries its own search-engine data and sits in the sitemap and in llms.txt. The homepage, the Compliance page and the ISO 27001 page now link to it.
+
 ## 2026-10-22: GDPR page calls the supplier category Subprocessor
 The GDPR page now calls the supplier category "Subprocessor", the same word the Compliance app's Suppliers register shows. Before, it spelled the category "SubProcessor". The rest of the page is unchanged.
 
