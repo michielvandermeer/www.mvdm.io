@@ -207,6 +207,7 @@
         <div>
           <p class="sub">Nothing to hand-roll: the client generates strongly-typed resource classes from your <code>.resx</code> files, and the CLI drives the whole pull/push cycle from a terminal or a build pipeline.</p>
           <ul class="list">
+            <li>Install the <a href="https://www.nuget.org/packages/mvdmio.TranslationTools.Client/"><code>mvdmio.TranslationTools.Client</code></a> NuGet package in your app, and the CLI with <code>dotnet tool install --global <a href="https://www.nuget.org/packages/mvdmio.TranslationTools.Tool/">mvdmio.TranslationTools.Tool</a></code>.</li>
             <li>The NuGet client's source generator reads your neutral <code>.resx</code> files directly and emits one type per resource set — no manual key constants</li>
             <li>Generated properties read a runtime cache first, then an embedded snapshot, so lookups never block on the network</li>
             <li>The <code>translations</code> CLI (<code>init</code>, <code>pull</code>, <code>push</code>) runs from a single <code>.mvdmio-translations.yml</code> config — no Git integration or extra service to run</li>
