@@ -5,6 +5,7 @@
 ## Products
 
 - [Compliance](https://mvdm.io/products/compliance/): a management system billed per framework (ISO 27001, SOC 2, ISO 9001, ISO 42001, BIO2, GDPR and others) from one set of records, with AI credit included.
+- Compliance demo (https://compliance-demo.mvdm.io): a public demo of Compliance with fictional data for a made-up company. No login is needed.
 - [Compliance for ISO 27001](https://mvdm.io/products/compliance/iso-27001/): running an ISO 27001 information security management system in Compliance, with registers, a 5×5 risk matrix, Annex A controls, audits and findings.
 - [Compliance for ISO 42001](https://mvdm.io/products/compliance/iso-42001/): running an ISO/IEC 42001 AI management system in Compliance, with clauses 4 to 10, Annex A controls, a Statement of Applicability, a 5×5 risk matrix and crosswalks to ISO 27001.
 - [Compliance for the EU AI Act](https://mvdm.io/products/compliance/eu-ai-act/): tracking EU AI Act requirements in Compliance, with an Applicability page for marking which apply, shared registers and crosswalk topics that show where the EU AI Act and ISO 42001 overlap.
