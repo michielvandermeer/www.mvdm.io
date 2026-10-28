@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-28: Legal pages name the change summary and the Confluence import
+The Subprocessor list, the Terms of Service and the Data Processing Agreement now say that Anthropic receives content for two jobs in Compliance: the Confluence import, and the change summary of a Policy, Procedure, or Scope. Before, the pages named only the import, and under two names. The pages now all call it the Confluence import, not "import extraction". Section 3 of the Data Processing Agreement now lists change summaries beside assistant features and the Confluence import. The three pages now carry the date 28 October 2026.
+
 ## 2026-10-28: Terms and Compliance FAQ state the trial for every Product
 Section 3 of the Terms of Service now says that an account may start one trial of each Product, that a trial lasts thirty days, needs no card and charges nothing, and that access to the Product closes when the trial ends unless the account has subscribed. Section 6 now says a trial is a licence for the 365-day data rule, counted from the day the trial ends. The Compliance subheading in section 3 no longer says the trial is offered for Compliance and no other Product. The Terms now carry the date 28 October 2026. The answer to "How does the free trial work?" on the Compliance page, in the page and in its search-engine data, now says access closes when the trial ends, nothing is charged unless you subscribe, and the data stays for 365 days.
 
