@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-28: Data Processing Agreement names the transfer basis for each United States subprocessor
+Section 9 of the Data Processing Agreement now says, for each United States subprocessor, what its own data processing agreement with mvdm.io relies on. The table gained a Transfer basis column: Stripe, Cloudflare and Sentry rely on the EU-US Data Privacy Framework, with the standard contractual clauses the European Commission adopted in 2021 as the fallback; xAI and Anthropic rely on those clauses, Module Two or Three, and the row for Anthropic says that mvdm.io contracts with Anthropic Ireland, Limited; the Hetzner row says no transfer. The sentence under the table, which used to say only "their own standard contractual clauses", now names mvdm.io as data exporter and the provider as data importer, says what covers UK personal data, links the Commission decision, and offers a Customer a copy of the clauses on request. Qualys SSL Labs no longer appears in section 9, because it processes none of mvdm.io's data. The provider agreements and the Data Privacy Framework List were checked on 28 October 2026. The Data Processing Agreement keeps the date 28 October 2026.
+
 ## 2026-10-28: Framework pages link the public demo
 The eight Framework pages (ISO 27001, ISO 42001, EU AI Act, SOC 2, GDPR, ISO 9001, ISO 14001 and Cyber Essentials) now carry a "Try the demo" button in the hero, between Get started and Contact me. It links the public Compliance demo. The rest of the pages is unchanged.
 
