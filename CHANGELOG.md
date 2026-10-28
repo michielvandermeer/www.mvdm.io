@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-28: Framework pages link the public demo
+The eight Framework pages (ISO 27001, ISO 42001, EU AI Act, SOC 2, GDPR, ISO 9001, ISO 14001 and Cyber Essentials) now carry a "Try the demo" button in the hero, between Get started and Contact me. It links the public Compliance demo. The rest of the pages is unchanged.
+
 ## 2026-10-28: Legal pages name the change summary and the Confluence import
 The Subprocessor list, the Terms of Service and the Data Processing Agreement now say that Anthropic receives content for two jobs in Compliance: the Confluence import, and the change summary of a Policy, Procedure, or Scope. Before, the pages named only the import, and under two names. The pages now all call it the Confluence import, not "import extraction". Section 3 of the Data Processing Agreement now lists change summaries beside assistant features and the Confluence import. The three pages now carry the date 28 October 2026.
 
