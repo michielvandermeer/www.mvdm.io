@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-28: Terms and Compliance FAQ state the trial for every Product
+Section 3 of the Terms of Service now says that an account may start one trial of each Product, that a trial lasts thirty days, needs no card and charges nothing, and that access to the Product closes when the trial ends unless the account has subscribed. Section 6 now says a trial is a licence for the 365-day data rule, counted from the day the trial ends. The Compliance subheading in section 3 no longer says the trial is offered for Compliance and no other Product. The Terms now carry the date 28 October 2026. The answer to "How does the free trial work?" on the Compliance page, in the page and in its search-engine data, now says access closes when the trial ends, nothing is charged unless you subscribe, and the data stays for 365 days.
+
 ## 2026-10-23: Compliance has an ISO 9001 page
 There is a new Framework page at /products/compliance/iso-9001/. It covers ISO 9001 quality management software for the 2015 and 2026 editions: the catalogs, the move from the 2015 edition to the 2026 edition, findings with corrective action, audits and management reviews, and how the crosswalk links ISO 9001 to ISO 27001. It carries its own search-engine data and sits in the sitemap and in llms.txt. The homepage, the Compliance page and the ISO 27001 page now link to it.
 
