@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-29: Search-engine data ties every Product to mvdmio
+The search-engine data of the five Landing pages, the eight Framework pages and the Dutch page now names mvdmio as the publisher of every Product. The homepage data now also describes mvdmio itself (legal name, logo, address, VAT number, Chamber of Commerce number and the GitHub organisation) and points at its founder, and the About page now carries data describing the founder, with the founder's LinkedIn profile. No visible page text changed.
+
 ## 2026-10-28: Data Processing Agreement names the transfer basis for each United States subprocessor
 Section 9 of the Data Processing Agreement now says, for each United States subprocessor, what its own data processing agreement with mvdm.io relies on. The table gained a Transfer basis column: Stripe, Cloudflare and Sentry rely on the EU-US Data Privacy Framework, with the standard contractual clauses the European Commission adopted in 2021 as the fallback; xAI and Anthropic rely on those clauses, Module Two or Three, and the row for Anthropic says that mvdm.io contracts with Anthropic Ireland, Limited; the Hetzner row says no transfer. The sentence under the table, which used to say only "their own standard contractual clauses", now names mvdm.io as data exporter and the provider as data importer, says what covers UK personal data, links the Commission decision, and offers a Customer a copy of the clauses on request. Qualys SSL Labs no longer appears in section 9, because it processes none of mvdm.io's data. The provider agreements and the Data Privacy Framework List were checked on 28 October 2026. The Data Processing Agreement keeps the date 28 October 2026.
 
