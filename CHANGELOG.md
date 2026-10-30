@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-30: Framework pages link each other
+The eight Framework pages (ISO 27001, SOC 2, GDPR, ISO 9001, ISO 14001, ISO 42001, EU AI Act and Cyber Essentials) now carry an "Other frameworks in Compliance" section before the FAQ. It lists links to the other seven Framework pages, so a reader can move from one Framework to another without going back to the Compliance page. Nothing else changed.
+
 ## 2026-10-30: Legal pages say which providers get what, and what their terms say about training
 Section 8 of the Terms of Service and section 10 of the Data Processing Agreement now name xAI, TypeSafe and Anthropic with what each one receives, and say what the providers' published terms say about training: they do not use that content to train models. Before, both pages said mvdm.io does not promise that. The Subprocessor list now names every use, adds xAI and Anthropic under Commonplace and TypeSafe under Compliance, and links each provider's data processing agreement where one exists. Section 9 of the Data Processing Agreement lists TypeSafe. The Privacy Notice has a new mvdm.io Commonplace part in section 6, covering who receives journal content, where it goes, how long it stays and who at mvdm.io can read it, and section 9 now names the right to complain to the Autoriteit Persoonsgegevens. The Terms have a new section on Commonplace Allowance packs, which the withdrawal terms link to, and the Commonplace page now says the Assistant runs on packs bought separately. The four legal pages carry the date 30 October 2026.
 
