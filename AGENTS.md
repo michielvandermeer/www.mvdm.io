@@ -215,8 +215,18 @@ live in the page itself.
    same change. A link to a page in Dutch carries `hreflang="nl"`.
 8. A new Framework page also edits this file in the same change: the
    Page / URL structure list, the Framework page count under **Tech stack**,
-   and both Compliance lists under **Prices** (price change, AI credit
-   change).
+   both Compliance lists under **Prices** (price change, AI credit
+   change), and the Framework order below, where it goes last. It also keeps
+   the numbered "Other frameworks in Compliance" section complete. The new
+   page carries that section, copied from a sibling Framework page, numbered
+   next in the new page's own sequence after its Pricing and trial section,
+   linking every other Framework page and not itself. The Framework pages
+   share one order: ISO 27001, SOC 2, GDPR, ISO 9001, ISO 14001, ISO 42001,
+   EU AI Act, Cyber Essentials. The sibling's list lacks the sibling's own
+   entry, so add it back in its place in that order, and leave out the new
+   page's own entry, which would sit last. Every existing Framework page
+   gains a link to the new page in that section, at the end of its list,
+   which keeps the order.
 
 ## Prices
 
