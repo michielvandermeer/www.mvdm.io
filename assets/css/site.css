@@ -723,6 +723,7 @@ main { flex: 1; }
   color: var(--ink-soft);
 }
 .legal-table td { color: var(--ink-soft); }
+.legal-table code { overflow-wrap: anywhere; }
 /* after the base rules, so the narrow values win */
 @media (max-width: 480px) {
   .legal-table { font-size: 14px; }

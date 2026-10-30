@@ -96,8 +96,53 @@
 <h2>3. Why we process it</h2>
 <p>We process this data to provide and secure the services, to bill for paid use, to understand and improve reliability and usage, and to respond to you. The legal bases are performance of a contract, our legitimate interests in operating and securing the service, and where required by law.</p>
 
-<h2>4. Cookies</h2>
-<p>The <strong>strictly necessary sign-in cookie</strong> is the only cookie mvdm.io sets. It is required for the service you ask for, so it is not something you can decline; that is also why we do not show a cookie consent banner. There is no other cookie, and none for marketing or advertising.</p>
+<h2>4. Cookies and browser storage</h2>
+<p>mvdm.io sets only its own cookies, on mvdm.io and its subdomains. No other company sets a cookie through our pages. Each cookie below is either needed for the service you ask for, or remembers a choice you made. None is used for analytics, marketing, or advertising. A name ending in <code>*</code> stands for a family of cookies whose names end in a random value.</p>
+
+<h3>Needed for the service</h3>
+<table class="legal-table">
+  <thead>
+    <tr><th scope="col">Cookie</th><th scope="col">Where</th><th scope="col">What it is for</th><th scope="col">How long it lasts</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>.AspNetCore.mvdmio</code></td><td>Sign-in (auth.mvdm.io)</td><td>Keeps you signed in to mvdm.io&rsquo;s sign-in, so each Product can sign you in without asking again.</td><td>Up to 30 days</td></tr>
+    <tr><td><code>.AspNetCore.Cookies</code></td><td>Each Product</td><td>Keeps you signed in to that Product.</td><td>Until you close the browser</td></tr>
+    <tr><td><code>mvdmio.external</code></td><td>Sign-in (auth.mvdm.io)</td><td>Holds the answer from another sign-in provider while you finish signing in.</td><td>15 minutes</td></tr>
+    <tr><td><code>mvdmio.clients</code></td><td>Sign-in (auth.mvdm.io)</td><td>Lists the Products you signed in to, so signing out signs you out of each one.</td><td>12 hours</td></tr>
+    <tr><td><code>.AspNetCore.Correlation.*</code> and <code>.AspNetCore.OpenIdConnect.Nonce.*</code></td><td>Each Product, and sign-in</td><td>Protect the sign-in round trip from being forged.</td><td>Until sign-in finishes, at most 15 minutes</td></tr>
+    <tr><td><code>.AspNetCore.Antiforgery.*</code></td><td>Every Product, and sign-in</td><td>Protects your forms from being sent by another site.</td><td>Until you close the browser</td></tr>
+    <tr><td><code>.AspNetCore.Mvc.CookieTempDataProvider</code></td><td>Sign-in (auth.mvdm.io)</td><td>Carries a one-time message, such as &ldquo;Saved&rdquo;, to the next page.</td><td>Until the next page shows it</td></tr>
+    <tr><td><code>.DevAuth.Ticket</code></td><td>The mvdm.io Compliance Demo (compliance-demo.mvdm.io)</td><td>Remembers which demo account you picked.</td><td>Until you close the browser</td></tr>
+    <tr><td><code>browser-timezone</code></td><td>Every Product, and sign-in. It is shared across mvdm.io.</td><td>Your browser&rsquo;s time zone, so times show in your local time from the first page.</td><td>1 year</td></tr>
+  </tbody>
+</table>
+
+<h3>Choices you make</h3>
+<table class="legal-table">
+  <thead>
+    <tr><th scope="col">Cookie</th><th scope="col">Where</th><th scope="col">What it is for</th><th scope="col">How long it lasts</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>assistant-panel-width</code></td><td>mvdm.io Compliance, mvdm.io Commonplace, mvdm.io Translation Tools</td><td>Whether you set the Assistant panel wide or normal.</td><td>1 year</td></tr>
+    <tr><td><code>assistant-panel-state</code></td><td>Compliance, Commonplace</td><td>Whether you left the Assistant panel open or folded.</td><td>1 year</td></tr>
+    <tr><td><code>assistant-panel-conversation</code></td><td>Compliance, Commonplace, Translation Tools</td><td>The Assistant conversation you last opened on this device.</td><td>1 year</td></tr>
+  </tbody>
+</table>
+
+<h3>Browser storage</h3>
+<p>These items are kept in your browser&rsquo;s local storage, not in a cookie. They are never sent to us.</p>
+<table class="legal-table">
+  <thead>
+    <tr><th scope="col">Item</th><th scope="col">Where</th><th scope="col">What it is for</th><th scope="col">How long it lasts</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>mvdmio.&lt;Product&gt;.changelog.seenIdentity</code></td><td>Every Product, and sign-in</td><td>The newest Changelog entry you have seen, so the Changelog badge can show what is new.</td><td>Until you clear your browser&rsquo;s site data</td></tr>
+    <tr><td><code>tinymce-url-history</code></td><td>Wherever the text editor appears</td><td>The last five web addresses you entered in the editor&rsquo;s link or image dialog, so you can pick one again.</td><td>Until you clear your browser&rsquo;s site data</td></tr>
+  </tbody>
+</table>
+
+<p>When you pay, you leave mvdm.io for Stripe&rsquo;s own checkout pages. Cookies there are Stripe&rsquo;s, under Stripe&rsquo;s privacy policy.</p>
+<p>We do not show a cookie consent banner. The cookies needed for the service are required for what you ask us to do, so you cannot decline them. The cookies for choices you make, and the browser storage, only remember what you chose, on your own device.</p>
 
 <h2>5. Analytics</h2>
 <p>mvdm.io Statistics captures <strong>first-party request analytics</strong> for the other applications: the signed-in user&rsquo;s name, or their email address where no name is available; the full URL requested, including its query string; timing; and tags. This means your email address can end up standing in for your name in that record. mvdm.io Commonplace sends nothing to Statistics. This is our own instrumentation, not a third-party advertising tracker.</p>

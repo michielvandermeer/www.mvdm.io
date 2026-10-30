@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-30: Privacy Notice names every cookie and browser storage item
+Section 4 of the Privacy Notice now lists every cookie the apps set, in two groups: the cookies needed for the service, and the cookies that remember a choice you made. It also lists the two items the apps keep in the browser's local storage. For each one it gives the purpose and how long it lasts. Before, the page said the sign-in cookie was the only cookie mvdm.io sets. Nothing else in the notice changed.
+
 ## 2026-10-30: Framework pages link each other
 The eight Framework pages (ISO 27001, SOC 2, GDPR, ISO 9001, ISO 14001, ISO 42001, EU AI Act and Cyber Essentials) now carry an "Other frameworks in Compliance" section before the FAQ. It lists links to the other seven Framework pages, so a reader can move from one Framework to another without going back to the Compliance page. Nothing else changed.
 
