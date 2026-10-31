@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-31: Four Landing pages mention the 30-day trial
+The Commonplace, Translation Tools, Health Check and Statistics pages now say a 30-day trial exists. A note under the hero buttons and a note under the buttons of the Plain pricing box say you can try the Product for 30 days without a credit card. The pricing note adds that access closes when the trial ends and nothing is charged unless you subscribe. Nothing else on the pages changed.
+
 ## 2026-10-30: Privacy Notice names every cookie and browser storage item
 Section 4 of the Privacy Notice now lists every cookie the apps set, in two groups: the cookies needed for the service, and the cookies that remember a choice you made. It also lists the two items the apps keep in the browser's local storage. For each one it gives the purpose and how long it lasts. Before, the page said the sign-in cookie was the only cookie mvdm.io sets. Nothing else in the notice changed.
 

@@ -483,6 +483,7 @@ main { flex: 1; }
 .ledger .row a { color: var(--pine); }
 .ledger .total { border-top: 1px solid var(--ink); margin-top: 8px; font-weight: 600; }
 .ledger .actions { justify-content: center; margin-top: 26px; }
+.ledger .cta-note { text-align: center; margin-top: 14px; }
 
 /* ---------- open-source strip ---------- */
 .oss { padding: 88px 0; }
