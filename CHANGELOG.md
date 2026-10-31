@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-31: The Commonplace page describes the Journal
+The Commonplace page now opens its numbered sections with one about the Journal: a dated entry that starts on today's date and the town you're in, keeps only the place name and never your coordinates, can be searched by text or place, and holds images and remarks. The sections that followed moved from 01-04 to 02-05. The Journal is now also named in the hero line, the row of labels under the hero, the Plain pricing box and the page description. The homepage's Commonplace card and llms.txt name the Journal too. Nothing else changed.
+
 ## 2026-10-31: Four Landing pages mention the 30-day trial
 The Commonplace, Translation Tools, Health Check and Statistics pages now say a 30-day trial exists. A note under the hero buttons and a note under the buttons of the Plain pricing box say you can try the Product for 30 days without a credit card. The pricing note adds that access closes when the trial ends and nothing is charged unless you subscribe. Nothing else on the pages changed.
 

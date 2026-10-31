@@ -18,7 +18,7 @@
 - [Translation Tools](https://mvdm.io/products/translation-tools/): keeps `.resx` files as the source of truth, fills empty locales with AI, and ships a NuGet client (`mvdmio.TranslationTools.Client`) and a `translations` CLI (`mvdmio.TranslationTools.Tool`) for .NET projects.
 - [Health Check](https://mvdm.io/products/health-check/): monitors uptime, DNS and SSL certificates, and crawls your app with automated smoke tests.
 - [Statistics](https://mvdm.io/products/statistics/): tracks active users, throughput and response times across your applications from raw request data, self-hosted, with a drop-in .NET client.
-- [Commonplace](https://mvdm.io/products/commonplace/): a personal place for books, quotes, notes, contacts and reminders, on an annual licence.
+- [Commonplace](https://mvdm.io/products/commonplace/): a personal place for a journal, books, quotes, notes, contacts and reminders, on an annual licence.
 
 ## Company
 
