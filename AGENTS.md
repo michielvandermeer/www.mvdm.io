@@ -168,7 +168,16 @@ live in the page itself.
    each for the EU GDPR and the UK GDPR). So does the block of the Dutch page
    (`nl/gemeenten/`), which holds one `Offer` each for BIO2 and the AVG
    and has `inLanguage` `nl`. Each `SoftwareApplication` carries a
-   `publisher` naming the homepage's `Organization` by `@id`. The homepage
+   `publisher` naming the homepage's `Organization` by `@id`. The block of
+   each Framework page also holds a `BreadcrumbList` of three `ListItem`s at
+   positions 1 to 3: mvdmio at `https://mvdm.io/`, Compliance at
+   `https://mvdm.io/products/compliance/`, and the Framework, named as the
+   page shows it ("SOC 2", "GDPR"), at the page's own canonical address.
+   Only the Framework pages carry a `BreadcrumbList`; the Compliance
+   Landing page, the Dutch page and every other page have none. A
+   Framework page writes its canonical address four times: in the canonical
+   link, in `og:url`, in the `url` of its `SoftwareApplication` and in item 3
+   of the `BreadcrumbList`, and the four are equal. The homepage
    carries its own block (an `Organization` and a `WebSite`, no price), and
    the About page one (a `ProfilePage` with a `Person`, no price); no other
    kind of page has one. Two of those blocks restate visible text: the
@@ -226,7 +235,10 @@ live in the page itself.
    entry, so add it back in its place in that order, and leave out the new
    page's own entry, which would sit last. Every existing Framework page
    gains a link to the new page in that section, at the end of its list,
-   which keeps the order.
+   which keeps the order. After copying the JSON-LD block from a sibling
+   Framework page, replace the name and address of the `BreadcrumbList`'s
+   item 3 so the trail does not name the sibling; its address equals the new
+   page's canonical link.
 
 ## Prices
 
