@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-31: Framework pages carry breadcrumb data
+The eight Framework pages (ISO 27001, SOC 2, GDPR, ISO 9001, ISO 14001, ISO 42001, EU AI Act and Cyber Essentials) now carry breadcrumb data in their search-engine data: mvdmio, then Compliance, then the Framework. A search result can show that trail instead of the raw path. No visible page text changed. Nothing else changed.
+
 ## 2026-10-31: The Commonplace page describes the Journal
 The Commonplace page now opens its numbered sections with one about the Journal: a dated entry that starts on today's date and the town you're in, keeps only the place name and never your coordinates, can be searched by text or place, and holds images and remarks. The sections that followed moved from 01-04 to 02-05. The Journal is now also named in the hero line, the row of labels under the hero, the Plain pricing box and the page description. The homepage's Commonplace card and llms.txt name the Journal too. Nothing else changed.
 
