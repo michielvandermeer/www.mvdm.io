@@ -22,7 +22,7 @@ add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
 behavior, and the homepage, the About page, the five Landing pages, the eight Compliance
-Framework pages and the Dutch page each carry one (see
+Framework pages, the Dutch page and the ten posts each carry one (see
 **Prices** and "How to add a page" below; the Compliance page's, the
 Framework pages' and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
 forbidden.
@@ -179,12 +179,22 @@ live in the page itself.
    link, in `og:url`, in the `url` of its `SoftwareApplication` and in item 3
    of the `BreadcrumbList`, and the four are equal. The homepage
    carries its own block (an `Organization` and a `WebSite`, no price), and
-   the About page one (a `ProfilePage` with a `Person`, no price); no other
-   kind of page has one. Two of those blocks restate visible text: the
+   the About page one (a `ProfilePage` with a `Person`, no price). A post
+   copies the block from a sibling post, directly after the Share card block,
+   and adapts it: one `BlogPosting` whose `@id` is its canonical address plus
+   `#article`, `headline` equal to its `<h1>`, `description` equal to its
+   meta description, `datePublished` equal to its `<time datetime>`, `url` and
+   `mainEntityOfPage` equal to its canonical address, `image` equal to its
+   `og:image`, `author` referencing `https://mvdm.io/about/#michiel` (the
+   `Person` of the About page), `publisher` referencing
+   `https://mvdm.io/#organization`, and `inLanguage` `en`; no price and no
+   `dateModified`, because the site tracks no modified date on posts. No
+   other kind of page has a block. Three kinds of block restate visible text: the
    homepage `Organization` repeats the Company details (legal name, address,
-   VAT number, Chamber of Commerce number) of `legal/company/`, and the About
+   VAT number, Chamber of Commerce number) of `legal/company/`, the About
    `Person` repeats the email and LinkedIn link of the About page's contact
-   line. Edit each block together with the text it copies.
+   line, and a post's `BlogPosting` repeats the post's title, date and
+   description. Edit each block together with the text it copies.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
    element in `<body>`, pointing at `<main id="main">`), the two-row
    header, the two-line footer, and the `site.js` script tag from a
@@ -215,7 +225,7 @@ live in the page itself.
    writes it by hand.
 5. If it's a new post: add it to `blog/index.html`'s list (and to
    `feed.xml`'s items, most-recent-first) and its own `posts/<slug>/`
-   directory.
+   directory, whose `<head>` carries the `BlogPosting` block from step 2.
 6. If it's a new Resume entry: add it to `projects/index.html`'s tile grid
    in the same order.
 7. If the new page is a Framework page, or another page built around one
