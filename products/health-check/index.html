@@ -97,13 +97,13 @@
       <p class="eyebrow">mvdmio · Health Check</p>
       <h1>Know it's down <em>before</em> your users do.</h1>
       <p class="aud">For anyone running web services or apps who wants email alerts for outages and expiring SSL certificates, with DNS monitoring too.</p>
-      <p class="sub">Health Check polls your services every minute, watches your DNS and SSL, and crawls your app with a real browser — so an outage reaches your inbox before it reaches a support ticket.</p>
+      <p class="sub">Health Check polls your services every minute, watches your DNS and SSL, and crawls your app with a real browser. You get an email about an outage before anyone opens a support ticket about it.</p>
       <div class="actions">
         <a class="btn" href="https://healthcheck.mvdm.io">Get started</a>
         <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
       </div>
       <p class="cta-note">Try Health Check for 30 days without a credit card.</p>
-      <p class="fee" id="price">€999 / year, excl. VAT — every project you monitor. <a href="#pricing">See pricing →</a></p>
+      <p class="fee" id="price">€999 / year, excl. VAT, every project you monitor. <a href="#pricing">See pricing →</a></p>
     </div>
     <figure class="frame">
       <svg class="ill" viewBox="0 0 320 220" role="img" aria-label="A status board listing services with up and down indicators">
@@ -121,9 +121,9 @@
           <text x="256" y="82" fill="#47584f">A</text>
           <text x="26" y="110" fill="#10231c">db-primary</text>
           <circle cx="206" cy="106" r="4" fill="#c8553d"/><text x="216" y="110" fill="#c8553d">down</text>
-          <text x="256" y="110" fill="#47584f">—</text>
+          <text x="256" y="110" fill="#47584f">n/a</text>
         </g>
-        <text x="16" y="146" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">illustrative — status board, one row per monitored service</text>
+        <text x="16" y="146" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">illustrative · status board, one row per monitored service</text>
         <line x1="16" y1="160" x2="304" y2="160" stroke="#dcd8ca"/>
         <text x="16" y="176" font-family="IBM Plex Mono, monospace" font-size="9" fill="#47584f">re-check in 10s on state change</text>
         <text x="16" y="192" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8a9791">healthcheck.mvdm.io</text>
@@ -144,24 +144,24 @@
         <div>
           <p class="sub">Every configured service URL is polled every minute for availability and response time. Only state changes are recorded, so a service that stays up for a month costs you one row, not forty-three thousand.</p>
           <ul class="list">
-            <li>On a transition from up to down, Health Check waits 10 seconds and re-checks before recording the failure or notifying anyone — this filters out transient blips</li>
+            <li>On a transition from up to down, Health Check waits 10 seconds and re-checks before recording the failure or notifying anyone. This filters out transient blips</li>
             <li>Every minute, each service's host is also resolved for <code>CNAME</code>, <code>A</code>, and <code>AAAA</code> records, following CNAME chains to their terminal records, with the full snapshot kept historically</li>
-            <li>You get an email the moment a service goes down or recovers, and — if you opt in — when its DNS resolution starts or stops succeeding</li>
+            <li>You get an email the moment a service goes down or recovers. If you opt in, you also get one when its DNS resolution starts or stops succeeding</li>
           </ul>
         </div>
         <figure class="frame">
           <svg class="ill" viewBox="0 0 320 180" role="img" aria-label="A service transitioning from up to down after a re-check, illustrative">
             <g font-family="IBM Plex Mono, monospace" font-size="9.5">
               <rect x="16" y="20" width="288" height="30" rx="6" fill="#fff" stroke="#dcd8ca"/>
-              <circle cx="32" cy="35" r="4" fill="#2f9e63"/><text x="44" y="39" fill="#0e3b2e">api.example.io — UP</text>
+              <circle cx="32" cy="35" r="4" fill="#2f9e63"/><text x="44" y="39" fill="#0e3b2e">api.example.io · UP</text>
               <text x="230" y="39" fill="#8a9791">14:02:00</text>
               <path d="M160 50 L160 66" stroke="#dcd8ca" stroke-width="1.5"/>
               <rect x="16" y="66" width="288" height="30" rx="6" fill="var(--acc)" opacity=".1"/>
-              <circle cx="32" cy="81" r="4" fill="#c8553d"/><text x="44" y="85" fill="#0e3b2e">check failed — re-checking…</text>
+              <circle cx="32" cy="81" r="4" fill="#c8553d"/><text x="44" y="85" fill="#0e3b2e">check failed · re-checking…</text>
               <text x="230" y="85" fill="#8a9791">14:02:10</text>
               <path d="M160 96 L160 112" stroke="#dcd8ca" stroke-width="1.5"/>
               <rect x="16" y="112" width="288" height="30" rx="6" fill="#fff" stroke="#dcd8ca"/>
-              <circle cx="32" cy="127" r="4" fill="#c8553d"/><text x="44" y="131" fill="#10231c">api.example.io — DOWN</text>
+              <circle cx="32" cy="127" r="4" fill="#c8553d"/><text x="44" y="131" fill="#10231c">api.example.io · DOWN</text>
               <text x="230" y="131" fill="#8a9791">14:02:10</text>
             </g>
             <text x="16" y="164" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">10s re-check before a DOWN is recorded</text>
@@ -189,7 +189,7 @@
             <text x="242" y="92" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#e8f0ea">SSL Labs grade</text>
             <text x="242" y="130" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#8fd9b0">re-analyzed daily</text>
           </svg>
-          <figcaption><span>certificates &amp; grading</span><span>expiry warnings and A+–F grades</span></figcaption>
+          <figcaption><span>certificates &amp; grading</span><span>expiry warnings and A+ to F grades</span></figcaption>
         </figure>
         <div>
           <p class="sub">A daily check inspects each service's certificate directly and submits the domain to SSL Labs for a full configuration analysis.</p>
@@ -208,10 +208,10 @@
         <div>
           <p class="sub">Smoke tests run a headless Chromium browser against your application, following links the way a user would, and can fill in and submit forms to reach authenticated pages.</p>
           <ul class="list">
-            <li>Every crawled page records its status code, load time, console errors, and a screenshot — up to 500 pages per run, 10 hops deep</li>
+            <li>Every crawled page records its status code, load time, console errors, and a screenshot. A run covers up to 500 pages, 10 hops deep</li>
             <li>Configure input values once and the crawler drives login and multi-step forms on every run after that, chaining from one form to the next</li>
             <li>Trigger a run from the UI or from a webhook, so a deploy pipeline can smoke-test a release before it's called done</li>
-            <li>A run's outcome is <strong>Passed</strong>, <strong>Issues</strong> (warnings or 4xx pages), or <strong>Failed</strong> (console errors, exceptions, or 5xx) — never buried in a raw error count</li>
+            <li>A run's outcome is <strong>Passed</strong>, <strong>Issues</strong> (warnings or 4xx pages), or <strong>Failed</strong> (console errors, exceptions, or 5xx), not a raw error count</li>
           </ul>
         </div>
         <figure class="frame">
@@ -219,18 +219,18 @@
             <g font-family="IBM Plex Mono, monospace" font-size="9">
               <rect x="16" y="16" width="288" height="26" rx="5" fill="#fff" stroke="#dcd8ca"/>
               <rect x="26" y="24" width="10" height="10" rx="2" fill="#2f9e63"/>
-              <text x="44" y="33" fill="#0e3b2e">/ — 200 — 340ms</text>
+              <text x="44" y="33" fill="#0e3b2e">/ · 200 · 340ms</text>
               <rect x="16" y="48" width="288" height="26" rx="5" fill="#fff" stroke="#dcd8ca"/>
               <rect x="26" y="56" width="10" height="10" rx="2" fill="#2f9e63"/>
-              <text x="44" y="65" fill="#0e3b2e">/pricing — 200 — 210ms</text>
+              <text x="44" y="65" fill="#0e3b2e">/pricing · 200 · 210ms</text>
               <rect x="16" y="80" width="288" height="26" rx="5" fill="var(--acc)" opacity=".1"/>
               <rect x="26" y="88" width="10" height="10" rx="2" fill="#c99a2e"/>
-              <text x="44" y="97" fill="#0e3b2e">/legacy-page — 404</text>
+              <text x="44" y="97" fill="#0e3b2e">/legacy-page · 404</text>
               <rect x="16" y="112" width="288" height="26" rx="5" fill="#fff" stroke="#dcd8ca"/>
               <rect x="26" y="120" width="10" height="10" rx="2" fill="#2f9e63"/>
-              <text x="44" y="129" fill="#0e3b2e">/login → /dashboard — form chain</text>
+              <text x="44" y="129" fill="#0e3b2e">/login → /dashboard · form chain</text>
             </g>
-            <text x="16" y="156" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">run outcome: Issues — one 404, nothing failed</text>
+            <text x="16" y="156" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">run outcome: Issues · one 404, nothing failed</text>
           </svg>
           <figcaption><span>crawl run</span><span>page-by-page, screenshot per page</span></figcaption>
         </figure>
@@ -266,7 +266,7 @@
         <div>
           <p class="sub">Health Check reports on more than uptime, and shares it with the people who need to see it.</p>
           <ul class="list">
-            <li>Install the <code>mvdmio.HealthCheck.Client</code> NuGet package in a monitored app to expose a <code>/status</code> endpoint and report custom metrics — database size, record counts, or anything else you define</li>
+            <li>Install the <code>mvdmio.HealthCheck.Client</code> NuGet package in a monitored app to expose a <code>/status</code> endpoint and report custom metrics, such as database size, record counts, or anything else you define</li>
             <li>Every Monday, an email summarizes availability and SSL Labs results across each of your projects, so you stay informed without logging in</li>
             <li>Each project can publish a public status page showing availability, SSL grades, and 90-day uptime history, for sharing with your own users</li>
           </ul>
@@ -277,7 +277,7 @@
     <section class="section" id="pricing">
       <div class="ledger">
         <h2>Plain pricing</h2>
-        <div class="row"><span>Health Check — annual licence</span><span class="dots"></span><span>included</span></div>
+        <div class="row"><span>Health Check annual licence</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Uptime, DNS, SSL &amp; SSL Labs monitoring</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Smoke test crawler &amp; webhook trigger</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Public status pages</span><span class="dots"></span><span>included</span></div>

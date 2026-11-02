@@ -97,18 +97,18 @@
       <p class="eyebrow">mvdmio · Statistics</p>
       <h1>Know how your app is actually used.</h1>
       <p class="aud">For .NET developers who want usage numbers for their own applications without sending data to a third party.</p>
-      <p class="sub">Statistics tracks every request your applications make, self-hosted, and turns that raw stream into active-user counts, throughput, and response times — no third party ever sees your data.</p>
+      <p class="sub">Statistics is self-hosted and tracks every request your applications make. It turns that raw stream into active-user counts, throughput, and response times, and no third party ever sees your data.</p>
       <div class="actions">
         <a class="btn" href="https://statistics.mvdm.io">Get started</a>
         <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
       </div>
       <p class="cta-note">Try Statistics for 30 days without a credit card.</p>
-      <p class="fee" id="price">€999 / year, excl. VAT — every project you track. <a href="#pricing">See pricing →</a></p>
+      <p class="fee" id="price">€999 / year, excl. VAT, every project you track. <a href="#pricing">See pricing →</a></p>
     </div>
     <figure class="frame">
       <svg class="ill" viewBox="0 0 320 220" role="img" aria-label="A dashboard showing daily active user counts as a bar chart">
         <g font-family="IBM Plex Mono, monospace" font-size="9.5">
-          <text x="16" y="26" fill="#0e3b2e">DAU — last 14 days</text>
+          <text x="16" y="26" fill="#0e3b2e">DAU · last 14 days</text>
           <g stroke="#dcd8ca"><line x1="16" y1="140" x2="304" y2="140"/></g>
           <g fill="var(--acc)" opacity=".75">
             <rect x="20" y="96" width="14" height="44"/><rect x="40" y="110" width="14" height="30"/><rect x="60" y="86" width="14" height="54"/>
@@ -118,7 +118,7 @@
             <rect x="260" y="52" width="14" height="88"/><rect x="280" y="36" width="14" height="104"/>
           </g>
         </g>
-        <text x="16" y="160" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">illustrative — counts derived from raw requests, not stored metrics</text>
+        <text x="16" y="160" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">illustrative · counts derived from raw requests, not stored metrics</text>
         <line x1="16" y1="174" x2="304" y2="174" stroke="#dcd8ca"/>
         <text x="16" y="190" font-family="IBM Plex Mono, monospace" font-size="9" fill="#47584f">group by: tag = application</text>
         <text x="16" y="206" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8a9791">statistics.mvdm.io</text>
@@ -142,7 +142,7 @@
             <li>Switch interval between <strong>Day</strong>, <strong>Week</strong>, and <strong>Month</strong> to get DAU, WAU, or MAU from the same underlying request data</li>
             <li>Monthly buckets align to calendar month boundaries, so a range like "last 30 days" still renders full, correctly-bounded months instead of ragged partial ones</li>
             <li>Compare the current range against the previous period or the same period last year to see growth or seasonality at a glance</li>
-            <li>Group and filter by any tag your requests carry — application, account, feature area — to slice activity by the dimension you care about</li>
+            <li>Group and filter by any tag your requests carry, such as application, account or feature area, to break down activity by the dimension you care about</li>
           </ul>
         </div>
         <figure class="frame">
@@ -197,7 +197,7 @@
           <ul class="list">
             <li>The throughput dashboard shows total requests and average requests per minute per day, so you can see traffic spikes and measure the effect of a release</li>
             <li>The response time view aggregates requests by normalized path and reports P50, P95, and P99 processing-time percentiles per path</li>
-            <li>Both views support the same tag-based grouping and filtering as active users — drill into one application, one account, or one environment without a separate dashboard</li>
+            <li>Both views support the same tag-based grouping and filtering as active users, so you can look at one application, one account, or one environment without a separate dashboard</li>
           </ul>
         </div>
       </div>
@@ -207,10 +207,10 @@
       <div class="clause"><span class="num mono">03</span><h2>Every request, searchable, and one client to install</h2></div>
       <div class="duo">
         <div>
-          <p class="sub">Statistics is built on a single append-only fact: the tracked request. Every dashboard is derived from that stream at query time — there's no separate metrics pipeline to keep in sync.</p>
+          <p class="sub">Statistics is built on a single append-only fact: the tracked request. Every dashboard is derived from that stream at query time, so there's no separate metrics pipeline to keep in sync.</p>
           <ul class="list">
             <li>The request log lists every tracked request with timestamp, URL, user, and tags, with server-side search, sort, and pagination for ad-hoc debugging</li>
-            <li>Tags are free-form key-value pairs on each request — there's no fixed catalog to maintain, and a tag appears in filters the moment a request in your window carries it</li>
+            <li>Tags are free-form key-value pairs on each request. There's no fixed catalog to maintain, and a tag appears in filters the moment a request in your window carries it</li>
             <li>Install the <code>mvdmio.Statistics.Client</code> NuGet package and tracking starts automatically: it intercepts authenticated requests, captures user identity and your custom tags, and skips static files and unauthenticated traffic on its own</li>
           </ul>
         </div>
@@ -236,7 +236,7 @@
     <section class="section" id="pricing">
       <div class="ledger">
         <h2>Plain pricing</h2>
-        <div class="row"><span>Statistics — annual licence</span><span class="dots"></span><span>included</span></div>
+        <div class="row"><span>Statistics annual licence</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Active users, throughput &amp; response time dashboards</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Request log &amp; tag-based filtering</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>NuGet client</span><span class="dots"></span><span>included</span></div>
