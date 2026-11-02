@@ -200,8 +200,11 @@ jobs:
                 );
                 const sep = " | ";
                 const idx = titleText.indexOf(sep);
+                if (idx === -1) {
+                  throw new Error(`No "${sep}" separator in the homepage og:title, cannot draw its share card`);
+                }
                 eyebrow = "mvdmio";
-                headline = idx === -1 ? titleText : titleText.slice(idx + sep.length);
+                headline = titleText.slice(idx + sep.length);
               }
 
               const params = new URLSearchParams();
