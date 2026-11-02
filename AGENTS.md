@@ -417,7 +417,11 @@ publishing a card that points at nothing — `404.html` is the one named
 exception: it has no `.eyebrow` element, so the render step substitutes
 `mvdmio · 404` for it alone. The homepage is also handled on its own: its
 card reads its own `og:title` instead of its hero's Product-led `<h1>`/
-`.eyebrow`, so the card speaks for mvdmio rather than for one Product.
+`.eyebrow`, so the card speaks for mvdmio rather than for one Product. The
+render step splits that `og:title` on its first `" | "` (the headline is
+what follows), so the homepage `og:title` stays `mvdmio | <the five
+Products>`; changing the separator there means changing `sep` in the
+workflow too.
 
 `assets/share-card.html` is the template, not a page: it carries no header,
 footer or Share card of its own, and it is not in `sitemap.xml`. **Tech
