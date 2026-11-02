@@ -147,9 +147,12 @@ live in the page itself.
    wording, and `og:title` may differ from `<title>` (a Landing page's
    `<title>` carries the search keywords, its `og:title` stays brand-first
    "Product | mvdmio", and a Framework page's `og:title` reads
-   "Compliance for <Framework> | mvdmio"; a bar, not an em dash, separates
-   the name from the brand on Landing and Framework pages);
-   `og:description` mirrors this page's meta
+   "Compliance for <Framework> | mvdmio"). Site-wide, every
+   page `<title>` and `og:title` separates the page name from the brand with
+   " | " ("Blog | mvdmio", "Terms of Service | mvdm.io"), never an em dash,
+   and `og:image:alt` uses ": " in place of a dash, because screen readers say
+   "vertical bar" for "|".
+   The `og:description` mirrors this page's meta
    description, `og:url` its canonical, and its `og:image` path
    mirrors the new URL (see **Share cards** below). `og:type` is `article`
    for a post, `website` for everything else. A Landing page also copies

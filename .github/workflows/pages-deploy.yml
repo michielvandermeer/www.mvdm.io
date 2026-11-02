@@ -190,7 +190,7 @@ jobs:
               if (urlPath === "/") {
                 // Story 6: the homepage's card should speak for mvdmio, not
                 // for whichever Product leads its hero. Reuse the page's own
-                // og:title (brand-first: "mvdmio — <the five Products>";
+                // og:title (brand-first: "mvdmio | <the five Products>";
                 // the <title> carries search keywords instead) in place of
                 // its hero <h1>/.eyebrow — no new copy, same rule as every
                 // other field in this block.
@@ -198,7 +198,7 @@ jobs:
                   'meta[property="og:title"]',
                   (el) => el.getAttribute("content"),
                 );
-                const sep = " — ";
+                const sep = " | ";
                 const idx = titleText.indexOf(sep);
                 eyebrow = "mvdmio";
                 headline = idx === -1 ? titleText : titleText.slice(idx + sep.length);
