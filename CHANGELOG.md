@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03: Privacy Notice names the editor's colour item and drops the antiforgery cookie
+Section 4 of the Privacy Notice now lists the text editor's colour item in the browser storage table. The editor keeps the custom colours you picked, such as a table's border or background colour, so you can pick one again. The notice no longer lists the `.AspNetCore.Antiforgery.*` cookie, which the apps stopped setting. Nothing else in the notice changed.
+
 ## 2026-10-31: Framework pages carry breadcrumb data
 The eight Framework pages (ISO 27001, SOC 2, GDPR, ISO 9001, ISO 14001, ISO 42001, EU AI Act and Cyber Essentials) now carry breadcrumb data in their search-engine data: mvdmio, then Compliance, then the Framework. A search result can show that trail instead of the raw path. No visible page text changed. Nothing else changed.
 

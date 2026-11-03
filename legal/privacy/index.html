@@ -65,7 +65,7 @@
       <header class="page-head">
         <p class="eyebrow mono">mvdm.io &middot; legal</p>
         <h1>Privacy Notice</h1>
-        <p class="sub">Effective <time datetime="2026-10-30">30 October 2026</time>. A later edit replaces this page in place.</p>
+        <p class="sub">Effective <time datetime="2026-11-03">3 November 2026</time>. A later edit replaces this page in place.</p>
         <p class="print-hide"><a class="btn sm" href="/legal/privacy/privacy-notice.pdf">Download PDF</a></p>
       </header>
       <div class="prose">
@@ -110,9 +110,8 @@
     <tr><td><code>mvdmio.external</code></td><td>Sign-in (auth.mvdm.io)</td><td>Holds the answer from another sign-in provider while you finish signing in.</td><td>15 minutes</td></tr>
     <tr><td><code>mvdmio.clients</code></td><td>Sign-in (auth.mvdm.io)</td><td>Lists the Products you signed in to, so signing out signs you out of each one.</td><td>12 hours</td></tr>
     <tr><td><code>.AspNetCore.Correlation.*</code> and <code>.AspNetCore.OpenIdConnect.Nonce.*</code></td><td>Each Product, and sign-in</td><td>Protect the sign-in round trip from being forged.</td><td>Until sign-in finishes, at most 15 minutes</td></tr>
-    <tr><td><code>.AspNetCore.Antiforgery.*</code></td><td>Every Product, and sign-in</td><td>Protects your forms from being sent by another site.</td><td>Until you close the browser</td></tr>
     <tr><td><code>.AspNetCore.Mvc.CookieTempDataProvider</code></td><td>Sign-in (auth.mvdm.io)</td><td>Carries a one-time message, such as &ldquo;Saved&rdquo;, to the next page.</td><td>Until the next page shows it</td></tr>
-    <tr><td><code>.DevAuth.Ticket</code></td><td>The mvdm.io Compliance Demo (demo.mvdm.io/compliance)</td><td>Remembers which demo account you picked.</td><td>Until you close the browser</td></tr>
+    <tr><td><code>.DevAuth.Ticket</code></td><td>The mvdm.io Compliance Demo (demo.mvdm.io/<wbr>compliance)</td><td>Remembers which demo account you picked.</td><td>Until you close the browser</td></tr>
     <tr><td><code>browser-timezone</code></td><td>Every Product, and sign-in. It is shared across mvdm.io.</td><td>Your browser&rsquo;s time zone, so times show in your local time from the first page.</td><td>1 year</td></tr>
   </tbody>
 </table>
@@ -138,6 +137,7 @@
   <tbody>
     <tr><td><code>mvdmio.&lt;Product&gt;.changelog.seenIdentity</code></td><td>Every Product, and sign-in</td><td>The newest Changelog entry you have seen, so the Changelog badge can show what is new.</td><td>Until you clear your browser&rsquo;s site data</td></tr>
     <tr><td><code>tinymce-url-history</code></td><td>Wherever the text editor appears</td><td>The last five web addresses you entered in the editor&rsquo;s link or image dialog, so you can pick one again.</td><td>Until you clear your browser&rsquo;s site data</td></tr>
+    <tr><td><code>tinymce-custom-colors-&lt;picker&gt;</code></td><td>Wherever the text editor appears</td><td>The custom colours you picked in the editor, such as a table&rsquo;s border or background colour, so you can pick one again.</td><td>Until you clear your browser&rsquo;s site data</td></tr>
   </tbody>
 </table>
 
