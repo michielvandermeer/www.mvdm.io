@@ -733,6 +733,13 @@ main { flex: 1; }
   .legal-table th, .legal-table td { padding: 8px 10px 8px 0; }
   .legal-table th { font-size: 11px; letter-spacing: .02em; }
 }
+/* 320px: the widest heading word sets a column's minimum, so shrink the type
+   rather than let words break mid-letter */
+@media (max-width: 360px) {
+  .legal-table { font-size: 13px; }
+  .legal-table th, .legal-table td { padding-right: 4px; }
+  .legal-table th { font-size: 10px; letter-spacing: 0; }
+}
 
 /* ---------- resume / open-source tile grid ---------- */
 .tiles {
