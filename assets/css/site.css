@@ -427,6 +427,8 @@ main { flex: 1; }
   top: 10px;
   left: 0;
 }
+/* A long code name (a package id) wraps instead of widening the bullet */
+.list code { overflow-wrap: anywhere; }
 
 /* ---------- three-card grid ---------- */
 .cards {
