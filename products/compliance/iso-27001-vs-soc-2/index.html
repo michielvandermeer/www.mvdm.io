@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en" data-product="compliance">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISO 27001 vs SOC 2: differences and where to start | mvdmio</title>
+<meta name="description" content="ISO 27001 gives you a certificate. SOC 2 gives you a report from a CPA firm. Here is how they differ, which to start with and how to run both.">
+<link rel="canonical" href="https://mvdm.io/products/compliance/iso-27001-vs-soc-2/">
+<meta property="og:title" content="ISO 27001 vs SOC 2 | mvdmio Compliance">
+<meta property="og:description" content="ISO 27001 gives you a certificate. SOC 2 gives you a report from a CPA firm. Here is how they differ, which to start with and how to run both.">
+<meta property="og:url" content="https://mvdm.io/products/compliance/iso-27001-vs-soc-2/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mvdm.io/assets/share-cards/products/compliance/iso-27001-vs-soc-2.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="mvdmio Compliance: ISO 27001 vs SOC 2, the differences and where to start">
+<meta property="og:site_name" content="mvdmio">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between ISO 27001 and SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ISO 27001 is an international standard for an information security management system. A certification body audits you against it and issues a certificate. SOC 2 is a US attestation from the AICPA. A CPA firm examines your controls against the Trust Services Criteria and issues a report, either Type 1 or Type 2."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I start with ISO 27001 or SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the one your customers ask for. If most of your customers are in the US and ask for a SOC 2 report, start with SOC 2. If your customers are in Europe or spread over several regions, or nobody has asked yet, start with ISO 27001."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SOC 2 required in Europe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. SOC 2 is a voluntary attestation from a US professional body, not a legal requirement. Some customers ask for a SOC 2 report in their contracts or security questionnaires, often customers in the US. Many European customers ask for ISO 27001 instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can ISO 27001 replace SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if your customer accepts it. Some customers accept an ISO 27001 certificate instead of a SOC 2 report, and others ask for SOC 2 by name. Ask the customer before you plan the audit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do ISO 27001 and SOC 2 overlap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The two share many security topics. In Compliance, the crosswalk marks ISO 27001 A.5.15 on access control as Equivalent to SOC 2 CC6.1, and ISO 27001 A.8.32 on change management as Equivalent to SOC 2 CC8.1. They still differ. ISO 27001 asks for a full management system, and SOC 2 can include categories such as Privacy and Processing Integrity. Each one has its own audit."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "mvdmio",
+          "item": "https://mvdm.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Compliance",
+          "item": "https://mvdm.io/products/compliance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ISO 27001 vs SOC 2",
+          "item": "https://mvdm.io/products/compliance/iso-27001-vs-soc-2/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#0e3b2e">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#fbfaf7">
+
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-latin.woff2">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-nav" id="site-nav">
+  <div class="site-util">
+    <div class="wrap site-util-inner">
+      <a href="/open-source/">Open source</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <a href="/projects/">Resume</a>
+    </div>
+  </div>
+  <div class="wrap site-nav-inner">
+    <a class="wordmark" href="/">mvdmio</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="/products/compliance/">Compliance</a>
+      <a href="/products/translation-tools/">Translation Tools</a>
+      <a href="/products/health-check/">Health Check</a>
+      <a href="/products/statistics/">Statistics</a>
+      <a href="/products/commonplace/">Commonplace</a>
+      <span class="nav-cta"><a class="btn" href="https://compliance.mvdm.io">Get started</a></span>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap hero hero-single">
+    <div>
+      <p class="eyebrow">mvdmio · Compliance</p>
+      <h1>ISO 27001 vs SOC 2: start with the one your customers ask for</h1>
+      <p class="sub">ISO 27001 is an international standard for an information security management system (ISMS). A certification body audits your ISMS against it and issues a certificate. SOC 2 is a US attestation from the AICPA. A CPA firm examines your controls against the Trust Services Criteria and writes a report.</p>
+      <p class="sub">If most of your customers are in the US and ask for a SOC 2 report, start with SOC 2. In most other cases, start with ISO 27001. The two share many security topics, such as access control, change management and risk assessment, so the second one builds on the work you did for the first. Each one still has its own audit.</p>
+      <p class="sub">This page covers what each one is, how they differ, which one to start with and how to run both.</p>
+      <div class="actions">
+        <a class="btn" href="https://compliance.mvdm.io">Get started</a>
+        <a class="btn ghost" href="https://demo.mvdm.io/compliance">Try the demo</a>
+        <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section">
+      <div class="clause"><span class="num mono">01</span><h2>What ISO 27001 is</h2></div>
+      <p class="sub">ISO/IEC 27001 is published by ISO and the International Electrotechnical Commission (IEC). It sets the requirements for an ISMS: how you decide which information security risks matter, how you treat them and how you keep the system working.</p>
+      <p class="sub">Clauses 4 to 10 cover the management system itself, such as context, leadership, risk assessment, internal audit and management review. Annex A of ISO/IEC 27001:2022 lists 93 controls. You decide which ones apply to you and record that in a Statement of Applicability.</p>
+      <p class="sub">Certification is optional. If you want a certificate, a certification body audits you. ISO notes that a certificate from an accredited certification body can give customers more confidence. Accredited certification runs in a three-year cycle, with an initial audit, surveillance audits in the first and second year and a recertification audit in the third.</p>
+    </section>
+
+    <section class="section">
+      <div class="clause"><span class="num mono">02</span><h2>What SOC 2 is</h2></div>
+      <p class="sub">SOC 2 comes from the American Institute of Certified Public Accountants (AICPA). It is an examination of the controls at a service organization, such as a SaaS company, against the Trust Services Criteria.</p>
+      <p class="sub">The criteria are grouped into five categories: Security, Availability, Processing Integrity, Confidentiality and Privacy. Every SOC 2 report covers Security, through the Common Criteria. You choose which of the other categories to add to your scope.</p>
+      <p class="sub">A licensed CPA firm performs the examination and issues the report. There are two types:</p>
+      <ul class="list">
+        <li>A Type 1 report looks at whether your controls are suitably designed, as of one date.</li>
+        <li>A Type 2 report also tests whether your controls operated effectively throughout a period, and it describes the auditor's tests and results.</li>
+      </ul>
+      <p class="sub">SOC 2 is an attestation report, not a certification. The report is meant for your customers and other specified parties.</p>
+    </section>
+
+    <section class="section">
+      <div class="clause"><span class="num mono">03</span><h2>The differences that matter when you choose</h2></div>
+      <ul class="list">
+        <li>ISO 27001 ends in a certificate. SOC 2 ends in a report with the auditor's opinion.</li>
+        <li>A certification body audits ISO 27001. A CPA firm examines your controls for SOC 2.</li>
+        <li>ISO 27001 asks for a full management system plus the Annex A controls that apply to you. SOC 2 measures your controls against the Trust Services Criteria for the categories in your scope.</li>
+        <li>ISO 27001 is an international standard. SOC 2 is a US framework, so it comes up most with US customers.</li>
+      </ul>
+      <p class="sub">Neither one is better in general. The right one is the one your customers accept.</p>
+    </section>
+
+    <section class="section">
+      <div class="clause"><span class="num mono">04</span><h2>Which one to start with</h2></div>
+      <p class="sub">Look at the security questionnaires and contract terms you get from customers and prospects. They tell you which one to do first.</p>
+      <ul class="list">
+        <li>If most of your customers are in the US and ask for a SOC 2 report by name, start with SOC 2.</li>
+        <li>If your customers are in Europe or spread over several regions, start with ISO 27001.</li>
+        <li>If nobody has asked yet, ISO 27001 is a reasonable default, because it is an international standard.</li>
+      </ul>
+      <p class="sub">Some customers accept either one. Others ask for one by name. When a large customer asks for the other one later, you add it.</p>
+    </section>
+
+    <section class="section">
+      <div class="clause"><span class="num mono">05</span><h2>Doing both</h2></div>
+      <p class="sub">If your customers ask for both, you keep one ISMS and run two audits: an ISO 27001 audit by a certification body and a SOC 2 examination by a CPA firm. One audit does not cover the other standard.</p>
+      <p class="sub">Much of the work behind the two audits is shared. An access control policy, a risk assessment or a change management procedure is useful for both, and the evidence you keep for it can be evidence for both. Each auditor decides what to accept as evidence for their own standard.</p>
+    </section>
+
+    <section class="section">
+      <div class="clause"><span class="num mono">06</span><h2>ISO 27001 and SOC 2 in Compliance</h2></div>
+      <p class="sub">Compliance by mvdmio has catalogs for ISO 27001:2022 and SOC 2. Crosswalk mappings link related requirements across the frameworks you adopt, and the crosswalk marks each link as Equivalent, Partial or Related.</p>
+      <ul class="list">
+        <li>The crosswalk marks ISO 27001 A.5.15 on access control as Equivalent to SOC 2 CC6.1.</li>
+        <li>It marks ISO 27001 A.8.32 on change management as Equivalent to SOC 2 CC8.1.</li>
+        <li>It marks ISO 27001 clause 6.1.2 on risk assessment as Equivalent to SOC 2 CC3.2.</li>
+      </ul>
+      <p class="sub">You keep one access control record, and both frameworks show it against their own requirement. The same goes for evidence and findings. Each framework shows what is satisfied and what is still open.</p>
+      <p class="sub">Your ISO 27001 audit and your SOC 2 examination stay separate, because each one covers its own framework. Compliance does not certify you and does not issue a SOC 2 report. It is where you keep the records, evidence and findings your auditors ask to see.</p>
+      <p class="sub">Compliance doesn't connect to your cloud, identity or HR systems to collect evidence. You attach evidence to tasks yourself, or build your own sync through the REST API, the MCP server or the CLI.</p>
+      <p class="sub">More detail on each framework: <a href="/products/compliance/iso-27001/">ISO 27001 in Compliance</a> and <a href="/products/compliance/soc-2/">SOC 2 in Compliance</a>.</p>
+    </section>
+
+    <section class="section">
+      <div class="clause"><span class="num mono">07</span><h2>Pricing and trial</h2></div>
+      <p class="sub">ISO 27001 and SOC 2 are each €999 per framework per year, excl. VAT. You pay for each framework you adopt separately. Users in your organisation are unlimited.</p>
+      <p class="sub">Try Compliance for 30 days without a credit card. The trial gives you full access to every framework. The AI assistant is not part of the trial unless you buy AI credits.</p>
+      <p class="sub">Used at Jewel Software, where Michiel van der Meer is Tech Lead. He built Compliance after taking over an ISMS there and seeing how much hand-work it took.</p>
+      <p class="sub">You can also look around in the public demo first. It uses fictional data.</p>
+      <div class="actions">
+        <a class="btn" href="https://compliance.mvdm.io">Get started</a>
+        <a class="btn ghost" href="https://demo.mvdm.io/compliance">Try the demo</a>
+        <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="clause"><span class="num mono">08</span><h2>Questions about ISO 27001 and SOC 2</h2></div>
+      <div class="faq">
+        <h3>What is the difference between ISO 27001 and SOC 2?</h3>
+        <p>ISO 27001 is an international standard for an information security management system. A certification body audits you against it and issues a certificate. SOC 2 is a US attestation from the AICPA. A CPA firm examines your controls against the Trust Services Criteria and issues a report, either Type 1 or Type 2.</p>
+        <h3>Should I start with ISO 27001 or SOC 2?</h3>
+        <p>Start with the one your customers ask for. If most of your customers are in the US and ask for a SOC 2 report, start with SOC 2. If your customers are in Europe or spread over several regions, or nobody has asked yet, start with ISO 27001.</p>
+        <h3>Is SOC 2 required in Europe?</h3>
+        <p>No. SOC 2 is a voluntary attestation from a US professional body, not a legal requirement. Some customers ask for a SOC 2 report in their contracts or security questionnaires, often customers in the US. Many European customers ask for ISO 27001 instead.</p>
+        <h3>Can ISO 27001 replace SOC 2?</h3>
+        <p>Only if your customer accepts it. Some customers accept an ISO 27001 certificate instead of a SOC 2 report, and others ask for SOC 2 by name. Ask the customer before you plan the audit.</p>
+        <h3>How much do ISO 27001 and SOC 2 overlap?</h3>
+        <p>The two share many security topics. In Compliance, the crosswalk marks ISO 27001 A.5.15 on access control as Equivalent to SOC 2 CC6.1, and ISO 27001 A.8.32 on change management as Equivalent to SOC 2 CC8.1. They still differ. ISO 27001 asks for a full management system, and SOC 2 can include categories such as Privacy and Processing Integrity. Each one has its own audit.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <p class="foot-id">
+      <span class="wordmark">mvdmio</span>
+      <span class="foot-sep">Built by Michiel van der Meer</span>
+      <span class="foot-sep"><a href="mailto:michiel@mvdm.io">michiel@mvdm.io</a></span>
+    </p>
+    <p class="foot-legal">
+      <a href="/legal/">Legal</a>
+      <span class="foot-sep"><a href="/legal/terms/">Terms of Service</a></span>
+      <span class="foot-sep"><a href="/legal/privacy/">Privacy Notice</a></span>
+      <span class="foot-sep"><a href="/legal/dpa/">Data Processing Agreement</a></span>
+      <span class="foot-sep"><a href="/legal/subprocessors/">Subprocessors</a></span>
+      <span class="foot-sep"><a href="/legal/company/">Company details</a></span>
+      <span class="foot-sep"><a href="/legal/partners/">Partner terms</a></span>
+    </p>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
