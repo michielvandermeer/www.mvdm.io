@@ -65,7 +65,7 @@
       <header class="page-head">
         <p class="eyebrow mono">mvdm.io &middot; legal</p>
         <h1>Data Processing Agreement</h1>
-        <p class="sub">Effective <time datetime="2026-10-30">30 October 2026</time>. A later edit replaces this page in place.</p>
+        <p class="sub">Effective <time datetime="2026-11-05">5 November 2026</time>. A later edit replaces this page in place.</p>
         <p class="print-hide"><a class="btn sm" href="/legal/dpa/data-processing-agreement.pdf">Download PDF</a></p>
       </header>
       <div class="prose">
@@ -118,7 +118,7 @@
 <li>application logs, error reports, and traces kept for at most 90 days;</li>
 <li>deletion of an account&rsquo;s data for a Product after the closed-licence retention window, described in section 12, when no current licence remains.</li>
 </ul>
-<p><strong>Data is not encrypted at rest, and mvdm.io keeps no separate copy of it for recovery.</strong> If data in a covered Product is lost or corrupted, there is nothing else to restore it from. Customer should assess that risk on this basis rather than assume otherwise. A Platform Administrator may read mvdm.io Compliance and mvdm.io Translation Tools assistant conversations for support and quality.</p>
+<p><strong>Data on the production server is not encrypted at rest.</strong> Once a day, mvdm.io takes a copy of every covered Product&rsquo;s data and stored files. That copy is the Backup, and it is encrypted. It is kept on hardware mvdm.io owns, in the Netherlands, apart from the production server. Each Backup is kept for 30 days and then deleted. Each Backup is restored and checked the night it is taken. A Platform Administrator may read mvdm.io Compliance and mvdm.io Translation Tools assistant conversations for support and quality.</p>
 
 <h2>8. Subprocessors</h2>
 <p>Customer authorises mvdm.io to use the subprocessors listed on the public <a href="/legal/subprocessors/">Subprocessor list</a>. That page is incorporated by reference. mvdm.io remains responsible for subprocessors&rsquo; performance of the processing obligations under this DPA. mvdm.io emails account owners when the Subprocessor list changes. A Customer who objects to a new subprocessor may end the contract, with no refund for time already paid, as described in the <a href="/legal/terms/">Terms of Service</a>.</p>
@@ -149,7 +149,7 @@
 <p>Taking into account the nature of the processing, mvdm.io will assist Customer with data-subject requests, security, breach notification, and data-protection impact assessments where reasonably possible through the product or by email. mvdm.io will notify Customer without undue delay, and within 48 hours, after becoming aware of a personal-data breach affecting Customer&rsquo;s data in a covered Product. Audit rights are exercised reasonably, no more than once per year unless a breach or competent authority requires otherwise, and in a way that does not compromise other customers&rsquo; security.</p>
 
 <h2>12. Return and deletion</h2>
-<p>Until a full product export exists, Customer may request return of its data for a covered Product by email to <a href="mailto:michiel@mvdm.io">michiel@mvdm.io</a>, during an active licence for that Product or the retention window. When a covered Product&rsquo;s licence ends, mvdm.io keeps that account&rsquo;s data for that Product for <strong>365 days</strong> from the licence end date. If Customer obtains a new current licence for that Product within those 365 days, the countdown stops and the data remains. If Customer does not, mvdm.io deletes that account&rsquo;s data for that Product after 365 days. Customer&rsquo;s sign-in account and users are not deleted by that wipe. This rule is the same for every covered Product.</p>
+<p>Until a full product export exists, Customer may request return of its data for a covered Product by email to <a href="mailto:michiel@mvdm.io">michiel@mvdm.io</a>, during an active licence for that Product or the retention window. When a covered Product&rsquo;s licence ends, mvdm.io keeps that account&rsquo;s data for that Product for <strong>365 days</strong> from the licence end date. If Customer obtains a new current licence for that Product within those 365 days, the countdown stops and the data remains. If Customer does not, mvdm.io deletes that account&rsquo;s data for that Product after 365 days. Customer&rsquo;s sign-in account and users are not deleted by that wipe. This rule is the same for every covered Product. Data that mvdm.io deletes under this section leaves every Backup within 30 days.</p>
 
 <h2>13. Changes to this DPA</h2>
 <p>mvdm.io may replace this DPA by publishing an updated page with a new effective date. <strong>Continued use of a covered Product after a replacement is acceptance of the replacement.</strong></p>

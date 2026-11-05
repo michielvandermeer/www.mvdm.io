@@ -87,6 +87,10 @@ _Avoid_: using this name for a file a customer attaches to their own supplier
 The public list of third parties **mvdm.io** uses to process customer data, grouped by application: one section for the providers every Product uses, then one subheading per Product for what only it uses.
 _Avoid_: vendors, processors (alone)
 
+**Backup**:
+The daily encrypted copy of every Product's database rows and stored files, kept on hardware mvdm.io owns in the Netherlands, apart from the production server, for 30 days.
+_Avoid_: snapshot, archive
+
 **Closed-licence retention**:
 The rule that mvdm.io keeps an account's data for a Product for 365 days after that Product's licence ends, then deletes it. A new current licence inside the window stops the countdown.
 _Avoid_: grace period, dormancy

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-05: The DPA and the Privacy Notice describe the daily Backup
+Section 7 of the Data Processing Agreement now says mvdm.io takes an encrypted copy of every covered Product's data and stored files once a day, keeps it on hardware it owns in the Netherlands apart from the production server, keeps each copy for 30 days, and restores and checks each one the night it is taken. The line that mvdm.io keeps no separate copy is gone, and "not encrypted at rest" is narrowed to the production server. Section 12 of the DPA and section 8 of the Privacy Notice now say that deleted data leaves every Backup within 30 days, and section 7 of the Privacy Notice names where the Backup is kept. The DPA and the Privacy Notice carry the new Effective date. No other Legal page changed, and the Subprocessor list needs no change because the hardware is mvdm.io's own.
+
 ## 2026-11-03: Privacy Notice names the editor's colour item and drops the antiforgery cookie
 Section 4 of the Privacy Notice now lists the text editor's colour item in the browser storage table. The editor keeps the custom colours you picked, such as a table's border or background colour, so you can pick one again. The notice no longer lists the `.AspNetCore.Antiforgery.*` cookie, which the apps stopped setting. Nothing else in the notice changed.
 
