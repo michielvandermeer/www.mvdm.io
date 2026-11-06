@@ -73,8 +73,9 @@ open-source/index.html             /open-source/
 feed.xml                           /feed.xml    (hand-maintained RSS)
 sitemap.xml, robots.txt            search-engine files, served at root
 llms.txt                           /llms.txt    (plain markdown summary for
-                                   language models; no price in it, and
-                                   not in sitemap.xml)
+                                   language models; only its Compliance
+                                   bullet holds prices and the trial, and
+                                   it is not in sitemap.xml)
 assets/css/site.css                the one shared stylesheet
 assets/js/site.js                  the one shared script (mobile nav toggle)
 assets/images/, assets/img/        images and favicons
@@ -302,7 +303,8 @@ their cards). Prices are hand-written against what's actually configured
 in Stripe; there is no page-load fetch and no sync. A later Compliance
 price change edits the hero, the band table, the matching `Offer` in the
 page's JSON-LD block, the FAQ's cost answer (in the visible FAQ and in the
-JSON-LD), and at most the homepage Flagship line. It
+JSON-LD), the three fee tiers in `llms.txt`'s Compliance bullet, and at most the homepage Flagship line. A change to
+the FAQ's trial answer edits that bullet's trial sentences too. It
 also edits the Framework page `products/compliance/iso-27001/`: its meta
 description and `og:description` (which state the €999 fee and equal the
 JSON-LD `description`), its Pricing and trial section (which states the €999 fee), its FAQ cost
@@ -363,7 +365,7 @@ the JSON-LD. On `products/compliance/cyber-essentials/` it edits the Pricing and
 section's sentence about included credit and the FAQ cost answer, visible and in
 the JSON-LD. On `nl/gemeenten/` it edits the "Wat het
 kost" section's credit sentence and the FAQ assistant answer, visible and in
-the JSON-LD. The `Offer` entries need no edit for it
+the JSON-LD. It also edits the `$10` and `$5` amounts in `llms.txt`'s Compliance bullet. The `Offer` entries need no edit for it
 (the JSON-LD paragraph says they carry no AI credit amounts). A later change to another Product edits its hero price line (and the ledger total
 row), that page's JSON-LD block, and at most one line on the homepage.
 
