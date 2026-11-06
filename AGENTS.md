@@ -9,11 +9,13 @@ those terms, not "app", "project", "tool", "portfolio" or "info page".
 ## Tech stack
 
 Plain static HTML, hand-written CSS, and one small hand-written JS file
-(`assets/js/site.js`, the mobile nav toggle — every page references it with
+(`assets/js/site.js`, the Page view script and the mobile nav toggle — every page references it with
 `<script src="/assets/js/site.js" defer></script>` at the end of `<body>`).
 No generator, no Node, no Ruby, no Bundler, and no build step for the pages
 themselves — GitHub Pages serves the repository root directly, exactly as
-committed. The site has no external dependency: it serves its own fonts
+committed. The one outside request the site makes is Statistics' script
+(`https://statistics.mvdm.io/visits.js`, which `site.js` adds to every page),
+and Statistics is mvdm.io's own service. The site serves its own fonts
 (Source Serif 4, Inter, IBM Plex Mono) from `assets/fonts/` through the
 `@font-face` rules at the top of `site.css`, and no page may request
 `fonts.googleapis.com` or `fonts.gstatic.com` (see "How to add a page"
@@ -78,7 +80,7 @@ llms.txt                           /llms.txt    (plain markdown summary for
                                    bullet holds prices and the trial, and
                                    it is not in sitemap.xml)
 assets/css/site.css                the one shared stylesheet
-assets/js/site.js                  the one shared script (mobile nav toggle)
+assets/js/site.js                  the one shared script (Page view + nav toggle)
 assets/images/, assets/img/        images and favicons
 ```
 
