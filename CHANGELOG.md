@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-07: The Compliance page's section 02 heading and register caption get the rev 3 wording
+The Compliance Landing page's section 02 heading read "Frameworks that share your work" and now reads "Frameworks that share requirements", the same words as the homepage heading. The caption under the register picture in section 01 read "policies · risks · evidence · 10 more" and now reads "policies · risks · evidence · and more", so it gives no count. Nothing else changed.
+
 ## 2026-11-07: The Share card descriptions match the headings on four Compliance pages
 The Compliance Landing page, the Cyber Essentials Framework page and the two comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act) described their Share card picture in words that no longer matched the heading the picture shows. Their Share card picture descriptions now match the headings their pictures show, so a person who hears the description gets the same heading a sighted reader sees. Nothing else changed.
 
