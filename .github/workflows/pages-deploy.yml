@@ -36,6 +36,128 @@ jobs:
           # of one commit would stamp every page with this deploy's own date.
           fetch-depth: 0
 
+      - name: Check every page's address copies against sitemap.xml
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Runs first, on the committed files, so a wrong address fails the
+          # run before anything is built or published. Every page in
+          # sitemap.xml must write its own address the way the sitemap does,
+          # in each copy below; addresses that point at other pages
+          # (publisher, author, offers, earlier breadcrumb items) are not
+          # compared. Every problem is listed, then the step exits 1.
+          python3 - <<'PY'
+          import json
+          import re
+          import sys
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          SITE = "https://mvdm.io"
+          errors = []
+
+
+          class Head(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.canonical = []
+                  self.meta = {"og:url": [], "og:image": []}
+                  self.ld = []
+                  self.in_ld = False
+
+              def handle_starttag(self, tag, attrs):
+                  a = dict(attrs)
+                  if tag == "link" and "canonical" in (a.get("rel") or "").split():
+                      self.canonical.append(a.get("href"))
+                  elif tag == "meta" and a.get("property") in self.meta:
+                      self.meta[a["property"]].append(a.get("content"))
+                  elif tag == "script" and a.get("type") == "application/ld+json":
+                      self.ld.append("")
+                      self.in_ld = True
+
+              def handle_endtag(self, tag):
+                  if tag == "script":
+                      self.in_ld = False
+
+              def handle_data(self, data):
+                  if self.in_ld:
+                      self.ld[-1] += data
+
+
+          def problem(page, text):
+              errors.append(f"::error::{page}: {text}")
+
+
+          def compare(page, copy, found, expected):
+              if found != expected:
+                  problem(page, f"{copy} is {found}, expected {expected}")
+
+
+          def single(page, name, plural, values, expected):
+              """Exactly one copy, equal to expected; returns it when there is one."""
+              if len(values) == 0:
+                  problem(page, f"has no {name}")
+              elif len(values) > 1:
+                  count = "two" if len(values) == 2 else len(values)
+                  problem(page, f"has {count} {plural}")
+              else:
+                  compare(page, name, values[0], expected)
+                  return values[0]
+              return None
+
+
+          def check_node(page, node, og_image):
+              kind = node.get("@type", "structured data")
+              if "url" in node:
+                  compare(page, f"{kind} url", node["url"], page)
+              if isinstance(node.get("mainEntityOfPage"), str):
+                  compare(page, f"{kind} mainEntityOfPage", node["mainEntityOfPage"], page)
+              if "@id" in node and not str(node["@id"]).startswith(page + "#"):
+                  problem(page, f"{kind} @id is {node['@id']}, expected starting with {page}#")
+              if kind == "BlogPosting" and og_image is not None:
+                  compare(page, "BlogPosting image", node.get("image"), og_image)
+              if kind == "BreadcrumbList":
+                  steps = [s for s in node.get("itemListElement", []) if "position" in s and "item" in s]
+                  last = max(steps, key=lambda s: s["position"])["item"] if steps else "none"
+                  compare(page, "last breadcrumb item", last, page)
+
+
+          def check_page(page, file):
+              head = Head()
+              head.feed(file.read_text(encoding="utf-8"))
+              path = page[len(SITE):].strip("/")
+              single(page, "canonical link", "canonical links", head.canonical, page)
+              single(page, "og:url", "og:url", head.meta["og:url"], page)
+              og_image = single(
+                  page, "og:image", "og:image", head.meta["og:image"],
+                  f"{SITE}/assets/share-cards/{path or 'index'}.png",
+              )
+              for block in head.ld:
+                  try:
+                      data = json.loads(block)
+                      nodes = data["@graph"] if isinstance(data, dict) and "@graph" in data else [data]
+                      if not isinstance(nodes, list) or not all(isinstance(n, dict) for n in nodes):
+                          raise ValueError("not a list of objects")
+                      for node in nodes:
+                          check_node(page, node, og_image)
+                  except (ValueError, TypeError, KeyError):
+                      problem(page, "its structured data does not parse")
+
+
+          for page in re.findall(r"<loc>([^<]*)</loc>", Path("sitemap.xml").read_text(encoding="utf-8")):
+              path = page[len(SITE):]
+              file = Path("index.html" if path == "/" else path.lstrip("/") + "index.html")
+              if file.is_file():
+                  check_page(page, file)
+              else:
+                  problem(page, f"page file {file} is missing")
+
+          if errors:
+              print("\n".join(errors), file=sys.stderr)
+              sys.exit(1)
+          PY
+
       - name: Add lastmod to sitemap.xml from git history
         shell: bash
         run: |

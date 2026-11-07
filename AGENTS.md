@@ -33,7 +33,9 @@ The one exception is the Pages deploy workflow
 (`.github/workflows/pages-deploy.yml`), which does run build steps
 of its own: the legal pack (see **Legal documents** below), the Share cards
 (see **Share cards** below), and the sitemap's `<lastmod>` dates (see **Page
-/ URL structure** and "How to add a page" step 4).
+/ URL structure** and "How to add a page" step 4). Its first step builds
+nothing: it checks that every page's own-address copies equal the address
+`sitemap.xml` lists for it (see **Page / URL structure**).
 
 ## Page / URL structure
 
@@ -93,6 +95,17 @@ The committed `sitemap.xml` lists addresses only. The deploy adds
 `index.html` was last committed); nobody writes it by hand. The deploy fails if an
 address in `sitemap.xml` has no page file, so removing or renaming a page
 includes updating its sitemap entry.
+
+The deploy also fails when any copy of a page's own address differs from the
+address `sitemap.xml` lists for it, before it builds or publishes anything,
+and it lists every mismatch in the one run. The copies compared are the
+canonical link, `og:url`, `og:image` (the share card path mirroring the URL),
+the `url`, `mainEntityOfPage` and `@id` of each top-level node of the page's
+structured data, a `BlogPosting`'s `image`, and the last item of a
+`BreadcrumbList`. It also fails on a missing or duplicated canonical link,
+`og:url` or `og:image`, and on a structured-data block that is not valid JSON.
+Addresses that point at other pages (the publisher, the author, offers, the
+earlier breadcrumb items) are not compared.
 
 ## Shared stylesheet and design tokens
 
@@ -471,6 +484,12 @@ means serving the tree and looking at it:
 5. If you touched `feed.xml`, confirm it still parses as RSS (e.g. open it
    in a browser or feed reader, or run it through an XML parser).
 6. If you added or removed a page, update `sitemap.xml` to match.
+7. If you added or moved a page, run the deploy's address check: copy the
+   Python between `python3 - <<'PY'` and `PY` in the workflow step "Check
+   every page's address copies against sitemap.xml"
+   (`.github/workflows/pages-deploy.yml`), remove the step's 10-space
+   indentation, and run it with `python3` from the repo root. It prints one
+   `::error::` line per mismatch and exits 1, or prints nothing and exits 0.
 
 A throwaway link-crawl script is fine for a one-off check but should not be
 committed — there is no CI test suite for this repo.
