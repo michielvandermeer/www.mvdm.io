@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-07: The Compliance pages name the records that link to a Requirement
+Five sentences on the website said that evidence, audits and findings link to the requirements they prove or fail, which Compliance does not do. The ISO 27001, ISO 42001 and SOC 2 Framework pages, the Compliance Landing page and the Dutch page now say that policies, procedures, risks and objectives link to the requirements they meet (the criteria they meet on the SOC 2 page). The ISO 27001 page and the Compliance Landing page still say that each requirement shows whether it is satisfied or still open. Audits stay described wherever Compliance schedules and records them. Nothing else changed.
+
 ## 2026-11-07: The Legal pages say the Backup is kept with Cloudflare in the EU
 The Backup is now kept with Cloudflare in the EU, apart from the production server, and no longer on hardware mvdm.io owns in the Netherlands, so the place named in the 2026-11-05 entry no longer holds. Section 7 (Technical and organisational measures) of the Data Processing Agreement now says the Backup is kept with Cloudflare in the EU, and in section 9 (International transfers) the subprocessor table now reads "United States, and the Backup in the EU" for Cloudflare. Section 7 (Recipients and transfers) of the Privacy Notice says the same. The Subprocessor list now names Cloudflare for encrypted storage of the Backup, and it carries the Effective date 7 November 2026. The Backup's retention, encryption and nightly restore check did not change.
 
