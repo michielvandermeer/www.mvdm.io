@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-07: Try the demo counts as a Conversion and the Privacy Notice names the kept source
+Clicking Try the demo, or Bekijk de demo on the Dutch page, now counts as a Conversion named "Demo opened" in Statistics. The Privacy Notice now says that an account keeps the site or campaign that brought you, in section 2 and again in section 5 for the `via` value. Nothing else changed.
+
 ## 2026-11-07: The Data Processing Agreement says data is encrypted at rest
 Section 7 of the Data Processing Agreement now says that every covered Product's data and stored files are encrypted at rest on the production server with AES-256, and that the key is kept apart from the data, in a key store outside the server. The sentence saying data on the production server is not encrypted at rest is gone. The Backup text did not change, and the Subprocessor list needs no change. Nothing else changed.
 
