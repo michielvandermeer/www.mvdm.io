@@ -88,7 +88,7 @@ The public list of third parties **mvdm.io** uses to process customer data, grou
 _Avoid_: vendors, processors (alone)
 
 **Backup**:
-The daily encrypted copy of every Product's database rows and stored files, kept on hardware mvdm.io owns in the Netherlands, apart from the production server, for 30 days.
+The daily encrypted copy of every Product's database rows and stored files, kept with Cloudflare in the EU, apart from the production server, for 30 days.
 _Avoid_: snapshot, archive
 
 **Closed-licence retention**:
