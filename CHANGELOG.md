@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-07: The Statistics Landing page links the public Demo
+The Statistics Landing page now carries a "Try the demo" button in the hero, between Get started and Contact me. It links the public Statistics Demo, and llms.txt now names the Statistics Demo. Nothing else changed.
+
 ## 2026-11-07: The Compliance page's section 02 heading and register caption get the rev 3 wording
 The Compliance Landing page's section 02 heading read "Frameworks that share your work" and now reads "Frameworks that share requirements", the same words as the homepage heading. The caption under the register picture in section 01 read "policies · risks · evidence · 10 more" and now reads "policies · risks · evidence · and more", so it gives no count. Nothing else changed.
 
