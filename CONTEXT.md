@@ -92,7 +92,7 @@ The daily encrypted copy of every Product's database rows and stored files, kept
 _Avoid_: snapshot, archive
 
 **Closed-licence retention**:
-The rule that mvdm.io keeps an account's data for a Product for 365 days after that Product's licence ends, then deletes it. A new current licence inside the window stops the countdown.
+The rule that mvdm.io keeps an account's data for a Product for 365 days after that Product's licence ends, then deletes it. A new current licence inside the window stops the countdown. A Withdrawal is the one exception: it deletes the account's Commonplace data at once.
 _Avoid_: grace period, dormancy
 
 **Company details**:
@@ -102,3 +102,7 @@ _Avoid_: Imprint, Colophon, Legal notice, Impressum
 **Consumer purchase**:
 A Product bought by an individual for themselves rather than by an organisation. mvdm.io Commonplace is the only one, and it carries a 14-day right of withdrawal.
 _Avoid_: personal plan, B2C tier
+
+**Withdrawal**:
+A consumer ending a paid Commonplace licence within 14 days of the day they subscribed, for a refund of everything paid. It ends the licence at once and deletes the account's Commonplace data at once. A renewal starts no new 14 days, and a trial or a complimentary licence carries no Withdrawal.
+_Avoid_: cancellation, refund request
