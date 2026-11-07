@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-07: The Share card descriptions match the headings on four Compliance pages
+The Compliance Landing page, the Cyber Essentials Framework page and the two comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act) described their Share card picture in words that no longer matched the heading the picture shows. Their Share card picture descriptions now match the headings their pictures show, so a person who hears the description gets the same heading a sighted reader sees. Nothing else changed.
+
 ## 2026-11-07: The Partner terms let a Partner end the partnership
 A Partner may now end the partnership at any time by email to the address on Company details, the same right mvdm.io already had. Whichever side ends it, new Commission stops and Commission already earned is still paid, and the self-billing agreement still covers the Commission paid after the partnership ends. Section 1 of the Partner terms says so, and the Partner terms carry the Effective date 7 November 2026. Nothing else changed.
 

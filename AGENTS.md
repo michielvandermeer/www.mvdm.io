@@ -156,7 +156,12 @@ live in the page itself.
    page `<title>` and `og:title` separates the page name from the brand with
    " | " ("Blog | mvdmio", "Terms of Service | mvdm.io"), never an em dash,
    and `og:image:alt` uses ": " in place of a dash, because screen readers say
-   "vertical bar" for "|".
+   "vertical bar" for "|". `og:image:alt` is built from the hero `.eyebrow`
+   text with " · " replaced by a single space, then ": ", then the `<h1>` text
+   with any markup such as `<em>` removed. The homepage is the one exception:
+   its `og:image:alt` is its `og:title` with " | " replaced by ": ", because
+   the deploy draws the homepage card from `og:title`. A change to a page's
+   `<h1>` or `.eyebrow` updates its `og:image:alt` in the same change.
    The `og:description` mirrors this page's meta
    description, `og:url` its canonical, and its `og:image` path
    mirrors the new URL (see **Share cards** below). `og:type` is `article`
