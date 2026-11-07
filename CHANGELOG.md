@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-07: The Partner terms let a Partner end the partnership
+A Partner may now end the partnership at any time by email to the address on Company details, the same right mvdm.io already had. Whichever side ends it, new Commission stops and Commission already earned is still paid, and the self-billing agreement still covers the Commission paid after the partnership ends. Section 1 of the Partner terms says so, and the Partner terms carry the Effective date 7 November 2026. Nothing else changed.
+
 ## 2026-11-07: The Compliance pages name the records that link to a Requirement
 Five sentences on the website said that evidence, audits, findings or register records link to requirements, which Compliance does not do. The ISO 27001, ISO 42001 and SOC 2 Framework pages, the Compliance Landing page and the Dutch page now say that policies, procedures, risks and objectives link to the requirements they meet (the criteria they meet on the SOC 2 page). The ISO 27001 page and the Compliance Landing page still say that each requirement shows whether it is satisfied or still open. Audits stay described wherever Compliance schedules and records them. Nothing else changed.
 
