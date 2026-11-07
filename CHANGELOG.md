@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-07: The Terms and Privacy Notice say how to withdraw from Commonplace and that a Withdrawal deletes its data at once
+Section 3 of the Terms of Service, under Consumer purchase, now says you may withdraw within 14 days of the day you subscribe, that a renewal starts no new 14 days, that a trial or a complimentary licence carries no right of withdrawal, and that you withdraw with Withdraw from contract here on the Commonplace row of your Subscriptions page on auth.mvdm.io or by email to the section 12 address. It also says a Withdrawal refunds everything paid to the card used, ends the licence at once, ends each Allowance pack still inside its own 14 days with a refund of its unused share, and deletes the account's Commonplace data at once. Section 6 of the Terms and section 8 of the Privacy Notice now name a Withdrawal as the one exception to closed-licence retention, and say what is left on the Commonplace Assistant balance still follows the 365-day rule. Section 6 of the Privacy Notice now says a Commonplace Assistant conversation is deleted at once by a Withdrawal. The Commonplace Landing page has a new line under the price line that links to the Consumer purchase part of the Terms. The Terms and the Privacy Notice now carry 7 November 2026 as their effective date. Nothing else changed.
+
 ## 2026-11-07: Try the demo counts as a Conversion and the Privacy Notice names the kept source
 Clicking Try the demo, or Bekijk de demo on the Dutch page, now counts as a Conversion named "Demo opened" in Statistics. The Privacy Notice now says that an account keeps the site or campaign that brought you, in section 2 and again in section 5 for the `via` value. Nothing else changed.
 
