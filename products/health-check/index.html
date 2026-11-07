@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Health Check: Uptime, DNS &amp; SSL Monitoring | mvdmio</title>
-<meta name="description" content="Health Check by mvdmio monitors uptime, DNS, SSL certificates, and crawls your app with automated smoke tests, so you find problems before your users do.">
+<meta name="description" content="Health Check by mvdmio monitors uptime, DNS and SSL certificates, so you find problems before your users do.">
 <link rel="canonical" href="https://mvdm.io/products/health-check/">
 <meta property="og:title" content="Health Check | mvdmio">
-<meta property="og:description" content="Health Check by mvdmio monitors uptime, DNS, SSL certificates, and crawls your app with automated smoke tests, so you find problems before your users do.">
+<meta property="og:description" content="Health Check by mvdmio monitors uptime, DNS and SSL certificates, so you find problems before your users do.">
 <meta property="og:url" content="https://mvdm.io/products/health-check/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://mvdm.io/assets/share-cards/products/health-check.png">
@@ -28,7 +28,7 @@
     "name": "mvdmio",
     "url": "https://mvdm.io/"
   },
-  "description": "Health Check by mvdmio monitors uptime, DNS, SSL certificates, and crawls your app with automated smoke tests, so you find problems before your users do.",
+  "description": "Health Check by mvdmio monitors uptime, DNS and SSL certificates, so you find problems before your users do.",
   "applicationCategory": "DeveloperApplication",
   "offers": [
     {
@@ -97,7 +97,7 @@
       <p class="eyebrow">mvdmio · Health Check</p>
       <h1>Know it's down <em>before</em> your users do.</h1>
       <p class="aud">For anyone running web services or apps who wants email alerts for outages and expiring SSL certificates, with DNS monitoring too.</p>
-      <p class="sub">Health Check polls your services every minute, watches your DNS and SSL, and crawls your app with a real browser. You get an email about an outage before anyone opens a support ticket about it.</p>
+      <p class="sub">Health Check polls your services every minute and watches your DNS and SSL. You get an email about an outage before anyone opens a support ticket about it.</p>
       <div class="actions">
         <a class="btn" href="https://healthcheck.mvdm.io">Get started</a>
         <a class="btn ghost" href="mailto:michiel@mvdm.io">Contact me</a>
@@ -134,7 +134,7 @@
 
   <section class="strip"><div class="wrap strip-inner">
     <span>Uptime</span><span>DNS</span><span>SSL certificates</span><span>SSL Labs grading</span>
-    <span>Smoke tests</span><span>Telemetry</span><span>Status pages</span><span>Weekly summary</span>
+    <span>Telemetry</span><span>Status pages</span><span>Weekly summary</span>
   </div></section>
 
   <div class="wrap">
@@ -202,44 +202,9 @@
       </div>
     </section>
 
-    <section class="section" id="smoke-tests">
-      <div class="clause"><span class="num mono">03</span><h2>A real browser crawls your app for you</h2></div>
-      <div class="duo">
-        <div>
-          <p class="sub">Smoke tests run a headless Chromium browser against your application, following links the way a user would, and can fill in and submit forms to reach authenticated pages.</p>
-          <ul class="list">
-            <li>Every crawled page records its status code, load time, console errors, and a screenshot. A run covers up to 500 pages, 10 hops deep</li>
-            <li>Configure input values once and the crawler drives login and multi-step forms on every run after that, chaining from one form to the next</li>
-            <li>Trigger a run from the UI or from a webhook, so a deploy pipeline can smoke-test a release before it's called done</li>
-            <li>A run's outcome is <strong>Passed</strong>, <strong>Issues</strong> (warnings or 4xx pages), or <strong>Failed</strong> (console errors, exceptions, or 5xx), not a raw error count</li>
-          </ul>
-        </div>
-        <figure class="frame">
-          <svg class="ill" viewBox="0 0 320 180" role="img" aria-label="A crawl run's task list of pages with pass, issue, and fail outcomes, illustrative">
-            <g font-family="IBM Plex Mono, monospace" font-size="9">
-              <rect x="16" y="16" width="288" height="26" rx="5" fill="#fff" stroke="#dcd8ca"/>
-              <rect x="26" y="24" width="10" height="10" rx="2" fill="#2f9e63"/>
-              <text x="44" y="33" fill="#0e3b2e">/ · 200 · 340ms</text>
-              <rect x="16" y="48" width="288" height="26" rx="5" fill="#fff" stroke="#dcd8ca"/>
-              <rect x="26" y="56" width="10" height="10" rx="2" fill="#2f9e63"/>
-              <text x="44" y="65" fill="#0e3b2e">/pricing · 200 · 210ms</text>
-              <rect x="16" y="80" width="288" height="26" rx="5" fill="var(--acc)" opacity=".1"/>
-              <rect x="26" y="88" width="10" height="10" rx="2" fill="#c99a2e"/>
-              <text x="44" y="97" fill="#0e3b2e">/legacy-page · 404</text>
-              <rect x="16" y="112" width="288" height="26" rx="5" fill="#fff" stroke="#dcd8ca"/>
-              <rect x="26" y="120" width="10" height="10" rx="2" fill="#2f9e63"/>
-              <text x="44" y="129" fill="#0e3b2e">/login → /dashboard · form chain</text>
-            </g>
-            <text x="16" y="156" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#8a9791">run outcome: Issues · one 404, nothing failed</text>
-          </svg>
-          <figcaption><span>crawl run</span><span>page-by-page, screenshot per page</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
     <section class="section" id="reporting">
-      <div class="clause"><span class="num mono">04</span><h2>Custom telemetry, weekly digests, public status</h2></div>
-      <div class="duo rev">
+      <div class="clause"><span class="num mono">03</span><h2>Custom telemetry, weekly digests, public status</h2></div>
+      <div class="duo">
         <figure class="frame">
           <svg class="ill" viewBox="0 0 320 170" role="img" aria-label="A weekly summary email beside a public status page, illustrative">
             <rect x="14" y="14" width="146" height="142" rx="8" fill="#fff" stroke="#dcd8ca"/>
@@ -279,7 +244,6 @@
         <h2>Plain pricing</h2>
         <div class="row"><span>Health Check annual licence</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Uptime, DNS, SSL &amp; SSL Labs monitoring</span><span class="dots"></span><span>included</span></div>
-        <div class="row"><span>Smoke test crawler &amp; webhook trigger</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Public status pages</span><span class="dots"></span><span>included</span></div>
         <div class="row"><span>Monitored services per project</span><span class="dots"></span><span>unlimited</span></div>
         <div class="row total"><span>Per year, excl. VAT</span><span class="dots"></span><span>€999</span></div>
