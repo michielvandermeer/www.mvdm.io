@@ -23,6 +23,10 @@ The Product the homepage leads with. Currently Compliance, followed by Translati
 A Product's marketing page on this site: benefit-led copy, pricing, and calls to action. Not documentation and not an info page.
 _Avoid_: Product page, info page
 
+**Demo**:
+A public copy of one Product at its own address under `demo.mvdm.io`, such as `demo.mvdm.io/statistics`. It holds fictional data for a made-up company, and anyone who opens it is already signed in. Every visitor shares the same copy, and it resets every night. Compliance and Statistics each have one. It is not a trial, which is a person's own account on the Product itself.
+_Avoid_: sandbox, playground, trial
+
 **Framework page**:
 A page under a Product's Landing page that is about one Framework of Compliance, such as ISO 27001, or about one law kept as separate Frameworks, such as the EU GDPR and the UK GDPR. It is not a Landing page, which stays a Product's marketing page.
 _Avoid_: Landing page
