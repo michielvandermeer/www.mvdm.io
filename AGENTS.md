@@ -285,9 +285,12 @@ figure).
 Each Landing page's JSON-LD block (`<script type="application/ld+json">`
 in the `<head>`, after the Share card block) restates the price as
 machine-readable data: `price` as a number, `priceCurrency` `EUR`, and a
-`UnitPriceSpecification` with `valueAddedTaxIncluded` (false for the
+`PriceSpecification` with `valueAddedTaxIncluded` (false for the
 business Products and Compliance, true for Commonplace) and a one-year
-`billingDuration`. Compliance's block holds one `Offer` per band row of
+`billingDuration`. The type is `PriceSpecification`, not
+`UnitPriceSpecification`, because Google's Rich Results Test rejects
+`UnitPriceSpecification` on a `SoftwareApplication` Offer; `billingDuration`,
+`unitCode` and `referenceQuantity` stay on it on purpose. Compliance's block holds one `Offer` per band row of
 the table, named by that row's Frameworks, each per Framework. The block
 repeats only what the page shows: no ratings, no reviews, and the `Offer`
 (price) entries carry no AI credit amounts. A `FAQPage` answer may name an
