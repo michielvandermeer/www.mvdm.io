@@ -49,7 +49,7 @@ _Avoid_: treating mvdmio as the KvK name
 
 **mvdm.io**:
 The legal trade name of the sole proprietorship that offers the Products (KvK 86594737). Documents name this party, not the brand. In prose a Product carries this name as a prefix on first use in a section — "mvdm.io Statistics" — and stands bare after that.
-_Avoid_: mvdmio as the contracting party
+_Avoid_: mvdmio as the contracting party, "the operator" on a Legal page
 
 **Legal page**:
 A public page on this site that publishes one vendor document. Not a Landing page. Each page carries an effective date. A later edit replaces the page; continued use of a Product is acceptance. For a Consumer purchase, mvdm.io emails the buyer instead. A rule that holds for one Product only lives under a Product subheading.
