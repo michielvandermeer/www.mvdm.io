@@ -151,7 +151,7 @@
           "name": "How is Compliance different from Vanta and Drata?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vanta and Drata are trust platforms with a wider scope. Next to compliance automation and continuous control monitoring, both offer a Trust Center, AI help with security questionnaires and third-party risk management. Compliance focuses on running the management system itself. It keeps your policies, risks, assets, suppliers, evidence, findings, incidents and more in registers, and turns recurring reviews into tasks with an owner and a due date. Compliance doesn't connect to cloud, identity or HR systems to collect evidence. You attach evidence to tasks yourself, or build your own sync with the REST API, the MCP server or the CLI. Crosswalk mappings link related requirements across the frameworks you adopt, so one piece of evidence, one finding or one register record can meet requirements in several of them. An audit still covers one standard."
+            "text": "Vanta and Drata are trust platforms with a wider scope. Next to compliance automation and continuous control monitoring, both offer a Trust Center, AI help with security questionnaires and third-party risk management. Compliance focuses on running the management system itself. It keeps your policies, risks, assets, suppliers, findings, incidents and more in registers, and turns recurring reviews into tasks with an owner and a due date. Compliance doesn't connect to cloud, identity or HR systems to collect evidence. You attach evidence to tasks yourself, or build your own sync with the REST API, the MCP server or the CLI. Crosswalk mappings link related requirements across the frameworks you adopt, so one piece of evidence, one finding or one register record can meet requirements in several of them. An audit still covers one standard."
           }
         },
         {
@@ -254,8 +254,8 @@
 
   <section class="strip"><div class="wrap strip-inner">
     <span>Policies</span><span>Risks</span><span>Assets</span><span>People</span>
-    <span>Suppliers</span><span>Evidence</span><span>Findings</span>
-    <span>Vulnerabilities</span><span>Incidents</span><span>Continuity</span><span>Training</span>
+    <span>Suppliers</span><span>Findings</span>
+    <span>Vulnerabilities</span><span>Incidents</span><span>Continuity plans</span><span>Training courses</span>
   </div></section>
 
   <div class="wrap">
@@ -263,15 +263,15 @@
       <div class="clause"><span class="num mono">01</span><h2>Every register in one place</h2></div>
       <div class="duo">
         <div>
-          <p class="sub">Compliance keeps your management system in registers. Policies, risks and evidence each have one, and so do findings and incidents.</p>
+          <p class="sub">Compliance keeps your management system in registers. Policies, risks and suppliers each have one, and so do findings and incidents.</p>
           <ul class="list">
-            <li>Compliance has registers for policies, risks, assets, people, suppliers, evidence, findings, vulnerabilities, incidents, continuity and training, among others.</li>
+            <li>Compliance has registers for policies, risks, assets, people, suppliers, findings, vulnerabilities, incidents, continuity plans and training courses, among others. You attach evidence to the task it proves.</li>
             <li>Compliance scores each risk on a 5×5 likelihood and impact matrix. Treatment actions lower the residual risk score.</li>
             <li>Policies, procedures, risks and objectives link to the requirements they meet. Each requirement shows whether it is satisfied or still open.</li>
           </ul>
         </div>
         <figure class="frame">
-          <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="Stacked register cards, illustrative counts">
+          <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="Stacked register cards for policies, risks and suppliers">
             <g>
               <rect x="46" y="14" width="240" height="52" rx="8" fill="#fff" stroke="#dcd8ca"/>
               <rect x="46" y="14" width="240" height="18" rx="8" fill="var(--acc)" opacity=".08"/>
@@ -289,12 +289,12 @@
             <g>
               <rect x="14" y="142" width="240" height="52" rx="8" fill="#fff" stroke="#dcd8ca"/>
               <rect x="14" y="142" width="240" height="18" rx="8" fill="var(--acc)" opacity=".08"/>
-              <text x="26" y="155" font-family="IBM Plex Mono, monospace" font-size="9" fill="#0e3b2e">EVIDENCE · illustrative</text>
+              <text x="26" y="155" font-family="IBM Plex Mono, monospace" font-size="9" fill="#0e3b2e">SUPPLIERS · illustrative</text>
               <rect x="26" y="170" width="140" height="7" rx="3.5" fill="#cbd5e1"/><rect x="26" y="182" width="100" height="7" rx="3.5" fill="#e2e8f0"/>
               <circle cx="234" cy="176" r="9" fill="var(--acc)" opacity=".15"/><path d="M230 176 l3 3 l6 -7" stroke="var(--acc)" stroke-width="2" fill="none"/>
             </g>
           </svg>
-          <figcaption><span>registers</span><span>policies · risks · evidence · and more</span></figcaption>
+          <figcaption><span>registers</span><span>policies · risks · suppliers · and more</span></figcaption>
         </figure>
       </div>
     </section>
@@ -428,7 +428,7 @@
         <h3>Who is Compliance for?</h3>
         <p>Compliance is for organisations that run ISO 27001, SOC 2, GDPR or other frameworks side by side. Pricing is per framework, and users are unlimited.</p>
         <h3>How is Compliance different from Vanta and Drata?</h3>
-        <p>Vanta and Drata are trust platforms with a wider scope. Next to compliance automation and continuous control monitoring, both offer a Trust Center, AI help with security questionnaires and third-party risk management. Compliance focuses on running the management system itself. It keeps your policies, risks, assets, suppliers, evidence, findings, incidents and more in registers, and turns recurring reviews into tasks with an owner and a due date. Compliance doesn't connect to cloud, identity or HR systems to collect evidence. You attach evidence to tasks yourself, or build your own sync with the REST API, the MCP server or the CLI. Crosswalk mappings link related requirements across the frameworks you adopt, so one piece of evidence, one finding or one register record can meet requirements in several of them. An audit still covers one standard.</p>
+        <p>Vanta and Drata are trust platforms with a wider scope. Next to compliance automation and continuous control monitoring, both offer a Trust Center, AI help with security questionnaires and third-party risk management. Compliance focuses on running the management system itself. It keeps your policies, risks, assets, suppliers, findings, incidents and more in registers, and turns recurring reviews into tasks with an owner and a due date. Compliance doesn't connect to cloud, identity or HR systems to collect evidence. You attach evidence to tasks yourself, or build your own sync with the REST API, the MCP server or the CLI. Crosswalk mappings link related requirements across the frameworks you adopt, so one piece of evidence, one finding or one register record can meet requirements in several of them. An audit still covers one standard.</p>
         <h3>Can one record meet requirements in several frameworks?</h3>
         <p>Yes. Crosswalk mappings link related requirements across the frameworks you adopt. One access control record, for example, satisfies ISO 27001 A.5.15, SOC 2 CC6.1 and GDPR Art. 32. One piece of evidence, one finding or one register record can meet requirements in several frameworks. An audit still covers one standard, and a supplier review covers one supplier. Each framework shows what is satisfied and what is still open.</p>
       </div>
