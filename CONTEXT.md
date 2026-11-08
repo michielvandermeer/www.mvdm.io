@@ -31,6 +31,14 @@ _Avoid_: sandbox, playground, trial
 A page under a Product's Landing page that is about one Framework of Compliance, such as ISO 27001, or about one law kept as separate Frameworks, such as the EU GDPR and the UK GDPR. It is not a Landing page, which stays a Product's marketing page.
 _Avoid_: Landing page
 
+**Register**:
+A list of one kind of record in Compliance, such as Risks, Suppliers or Findings, that the Compliance application's own glossary calls a register. The site names something a register only when the application does. Evidence is never one. Continuity and Training are pages in the application, and the registers they hold are continuity plans and training courses.
+_Avoid_: Evidence as a register; "continuity" or "training" as a register name
+
+**Evidence**:
+Proof that an action in Compliance was performed, attached to the task it proves. It sits beside the registers, not among them.
+_Avoid_: Evidence register; listing evidence among the registers
+
 **Dutch page**:
 A page in Dutch for one Dutch-speaking audience, such as `/nl/gemeenten/` for gemeenten (Dutch municipalities). It is not a translation of an English page: it has no English twin and no `hreflang`. It is not a Landing page, which stays a Product's marketing page, and not a Framework page.
 _Avoid_: Dutch Landing page, translated page, localised page
