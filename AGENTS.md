@@ -24,7 +24,7 @@ add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
 behavior, and the homepage, the About page, the five Landing pages, the eight Compliance
-Framework pages, the two comparison guides (ISO 27001 vs SOC 2 and ISO 42001 vs EU AI Act), the Dutch page and the ten posts each carry one (see
+Framework pages, the three comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act and ISO 27001 vs GDPR), the Dutch page and the ten posts each carry one (see
 **Prices** and "How to add a page" below; the Compliance page's, the
 Framework pages', the comparison guides' and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
 forbidden.
@@ -56,6 +56,7 @@ products/compliance/iso-14001/index.html   /products/compliance/iso-14001/   (Fr
 products/compliance/cyber-essentials/index.html   /products/compliance/cyber-essentials/   (Framework page)
 products/compliance/iso-27001-vs-soc-2/index.html   /products/compliance/iso-27001-vs-soc-2/   (comparison guide, not a Framework page)
 products/compliance/iso-42001-vs-eu-ai-act/index.html   /products/compliance/iso-42001-vs-eu-ai-act/   (comparison guide, not a Framework page)
+products/compliance/iso-27001-vs-gdpr/index.html   /products/compliance/iso-27001-vs-gdpr/   (comparison guide, not a Framework page)
 nl/gemeenten/index.html            /nl/gemeenten/   (Dutch page, for gemeenten)
 blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
@@ -199,8 +200,8 @@ live in the page itself.
    positions 1 to 3: mvdmio at `https://mvdm.io/`, Compliance at
    `https://mvdm.io/products/compliance/`, and the Framework, named as the
    page shows it ("SOC 2", "GDPR"), at the page's own canonical address.
-   Only the Framework pages and the two comparison guides (ISO 27001 vs
-   SOC 2 and ISO 42001 vs EU AI Act, each of which holds a `FAQPage` and a
+   Only the Framework pages and the three comparison guides (ISO 27001 vs
+   SOC 2, ISO 42001 vs EU AI Act and ISO 27001 vs GDPR, each of which holds a `FAQPage` and a
    `BreadcrumbList`, no `Offer`) carry a
    `BreadcrumbList`; the Compliance
    Landing page, the Dutch page and every other page have none. A
@@ -365,6 +366,8 @@ It also edits the comparison guide `products/compliance/iso-27001-vs-soc-2/`
 when the €999 fee changes: its Pricing and trial section states it.
 It also edits the comparison guide `products/compliance/iso-42001-vs-eu-ai-act/`
 when the €749 or €199 fee changes: its Pricing and trial section states both.
+It also edits the comparison guide `products/compliance/iso-27001-vs-gdpr/`
+when the €999 or €199 fee changes: its Pricing and trial section states both, and its last FAQ answer states the €199 fee (visible and in the JSON-LD).
 It also edits the Dutch page `nl/gemeenten/`: its meta description
 and `og:description` (which state the BIO2 and AVG fees and equal the
 JSON-LD `description`), its "Wat het kost" section, its FAQ cost answer
@@ -390,6 +393,8 @@ the JSON-LD. On `products/compliance/iso-14001/` it edits the Pricing and trial
 section's sentence about included credit and the FAQ cost answer, visible and in
 the JSON-LD. On `products/compliance/cyber-essentials/` it edits the Pricing and trial
 section's sentence about included credit and the FAQ cost answer, visible and in
+the JSON-LD. On `products/compliance/iso-27001-vs-gdpr/` it edits the Pricing and trial
+section's sentence about included credit and the last FAQ answer, visible and in
 the JSON-LD. On `nl/gemeenten/` it edits the "Wat het
 kost" section's credit sentence and the FAQ assistant answer, visible and in
 the JSON-LD. It also edits the `$10` and `$5` amounts in `llms.txt`'s Compliance bullet. The `Offer` entries need no edit for it
