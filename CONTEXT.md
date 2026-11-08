@@ -60,7 +60,7 @@ The legal trade name of the sole proprietorship that offers the Products (KvK 86
 _Avoid_: mvdmio as the contracting party, "the operator" on a Legal page
 
 **Legal page**:
-A public page on this site that publishes one vendor document. Not a Landing page. Each page carries an effective date. A later edit replaces the page; continued use of a Product is acceptance. For a Consumer purchase, mvdm.io emails the buyer instead. A rule that holds for one Product only lives under a Product subheading.
+A public page on this site that publishes one vendor document. Not a Landing page. Each page carries an effective date. A later edit replaces the page; continued use of a Product is acceptance. For a Consumer purchase, mvdm.io emails the buyer instead. The Partner terms are the other exception: a Partner accepts them by email, and a replacement takes effect only after notice. A rule that holds for one Product only lives under a Product subheading.
 _Avoid_: info page, legal centre
 
 **Terms of Service**:
@@ -68,7 +68,7 @@ The one contract that lets a customer use any Product. Written product-neutral, 
 _Avoid_: Customer Agreement, User Agreement; a separate contract per Product
 
 **Partner terms**:
-The Legal page holding the Partner programme's contract: the Commission a Partner earns, payment through Stripe, and the self-billing agreement under which mvdm.io writes the Partner's invoices. Written for Partners, not customers.
+The Legal page holding the Partner programme's contract: the Commission a Partner earns, payment through Stripe, and the self-billing agreement under which mvdm.io writes the Partner's invoices. Written for Partners, not customers. A Partner accepts them by replying to the email that offers the partnership. mvdm.io emails a replacement at least 30 days before it takes effect, and a Partner who is still a Partner on that day has accepted it.
 _Avoid_: Partner agreement, affiliate terms
 
 **Partner**:
