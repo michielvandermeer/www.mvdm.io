@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-13: The DPA and Privacy Notice list what Statistics keeps from a customer's application
+Section 4 of the Data Processing Agreement, in the mvdm.io Statistics bullet, now lists what a Request, an App view, and a Click from a customer's own application keep, says none of them holds an IP address and a Click never holds what a person typed, and says Customer is the controller of these records and mvdm.io processes them as its processor. Section 5 of the Privacy Notice has a new paragraph after the one about a customer using Statistics on its own website, with the same lists, the same controller and processor sentence, and a sentence that the script sets no cookie and writes nothing to your device. Both pages carry 13 November 2026 as their effective date. Nothing else changed.
+
 ## 2026-11-08: The Partner terms say how a Partner accepts them and how a replacement takes effect
 The Partner terms now say in section 1 that a Partner accepts them, including the self-billing agreement in section 6, by replying to the email that offers the partnership. A new section 9 says a replacement is emailed to the owners of the Partner's account at least 30 days before it takes effect, that the page shows it from then on with its new effective date, and that a Partner who is still a Partner on that date has accepted it. A Partner who does not accept it can end the partnership by email first and keeps the Commission already earned. The subtitle now says a replacement is emailed at least 30 days ahead, and the page carries 8 November 2026 as its effective date. Nothing else changed.
 
