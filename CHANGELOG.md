@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-13: The DPA and Privacy Notice list the Track events and Properties Statistics keeps
+Section 4 of the Data Processing Agreement, in the mvdm.io Statistics bullet, and section 5 of the Privacy Notice, in the Analytics paragraph about a customer's application, now say a customer's application can also send Track events for a signed-in App user from a person's browser or from the customer's own server. They say a Track event stores the time, the name, the user id, the Customer id, and the Properties, such as a plan or an amount, that the application chooses, and that one sent from a person's browser also stores the page's hostname and path. The sentence that the customer is the controller and mvdm.io its processor now covers Track events. Both pages carry 13 November 2026 as their effective date. Nothing else changed.
+
 ## 2026-11-13: The DPA and Privacy Notice list the Customer id on a Request and the names and Fields Statistics keeps
 Section 4 of the Data Processing Agreement, in the mvdm.io Statistics bullet, and section 5 of the Privacy Notice, in the Analytics paragraph about a customer's application, now list the Customer id among what a Request keeps. Both now say that for each App user and each Customer, Statistics also stores the name and the Fields, such as a role or a plan, that the customer's own server sends, that the customer chooses those Fields, and that Fields never come from a person's browser. The sentence that the customer is the controller and mvdm.io its processor now covers these records and Fields. Both pages carry 13 November 2026 as their effective date. Nothing else changed.
 
