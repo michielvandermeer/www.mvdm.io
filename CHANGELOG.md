@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-13: The DPA and Privacy Notice list the Customer id on a Request and the names and Fields Statistics keeps
+Section 4 of the Data Processing Agreement, in the mvdm.io Statistics bullet, and section 5 of the Privacy Notice, in the Analytics paragraph about a customer's application, now list the Customer id among what a Request keeps. Both now say that for each App user and each Customer, Statistics also stores the name and the Fields, such as a role or a plan, that the customer's own server sends, that the customer chooses those Fields, and that Fields never come from a person's browser. The sentence that the customer is the controller and mvdm.io its processor now covers these records and Fields. Both pages carry 13 November 2026 as their effective date. Nothing else changed.
+
 ## 2026-11-13: The DPA and Privacy Notice list what Statistics keeps from a customer's application
 Section 4 of the Data Processing Agreement, in the mvdm.io Statistics bullet, now lists what a Request, an App view, and a Click from a customer's own application keep, says none of them holds an IP address and a Click never holds what a person typed, and says Customer is the controller of these records and mvdm.io processes them as its processor. Section 5 of the Privacy Notice has a new paragraph after the one about a customer using Statistics on its own website, with the same lists, the same controller and processor sentence, and a sentence that the script sets no cookie and writes nothing to your device. Both pages carry 13 November 2026 as their effective date. Nothing else changed.
 
