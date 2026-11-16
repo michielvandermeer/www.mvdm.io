@@ -115,6 +115,7 @@ button { font: inherit; cursor: pointer; }
   --acc-health-check: #0d9488;
   --acc-statistics: #4f46e5;
   --acc-commonplace: #d97706;
+  --acc-sales: #65a30d;
 }
 
 /* Landing-page accent registry: a Landing page opts in with
@@ -125,6 +126,7 @@ html[data-product="translation-tools"] { --acc: var(--acc-translation-tools); }
 html[data-product="health-check"]      { --acc: var(--acc-health-check); }
 html[data-product="statistics"]        { --acc: var(--acc-statistics); }
 html[data-product="commonplace"]       { --acc: var(--acc-commonplace); }
+html[data-product="sales"]             { --acc: var(--acc-sales); }
 
 html, body {
   background: var(--paper);
@@ -430,10 +432,10 @@ main { flex: 1; }
 /* A long code name (a package id) wraps instead of widening the bullet */
 .list code { overflow-wrap: anywhere; }
 
-/* ---------- three-card grid ---------- */
+/* ---------- card grid ---------- */
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 .card {

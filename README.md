@@ -1,7 +1,7 @@
 # mvdm.io
 
 The public marketing website for mvdmio — Compliance, Translation Tools,
-Health Check, Statistics and Commonplace. Plain static HTML and hand-written
+Health Check, Statistics, Commonplace and Sales. Plain static HTML and hand-written
 CSS, no build step, deployed as-is to GitHub Pages.
 
 ## Structure
@@ -9,8 +9,8 @@ CSS, no build step, deployed as-is to GitHub Pages.
 ```
 index.html                  Homepage
 404.html                     Not-found page
-products/<name>/index.html   The 5 Landing pages (compliance, translation-tools,
-                              health-check, statistics, commonplace)
+products/<name>/index.html   The 6 Landing pages (compliance, translation-tools,
+                              health-check, statistics, commonplace, sales)
 nl/gemeenten/index.html      Dutch page (Compliance, for gemeenten)
 blog/index.html              Blog index
 posts/<slug>/index.html      Blog posts

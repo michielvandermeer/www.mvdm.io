@@ -5,7 +5,7 @@ The public marketing website for mvdmio. Its job is to sell the mvdmio products;
 ## Language
 
 **Product**:
-A SaaS application mvdmio sells: Compliance, Translation Tools, Health Check, Statistics, or Commonplace. Auth is not a Product — it is internal SSO plumbing.
+A SaaS application mvdmio sells: Compliance, Translation Tools, Health Check, Statistics, Commonplace, or Sales. Auth is not a Product — it is internal SSO plumbing.
 _Avoid_: App, project, tool
 
 **Framework**:
@@ -75,9 +75,25 @@ _Avoid_: Partner agreement, affiliate terms
 A person or organisation mvdm.io has accepted to bring customers to the Products and earn a Commission. Not a customer reseller and not a Product user by that fact.
 _Avoid_: affiliate, reseller
 
+**Lead**:
+A person who fills in a Form on a Sales customer's website, or in a Form on this site. Sales keeps their email address, the name and company they give, the Campaign and page that brought them, and the consent text they ticked. A Lead is not a Referral, which ties a customer account to a Partner.
+_Avoid_: prospect, contact, signup
+
+**Form**:
+The sign-up form that Sales gives a customer to paste into their own website. The same form on this site collects a Lead for mvdm.io itself, whose data the Privacy Notice covers.
+_Avoid_: widget, embed
+
+**Campaign**:
+The label of the page or promotion that brought a Lead, which Sales stores with that Lead.
+_Avoid_: source, channel
+
+**Account member**:
+A person on a customer's Sales account who receives its new-Lead emails. The Data Processing Agreement names them as a group of people whose data Sales stores.
+_Avoid_: user, team member
+
 **Referral**:
 A customer account tied to one Partner, either because the customer registered through the Partner's link or named the Partner at registration, or because mvdm.io set it.
-_Avoid_: lead
+_Avoid_: lead (a Lead is a different thing: see **Lead**)
 
 **Commission**:
 The share of a Referral's paid licence charges that a Partner earns. AI credit packs and trials earn none.
@@ -88,11 +104,11 @@ The invoice mvdm.io issues in a Partner's name for each Commission payment, so t
 _Avoid_: Partner invoice
 
 **Privacy Notice**:
-The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, and billing. It also covers a Partner's billing details and payment records (billing address, tax ID, Commission payments and Self-billing invoices), and names a Partner as a recipient of an account's name and the Commission each invoice earned.
+The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, billing, and people who sign up on a Form on this site. It also covers a Partner's billing details and payment records (billing address, tax ID, Commission payments and Self-billing invoices), and names a Partner as a recipient of an account's name and the Commission each invoice earned.
 _Avoid_: Privacy Policy
 
 **Data Processing Agreement**:
-The contract for personal data a customer keeps in mvdm.io Compliance, mvdm.io Statistics, mvdm.io Health Check, or mvdm.io Translation Tools, which **mvdm.io** processes as processor. mvdm.io Commonplace falls outside it — there mvdm.io is controller.
+The contract for personal data a customer keeps in mvdm.io Compliance, mvdm.io Statistics, mvdm.io Health Check, mvdm.io Translation Tools, or mvdm.io Sales, which **mvdm.io** processes as processor. mvdm.io Commonplace falls outside it — there mvdm.io is controller.
 _Avoid_: using this name for a file a customer attaches to their own supplier
 
 **Subprocessor list**:

@@ -1,7 +1,7 @@
 # mvdm.io — marketing website for mvdmio's products
 
-This is the public marketing site for mvdmio. It sells five SaaS products
-(Compliance, Translation Tools, Health Check, Statistics, Commonplace); the
+This is the public marketing site for mvdmio. It sells six SaaS products
+(Compliance, Translation Tools, Health Check, Statistics, Commonplace, Sales); the
 blog, resume and open-source pages are secondary. See `CONTEXT.md` for the
 domain vocabulary (Product, Flagship, Landing page, Resume, mvdmio) — use
 those terms, not "app", "project", "tool", "portfolio" or "info page".
@@ -23,7 +23,7 @@ step 2 for the check). Don't
 add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
-behavior, and the homepage, the About page, the five Landing pages, the eight Compliance
+behavior, and the homepage, the About page, the six Landing pages, the eight Compliance
 Framework pages, the four comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR), the Dutch page and the ten posts each carry one (see
 **Prices** and "How to add a page" below; the Compliance page's, the
 Framework pages', the comparison guides' and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
@@ -45,7 +45,7 @@ Every URL is a directory containing an `index.html`, so links never carry a
 ```
 index.html                         /            (homepage)
 404.html                           served for unmatched paths
-products/<name>/index.html         /products/<name>/   (5 Product Landing pages)
+products/<name>/index.html         /products/<name>/   (6 Product Landing pages)
 products/compliance/iso-27001/index.html   /products/compliance/iso-27001/   (Framework page)
 products/compliance/iso-42001/index.html   /products/compliance/iso-42001/   (Framework page)
 products/compliance/eu-ai-act/index.html   /products/compliance/eu-ai-act/   (Framework page)
@@ -118,7 +118,7 @@ page links it, nothing else. It carries the "Boardroom" design system:
   `--paper`, ink `--ink`, pine `--pine` (buttons), hairline `--hairline`,
   plus one accent variable per product — `--acc-compliance`,
   `--acc-translation-tools`, `--acc-health-check`, `--acc-statistics`,
-  `--acc-commonplace`. A Landing page sets its accent by putting
+  `--acc-commonplace`, `--acc-sales`. A Landing page sets its accent by putting
   `data-product="<name>"` on its `<html>` tag; the registry in `site.css`
   (right under the tokens) maps that attribute to `--acc`, and the page
   reads `var(--acc)` everywhere. Don't hardcode a product's hex color
@@ -237,7 +237,7 @@ live in the page itself.
    language on `<html>` (the Dutch page uses `lang="nl"`). A page in
    English carries no `lang` on those three elements, so a frame copied
    from the Dutch page loses them. The header's upper row is `.site-util` (Open source, Blog, About, Resume); the lower row
-   is `.site-nav-inner` / `#nav-links` (the five Product names, then Get
+   is `.site-nav-inner` / `#nav-links` (the six Product names, then Get
    started). Get started in that header always opens
    `https://compliance.mvdm.io`, including on a new Landing page — do not
    point it at that Product's own application. Hero and other in-page Get
@@ -325,7 +325,7 @@ the Compliance fees and names the frameworks of each fee row, as the matching
 `Offer` does; its billing answer states no fee.
 
 The homepage mentions each Product's price **at most once** (Compliance in
-the hero fee line, Translation Tools in its clause tail, the other three on
+the hero fee line, Translation Tools in its clause tail, the other four on
 their cards). Prices are hand-written against what's actually configured
 in Stripe; there is no page-load fetch and no sync. A later Compliance
 price change edits the hero, the band table, the matching `Offer` in the
@@ -474,6 +474,13 @@ you want to see what a card looks like: serve the repo root and visit
 `/assets/share-card.html?eyebrow=...&headline=...&product=...`. See
 [ADR-0001](docs/adr/0001-share-card-pictures-are-rendered-at-deploy-time.md)
 for why the pictures are deploy-time output rather than committed files.
+
+## Sales Form consent text
+
+This is the text marketing pastes into every mvdm.io Form, so every
+lead-magnet page uses the same words:
+
+> Email me now and then about compliance from mvdmio. I can ask you to stop at any time.
 
 ## How to verify a change
 
