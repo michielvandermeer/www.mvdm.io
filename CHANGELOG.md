@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-17: The Privacy Notice opening paragraph no longer has a doubled "and"
+The opening paragraph of the Privacy Notice no longer has a doubled "and" before "for Page views on the marketing site and the Demos". The list of what mvdm.io processes as a controller now reads "for first-party request analytics, for Page views on the marketing site and the Demos, and for the people we email about our Products". The Privacy Notice's effective date is unchanged at 17 November 2026. Nothing else changed.
+
 ## 2026-11-17: The Privacy Notice covers Prospects mvdm.io emails without them signing up
 The Privacy Notice has a new section 11, "When I email you without you signing up", for Prospects mvdm.io emails at their work without them signing up. It says what mvdm.io keeps for a Prospect, that the email address came from a public page, that the legal basis is mvdm.io's legitimate interest, that the record is deleted two years after the first email if the Prospect never replies, and that writing to michiel@mvdm.io stops the emails at once, leaving only the email address on a list of addresses mvdm.io must not email. The opening paragraph now names the people mvdm.io emails about its Products. Section 2 has a Prospects bullet that points at section 11. Section 3 names legitimate interest in emailing businesses about mvdm.io's Products. Section 7 names HEY, run by 37signals, LLC in the United States, as the mailbox the emails are sent from. Section 8 gives the two-year retention for a Prospect who never replies and the do-not-contact list. Changes is now section 12. The Privacy Notice carries 17 November 2026 as its effective date. Nothing else changed.
 
