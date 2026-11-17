@@ -27,9 +27,9 @@ add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
 behavior, and the homepage, the About page, the six Landing pages, the eight Compliance
-Framework pages, the four comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR), the Dutch page and the ten posts each carry one (see
+Framework pages, the four comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR), the ISO 27001 Statement of Applicability template page, the Dutch page and the ten posts each carry one (see
 **Prices** and "How to add a page" below; the Compliance page's, the
-Framework pages', the comparison guides' and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
+Framework pages', the comparison guides', the template page's and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
 forbidden.
 
 The one exception is the Pages deploy workflow
@@ -61,6 +61,7 @@ products/compliance/iso-27001-vs-soc-2/index.html   /products/compliance/iso-270
 products/compliance/iso-42001-vs-eu-ai-act/index.html   /products/compliance/iso-42001-vs-eu-ai-act/   (comparison guide, not a Framework page)
 products/compliance/iso-27001-vs-gdpr/index.html   /products/compliance/iso-27001-vs-gdpr/   (comparison guide, not a Framework page)
 products/compliance/soc-2-vs-gdpr/index.html   /products/compliance/soc-2-vs-gdpr/   (comparison guide, not a Framework page)
+products/compliance/iso-27001-statement-of-applicability-template/index.html   /products/compliance/iso-27001-statement-of-applicability-template/   (template page, not a Framework page)
 nl/gemeenten/index.html            /nl/gemeenten/   (Dutch page, for gemeenten)
 blog/index.html                    /blog/       (post index)
 posts/<slug>/index.html            /posts/<slug>/       (10 posts)
@@ -204,8 +205,10 @@ live in the page itself.
    positions 1 to 3: mvdmio at `https://mvdm.io/`, Compliance at
    `https://mvdm.io/products/compliance/`, and the Framework, named as the
    page shows it ("SOC 2", "GDPR"), at the page's own canonical address.
-   Only the Framework pages and the four comparison guides (ISO 27001 vs
-   SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR, each of which holds a `FAQPage` and a
+   Only the Framework pages, the four comparison guides (ISO 27001 vs
+   SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR) and the
+   ISO 27001 Statement of Applicability template page (the guides and the template page
+   each hold a `FAQPage` and a
    `BreadcrumbList`, no `Offer`) carry a
    `BreadcrumbList`; the Compliance
    Landing page, the Dutch page and every other page have none. A
