@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-17: The Privacy Notice names the transfer safeguard for each provider in the United States
+Section 7 of the Privacy Notice, "Recipients and transfers", now has a table of the five providers in the United States that receive personal data the notice covers: Stripe, Cloudflare, Sentry, GitHub and 37signals. Each row says what the provider gets and the safeguard its transfer rests on, and the GitHub and 37signals rows link the provider's own privacy statement. A line under the table covers the UK GDPR and says how to get a copy of the clauses. The Privacy Notice's effective date is unchanged at 17 November 2026. Nothing else changed.
+
 ## 2026-11-17: The Privacy Notice opening paragraph no longer has a doubled "and"
 The opening paragraph of the Privacy Notice no longer has a doubled "and" before "for Page views on the marketing site and the Demos". The list of what mvdm.io processes as a controller now reads "for first-party request analytics, for Page views on the marketing site and the Demos, and for the people we email about our Products". The Privacy Notice's effective date is unchanged at 17 November 2026. Nothing else changed.
 

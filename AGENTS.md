@@ -448,6 +448,8 @@ confuse it with that step's Share card page list, which is read from
 `sitemap.xml` and is not hand-kept. The pack takes every PDF `legalDocs`
 renders, so there is no second list to keep.
 
+The Privacy Notice's section 7 table restates the transfer safeguard of Stripe, Cloudflare and Sentry from the Data Processing Agreement's section 9 table. A change to one of those safeguards in the Data Processing Agreement edits the same row of the Privacy Notice table in the same change.
+
 ## Share cards
 
 Every page carries Open Graph/Twitter Card markup in its `<head>` pointing at
