@@ -13,9 +13,12 @@ Plain static HTML, hand-written CSS, and one small hand-written JS file
 `<script src="/assets/js/site.js" defer></script>` at the end of `<body>`).
 No generator, no Node, no Ruby, no Bundler, and no build step for the pages
 themselves — GitHub Pages serves the repository root directly, exactly as
-committed. The one outside request the site makes is Statistics' script
-(`https://statistics.mvdm.io/visits.js`, which `site.js` adds to every page),
-and Statistics is mvdm.io's own service. The site serves its own fonts
+committed. The only outside requests the site makes are Statistics' script
+(`https://statistics.mvdm.io/visits.js`, which `site.js` adds to every page)
+and, on pages that carry a Sales Form, Sales' script
+(`https://sales.mvdm.io/form.js`, a `<script defer src>` tag next to the Form).
+Statistics and Sales
+are mvdm.io's own services. The site serves its own fonts
 (Source Serif 4, Inter, IBM Plex Mono) from `assets/fonts/` through the
 `@font-face` rules at the top of `site.css`, and no page may request
 `fonts.googleapis.com` or `fonts.gstatic.com` (see "How to add a page"

@@ -589,6 +589,41 @@ main { flex: 1; }
 }
 .post-image img { width: 100%; display: block; }
 
+/* ---------- lead form (a Sales Form on a resource page) ---------- */
+.lead-form {
+  display: grid;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 0 22px;
+}
+.lead-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.lead-form input[type="email"],
+.lead-form input[type="text"] {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 10px 12px;
+  width: 100%;
+}
+.lead-form .consent {
+  display: block;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+.lead-form .consent input { margin: 0 8px 0 0; vertical-align: -1px; }
+.lead-form .consent a { color: var(--pine); }
+.lead-form [role="alert"] { margin: 0; font-size: 15px; }
+.lead-form [role="alert"]:empty { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.lead-form button { justify-self: start; }
+
 .prose { max-width: 720px; margin: 0 auto; padding-bottom: 96px; }
 .prose h2 { font-size: 26px; margin: 44px 0 16px; }
 .prose h3 { font-size: 20px; margin: 32px 0 12px; }
