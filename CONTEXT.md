@@ -80,7 +80,7 @@ A person who fills in a Form on a Sales customer's website, or in a Form on this
 _Avoid_: contact, signup, prospect (a Prospect is a different thing: see **Prospect**)
 
 **Prospect**:
-One person a Sales customer emails cold, outside of any Form. The customer is the controller of a Prospect's data and mvdm.io its processor. For a Prospect, Sales keeps the email address, the name, the role, the organisation, the Email source, why they fit the customer's outreach, the group the customer put them in, the customer's notes and the Status history. Sales sends no email to a Prospect. A Prospect is not a Lead, who signed up on a Form, and not a Referral, which ties a customer account to a Partner.
+One person a Sales account emails cold, outside of any Form. The account's owner is the controller of a Prospect's data. For a customer's account, that is the customer, and mvdm.io is its processor. For mvdm.io's own account, mvdm.io is the controller, and the Privacy Notice covers that Prospect. For a Prospect, Sales keeps the email address, the name, the role, the organisation, the Email source, why they fit the account's outreach, the group the account put them in, the account's notes and the Status history. Sales sends no email to a Prospect. A Prospect is not a Lead, who signed up on a Form, and not a Referral, which ties a customer account to a Partner.
 _Avoid_: lead (a Lead is a different thing: see **Lead**), contact
 
 **Email source**:
@@ -112,7 +112,7 @@ The invoice mvdm.io issues in a Partner's name for each Commission payment, so t
 _Avoid_: Partner invoice
 
 **Privacy Notice**:
-The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, billing, and people who sign up on a Form on this site. It also covers a Partner's billing details and payment records (billing address, tax ID, Commission payments and Self-billing invoices), and names a Partner as a recipient of an account's name and the Commission each invoice earned.
+The notice of personal data **mvdm.io** processes as controller — site visitors, people who sign in, billing, people who sign up on a Form on this site, and the Prospects in mvdm.io's own Sales account. It also covers a Partner's billing details and payment records (billing address, tax ID, Commission payments and Self-billing invoices), and names a Partner as a recipient of an account's name and the Commission each invoice earned.
 _Avoid_: Privacy Policy
 
 **Data Processing Agreement**:
