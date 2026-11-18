@@ -158,6 +158,169 @@ jobs:
               sys.exit(1)
           PY
 
+      - name: Check that no page or script carries a code comment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import subprocess
+          import sys
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          SCRIPT_TYPES = {"", "text/javascript", "application/javascript", "module"}
+          REGEX_AFTER_PUNCTUATOR = set("(,=:[!&|?{};+-*%<>~^")
+          REGEX_AFTER_KEYWORD = {
+              "return", "typeof", "case", "do", "else", "in", "of", "new",
+              "delete", "void", "throw", "instanceof", "yield", "await",
+          }
+          MESSAGE = (
+              "A '{kind}' comment is not allowed. Explain the code through names and "
+              "structure, or record the reason in an ADR "
+              "(docs/adr/0003-code-carries-no-comments.md)."
+          )
+
+
+          def skip_string(text, i):
+              quote = text[i]
+              i += 1
+              while i < len(text) and text[i] != quote:
+                  i += 2 if text[i] == "\\" else 1
+              return i + 1
+
+
+          def skip_template(text, i, found):
+              i += 1
+              while i < len(text):
+                  if text[i] == "\\":
+                      i += 2
+                  elif text[i] == "`":
+                      return i + 1
+                  elif text.startswith("${", i):
+                      i = scan(text, i + 2, True, found)
+                  else:
+                      i += 1
+              return i
+
+
+          def skip_regex(text, i):
+              i += 1
+              in_class = False
+              while i < len(text) and text[i] != "\n":
+                  c = text[i]
+                  if c == "\\":
+                      i += 2
+                      continue
+                  if c == "[":
+                      in_class = True
+                  elif c == "]":
+                      in_class = False
+                  elif c == "/" and not in_class:
+                      i += 1
+                      break
+                  i += 1
+              while i < len(text) and text[i].isalpha():
+                  i += 1
+              return i
+
+
+          def scan(text, i, nested, found):
+              depth = 0
+              last = ""
+              while i < len(text):
+                  c = text[i]
+                  if c.isspace():
+                      i += 1
+                  elif text.startswith("//", i):
+                      found.append(("//", i))
+                      end = text.find("\n", i)
+                      i = len(text) if end < 0 else end
+                  elif text.startswith("/*", i):
+                      found.append(("/* */", i))
+                      end = text.find("*/", i + 2)
+                      i = len(text) if end < 0 else end + 2
+                  elif c in "'\"":
+                      i = skip_string(text, i)
+                      last = "value"
+                  elif c == "`":
+                      i = skip_template(text, i, found)
+                      last = "value"
+                  elif c == "/":
+                      if last == "" or last in REGEX_AFTER_PUNCTUATOR or last in REGEX_AFTER_KEYWORD:
+                          i = skip_regex(text, i)
+                          last = "value"
+                      else:
+                          i += 1
+                          last = c
+                  elif c.isalnum() or c in "_$":
+                      start = i
+                      while i < len(text) and (text[i].isalnum() or text[i] in "_$"):
+                          i += 1
+                      last = text[start:i]
+                  else:
+                      if c == "}" and nested and depth == 0:
+                          return i + 1
+                      depth += (c == "{") - (c == "}")
+                      last = c
+                      i += 1
+              return i
+
+
+          def script_comments(text, first_line):
+              found = []
+              scan(text, 0, False, found)
+              return [(kind, first_line + text.count("\n", 0, offset)) for kind, offset in found]
+
+
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=False)
+                  self.found = []
+                  self.script = None
+
+              def handle_starttag(self, tag, attrs):
+                  a = dict(attrs)
+                  inline = tag == "script" and "src" not in a and (a.get("type") or "").lower() in SCRIPT_TYPES
+                  self.script = [None, ""] if inline else None
+
+              def handle_data(self, data):
+                  if self.script is not None:
+                      if self.script[0] is None:
+                          self.script[0] = self.getpos()[0]
+                      self.script[1] += data
+
+              def handle_endtag(self, tag):
+                  if tag == "script" and self.script is not None and self.script[0] is not None:
+                      self.found += script_comments(self.script[1], self.script[0])
+                  self.script = None
+
+              def handle_comment(self, data):
+                  self.found.append(("<!-- -->", self.getpos()[0]))
+
+
+          tracked = subprocess.run(
+              ["git", "ls-files"], check=True, capture_output=True, text=True
+          ).stdout.splitlines()
+          errors = []
+          for name in sorted(tracked):
+              if name.startswith(".agents/") or not name.endswith((".html", ".js")):
+                  continue
+              text = Path(name).read_text(encoding="utf-8")
+              if name.endswith(".js"):
+                  found = script_comments(text, 1)
+              else:
+                  page = Page()
+                  page.feed(text)
+                  page.close()
+                  found = sorted(page.found, key=lambda f: f[1])
+              for kind, line in found:
+                  errors.append(f"::error file={name},line={line}::" + MESSAGE.format(kind=kind))
+
+          if errors:
+              print("\n".join(errors), file=sys.stderr)
+              sys.exit(1)
+          PY
+
       - name: Add lastmod to sitemap.xml from git history
         shell: bash
         run: |

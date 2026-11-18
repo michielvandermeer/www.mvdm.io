@@ -5,27 +5,6 @@
 <meta name="viewport" content="width=1200">
 <title>Share card template</title>
 
-<!--
-  This is a TOOL, not a page: it is never added to sitemap.xml or feed.xml,
-  carries no Share card of its own, and has no site header, footer or nav.
-  It is driven by the deploy render (step 02) with three query parameters —
-  eyebrow, headline, product — and screenshotted at a 1200x630 viewport.
-
-  It links the site's own stylesheet so the card reads the real Boardroom
-  tokens and can never drift from the palette. It takes only the tokens:
-  every element below carries a share-card-* class name that site.css does
-  not use, so no page component can reach in. Reusing site.css's own class
-  names here — .card, .eyebrow, .wordmark — inherits a whole page component
-  (a white panel with a hairline border, rounded corners, and `.card p
-  { flex: 1 }`, which grows the eyebrow and shoves the headline onto the
-  signature). Its own <style> block holds only the card's layout, which
-  does not exist as a page pattern.
-
-  The inline <script> at the bottom reads those three query parameters —
-  AGENTS.md's "don't add inline <script> blocks to pages" governs pages a
-  reader visits, and this file is not one of those.
--->
-
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-latin.woff2">
 <link rel="stylesheet" href="/assets/css/site.css">
 
@@ -119,12 +98,6 @@
 </div>
 
 <script>
-  // Query-string read — see the head comment for why this file may carry
-  // an inline script. Build input only: eyebrow/headline/product are
-  // taken from the site's own pages at deploy time, never from a reader,
-  // so writing headline as innerHTML below is safe. The deploy render
-  // always supplies eyebrow (404.html's own substitute included) — a
-  // missing one there fails the deploy rather than reaching this file.
   (function () {
     var params = new URLSearchParams(location.search);
     var eyebrow = params.get('eyebrow');
@@ -140,15 +113,11 @@
     var h1 = document.getElementById('headline');
     h1.innerHTML = headline;
 
-    // Size ramp keyed to the plain-text length of the headline (tags
-    // stripped), the decision the prototype's render() settled.
     var plain = headline.replace(/<[^>]+>/g, '');
     var len = plain.length;
     var size = len <= 20 ? 96 : len <= 35 ? 82 : len <= 50 ? 70 : len <= 65 ? 58 : 50;
     h1.style.fontSize = size + 'px';
 
-    // Signal readiness to the screenshotter once web fonts are loaded, so
-    // a card is never shot in a fallback font.
     document.fonts.ready.then(function () {
       document.documentElement.setAttribute('data-ready', 'true');
     });

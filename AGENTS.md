@@ -36,9 +36,11 @@ The one exception is the Pages deploy workflow
 (`.github/workflows/pages-deploy.yml`), which does run build steps
 of its own: the legal pack (see **Legal documents** below), the Share cards
 (see **Share cards** below), and the sitemap's `<lastmod>` dates (see **Page
-/ URL structure** and "How to add a page" step 4). Its first step builds
-nothing: it checks that every page's own-address copies equal the address
-`sitemap.xml` lists for it (see **Page / URL structure**).
+/ URL structure** and "How to add a page" step 4). Its first two steps build
+nothing: the first checks that every page's own-address copies equal the
+address `sitemap.xml` lists for it (see **Page / URL structure**), and the
+second checks that no page or script carries a code comment (see **Code
+carries no comments**).
 
 ## Page / URL structure
 
@@ -151,6 +153,17 @@ page links it, nothing else. It carries the "Boardroom" design system:
 Adding new shared UI: put the class in `site.css`, not in a `<style>` block
 on one page. Page-specific one-offs (e.g. an inline SVG illustration) can
 live in the page itself.
+
+## Code carries no comments
+
+HTML and script carry no comments: no `<!-- -->` in any HTML file, and no `//`
+or `/* */` in `assets/js/site.js` or in an inline `<script>`. Explain the code
+through names and structure, or record the reason in an ADR. There are no
+exceptions. CSS (`assets/css/site.css` and `<style>` blocks), the deploy
+workflow and `.agents/` are out of reach. The deploy step "Check that no page
+or script carries a code comment" enforces it, before anything is built or
+published, and lists every comment it finds in one run. See
+[ADR-0003](docs/adr/0003-code-carries-no-comments.md).
 
 ## How to add a page
 
@@ -483,6 +496,12 @@ you want to see what a card looks like: serve the repo root and visit
 [ADR-0001](docs/adr/0001-share-card-pictures-are-rendered-at-deploy-time.md)
 for why the pictures are deploy-time output rather than committed files.
 
+The card's elements use their own `share-card-*` class names and never one of
+`site.css`'s: a class such as `.card` or `.eyebrow` brings a whole page
+component's styles with it. The inline script writes the headline as HTML,
+which is safe because the deploy takes it from the site's own pages and never
+from a reader.
+
 ## Sales Form consent text
 
 This is the text marketing pastes into every mvdm.io Form, so every
@@ -515,6 +534,12 @@ means serving the tree and looking at it:
    (`.github/workflows/pages-deploy.yml`), remove the step's 10-space
    indentation, and run it with `python3` from the repo root. It prints one
    `::error::` line per mismatch and exits 1, or prints nothing and exits 0.
+8. Before pushing a change to an HTML or `.js` file, run the deploy's comment
+   check: copy the Python between `python3 - <<'PY'` and `PY` in the workflow
+   step "Check that no page or script carries a code comment"
+   (`.github/workflows/pages-deploy.yml`), remove the step's 10-space
+   indentation, and run it with `python3` from the repo root. It prints one
+   `::error` line per comment and exits 1, or prints nothing and exits 0.
 
 A throwaway link-crawl script is fine for a one-off check but should not be
 committed — there is no CI test suite for this repo.

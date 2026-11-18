@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-18: The deploy fails on a code comment in a page or a script
+The Pages deploy now fails, before it builds or publishes anything, when an HTML file holds a `<!-- -->` comment or when `assets/js/site.js` or an inline `<script>` holds a `//` or `/* */` comment. It lists every comment it finds with its file, line and kind. Comments in the stylesheet, in `<style>` blocks and in the deploy workflow stay allowed. The existing comments in the share card template and in the shared script were deleted. Nothing changed for a visitor.
+
 ## 2026-11-17: The Privacy Notice names the transfer safeguard for each provider in the United States
 Section 7 of the Privacy Notice, "Recipients and transfers", now has a table of the five providers in the United States that receive personal data the notice covers: Stripe, Cloudflare, Sentry, GitHub and 37signals. Each row says what the provider gets and the safeguard its transfer rests on, and the GitHub and 37signals rows link the provider's own privacy statement. A line under the table covers the UK GDPR and says how to get a copy of the clauses. The Privacy Notice's effective date is unchanged at 17 November 2026. Nothing else changed.
 
