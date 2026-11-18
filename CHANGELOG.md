@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-18: The Terms and the DPA call the Lead's tag UTM campaign
+The Terms of Service, section 1, and the Data Processing Agreement, section 4, now say "UTM campaign" where they said "Campaign" for the tag a Sales Lead keeps, matching the Sales page. The effective dates of the Terms and the DPA moved to 18 November 2026. Nothing else changed.
+
 ## 2026-11-18: The Sales pages call the Lead's tag UTM campaign
 The Sales pricing page no longer promises a Campaign per Form. Its bullet under "Every Lead keeps its UTM campaign" now explains how to add `?utm_campaign=` to a link. The Sales pricing page, the homepage's Sales card, and `llms.txt` now say "UTM campaign" where they said "Campaign", matching the Leads list in Sales. Nothing else changed.
 
