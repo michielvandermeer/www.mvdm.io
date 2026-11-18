@@ -22,7 +22,7 @@
 - [Compliance for gemeenten (in Dutch)](https://mvdm.io/nl/gemeenten/): a Dutch page for Dutch municipalities that track BIO2 and the GDPR together in Compliance.
 - [Translation Tools](https://mvdm.io/products/translation-tools/): keeps `.resx` files as the source of truth, fills empty locales with AI, and ships a NuGet client (`mvdmio.TranslationTools.Client`) and a `translations` CLI (`mvdmio.TranslationTools.Tool`) for .NET projects.
 - [Health Check](https://mvdm.io/products/health-check/): monitors uptime, DNS and SSL certificates.
-- [Statistics](https://mvdm.io/products/statistics/): tracks active users, throughput and response times across your applications from raw request data, self-hosted, with a drop-in .NET client.
+- [Statistics](https://mvdm.io/products/statistics/): tracks active users, throughput, and response times across your applications from raw request data, hosted by mvdmio at statistics.mvdm.io, with a drop-in .NET client. No data is sent to Google.
 - Statistics demo (https://demo.mvdm.io/statistics): a public demo of Statistics with fictional data for a made-up company. No login is needed.
 - [Commonplace](https://mvdm.io/products/commonplace/): a personal place for a journal, books, quotes, notes, contacts and reminders, on an annual licence.
 - [Sales](https://mvdm.io/products/sales/): collects Leads from Forms you paste into any website, keeps each Lead's Campaign, exports Leads and erases them on request, hosted in the EU with no new vendor, on an annual licence.
