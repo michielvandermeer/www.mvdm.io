@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-18: The Sales pages call the Lead's tag UTM campaign
+The Sales pricing page no longer promises a Campaign per Form. Its bullet under "Every Lead keeps its UTM campaign" now explains how to add `?utm_campaign=` to a link. The Sales pricing page, the homepage's Sales card, and `llms.txt` now say "UTM campaign" where they said "Campaign", matching the Leads list in Sales. Nothing else changed.
+
 ## 2026-11-18: The Privacy Notice lists the facts-column-state cookie
 The "Choices you make" table in section 4 of the Privacy Notice, "Cookies and browser storage", now has a `facts-column-state` row after the three Assistant panel rows. It says Compliance sets it, that it remembers whether you collapsed the Facts column on Details pages or left it open (`collapsed` or `open`), and that it lasts 1 year. The Privacy Notice's effective date moved to 18 November 2026. Nothing else changed.
 

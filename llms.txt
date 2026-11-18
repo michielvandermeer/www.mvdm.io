@@ -25,7 +25,7 @@
 - [Statistics](https://mvdm.io/products/statistics/): tracks active users, throughput, and response times across your applications from raw request data, hosted by mvdmio at statistics.mvdm.io, with a drop-in .NET client. No data is sent to Google.
 - Statistics demo (https://demo.mvdm.io/statistics): a public demo of Statistics with fictional data for a made-up company. No login is needed.
 - [Commonplace](https://mvdm.io/products/commonplace/): a personal place for a journal, books, quotes, notes, contacts and reminders, on an annual licence.
-- [Sales](https://mvdm.io/products/sales/): collects Leads from Forms you paste into any website, keeps each Lead's Campaign, exports Leads and erases them on request, hosted in the EU with no new vendor, on an annual licence.
+- [Sales](https://mvdm.io/products/sales/): collects Leads from Forms you paste into any website, keeps each Lead's UTM campaign, exports Leads and erases them on request, hosted in the EU with no new vendor, on an annual licence.
 
 ## Company
 

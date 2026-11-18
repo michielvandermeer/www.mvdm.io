@@ -76,7 +76,7 @@ A person or organisation mvdm.io has accepted to bring customers to the Products
 _Avoid_: affiliate, reseller
 
 **Lead**:
-A person who fills in a Form on a Sales customer's website, or in a Form on this site. Sales keeps their email address, the name and company they give, the Campaign and page that brought them, and the consent text they ticked. A Lead is not a Referral, which ties a customer account to a Partner.
+A person who fills in a Form on a Sales customer's website, or in a Form on this site. Sales keeps their email address, the name and company they give, the page and UTM campaign that brought them, and the consent text they ticked. A Lead is not a Referral, which ties a customer account to a Partner.
 _Avoid_: contact, signup, prospect (a Prospect is a different thing: see **Prospect**)
 
 **Prospect**:
@@ -91,9 +91,9 @@ _Avoid_: origin, provenance
 The sign-up form that Sales gives a customer to paste into their own website. The same form on this site collects a Lead for mvdm.io itself, whose data the Privacy Notice covers.
 _Avoid_: widget, embed
 
-**Campaign**:
-The label of the page or promotion that brought a Lead, which Sales stores with that Lead. A Sales Campaign, the group of Prospects the Sales application names, is a different thing, and this site's legal text does not use the word for it.
-_Avoid_: source, channel
+**UTM campaign**:
+The `utm_campaign` part of the address of the page where a Lead first signed up, which Sales keeps with that Lead. It is empty when that address had none. A Sales Campaign is a different thing: the group of Prospects a Sales customer approaches in their outreach, each with a Status. This site's legal text never uses Campaign for that outreach group.
+_Avoid_: Campaign (in Sales, the outreach group of Prospects), source, channel
 
 **Account member**:
 A person on a customer's Sales account who receives its new-Lead emails. The Data Processing Agreement names them as a group of people whose data Sales stores.
