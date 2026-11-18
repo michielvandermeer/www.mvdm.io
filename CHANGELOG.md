@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-18: The Privacy Notice lists the facts-column-state cookie
+The "Choices you make" table in section 4 of the Privacy Notice, "Cookies and browser storage", now has a `facts-column-state` row after the three Assistant panel rows. It says Compliance sets it, that it remembers whether you collapsed the Facts column on Details pages or left it open (`collapsed` or `open`), and that it lasts 1 year. The Privacy Notice's effective date moved to 18 November 2026. Nothing else changed.
+
 ## 2026-11-18: The deploy fails on a code comment in a page or a script
 The Pages deploy now fails, before it builds or publishes anything, when an HTML file holds a `<!-- -->` comment or when `assets/js/site.js` or an inline `<script>` holds a `//` or `/* */` comment. It lists every comment it finds with its file, line and kind. Comments in the stylesheet, in `<style>` blocks and in the deploy workflow stay allowed. The existing comments in the share card template and in the shared script were deleted. Nothing changed for a visitor.
 
