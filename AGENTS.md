@@ -9,7 +9,7 @@ those terms, not "app", "project", "tool", "portfolio" or "info page".
 ## Tech stack
 
 Plain static HTML, hand-written CSS, and one small hand-written JS file
-(`assets/js/site.js`, the Page view script and the mobile nav toggle — every page references it with
+(`assets/js/site.js`, the Page view script, the currency sign switch (see **Prices**) and the mobile nav toggle — every page references it with
 `<script src="/assets/js/site.js" defer></script>` at the end of `<body>`).
 No generator, no Node, no Ruby, no Bundler, and no build step for the pages
 themselves — GitHub Pages serves the repository root directly, exactly as
@@ -90,7 +90,7 @@ llms.txt                           /llms.txt    (plain markdown summary for
                                    bullet holds prices and the trial, and
                                    it is not in sitemap.xml)
 assets/css/site.css                the one shared stylesheet
-assets/js/site.js                  the one shared script (Page view + nav toggle)
+assets/js/site.js                  the one shared script (Page view + currency sign + nav toggle)
 assets/images/, assets/img/        images and favicons
 ```
 
@@ -209,9 +209,9 @@ published, and lists every comment it finds in one run. See
    `products/compliance/eu-ai-act/`, `products/compliance/soc-2/`,
    `products/compliance/gdpr/`, `products/compliance/iso-9001/`,
    `products/compliance/iso-14001/`, `products/compliance/cyber-essentials/`),
-   which holds one `Offer` for its Framework (the GDPR page holds two, one
-   each for the EU GDPR and the UK GDPR). So does the block of the Dutch page
-   (`nl/gemeenten/`), which holds one `Offer` each for BIO2 and the AVG
+   which holds one EUR `Offer` for its Framework (the GDPR page holds two, one
+   each for the EU GDPR and the UK GDPR), each with its USD `Offer` beside it. So does the block of the Dutch page
+   (`nl/gemeenten/`), which holds one EUR `Offer` each for BIO2 and the AVG, with a USD `Offer` beside each,
    and has `inLanguage` `nl`. Each `SoftwareApplication` carries a
    `publisher` naming the homepage's `Organization` by `@id`. The block of
    each Framework page also holds a `BreadcrumbList` of three `ListItem`s at
@@ -321,6 +321,20 @@ introduce it anywhere else on those pages (meta description, prose, etc.
 must paraphrase around it or link to `#price` instead of repeating the
 figure).
 
+A price amount in the page body marks its currency sign: it is written
+`<span data-currency>€</span>999`, so the number appears once. `site.js`
+fetches `/cdn-cgi/trace` from the same origin and, when its `loc=` line says
+`US`, sets every marked sign to `$`; the number stays the same, because a US
+visitor is billed the euro number in dollars. A failed fetch, another country
+and a browser that runs no script leave the €. Marked: the hero price line, the
+ledger and band rows, totals, the visible FAQ answers and any other body prose
+that quotes a price, on every page that has one. Not marked, and still €: meta
+descriptions, `og:` and `twitter:` descriptions, the JSON-LD `description` and
+FAQ answer text (the answers mirror the visible FAQ but are structured data),
+`llms.txt`, and any other text that is not page body. A new price amount in the
+body gets its sign marked in the same change. The `$10` and `$5` AI credit
+amounts are dollars on every page and are not marked.
+
 Each Landing page's JSON-LD block (`<script type="application/ld+json">`
 in the `<head>`, after the Share card block) restates the price as
 machine-readable data: `price` as a number, `priceCurrency` `EUR`, and a
@@ -329,7 +343,12 @@ business Products and Compliance, true for Commonplace) and a one-year
 `billingDuration`. The type is `PriceSpecification`, not
 `UnitPriceSpecification`, because Google's Rich Results Test rejects
 `UnitPriceSpecification` on a `SoftwareApplication` Offer; `billingDuration`,
-`unitCode` and `referenceQuantity` stay on it on purpose. Compliance's block holds one `Offer` per band row of
+`unitCode` and `referenceQuantity` stay on it on purpose. Every
+EUR `Offer` has a USD `Offer` directly after it, equal in every field but
+`priceCurrency` (`USD`, in the `Offer` and in its `PriceSpecification`): the
+price, `valueAddedTaxIncluded`, `billingDuration`, name and `url` are the
+same. Wherever this section says an `Offer` is edited, the EUR `Offer` and its
+USD `Offer` are edited together. Compliance's block holds one EUR `Offer` per band row of
 the table, named by that row's Frameworks, each per Framework. The block
 repeats only what the page shows: no ratings, no reviews, and the `Offer`
 (price) entries carry no AI credit amounts. A `FAQPage` answer may name an
@@ -540,6 +559,12 @@ means serving the tree and looking at it:
    (`.github/workflows/pages-deploy.yml`), remove the step's 10-space
    indentation, and run it with `python3` from the repo root. It prints one
    `::error` line per comment and exits 1, or prints nothing and exits 0.
+9. If you touched a price amount in a page body, check that its sign is marked
+   (`grep -rn "€" --include=*.html --exclude-dir=.agents --exclude-dir=.git .`
+   lists, outside `<meta>` tags and JSON-LD text, no `€` that is not inside
+   `<span data-currency>`). The local server has no `/cdn-cgi/trace`: answer it
+   with `loc=US` through the browser's own request interception to see the `$`,
+   and never commit a file for it.
 
 A throwaway link-crawl script is fine for a one-off check but should not be
 committed — there is no CI test suite for this repo.

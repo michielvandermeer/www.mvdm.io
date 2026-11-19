@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-19: Visitors in the United States see prices in dollars
+Every price in the body of a page, on the homepage, the Product pages, the Compliance Framework pages, the comparison guides and the Dutch page for gemeenten, now shows a dollar sign in front of the same number when you visit from the United States. The numbers did not change. Everyone outside the United States sees euro, as before, and so does a visitor whose browser runs no script. The search-result and share-preview descriptions and `llms.txt` still say euro.
+
 ## 2026-11-18: The Terms and the DPA call the Lead's tag UTM campaign
 The Terms of Service, section 1, and the Data Processing Agreement, section 4, now say "UTM campaign" where they said "Campaign" for the tag a Sales Lead keeps, matching the Sales page. The effective dates of the Terms and the DPA moved to 18 November 2026. Nothing else changed.
 
