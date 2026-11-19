@@ -6,6 +6,10 @@
 })();
 
 (function () {
+  var signs = document.querySelectorAll('[data-currency]');
+  if (signs.length === 0) {
+    return;
+  }
   fetch('/cdn-cgi/trace')
     .then(function (response) {
       return response.ok ? response.text() : '';
@@ -14,10 +18,11 @@
       if (!/^loc=US$/m.test(trace)) {
         return;
       }
-      document.querySelectorAll('[data-currency]').forEach(function (sign) {
+      signs.forEach(function (sign) {
         sign.textContent = '$';
       });
-    });
+    })
+    .catch(function () {});
 })();
 
 (function () {
