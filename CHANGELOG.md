@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-20: The Privacy Notice names the Audit Log and keeps its entries 365 days
+The Privacy Notice, section 2, now names the Audit Log of sign-ins and access changes where it said "related security logs", and section 8 now says each Audit Log entry is deleted 365 days after it happened. The effective date moved to 20 November 2026. Nothing else changed.
+
 ## 2026-11-19: Visitors in the United States see prices in dollars
 Every price in the body of a page, on the homepage, the Product pages, the Compliance Framework pages, the comparison guides and the Dutch page for gemeenten, now shows a dollar sign in front of the same number when you visit from the United States. The numbers did not change. Everyone outside the United States sees euro, as before, and so does a visitor whose browser runs no script. The search-result and share-preview descriptions and `llms.txt` still say euro.
 
