@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-21: The Sales pricing card lists Campaigns and the AI credit
+The Sales pricing card now lists Campaigns & Prospects with their Statuses and the AI assistant with $10 of AI credit per year, both included. It also says extra AI credit is bought in USD packs and each use is charged at the provider's list price plus ten percent. The €999 and the rest of the page did not change.
+
 ## 2026-11-21: The Privacy Notice and the DPA name the App views and Clicks in mvdm.io's own Products
 The Privacy Notice now says that mvdm.io, as controller, records App views and Clicks in its own signed-in Products, starting with Compliance, using Statistics. Section 2 has a new App views and Clicks bullet next to Request analytics. Section 5 has a new paragraph that says what an App view and a Click hold (the time, the user id, the id of the user's organisation, the page's address with its query string and its title, the browser, the OS, the device type, the language, the screen size and a country; for a Click also the clicked element and the visible text of a button, link or labelled control), that neither holds an IP address and a Click never holds what a person typed, that the text of a Click on anything that shows a customer's record content is masked so record content is never kept, and that the script sets no cookie and writes nothing to your device. The opening paragraph and the search-result and share-preview descriptions name App views and Clicks. The controller paragraph of the Data Processing Agreement lists them among what mvdm.io controls, outside the processor instructions. Both pages carry 21 November 2026 as their effective date. Nothing else changed.
 
