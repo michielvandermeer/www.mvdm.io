@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-21: The Terms name Sales' export of Leads
+The Terms of Service, section 5, no longer says that no Product has an export feature. It now says a Product may let you export part of your data from its own pages, names Sales' export of the Leads on its Leads list as a CSV or Excel file, says no Product exports all of your data, and keeps the email route for the data a Product does not export. The effective date of the Terms moved to 21 November 2026. Nothing else changed.
+
 ## 2026-11-21: The Sales pricing card lists Campaigns and the AI credit
 The Sales pricing card now lists Campaigns & Prospects with their Statuses and the AI assistant with $10 of AI credit per year, both included. It also says extra AI credit is bought in USD packs and each use is charged at the provider's list price plus ten percent. The €999 and the rest of the page did not change.
 
