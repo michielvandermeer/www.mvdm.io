@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-21: The Privacy Notice and the DPA name Statistics' data-centre-network check
+The Privacy Notice, section 5, and the Data Processing Agreement, in the mvdm.io Statistics entry, now say that Statistics uses your IP address for two lookups, the country and whether the address is on a data-centre network, both inside Statistics. Both pages now say a Page view from an address on a data-centre network is not kept, and the Data Processing Agreement also says so for a Conversion a page sends. The effective date of both pages is 21 November 2026. The address is still dropped without being stored, no outside service receives it, no source is named for the data, and no other wording moved.
+
 ## 2026-11-21: The Terms name Sales' export of Leads
 The Terms of Service, section 5, no longer says that no Product has an export feature. It now says a Product may let you export part of your data from its own pages, names Sales' export of the Leads on its Leads list as a CSV or Excel file, says no Product exports all of your data, and keeps the email route for the data a Product does not export. The effective date of the Terms moved to 21 November 2026. Nothing else changed.
 
