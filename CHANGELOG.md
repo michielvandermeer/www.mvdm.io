@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-22: The Privacy Notice names Commonplace on the facts-column-state cookie
+The Privacy Notice, section 4, lists Commonplace with Compliance for the facts-column-state cookie. The row says the cookie remembers whether you collapsed the Facts column on Compliance Details pages or the Ingredients column on Commonplace Recipe pages, or left it open. It still holds collapsed or open and lasts 1 year. The effective date of the Privacy Notice is 22 November 2026. Nothing else changed.
+
 ## 2026-11-21: The Privacy Notice and the DPA name Statistics' data-centre-network check
 The Privacy Notice, section 5, and the Data Processing Agreement, in the mvdm.io Statistics entry, now say that Statistics uses your IP address for two lookups, the country and whether the address is on a data-centre network, both inside Statistics. Both pages now say a Page view from an address on a data-centre network is not kept, and the Data Processing Agreement also says so for a Conversion a page sends. The effective date of both pages is 21 November 2026. The address is still dropped without being stored, no outside service receives it, no source is named for the data, and no other wording moved.
 
