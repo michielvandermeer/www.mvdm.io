@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-23: The Privacy Notice and the DPA list what a Conversion holds
+The Data Processing Agreement, in the mvdm.io Statistics entry, now says that a Conversion holds the time, the name the customer gave it, and the source, medium, campaign, campaign content, and country of the Visit that brought the person. The Privacy Notice, section 5, has a new paragraph that says mvdm.io Statistics also counts Conversions, each one a step such as clicking "Try the demo", registering an account, or paying, and that a Conversion holds the same values and nothing else. The effective date of both pages is 23 November 2026. There is still no cookie, no visitor identifier and no IP address stored, no outside service receives the request, and no other wording moved.
+
 ## 2026-11-23: The Privacy Notice and the DPA list utm_content and the Visit values a Page view carries
 The Privacy Notice, section 5, and the Data Processing Agreement, in the mvdm.io Statistics entry, now say that a Page view also holds the `utm_content` of the page's address. Both pages now also say that a Page view that follows a Visit on another page holds the source, medium, campaign, and campaign content of that Visit, which the `via` value carries, and that many people share these values, so they identify no one. The Data Processing Agreement adds that this is so unless a customer gives one person their own UTM value. The next sentence of the DPA entry now starts with "Statistics" instead of "It". The effective date of both pages is 23 November 2026. There is still no cookie, no visitor identifier and no IP address stored, no outside service receives the request, and no other wording moved.
 
