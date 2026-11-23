@@ -410,6 +410,8 @@ main { flex: 1; }
   align-items: center;
 }
 .duo .sub { margin-bottom: 22px; }
+.duo h3 { font-size: 20px; margin: 32px 0 12px; }
+.duo p:not(.sub) { font-size: 15.5px; color: var(--ink-soft); margin-bottom: 16px; }
 /* alternating feature sections: swap sides without reordering the markup */
 .duo.rev > *:first-child { order: 2; }
 .duo.rev > *:last-child { order: 1; }
