@@ -19,7 +19,7 @@ those terms, not "app", "project", "tool", "portfolio" or "info page".
 ## Tech stack
 
 Plain static HTML, hand-written CSS, and one small hand-written JS file
-(`assets/js/site.js`, the Page view script, the currency sign switch (see **Prices**) and the mobile nav toggle — every page references it with
+(`assets/js/site.js`, the Page view script, the currency sign and VAT/tax switch (see **Prices**) and the mobile nav toggle — every page references it with
 `<script src="/assets/js/site.js" defer></script>` at the end of `<body>`).
 No generator, no Node, no Ruby, no Bundler, and no build step for the pages
 themselves — GitHub Pages serves the repository root directly, exactly as
@@ -335,8 +335,12 @@ A price amount in the page body marks its currency sign: it is written
 `<span data-currency>€</span>999`, so the number appears once. `site.js`
 fetches `/cdn-cgi/trace` from the same origin and, when its `loc=` line says
 `US`, sets every marked sign to `$`; the number stays the same, because a US
-visitor is billed the euro number in dollars. A failed fetch, another country
-and a browser that runs no script leave the €. Marked: the hero price line, the
+visitor is billed the euro number in dollars. The word VAT beside a marked
+price in the body ("excl. VAT", "excluding VAT", "incl. VAT") is written
+`<span data-tax>VAT</span>`, and `site.js` sets it to `tax` together with the
+signs. A failed fetch, another country and a browser that runs no script leave
+the € and the VAT. Meta, `og:`, JSON-LD, `llms.txt` and the Dutch page ("excl.
+btw") keep their wording. Marked: the hero price line, the
 ledger and band rows, totals, the visible FAQ answers and any other body prose
 that quotes a price, on every page that has one. Not marked, and still €: meta
 descriptions, `og:` and `twitter:` descriptions, the JSON-LD `description` and

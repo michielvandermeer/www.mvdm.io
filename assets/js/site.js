@@ -7,6 +7,7 @@
 
 (function () {
   var signs = document.querySelectorAll('[data-currency]');
+  var taxWords = document.querySelectorAll('[data-tax]');
   if (signs.length === 0) {
     return;
   }
@@ -20,6 +21,9 @@
       }
       signs.forEach(function (sign) {
         sign.textContent = '$';
+      });
+      taxWords.forEach(function (word) {
+        word.textContent = 'tax';
       });
     })
     .catch(function () {});
