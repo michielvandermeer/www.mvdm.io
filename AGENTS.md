@@ -397,7 +397,7 @@ the JSON-LD `description`), its Pricing and trial section (which states the €1
 It also edits the Framework page `products/compliance/soc-2/`: its meta description
 and `og:description` (which state the €999 fee and equal the JSON-LD
 `description`), its Pricing and trial section with the example of adding SOC 2 to ISO 27001 (another €999), its FAQ cost answer
-(visible and in the JSON-LD) and its `Offer`.
+(visible and in the JSON-LD), its US-price FAQ answer (visible and in the JSON-LD; the amount in it is a literal `$999`, the euro number written in dollars, which `site.js` does not swap) and its `Offer`.
 It also edits the Framework page `products/compliance/gdpr/`: its meta description
 and `og:description` (which state the €199 fee and equal the JSON-LD
 `description`), its Pricing and trial section (the €199 fee for each of the EU GDPR
@@ -422,7 +422,7 @@ when the €749 or €199 fee changes: its Pricing and trial section states both
 It also edits the comparison guide `products/compliance/iso-27001-vs-gdpr/`
 when the €999 or €199 fee changes: its Pricing and trial section states both, and its last FAQ answer states the €199 fee (visible and in the JSON-LD).
 It also edits the comparison guide `products/compliance/soc-2-vs-gdpr/`
-when the €999 or €199 fee changes: its Pricing and trial section states both, and its last FAQ answer states the €199 fee (visible and in the JSON-LD).
+when the €999 or €199 fee changes: its Pricing and trial section states both, its FAQ answer on whether the EU GDPR and the UK GDPR are the same framework states the €199 fee (visible and in the JSON-LD), and a €999 change also edits its US-price FAQ answer (visible and in the JSON-LD; the amount in it is a literal `$999`, the euro number written in dollars, which `site.js` does not swap).
 It also edits the Dutch page `nl/gemeenten/`: its meta description
 and `og:description` (which state the BIO2 and AVG fees and equal the
 JSON-LD `description`), its "Wat het kost" section, its FAQ cost answer
@@ -451,7 +451,7 @@ section's sentence about included credit and the FAQ cost answer, visible and in
 the JSON-LD. On `products/compliance/iso-27001-vs-gdpr/` it edits the Pricing and trial
 section's sentence about included credit and the last FAQ answer, visible and in
 the JSON-LD. On `products/compliance/soc-2-vs-gdpr/` it edits the Pricing and trial
-section's sentences about included credit and the last FAQ answer, visible and in
+section's sentences about included credit and the FAQ answer on whether the EU GDPR and the UK GDPR are the same framework, visible and in
 the JSON-LD. On `nl/gemeenten/` it edits the "Wat het
 kost" section's credit sentence and the FAQ assistant answer, visible and in
 the JSON-LD. It also edits the `$10` and `$5` amounts in `llms.txt`'s Compliance bullet. The `Offer` entries need no edit for it
