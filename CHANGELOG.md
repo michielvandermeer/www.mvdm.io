@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-24: The Privacy Notice, the Subprocessor list, and the DPA name Cloudflare Web Analytics
+Section 5 of the Privacy Notice drops its sentence about analytics companies and a Page view. It has a new paragraph that says Cloudflare also measures our pages with its Web Analytics script, on the marketing site, the Demos, and every Product, and what the script sends: the page's address without its query string, the address of the page that linked to it, how long the page took to load, and your browser and operating system. Cloudflare drops your IP address and does not store it, and the script sets no cookie. The opening paragraph and section 2 name this use, the Subprocessor list adds it to the Cloudflare row, and the Data Processing Agreement lists the measurements among what mvdm.io controls. The effective date of all three pages is 24 November 2026.
+
 ## 2026-11-24: The Privacy Notice and the DPA list what a Conversion holds
 The Data Processing Agreement, in the mvdm.io Statistics entry, now says that a Conversion holds the time, the name the customer gave it, and the source, medium, campaign, campaign content, and country of the Visit that brought the person. The Privacy Notice, section 5, has a new paragraph that says Statistics also counts Conversions, each one a step such as clicking "Try the demo", registering an account, or paying, and that a Conversion holds the same values and nothing else. The effective date of both pages is 24 November 2026. There is still no cookie, no visitor identifier and no IP address stored, no outside service receives the request, and no other wording moved.
 
