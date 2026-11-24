@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-24: The Partner terms raise the Commission to twenty percent
+Section 3 of the Partner terms now says a Partner earns a Commission of twenty percent of the licence charges each Referral pays, up from ten percent, still calculated on the amount without VAT and after any discount and still including renewals. The Partner terms carry 24 November 2026 as their effective date. No other wording moved.
+
 ## 2026-11-24: The Privacy Notice, the Subprocessor list, and the DPA name Cloudflare Web Analytics
 Section 5 of the Privacy Notice drops its sentence about analytics companies and a Page view. It has a new paragraph that says Cloudflare also measures our pages with its Web Analytics script, on the marketing site, the Demos, and every Product, and what the script sends: the page's address without its query string, the address of the page that linked to it, how long the page took to load, and the visitor's browser and operating system. Cloudflare drops the visitor's IP address and does not store it, and the script sets no cookie. The opening paragraph and section 2 name this use, the Subprocessor list adds it to the Cloudflare row, and the Data Processing Agreement lists the measurements among what mvdm.io controls. The US transfers table in section 7 names the measurements in the Cloudflare row. The effective date of all three pages is 24 November 2026. No other wording moved.
 
