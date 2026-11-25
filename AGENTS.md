@@ -522,6 +522,8 @@ renders, so there is no second list to keep.
 
 The Privacy Notice's section 7 table restates the transfer safeguard of Stripe, Cloudflare and Sentry from the Data Processing Agreement's section 9 table. A change to one of those safeguards in the Data Processing Agreement edits the same row of the Privacy Notice table in the same change.
 
+A Landing page that names the providers its Product uses restates the Subprocessor list: the providers every Product uses, plus that Product's own subheading. A provider added to, removed from, or moved on the Subprocessor list edits every Landing page sentence, figure label and `llms.txt` bullet that names that Product's providers, in the same change. No Landing page claims a Product adds no vendor.
+
 Partners page `partners/index.html` repeats these Partner terms
 (`legal/partners/`) rules: Commission rate and what it is calculated on; rate
 applies to every paid invoice from when Referral is set, renewals included, as
