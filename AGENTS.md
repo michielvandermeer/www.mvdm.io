@@ -37,7 +37,7 @@ add inline `<script>` blocks to pages; if the site ever needs more
 behavior, extend `site.js`. The one exception is a
 `<script type="application/ld+json">` block: it is inert data, not
 behavior, and the homepage, the About page, the six Landing pages, the eight Compliance
-Framework pages, the four comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR), the ISO 27001 Statement of Applicability template page, the Dutch page and the ten posts each carry one (see
+Framework pages, the four comparison guides (ISO 27001 vs SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR), the ISO 27001 Statement of Applicability template page, the Dutch page, the Partners page and the ten posts each carry one (see
 **Prices** and "How to add a page" below; the Compliance page's, the
 Framework pages', the comparison guides', the template page's and the Dutch page's blocks also hold a `FAQPage`). Executable inline scripts stay
 forbidden.
@@ -93,6 +93,7 @@ legal/mvdmio-legal-pack.zip        deploy-generated pack of all 6 (see
                                    Legal documents section below)
 about/index.html                   /about/
 open-source/index.html             /open-source/
+partners/index.html                /partners/   (Partners page, not the Legal page /legal/partners/)
 feed.xml                           /feed.xml    (hand-maintained RSS)
 sitemap.xml, robots.txt            search-engine files, served at root
 llms.txt                           /llms.txt    (plain markdown summary for
@@ -229,17 +230,24 @@ published, and lists every comment it finds in one run. See
    `https://mvdm.io/products/compliance/`, and the Framework, named as the
    page shows it ("SOC 2", "GDPR"), at the page's own canonical address.
    Only the Framework pages, the four comparison guides (ISO 27001 vs
-   SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR) and the
+   SOC 2, ISO 42001 vs EU AI Act, ISO 27001 vs GDPR and SOC 2 vs GDPR), the
    ISO 27001 Statement of Applicability template page (the guides and the template page
    each hold a `FAQPage` and a
-   `BreadcrumbList`, no `Offer`) carry a
+   `BreadcrumbList`, no `Offer`) and the Partners page carry a
    `BreadcrumbList`; the Compliance
    Landing page, the Dutch page and every other page have none. A
    Framework page writes its canonical address four times: in the canonical
    link, in `og:url`, in the `url` of its `SoftwareApplication` and in item 3
    of the `BreadcrumbList`, and the four are equal. The homepage
    carries its own block (an `Organization` and a `WebSite`, no price), and
-   the About page one (a `ProfilePage` with a `Person`, no price). A post
+   the About page one (a `ProfilePage` with a `Person`, no price). Partners
+   page (`partners/index.html`) block: one `@graph`, two nodes. A `WebPage`:
+   `url` = canonical address, `name` = `<h1>`, `description` = meta
+   description, `publisher` = homepage's `Organization`, named by `@id`;
+   `publisher` object also carries that organization's own `name` and `url`. A
+   `BreadcrumbList` of two `ListItem`s: mvdmio at `https://mvdm.io/`, then
+   Partners at page's canonical address. No `FAQPage`, `SoftwareApplication`
+   or `Offer`. A post
    copies the block from a sibling post, directly after the Share card block,
    and adapts it: one `BlogPosting` whose `@id` is its canonical address plus
    `#article`, `headline` equal to its `<h1>`, `description` equal to its
@@ -249,12 +257,14 @@ published, and lists every comment it finds in one run. See
    `Person` of the About page), `publisher` referencing
    `https://mvdm.io/#organization`, and `inLanguage` `en`; no price and no
    `dateModified`, because the site tracks no modified date on posts. No
-   other kind of page has a block. Three kinds of block restate visible text: the
+   other kind of page has a block. Four kinds of block restate visible text: the
    homepage `Organization` repeats the Company details (legal name, address,
    VAT number, Chamber of Commerce number) of `legal/company/`, the About
    `Person` repeats the email and LinkedIn link of the About page's contact
-   line, and a post's `BlogPosting` repeats the post's title, date and
-   description. Edit each block together with the text it copies.
+   line, a post's `BlogPosting` repeats the post's title, date and
+   description, and the Partners page's `WebPage` repeats the page's `<h1>`
+   (as `name`) and meta description. Edit each block together with the text it
+   copies.
 3. Reuse the shared skip link (`<a class="skip-link" href="#main">`, first
    element in `<body>`, pointing at `<main id="main">`), the two-row
    header, the two-line footer, and the `site.js` script tag from a
@@ -271,7 +281,8 @@ published, and lists every comment it finds in one run. See
    `https://compliance.mvdm.io`, including on a new Landing page — do not
    point it at that Product's own application. Hero and other in-page Get
    started buttons stay pointed where they belong. The footer is
-   `.foot-inner`: identity on `.foot-id`, Legal pages on
+   `.foot-inner`: identity on `.foot-id`, which ends with a **Partners** link
+   to `/partners/`, after the email link, that every copy must keep; Legal pages on
    `.foot-legal`, which starts with a link to the `/legal/` hub that every
    copy must keep. Copy that footer wrap from a sibling page exactly —
    dashes are `.foot-sep::before` on a wrapper that is not a link. Do
