@@ -383,7 +383,9 @@ in Stripe; there is no page-load fetch and no sync. A later Compliance
 price change edits the hero, the band table, the matching `Offer` in the
 page's JSON-LD block, the FAQ's cost answer (in the visible FAQ and in the
 JSON-LD), the three fee tiers in `llms.txt`'s Compliance bullet, and at most the homepage Flagship line. A change to
-the FAQ's trial answer edits that bullet's trial sentences too. It
+the FAQ's trial answer edits that bullet's trial sentences too. Trial change:
+also edit trial sentence (30 days, no card) under "What you sell", Partners
+page `partners/index.html`. Compliance price change
 also edits the Framework page `products/compliance/iso-27001/`: its meta
 description and `og:description` (which state the €999 fee and equal the
 JSON-LD `description`), its Pricing and trial section (which states the €999 fee), its FAQ cost
@@ -458,6 +460,19 @@ the JSON-LD. It also edits the `$10` and `$5` amounts in `llms.txt`'s Compliance
 (the JSON-LD paragraph says they carry no AI credit amounts). A later change to another Product edits its hero price line (and the ledger total
 row), that page's JSON-LD block, and at most one line on the homepage.
 
+€999, €749 or €199 fee change also edits Partners page price list under "What
+you sell". List names each tier's Frameworks, so Framework added, removed or
+moved between tiers edits it too. €999 change also edits worked example under
+"What you earn" (€999 fee, €199.80 Commission) and same two amounts in page's
+"Short Dutch note" section (Commission written `€199,80` there). €749 or €199
+change: price list only. €199.80 = Commission rate times €999 fee; change to
+either means recalculating. Example of a Commission, not total of fees.
+
+Commission rate change (20% today) edits, on Partners page: meta description,
+`og:description`, JSON-LD `description`, introduction, "What you earn" (both
+mentions, worked example amount), "This is also for consultancies", "Short
+Dutch note" section (rate, amount). Also Partners bullet in `llms.txt`.
+
 ## Legal documents
 
 `/legal/` is where the deploy's build step renders PDFs. The six legal
@@ -495,6 +510,16 @@ confuse it with that step's Share card page list, which is read from
 renders, so there is no second list to keep.
 
 The Privacy Notice's section 7 table restates the transfer safeguard of Stripe, Cloudflare and Sentry from the Data Processing Agreement's section 9 table. A change to one of those safeguards in the Data Processing Agreement edits the same row of the Privacy Notice table in the same change.
+
+Partners page `partners/index.html` repeats these Partner terms
+(`legal/partners/`) rules: Commission rate and what it is calculated on; rate
+applies to every paid invoice from when Referral is set, renewals included, as
+long as Referral stands; trials and AI credit packs earn none; 30-day hold;
+monthly payout through Stripe; how customer becomes Referral; how person becomes
+Partner. List = what page repeats today. Partner terms change to any rule page
+repeats edits page in same change. Same for Partners bullet in `llms.txt`
+(repeats rate, what it is calculated on, Commission lasts as long as Referral
+stands). Rate change: **Prices** lists every place.
 
 ## Share cards
 
