@@ -13,8 +13,12 @@ A billed standards line inside Compliance, such as ISO 27001 or SOC 2. One Frame
 _Avoid_: Product, licence
 
 **AI credit**:
-The one US-dollar balance per account that the assistant spends in Compliance, Translation Tools, Commonplace, and Sales. Each Compliance Framework includes a yearly amount, and those amounts add when an organisation buys more than one Framework. Translation Tools includes none. Extra credit is bought in USD packs, by hand or through Auto-topup. Each use is the provider's list price plus ten percent, named in the Terms of Service. Translation Tools' automatic translation spends none, and neither does a call on an Own AI key. The apps call it Assistant funds, and Commonplace's own packs are Allowance packs, not AI credit.
+The one US-dollar balance per account that the assistant spends in Compliance, Translation Tools, Commonplace, and Sales. Each Compliance Framework includes a yearly amount, and those amounts add when an organisation buys more than one Framework. Translation Tools includes none. Extra credit is bought in Allowance packs, by hand or through Auto-topup. Each use is the provider's list price plus ten percent, named in the Terms of Service. Translation Tools' automatic translation spends none, and neither does a call on an Own AI key. The apps call it Assistant funds.
 _Avoid_: tokens, Assistant extra, token pack
+
+**Allowance pack**:
+A one-time purchase that adds $10, $25, or $100 to an account's AI credit, charged in USD. Bought in Commonplace, its price adds Dutch VAT on top of that amount, and the pack can be withdrawn within 14 days. Auto-topup buys the same packs.
+_Avoid_: token pack, credit pack, Commonplace balance
 
 **Own AI key**:
 An account's own API key at an AI provider, which an Account Owner gives the assistant so its calls for that account run on the customer's own account at that provider. That provider is the customer's own processor, under the customer's own agreement with it, and not a subprocessor of mvdm.io.
