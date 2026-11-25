@@ -31,5 +31,6 @@
 ## Company
 
 - [About](https://mvdm.io/about/): Michiel van der Meer, the software engineer and architect who builds and runs mvdmio, with two decades in industrial automation.
+- [Partners](https://mvdm.io/partners/): I build the Compliance Platform. You sell it. Partners earn 20% of the licence charges each of their Referrals pays for any Product, calculated on the amount without VAT and after any discount, for as long as the Referral stands. Write to michiel@mvdm.io.
 - [Open source](https://mvdm.io/open-source/): the MIT-licensed .NET packages mvdmio maintains on GitHub.
 - [Legal](https://mvdm.io/legal/): Terms of Service, Privacy Notice, Data Processing Agreement, Subprocessor list, Company details and Partner terms, each as a PDF and all six as one pack.
