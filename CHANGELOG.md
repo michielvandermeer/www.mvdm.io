@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-26: The Pages deploy builds and deploys as two jobs
+The Build and Deploy workflow now runs a `build` job, which checks the pages, builds the PDFs, the legal pack, and the share cards, and uploads the Pages artifact, and then a `deploy` job, which only publishes that artifact and starts only when `build` succeeds. As one job, the deploy sometimes asked for the artifact before GitHub listed it and failed, and rerunning it uploaded a second artifact with the same name, which the deploy also rejects. A failed deploy can now be rerun on its own, without a second upload. Nothing changed for a visitor.
+
 ## 2026-11-24: The Partner terms raise the Commission to twenty percent
 Section 3 of the Partner terms now says a Partner earns a Commission of twenty percent of the licence charges each Referral pays, up from ten percent, still calculated on the amount without VAT and after any discount and still including renewals. The Partner terms carry 24 November 2026 as their effective date. No other wording moved.
 
