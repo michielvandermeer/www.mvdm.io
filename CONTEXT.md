@@ -13,7 +13,7 @@ A billed standards line inside Compliance, such as ISO 27001 or SOC 2. One Frame
 _Avoid_: Product, licence
 
 **AI credit**:
-The one US-dollar balance per account that the assistant spends in Compliance, Translation Tools, Commonplace, and Sales. Each Compliance Framework includes a yearly amount, and those amounts add when an organisation buys more than one Framework. Translation Tools includes none. Extra credit is bought in Allowance packs, by hand or through Auto-topup. Each use is the provider's list price plus ten percent, named in the Terms of Service. Translation Tools' automatic translation spends AI credit unless the account has an Own AI key, and a call on an Own AI key spends none. The apps call it Assistant funds.
+The one US-dollar balance per account that the assistant spends in Compliance, Translation Tools, Commonplace, and Sales. Each Compliance Framework includes a yearly amount, and those amounts add when an organisation buys more than one Framework. Translation Tools includes none. Extra credit is bought in Allowance packs, by hand or through Auto-topup. Each use is the provider's list price plus ten percent, named in the Terms of Service. Translation Tools' automatic translation and Apply Terms spend AI credit unless the account has an Own AI key, and a call on an Own AI key spends none. The apps call it Assistant funds.
 _Avoid_: tokens, Assistant extra, token pack
 
 **Allowance pack**:
