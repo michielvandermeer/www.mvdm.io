@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-28: The Privacy Notice says the mvdmio.clients cookie lasts until you close the browser
+The cookie table in section 4 of the Privacy Notice now says the `mvdmio.clients` cookie lasts until you close the browser, where it said 12 hours. What the cookie is for did not change. The effective date of the Privacy Notice is 28 November 2026. No other wording moved.
+
 ## 2026-11-28: The Translation Tools pricing card no longer says AI auto-translation is included
 The pricing card on the Translation Tools Landing page drops the row that said AI auto-translation and the term bank were included. In its place stands the sentence "Term bank included. Automatic translation and Apply Terms spend AI credit, or nothing when you add your own AI key." The rest of the page did not change.
 
